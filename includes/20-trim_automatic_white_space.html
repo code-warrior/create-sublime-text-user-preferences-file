@@ -1,0 +1,19 @@
+      <section id="trim_automatic_white_space">
+         <h2>Trim Automatic White Space</h2>
+         <div>
+            <p><code>"trim_automatic_white_space": <span> </span>,</code></p>
+            <p>This option removes white space that appears on a line by itself. It’s usually added by mistake, and is hard to see because it’s white space. Let’s look at an example:</p>
+<pre>&lt;p&gt;This is the first paragraph…&lt;/p&gt;
+<span class="highlight">&sdot;&sdot;&sdot;</span>
+&lt;p&gt;and this is the second one.&lt;/p&gt;</pre>
+            <p>The three highlighted dots between the paragraphs represent three spaces that were mistakenly included in the document. Enabling <code>trim_automatic_white_space</code> would automatically delete it when you hit the return key.</p>
+            <p><strong>Note</strong>: if you open a file that already has white space on one or more lines, it won’t delete the existing white space, but won’t add to it, either, when you hit return key.</p>
+            <p>
+               <label for="trim_automatic_white_space_option">Would you like Sublime to <em>not</em> add white space to empty lines when you hit the return key?</label>
+               <select id="trim_automatic_white_space_option" name="trim_automatic_white_space_option">
+                  <option value="true" selected>Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
+         </div>
+      </section>

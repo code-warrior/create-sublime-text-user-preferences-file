@@ -1,0 +1,15 @@
+      <section id="detect_indentation">
+         <h2>Detect Indentation</h2>
+         <div>
+            <p><code>"detect_indentation": <span> </span>,</code></p>
+            <p>Upon load of a document, Sublime Text performs an analysis of white space, setting the options <code>tab_size</code> and <code>translate_tabs_to_spaces</code>. This is useful when wanting to retain the format of an existing file. For example, you have tabs being interpreted as spaces, and each tab is converted to 3 spaces, but you work temporarily on a file that only has tabs that are 4 spaces wide.</p>
+            <p>You might turn this option off if you were refactoring a messy code base to your standards, or if you wanted to make sure that <em>all</em> your source code was formatted exactly as you intended.</p>
+            <p>
+               <label for="detect_indentation_option">Would you like to have Sublime Text detect indentation?</label>
+               <select id="detect_indentation_option" name="detect_indentation_option">
+                  <option value="true" selected>Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
+         </div>
+      </section>

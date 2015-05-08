@@ -1,0 +1,17 @@
+      <section id="auto_indent">
+         <h2>Auto Indent</h2>
+         <div>
+            <p><code>"auto_indent": <span> </span>,</code></p>
+            <p>When <code>auto_indent</code> is enabled, pressing the return key aligns the cursor at the current level of indentation. For example, if you were working in a block of text that was indented by 9 spaces and then pressed the return key, the cursor would align at 9 spaces on the next line, saving you the trouble of having to hit the space bar 9 times to align the next block of content. If this option were disabled (<code>false</code>), pressing the return key would place the cursor at the beginning of the line.</p>
+
+            <p>This option works closely with <code><a href="#smart_indent">smart_indent</a></code>, <code><a href="#trim_automatic_white_space">trim_automatic_white_space</a></code>, and <code><a href="#indent_to_bracket">indent_to_bracket</a></code>. <span class="pending">An explanation of their inter-relation is pending.</span></p>
+
+            <p>
+               <label for="auto_indent_option">Would you like to enable automatic indentation?</label>
+               <select id="auto_indent_option" name="auto_indent_option">
+                  <option value="true" selected>Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
+         </div>
+      </section>

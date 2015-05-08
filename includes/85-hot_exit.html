@@ -1,0 +1,17 @@
+      <section id="hot_exit">
+         <h2>Hot Exit</h2>
+         <div>
+            <p><code>"hot_exit": <span> </span>,</code></p>
+            <p>With <code>hot_exit</code> enabled, closing Sublime when modified files exist causes those files to be cached, not saved, by Sublime. This is automatic, without notification to the user. If the modified files were opened in another program, changes would not appear.</p>
+            <p>Launching Sublime anew restores the files from the cache. In other words, only Sublime is aware of unsaved changes when <code>hot_exit</code> is <code>true</code>.</p>
+            <p>Disabling this option makes Sublime prompt the user to save any modified files <em>before</em> exiting. If the user chooses not save changes, then changes are lost; Sublime does not cache the changes.</p>
+            <p>The aforementioned applies to projects, also.</p>
+            <p>
+               <label for="hot_exit_option">Would you like to be asked to save changes before exiting?</label>
+               <select id="hot_exit_option" name="hot_exit_option">
+                  <option value="false">Yes</option>
+                  <option value="true" selected>No</option>
+               </select>
+            </p>
+         </div>
+      </section>

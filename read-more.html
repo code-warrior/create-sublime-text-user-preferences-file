@@ -1,0 +1,41 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>More Info About Project</title>
+
+   <meta name="description" content="Learn each of the 101 options in the Sublime Text 3 default preferences file, then generate a preferences file for use in your own Sublime Text environment.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="more-info-about-site">
+   <header>
+      <h1>Things to Know</h1>
+   </header>
+   <main>
+      <ul>
+         <li>Most, if not all, options ask you for input in a field or select box. Clicking the question places focus on the input field or select box next to it.</li>
+         <li>Below every heading is a light green highlighted key-value pair representing the exact <abbr title="JavaScript Object Notation">JSON</abbr> syntax of an option used in the Sublime default preferences file. The value to the option is updated in real time with the option you choose at the end of a section.</li>
+         <li>You needn’t use this site <em>only</em> to create a preferences file. It’s also useful as reference and and as a supplement to the explanations in the Sublime Text-supplied default preferences file.</li>
+         <li>Every Sublime Text option can be directly accessed on the web page. Precede the option with a hash mark and add the entire string to the end of the <abbr title="Uniform Resource Locator">URL</abbr>. For example, if you wanted to know more about <code>wrap_width</code>, you would add <code>#wrap_width</code> to the page’s <abbr title="Uniform Resource Locator">URL</abbr>, as such: <code>http://www.create-sublime-text-user-preferences-file.org/#wrap_width</code>. If the string you add to the <abbr title="Uniform Resource Locator">URL</abbr> doesn’t take you to the option you’re querying, then the option has not yet been implemented and explained on the web site.</li>
+         <li>Like <abbr title="Cascading Style Sheets">CSS</abbr> and Git, Sublime employs a cascade. It’s seven levels deep, and the highlighted entry below (item 3) is the file this web site creates. The order of the cascade for preferences files and their paths, from least important to most, is…
+            <ol>
+               <li><code>Packages/Default/Preferences.sublime-settings</code></li>
+               <li><code>Packages/Default/Preferences (OPERATING_SYSTEM).sublime-settings</code></li>
+               <li><code class="highlight">Packages/User/Preferences.sublime-settings</code></li>
+               <li><code>SETTINGS BOUND TO A PROJECT</code></li>
+               <li><code>Packages/SYNTAX/SYNTAX.sublime-settings</code></li>
+               <li><code>Packages/User/SYNTAX.sublime-settings</code></li>
+               <li><code>BUFFER SPECIFIC SETTINGS</code></li>
+            </ol>
+            <strong>Note</strong>: Because of the aforementioned cascade, this web site only generates non-default options chosen by the user. The same settings set on two different levels of the cascade are written in the results file created when you submit the preferences form. For example, if you choose Monokai as your default color scheme, this choice would not appear in the final file, because you’d be overriding Monokai with Monokai. The exceptions, however, are the options <code>font_face</code>, <code>font_size</code>, <code>scroll_past_end</code>, <code>move_to_limit_on_up_down</code>, <code>find_selected_text</code>, <code>close_windows_when_empty</code>, and <code>show_full_path</code>, because they’re overridden in level 2, the operating system specific settings file.</li>
+         <li>Because there are so many options, reading about and choosing each option will take hours. (A future implementation will allow users to bookmark their progress so they can pick up where they left off.)</li>
+
+         <li>However long it takes, investing time in understanding and configuring Sublime’s text editing features will save users oodles of time over their career as a student of web design/programming and/or as a web designer/programmer. Knowledge is <a href="http://www.npr.org/blogs/npr-history-dept/2015/04/23/401681334/7-lost-american-slang-words?utm_campaign=storyshare&amp;utm_source=twitter.com&amp;utm_medium=social">ginchy</a>!</li>
+
+      </ul>
+   </main>
+</body>
+</html>

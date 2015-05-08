@@ -1,0 +1,23 @@
+      <section id="use_tab_stops">
+         <h2>Use Tab Stops</h2>
+         <div>
+            <p><code>"use_tab_stops": <span> </span>,</code></p>
+            <p>When set (<code>true</code>), this option enables the use of the backspace character to delete a tab’s worth of space, if tabs are inserting spaces instead of tabs in a document. Let me clarify with an example. Imagine you have the following Sublime Text settings:</p>
+            <ol>
+               <li><code>"tab_size": 3</code></li>
+               <li><code>"translate_tabs_to_spaces": true</code></li>
+               <li><code>"use_tab_stops": true</code></li>
+            </ol>
+            <p>The first option sets the width of a tab character equal to three spaces, regardless of whether Sublime is entering spaces or tabs when the tab key is pressed. (See the next option.)</p>
+            <p>The second option inserts spaces instead of tabs when the tab key is pressed. Because <code>3</code> is the value to the <code>tab_size</code> option, three spaces are entered into the document every time the tab key is pressed; no tab character is entered. This is equivalent to pressing the space bar three times every time the tab key is pressed.</p>
+            <p>The third option—this one—allows a user to hit the backspace/delete key and delete a tab’s worth of space, in this case, three characters. If <code>use_tab_stops</code> were set to <code>false</code>, then every time you’d type the backspace/delete key, only one space character would be deleted, not the grouping defined by <code>tab_size</code>.</p>
+            <p>This option also works with the Convert Indentation to Spaces option that appears in the lower right corner of the file window in Sublime Text.</p>
+            <p>
+               <label for="use_tab_stops_option">Would you like to employ the backspace/delete key to remove a tab’s worth of content?</label>
+               <select id="use_tab_stops_option" name="use_tab_stops_option">
+                  <option value="true" selected>Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
+         </div>
+      </section>

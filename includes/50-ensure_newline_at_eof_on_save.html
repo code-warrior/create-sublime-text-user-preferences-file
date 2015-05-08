@@ -1,0 +1,14 @@
+      <section id="ensure_newline_at_eof_on_save">
+         <h2>Ensure Newline at <abbr title="End of File">EOF</abbr> on Save </h2>
+         <div>
+            <p><code>"ensure_newline_at_eof_on_save": <span> </span>,</code></p>
+            <p>In 1989, the standard for the C programming language stated that non-empty files <q cite="http://port70.net/~nsz/c/c89/c89-draft.html#2.1.1.2">shall end in a new-line character.</q> We’ve been adding new lines ever since, and some programming language linters will complain. Setting this option to <code>true</code> will add a new line at the end of the file, if the file doesn’t already have one.</p>
+            <p>
+               <label for="ensure_newline_at_eof_on_save_option">Would you like to make sure that your files end with a new line character when you save the document?</label>
+               <select id="ensure_newline_at_eof_on_save_option" name="ensure_newline_at_eof_on_save_option">
+                  <option value="true">Yes</option>
+                  <option value="false" selected>No</option>
+               </select>
+            </p>
+         </div>
+      </section>

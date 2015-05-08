@@ -1,0 +1,67 @@
+      <section id="word_wrap">
+         <h2>Word Wrap</h2>
+         <div>
+            <p><code>"word_wrap": <span> </span>,</code></p>
+            <p>This option works in tandem with <code><a href="#wrap_width">wrap_width</a></code>. See how these options work together for both source code and non-source code below. And, note that <code>word_wrap</code> plays nicely with the <code><a href="#rulers">rulers</a></code> option.</p>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="2">Options</th>
+                     <th colspan="2">File contains…</th>
+                  </tr>
+                  <tr>
+                     <th><code>word_wrap</code></th>
+                     <th><code>wrap_width</code></th>
+                     <th>…code</th>
+                     <th>…text</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><code>auto</code></td>
+                     <td><code>0</code></td>
+                     <td>Content wraps at the window’s width, and reflows with the window’s resizing.</td>
+                     <td>Content wraps at the window’s width, and reflows with the window’s resizing.</td>
+                  </tr>
+                  <tr>
+                     <td><code>auto</code></td>
+                     <td><code>positive non-zero numeric value</code></td>
+                     <td>Content wraps at the non-zero numeric value, but doesn’t reflow with the window’s resizing.</td>
+                     <td>Content wraps at the non-zero numeric value, but doesn’t reflow with the window’s resizing.</td>
+                  </tr>
+                  <tr>
+                     <td><code>true</code></td>
+                     <td><code>0</code></td>
+                     <td>Content wraps at the window’s width, and reflows with the window’s resizing.</td>
+                     <td>Content wraps at the window’s width, and reflows with the window’s resizing.</td>
+                  </tr>
+                  <tr>
+                     <td><code>true</code></td>
+                     <td><code>positive non-zero numeric value</code></td>
+                     <td>Content wraps at the non-zero numeric value, but doesn’t reflow with the window’s resizing.</td>
+                     <td>Content wraps at the non-zero numeric value, but doesn’t reflow with the window’s resizing.</td>
+                  </tr>
+                  <tr>
+                     <td><code>false</code></td>
+                     <td><code>0</code></td>
+                     <td><code>wrap_width</code> is ignored; content does not wrap, and resizing the window generates a horizontal scrolling.</td>
+                     <td><code>wrap_width</code> is ignored; content does not wrap, and resizing the window generates a horizontal scrolling.</td>
+                  </tr>
+                  <tr>
+                     <td><code>false</code></td>
+                     <td><code>positive non-zero numeric value</code></td>
+                     <td>The numeric value to <code>wrap_width</code> is ignored; content does not wrap, and resizing the window generates a horizontal scrolling.</td>
+                     <td>The numeric value to <code>wrap_width</code> is ignored; content does not wrap, and resizing the window generates a horizontal scrolling.</td>
+                  </tr>
+               </tbody>
+            </table>
+            <p>
+               <label for="word_wrap_option">How would you like <abbr title="Sublime Text">ST</abbr> to treat word wrapping?</label>
+               <select id="word_wrap_option" name="word_wrap_option">
+                  <option value="auto" selected>Auto</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
+         </div>
+      </section>

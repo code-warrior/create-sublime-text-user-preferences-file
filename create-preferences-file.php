@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Your Preferences.sublime-settings File is Ready!</title>
+
+    <meta name="description"
+          content="Create a Custom Sublime Text User Preferences File">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="generated-file">
+   <h1>Your Preferences File!</h1>
+   <h2>Quick Notes</h2>
+   <ul>
+       <li>You can reconstruct this page by bookmarking it.</li>
+       <li>You can share this page by copying its address.</li>
+   </ul>
+
+   <h2>Installation Instructions</h2>
+   <ol>
+      <li>Copy everything in the bounded region below into a new text file called <code>Preferences.sublime-settings</code>.</li>
+      <li>Place <code>Preferences.sublime-settings</code> in your Sublime Text’s <code>User</code> folder:
+         <ul>
+            <li><h3>Mac</h3>
+               <kbd>/Users/<span class="highlight">USER_NAME</span>/Library/Application Support/Sublime Text 3/Packages/User</kbd>, where <code>USER_NAME</code> is your Mac username.</li>
+            <li><h3>Windows</h3>
+               <kbd>C:\Users\<span class="highlight">USER_NAME</span>\AppData\Roaming\Sublime Text 3\Packages\User</kbd>, again, where <code>USER_NAME</code> is your Windows user name.</li>
+         </ul>
+      </li>
+   </ol>
+<pre>{
+<?php
+
+$options = "";
+
+/**
+ * COLOR SCHEME
+ */
+if (!empty($_GET['color_scheme_option'])) {
+    $colorSchemeOption = trim($_GET['color_scheme_option']);
+
+    if (strcmp($colorSchemeOption, "Monokai.tmTheme") !== 0) {
+        $options .= '   "color_scheme": "Packages/Color Scheme - Default/' . $colorSchemeOption . '",' . "\n";
+    }
+}
+
+/**
+ * FONT FACE
+ */
+if (isset($_GET['font_face_option'])) {
+    $options .= '   "font_face": "' . trim($_GET['font_face_option']) . '",' . "\n";
+}
+
+/**
+ * FONT SIZE
+ */
+if (isset($_GET['font_size_option'])) {
+    $options .= '   "font_size": ' . trim($_GET['font_size_option']) . ',' . "\n";
+}
+
+/**
+ * FONT OPTIONS
+ */
+if (!empty($_GET['font_options_option'])) {
+    if (strcmp($_GET['font_options_option'], "") !== 0 ) {
+        $options .= '   "font_options": [' . $_GET['font_options_option'] . "],\n";
+    }
+}
+
+/**
+ * WORD SEPARATORS
+ */
+if (!empty($_GET['word_separators_option'])) {
+    if (strcmp($_GET['word_separators_option'], "./\\\\()\\\"'-:,l;<>~!@#$%^&*|+=[]{}`~?") !== 0) {
+        $options .= '   "word_separators": "' . $_GET['word_separators_option'] . '",' . "\n";
+    }
+}
+
+/**
+ * LINE NUMBERS
+ */
+if (!empty($_GET['line_numbers_option'])) {
+    if (strcmp($_GET['line_numbers_option'], "true") !== 0) {
+        $options .= '   "line_numbers": ' . $_GET['line_numbers_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * GUTTER
+ */
+if (!empty($_GET['gutter_option'])) {
+    if (strcmp($_GET['gutter_option'], "true") !== 0) {
+        $options .= '   "gutter": ' . $_GET['gutter_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * MARGIN
+ */
+if (!empty($_GET['margin_option'])) {
+    if (strcmp($_GET['margin_option'], "4") !== 0) {
+        $options .= '   "margin": ' . $_GET['margin_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * FOLD BUTTONS
+ */
+if (!empty($_GET['fold_buttons_option'])) {
+    if (strcmp($_GET['fold_buttons_option'], "true") !== 0) {
+        $options .= '   "fold_buttons": ' . $_GET['fold_buttons_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * FADE FOLD BUTTONS
+ */
+if (!empty($_GET['fade_fold_buttons_option'])) {
+    if (strcmp($_GET['fade_fold_buttons_option'], "true") !== 0) {
+        $options .= '   "fade_fold_buttons": ' . $_GET['fade_fold_buttons_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * RULERS
+ */
+if (!empty($_GET['rulers_option'])) {
+    if (strcmp($_GET['rulers_option'], "") !== 0) {
+        $options .= '   "rulers": [' . $_GET['rulers_option'] . '],' . "\n";
+    }
+}
+
+/**
+ * SPELL CHECK
+ */
+if (!empty($_GET['spell_check_option'])) {
+    if (strcmp($_GET['spell_check_option'], "false") !== 0) {
+        $options .= '   "spell_check": ' . $_GET['spell_check_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * TAB SIZE
+ */
+if (!empty($_GET['tab_size_option'])) {
+    if (strcmp($_GET['tab_size_option'], "4") !== 0) {
+        $options .= '   "tab_size": ' . $_GET['tab_size_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * TRANSLATE TABS TO SPACES
+ */
+if (!empty($_GET['translate_tabs_to_spaces_option'])) {
+    if (strcmp($_GET['translate_tabs_to_spaces_option'], "false") !== 0) {
+        $options .= '   "translate_tabs_to_spaces": ' . $_GET['translate_tabs_to_spaces_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * USE TAB STOPS
+ */
+if (!empty($_GET['use_tab_stops_option'])) {
+    if (strcmp($_GET['use_tab_stops_option'], "true") !== 0) {
+        $options .= '   "use_tab_stops": ' . $_GET['use_tab_stops_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * DETECT INDENTATION
+ */
+if (!empty($_GET['detect_indentation_option'])) {
+    if (strcmp($_GET['detect_indentation_option'], "true") !== 0) {
+        $options .= '   "detect_indentation": ' . $_GET['detect_indentation_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * AUTO INDENT
+ */
+if (!empty($_GET['auto_indent_option'])) {
+    if (strcmp($_GET['auto_indent_option'], "true") !== 0) {
+        $options .= '   "auto_indent": ' . $_GET['auto_indent_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * TRIM AUTOMATIC WHITE SPACE
+ */
+if (!empty($_GET['trim_automatic_white_space_option'])) {
+    if (strcmp($_GET['trim_automatic_white_space_option'], "true") !== 0) {
+        $options .= '   "trim_automatic_white_space": ' . $_GET['trim_automatic_white_space_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * WORD WRAP
+ */
+if (!empty($_GET['word_wrap_option'])) {
+    if (strcmp($_GET['word_wrap_option'], "auto") !== 0) {
+        $options .= '   "word_wrap": ' . $_GET['word_wrap_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * WRAP WIDTH
+ */
+if (!empty($_GET['wrap_width_option'])) {
+    if (strcmp($_GET['wrap_width_option'], "0") !== 0) {
+        $options .= '   "wrap_width": ' . $_GET['wrap_width_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * DRAW CENTERED
+ */
+if (!empty($_GET['draw_centered_option'])) {
+    if (strcmp($_GET['draw_centered_option'], "false") !== 0) {
+        $options .= '   "draw_centered": ' . $_GET['draw_centered_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * CARET STYLE
+ */
+if (!empty($_GET['caret_style_option'])) {
+    if (strcmp($_GET['caret_style_option'], "smooth") !== 0) {
+        $options .= '   "caret_style": "' . $_GET['caret_style_option'] . '",' . "\n";
+    }
+}
+
+/**
+ * SCROLL PAST END
+ */
+if (isset($_GET['scroll_past_end_option'])) {
+    $options .= '   "scroll_past_end": ' . $_GET['scroll_past_end_option'] . ',' . "\n";
+}
+
+/**
+ * TRIM TRALING WHITE SPACE ON SAVE
+ */
+if (!empty($_GET['trim_trailing_white_space_on_save_option'])) {
+    if (strcmp($_GET['trim_trailing_white_space_on_save_option'], "false") !== 0) {
+        $options .= '   "trim_trailing_white_space_on_save": ' . $_GET['trim_trailing_white_space_on_save_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * ENSURE NEWLINE AT EOF ON SAVE
+ */
+if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
+    if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
+        $options .= '   "ensure_newline_at_eof_on_save": ' . $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * ENSURE NEWLINE AT EOF ON SAVE
+ */
+if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
+    if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
+        $options .= '   "ensure_newline_at_eof_on_save": ' . $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * SAVE ON FOCUS LOST
+ */
+if (!empty($_GET['save_on_focus_lost_option'])) {
+    if (strcmp($_GET['save_on_focus_lost_option'], "false") !== 0) {
+        $options .= '   "save_on_focus_lost": ' . $_GET['save_on_focus_lost_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * DEFAULT LINE ENDING
+ */
+if (!empty($_GET['default_line_ending_option'])) {
+    if (strcmp($_GET['default_line_ending_option'], "system") !== 0) {
+        $options .= '   "default_line_ending": "' . $_GET['default_line_ending_option'] . '",' . "\n";
+    }
+}
+
+/**
+ * COPY WITH EMPTY SELECTION
+ */
+if (!empty($_GET['copy_with_empty_selection_option'])) {
+    if (strcmp($_GET['copy_with_empty_selection_option'], "true") !== 0) {
+        $options .= '   "copy_with_empty_selection": ' . $_GET['copy_with_empty_selection_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * DRAG TEXT
+ */
+if (!empty($_GET['drag_text_option'])) {
+    if (strcmp($_GET['drag_text_option'], "true") !== 0) {
+        $options .= '   "drag_text": ' . $_GET['drag_text_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * SHOW ENCODING
+ */
+if (!empty($_GET['show_encoding_option'])) {
+    if (strcmp($_GET['show_encoding_option'], "false") !== 0) {
+        $options .= '   "show_encoding": ' . $_GET['show_encoding_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * SHOW LINE ENDINGS
+ */
+if (!empty($_GET['show_line_endings_option'])) {
+    if (strcmp($_GET['show_line_endings_option'], "false") !== 0) {
+        $options .= '   "show_line_endings": ' . $_GET['show_line_endings_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * SHOW LINE ENDINGS
+ */
+if (!empty($_GET['hot_exit_option'])) {
+    if (strcmp($_GET['hot_exit_option'], "true") !== 0) {
+        $options .= '   "hot_exit": ' . $_GET['hot_exit_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * ALWAYS PROMPT FOR FILE RELOAD
+ */
+if (!empty($_GET['always_prompt_for_file_reload_option'])) {
+    if (strcmp($_GET['always_prompt_for_file_reload_option'], "true") !== 0) {
+        $options .= '   "always_prompt_for_file_reload": ' . $_GET['always_prompt_for_file_reload_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * OPEN FILES IN NEW WINDOW
+ */
+if (!empty($_GET['open_files_in_new_window_option'])) {
+    if (strcmp($_GET['open_files_in_new_window_option'], "true") !== 0) {
+        $options .= '   "open_files_in_new_window": '.$_GET['open_files_in_new_window_option'].',' . "\n";
+    }
+}
+
+/**
+ * CREATE WINDOW AT STARTUP
+ */
+if (!empty($_GET['create_window_at_startup_option'])) {
+    if (strcmp($_GET['create_window_at_startup_option'], "true") !== 0) {
+        $options .= '   "create_window_at_startup": '.$_GET['create_window_at_startup_option'].',' . "\n";
+    }
+}
+
+/**
+ * SHOW FULL PATH
+ */
+if (isset($_GET['show_full_path_option'])) {
+    $options .= '   "show_full_path": "' . trim($_GET['show_full_path_option']) . '",' . "\n";
+}
+
+/**
+ * TEMPLATE
+ */
+/*
+if (!empty($_GET['_option'])) {
+    if (strcmp($_GET['_option'], "") !== 0) {
+        $options .= '   "": '.$_GET['_option'].',' . "\n";
+    }
+}
+*/
+
+if (strlen($options) !== 0 ) {
+    $indexOfLastComma = strrpos($options, ',', 0);
+    $options[$indexOfLastComma] = ' '; // Replace the last comma with a space
+    echo $options;
+} else {
+    echo "   You’ve taken all the default parameters of the preferences file. Thus, no options were generated.\n";
+}
+
+?>
+}
+</pre>
+    </body>
+</html>
