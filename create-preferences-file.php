@@ -26,9 +26,9 @@
       <li>Place <code>Preferences.sublime-settings</code> in your Sublime Text’s <code>User</code> folder:
          <ul>
             <li><h3>Mac</h3>
-               <kbd>/Users/<span class="highlight">USER_NAME</span>/Library/Application Support/Sublime Text 3/Packages/User</kbd>, where <code>USER_NAME</code> is your Mac username.</li>
+               <kbd>/Users/USER_NAME/Library/Application Support/Sublime Text 3/Packages/User</kbd>, where <code>USER_NAME</code> is your Mac username.</li>
             <li><h3>Windows</h3>
-               <kbd>C:\Users\<span class="highlight">USER_NAME</span>\AppData\Roaming\Sublime Text 3\Packages\User</kbd>, again, where <code>USER_NAME</code> is your Windows user name.</li>
+               <kbd>C:\Users\USER_NAME\AppData\Roaming\Sublime Text 3\Packages\User</kbd>, again, where <code>USER_NAME</code> is your Windows user name.</li>
          </ul>
       </li>
    </ol>
