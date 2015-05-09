@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Your Preferences.sublime-settings File is Ready!</title>
+    <title>Your Sublime Preferences File is Ready!</title>
 
     <meta name="description"
           content="Create a Custom Sublime Text User Preferences File">
