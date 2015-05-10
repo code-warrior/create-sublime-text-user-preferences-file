@@ -13,6 +13,7 @@
 <body>
    <header>
       <h1>Create Sublime Text User Preferences File <sup>(v0.0.1)</sup></h1>
+<?php require_once "includes/navigation.html"; ?>
    </header>
    <div id="introduction">
       <p>The purpose of this web site is two-fold. First, it explains in detail each of the options in Sublime Text’s <code>Preferences.sublime-settings</code> file. And second, it allows you to create a customized preferences file that you can install in your own Sublime environment.</p>
