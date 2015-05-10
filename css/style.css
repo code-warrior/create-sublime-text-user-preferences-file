@@ -4,7 +4,7 @@
 @import url("http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
 body {
   font: 300 1.42rem / 1.5 "Noto Sans", sans-serif;
-  width: 80%;
+  width: 60%;
   margin: auto;
   color: #222;
   padding: 0 0 40px 0;
@@ -97,14 +97,34 @@ section > h2 + div p {
   margin: 0;
 }
 
+header h1 {
+  position: relative;
+  background-color: white;
+  height: 100%;
+  z-index: 1;
+}
+
 nav {
   font-size: .95rem;
+  position: fixed;
+  right: 78%;
+  top: 15%;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 0;
 }
-nav ul:first-of-type {
-  text-align: center;
+nav ul {
+  text-align: right;
+  padding-right: 24px;
+  height: 60%;
+  overflow-y: auto;
 }
-nav ul:first-of-type > li {
-  display: inline-block;
+nav ul li {
+  margin: 12px 0;
+}
+nav ul li a {
+  padding: 2px;
+  background-color: #fff8ed;
 }
 
 table, td {
@@ -168,7 +188,8 @@ p {
 }
 
 h1 {
-  margin: 48px 0 38px;
+  margin: 0;
+  padding: 48px 0;
   text-align: center;
   font-size: 2.2rem;
 }
@@ -271,6 +292,11 @@ blockquote {
   padding: 0;
 }
 
+form {
+  position: relative;
+  background-color: white;
+  z-index: 10;
+}
 form > div:last-of-type {
   text-align: center;
   margin: 40px 0;
@@ -280,6 +306,9 @@ form > div:last-of-type {
   opacity: 1;
   transition: all 1s;
   visibility: visible;
+  position: relative;
+  z-index: 1;
+  background-color: white;
 }
 #introduction.hide {
   opacity: 0;
@@ -336,20 +365,8 @@ a {
   background-color: yellow;
 }
 
-@media screen and (max-width: 1280px) {
-  body {
-    width: 90%;
-  }
-}
 @media screen and (max-width: 880px) {
   select {
     font-size: 1rem;
-  }
-}
-@media screen and (max-width: 320px) {
-  body {
-    font-size: .9rem;
-    width: 98%;
-    padding: 1%;
   }
 }

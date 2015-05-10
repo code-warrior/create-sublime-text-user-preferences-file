@@ -10,7 +10,7 @@ $background-color-for-input-and-choice: lighten(green,73%);
 
 body {
    font: 300 1.42rem / 1.5 "Noto Sans", sans-serif;
-   width: 80%;
+   width: 60%;
    margin: auto;
    color: $color-main;
    padding: 0 0 40px 0;
@@ -120,14 +120,37 @@ section {
    }
 }
 
+header {
+   h1 {
+      position: relative;
+      background-color: white;
+      height: 100%;
+      z-index: 1;
+   }
+}
+
 nav {
    font-size: .95rem;
+   position: fixed;
+   right: 78%;
+   top: 15%;
+   height: 100%;
+   overflow-y: hidden;
+   z-index: 0;
 
-   ul:first-of-type {
-      text-align: center;
+   ul {
+      text-align: right;
+      padding-right: 24px;
+      height: 60%;
+      overflow-y: auto;
 
-      >li {
-         display: inline-block;
+      li {
+         margin: 12px 0;
+
+         a {
+            padding: 2px;
+            background-color: lighten(#FFCB82, 21%);
+         }
       }
    }
 }
@@ -197,7 +220,8 @@ p {
 }
 
 h1 {
-   margin: 48px 0 38px;
+   margin: 0;
+   padding: 48px 0;
    text-align: center;
    font-size: 2.2rem;
 }
@@ -313,6 +337,9 @@ blockquote {
 }
 
 form {
+   position: relative;
+   background-color: white;
+   z-index: 10;
    >div:last-of-type {
       text-align: center;
       margin: 40px 0;
@@ -323,6 +350,9 @@ form {
    opacity: 1;
    transition: all 1s;
    visibility: visible;
+   position: relative;
+   z-index: 1;
+   background-color: white;
 
    &.hide {
       opacity: 0;
@@ -393,7 +423,6 @@ a {
 
 @media screen and (max-width: 1280px) {
    body {
-      width: 90%;
    }
 }
 
@@ -405,8 +434,5 @@ a {
 
 @media screen and (max-width: 320px) {
    body {
-      font-size: .9rem;
-      width: 98%;
-      padding: 1%;
    }
 }
