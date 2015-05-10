@@ -105,16 +105,6 @@ nav ul:first-of-type {
 }
 nav ul:first-of-type > li {
   display: inline-block;
-  border: 1px solid black;
-}
-nav ul:first-of-type > li ul {
-  display: none;
-}
-nav ul:first-of-type:hover ul {
-  display: inline-block;
-}
-nav ul:first-of-type:hover ul li {
-  display: block;
 }
 
 table, td {

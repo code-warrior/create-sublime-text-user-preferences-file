@@ -128,20 +128,6 @@ nav {
 
       >li {
          display: inline-block;
-         border: 1px solid black;
-
-         ul {
-            display: none;
-         }
-      }
-      &:hover {
-         ul {
-            display: inline-block;
-            li {
-               display: block;
-            }
-         }
-
       }
    }
 }
