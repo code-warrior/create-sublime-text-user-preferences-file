@@ -3,7 +3,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Create a Custom Sublime Text User Preferences File</title>
+   <title>Create a Custom Sublime Text User Preferences File (v0.0.4)</title>
 
    <meta name="description" content="Learn each of the 101 options in the Sublime Text 3 default preferences file, then generate a preferences file for use in your own Sublime Text environment.">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,8 +11,9 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+   <aside title="Fork me at Bitbucket"><a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork at <img src="img/Atlassian_Bitbucket_Logo.png" height="22" alt="Bitbucket"></a></aside>
    <header>
-      <h1>Create Sublime Text User Preferences File <sup>(v0.0.3)</sup></h1>
+      <h1>Create Sublime Text User Preferences File <sup>(v0.0.4)</sup></h1>
 <?php require_once "includes/navigation.html"; ?>
    </header>
    <div id="introduction">
@@ -23,7 +24,6 @@
       <address>— Roy Vanegas</address>
       <div><button>Hide the intro above</button></div>
    </div>
-   <aside title="Fork me at Bitbucket"><a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork at <img src="img/Atlassian_Bitbucket_Logo.png" height="22" alt="Bitbucket"></a></aside>
    <form method="get" action="create-preferences-file.php">
 <?php
 require_once "includes/01-color_scheme.html";

@@ -2,6 +2,45 @@
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
 
+@mixin border-radius( $radius ) {
+   -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+       -ms-border-radius: $radius;
+        -o-border-radius: $radius;
+           border-radius: $radius;
+}
+
+@mixin transition( $property, $duration, $timing_function, $delay ) {
+   -webkit-transition: $property $duration $timing_function $delay;
+      -moz-transition: $property $duration $timing_function $delay;
+        -o-transition: $property $duration $timing_function $delay;
+           transition: $property $duration $timing_function $delay;
+}
+
+@mixin box-shadow( $horizontal, $vertical, $blur_radius, $spread_radius, $color ) {
+   -webkit-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
+      -moz-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
+       -ms-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
+        -o-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
+           box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
+}
+
+@mixin transform( $x, $y, $rotation ) {
+   -webkit-transform: translateX($x) translateY($y) rotate($rotation);
+      -moz-transform: translateX($x) translateY($y) rotate($rotation);
+       -ms-transform: translateX($x) translateY($y) rotate($rotation);
+        -o-transform: translateX($x) translateY($y) rotate($rotation);
+           transform: translateX($x) translateY($y) rotate($rotation);
+}
+
+@mixin transform-origin( $x, $y ) {
+   -webkit-transform-origin: $x $y;
+      -moz-transform-origin: $x $y;
+       -ms-transform-origin: $x $y;
+        -o-transform-origin: $x $y;
+           transform-origin: $x $y;
+}
+
 $color-important-note: red;
 $color-links: rgb(0,79,130);
 $color-main: #222;
@@ -47,6 +86,32 @@ ol {
    ul {
       margin: 16px 0 16px 18px;
    }
+}
+
+code, tt, kbd, pre {
+   font: 1.45rem / 1.5 "Ubuntu Mono", monospace;
+}
+
+code, tt, kbd {
+   border: 1px solid #eee;
+   border-radius: 5px;
+   color: #444;
+   padding: 5px;
+}
+
+strong, b {
+   font-weight: 700;
+}
+
+p {
+   padding: .7rem 0;
+}
+
+h1 {
+   margin: 0;
+   padding: 48px 0;
+   text-align: center;
+   font-size: 2.2rem;
 }
 
 #generated-file, #more-info-about-site {
@@ -111,6 +176,10 @@ section {
          >p:first-of-type {
             margin: 0;
             padding: 24px 0 8px;
+
+            code {
+               font-size: 1.3rem;
+            }
          }
 
          p {
@@ -139,8 +208,8 @@ header {
 nav {
    font-size: .95rem;
    position: fixed;
-   right: 78%;
-   top: 15%;
+   right: 79%;
+   top: 154px;
    height: 100%;
    overflow-y: hidden;
    z-index: 0;
@@ -205,32 +274,6 @@ sup {
 
 abbr {
    border-bottom: 1px dotted $color-main;
-}
-
-code, tt, kbd, pre {
-   font: 1.45rem / 1.5 "Ubuntu Mono", monospace;
-}
-
-code, tt, kbd {
-   border: 1px solid #eee;
-   border-radius: 5px;
-   color: #444;
-   padding: 5px;
-}
-
-strong, b {
-   font-weight: 700;
-}
-
-p {
-   padding: .7rem 0;
-}
-
-h1 {
-   margin: 0;
-   padding: 48px 0;
-   text-align: center;
-   font-size: 2.2rem;
 }
 
 h2 {
@@ -309,15 +352,14 @@ aside {
    line-height: 36px;
    text-align: center;
    background-color: rgb(248,248,248);
-   color: white;
    top: 0;
    right: 0;
    position: fixed;
    width: 200px;
    padding: 0 30px;
    height: 36px;
-   transform: translateX(108px) translateY(-35px) rotate(45deg);
-   transform-origin: top left;
+   @include transform( 108px, -35px, 45deg );
+   @include transform-origin( top, left );
 
    a {
       color: $color-links;
@@ -428,18 +470,110 @@ a {
    background-color: yellow;
 }
 
+@media screen and (max-width: 1920px) {
+   body {
+      width: 40%;
+   }
+   nav {
+      right: 68.5%;
+      ul {
+         padding-right: 32px;
+      }
+   }
+}
+
+@media screen and (max-width: 1850px) {
+   body {
+      width: 50%;
+   }
+   nav {
+      right: 73%;
+   }
+}
+
+@media screen and (max-width: 1480px) {
+   body {
+      width: 54%;
+   }
+   nav {
+      right: 75%;
+   }
+}
+
+@media screen and (max-width: 1380px) {
+   body {
+      width: 58%;
+   }
+   nav {
+      right: 76.5%;
+   }
+}
+
 @media screen and (max-width: 1280px) {
    body {
+      width: 62%;
+   }
+   nav {
+      right: 78%;
    }
 }
 
-@media screen and (max-width: 880px) {
-   select {
-      font-size: 1rem;
-   }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1200px) {
    body {
+      width: 66%;
+   }
+   nav {
+      right: 80%;
+   }
+}
+
+@media screen and (max-width: 1130px) {
+   body {
+      width: 70%;
+   }
+   nav {
+      font-size: .8rem;
+      right: 82%;
+   }
+   select {
+      font-size: .9rem;
+   }
+}
+
+@media screen and (max-width: 1068px) {
+   body {
+      width: 74%;
+   }
+   nav {
+      right: 84%;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   body {
+      width: 70%;
+   }
+
+   aside {
+      background-color: white;
+      right: auto;
+      left: 0;
+      position: fixed;
+      width: 100%;
+      padding: 10px 0 0;
+      margin: 0 0 20px;
+      z-index: 3;
+      @include transform(0, 0, 0);
+   }
+
+   nav {
+      font-size: .8rem;
+      right: 82%;
+   }
+}
+
+@media screen and (max-width: 800px) {
+   select {
+      font-size: .8rem;
    }
 }
