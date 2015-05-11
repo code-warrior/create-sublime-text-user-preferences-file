@@ -3,7 +3,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Create a Custom Sublime Text User Preferences File</title>
+   <title>Create a Custom Sublime Text User Preferences File (v0.0.4)</title>
 
    <meta name="description" content="Learn each of the 101 options in the Sublime Text 3 default preferences file, then generate a preferences file for use in your own Sublime Text environment.">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 </head>
 <body>
    <header>
-      <h1>Create Sublime Text User Preferences File <sup>(v0.0.4)</sup></h1>
+      <h1>Create Sublime Text User Preferences File</h1>
 <?php require_once "includes/navigation.html"; ?>
    </header>
    <div id="introduction">
