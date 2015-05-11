@@ -11,6 +11,7 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+   <aside title="Fork me at Bitbucket"><a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork at <img src="img/Atlassian_Bitbucket_Logo.png" height="22" alt="Bitbucket"></a></aside>
    <header>
       <h1>Create Sublime Text User Preferences File</h1>
 <?php require_once "includes/navigation.html"; ?>
@@ -23,7 +24,6 @@
       <address>— Roy Vanegas</address>
       <div><button>Hide the intro above</button></div>
    </div>
-   <aside title="Fork me at Bitbucket"><a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork at <img src="img/Atlassian_Bitbucket_Logo.png" height="22" alt="Bitbucket"></a></aside>
    <form method="get" action="create-preferences-file.php">
 <?php
 require_once "includes/01-color_scheme.html";
