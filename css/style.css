@@ -144,7 +144,7 @@ nav {
   font-size: .95rem;
   position: fixed;
   right: 79%;
-  top: 15%;
+  top: 154px;
   height: 100%;
   overflow-y: hidden;
   z-index: 0;
@@ -270,14 +270,21 @@ aside {
   line-height: 36px;
   text-align: center;
   background-color: #f8f8f8;
-  color: white;
   top: 0;
   right: 0;
   position: fixed;
   width: 200px;
   padding: 0 30px;
   height: 36px;
+  -webkit-transform: translateX(108px) translateY(-35px) rotate(45deg);
+  -moz-transform: translateX(108px) translateY(-35px) rotate(45deg);
+  -ms-transform: translateX(108px) translateY(-35px) rotate(45deg);
+  -o-transform: translateX(108px) translateY(-35px) rotate(45deg);
   transform: translateX(108px) translateY(-35px) rotate(45deg);
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
   transform-origin: top left;
 }
 aside a {
@@ -382,14 +389,107 @@ a {
 
   nav {
     right: 68.5%;
-    top: 15.5%;
   }
   nav ul {
     padding-right: 32px;
   }
 }
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1850px) {
+  body {
+    width: 50%;
+  }
+
+  nav {
+    right: 73%;
+  }
+}
+@media screen and (max-width: 1480px) {
+  body {
+    width: 54%;
+  }
+
+  nav {
+    right: 75%;
+  }
+}
+@media screen and (max-width: 1380px) {
+  body {
+    width: 58%;
+  }
+
+  nav {
+    right: 76.5%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  body {
+    width: 62%;
+  }
+
+  nav {
+    right: 78%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body {
+    width: 66%;
+  }
+
+  nav {
+    right: 80%;
+  }
+}
+@media screen and (max-width: 1130px) {
+  body {
+    width: 70%;
+  }
+
+  nav {
+    font-size: .8rem;
+    right: 82%;
+  }
+
   select {
-    font-size: 1rem;
+    font-size: .9rem;
+  }
+}
+@media screen and (max-width: 1068px) {
+  body {
+    width: 74%;
+  }
+
+  nav {
+    right: 84%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    width: 70%;
+  }
+
+  aside {
+    background-color: white;
+    right: auto;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    padding: 10px 0 0;
+    margin: 0 0 20px;
+    z-index: 3;
+    -webkit-transform: translateX(0) translateY(0) rotate(0);
+    -moz-transform: translateX(0) translateY(0) rotate(0);
+    -ms-transform: translateX(0) translateY(0) rotate(0);
+    -o-transform: translateX(0) translateY(0) rotate(0);
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+
+  nav {
+    font-size: .8rem;
+    right: 82%;
+  }
+}
+@media screen and (max-width: 800px) {
+  select {
+    font-size: .8rem;
   }
 }
