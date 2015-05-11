@@ -12,7 +12,7 @@
 </head>
 <body>
    <header>
-      <h1>Create Sublime Text User Preferences File <sup>(v0.0.1)</sup></h1>
+      <h1>Create Sublime Text User Preferences File <sup>(v0.0.4)</sup></h1>
 <?php require_once "includes/navigation.html"; ?>
    </header>
    <div id="introduction">
