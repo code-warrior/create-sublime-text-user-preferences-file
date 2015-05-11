@@ -137,6 +137,10 @@ section {
          >p:first-of-type {
             margin: 0;
             padding: 24px 0 8px;
+
+            code {
+               font-size: 1.3rem;
+            }
          }
 
          p {
@@ -426,6 +430,19 @@ a {
 .error {
    color: red;
    background-color: yellow;
+}
+
+@media screen and (max-width: 1920px) {
+   body {
+      width: 40%;
+   }
+   nav {
+      right: 68.5%;
+      top: 20.5%;
+      ul {
+         padding-right: 32px;
+      }
+   }
 }
 
 @media screen and (max-width: 1280px) {

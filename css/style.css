@@ -119,6 +119,9 @@ section > h2 + div > p:first-of-type {
   margin: 0;
   padding: 24px 0 8px;
 }
+section > h2 + div > p:first-of-type code {
+  font-size: 1.3rem;
+}
 section > h2 + div p {
   margin: 0;
 }
@@ -372,6 +375,19 @@ a {
   background-color: yellow;
 }
 
+@media screen and (max-width: 1920px) {
+  body {
+    width: 40%;
+  }
+
+  nav {
+    right: 68.5%;
+    top: 20.5%;
+  }
+  nav ul {
+    padding-right: 32px;
+  }
+}
 @media screen and (max-width: 880px) {
   select {
     font-size: 1rem;
