@@ -383,10 +383,13 @@ if (strlen($options) !== 0 ) {
     $indexOfLastComma = strrpos($options, ',', 0);
     $options[$indexOfLastComma] = ' '; // Replace the last comma with a space
     echo $options;
-} else {
-    echo "   You’ve taken all the default parameters of the preferences file. Thus, no options were generated.\n";
-}
 
+    /**
+     * Add the left and right curly braces to $options in order to properly create
+     * the JSON string.
+     */
+    $_SESSION['options'] = "{\n" . $options . "}\n";
+}
 ?>
 }
 </pre>
