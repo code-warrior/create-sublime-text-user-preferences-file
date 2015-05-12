@@ -40,6 +40,10 @@ $file = fopen($full_filename, "w+");
 fwrite($file, $options);
 fclose($file);
 
+header('Content-Type: application/download');
+header('Content-Disposition: attachment; filename="' . $full_filename . '"');
+header("Content-Length: " . filesize($full_filename));
+
 /**
  * Open $full_filename for reading from the beginning of the file, preparing it for
  * download, then close it.
@@ -47,7 +51,3 @@ fclose($file);
 $file = fopen($full_filename, "r");
 fpassthru($file);
 fclose($file);
-
-header('Content-Type: application/download');
-header('Content-Disposition: attachment; filename="' . $full_filename . '"');
-header("Content-Length: " . filesize($full_filename));
