@@ -26,7 +26,7 @@ session_start();
 
    <h2>Installation Instructions</h2>
    <ol>
-      <li>Copy everything in the bounded region below into a new text file called <code>Preferences.sublime-settings</code>.</li>
+      <li><a href="download-preferences-file.php">Download this file</a> and rename it <code>Preferences.sublime-settings</code>, or copy everything in the bounded region below into a new text file and call it <code>Preferences.sublime-settings</code>.</li>
       <li>Place <code>Preferences.sublime-settings</code> in your Sublime Text’s <code>User</code> folder:
          <ul>
             <li><h3>Mac</h3>
