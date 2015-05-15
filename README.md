@@ -18,4 +18,4 @@ The project lives at [http://www.create-sublime-text-user-preferences-file.org](
 Like many open source projects, this project was begun by a single person. Consequently, the continued development will likely be slow-going. Consider getting involved: Report errors/bugs, request features, or address any of the issues logged at [Bitbucket](https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file).
 
 ## Contact
-— [Roy Vanegas](mailto:roy@thecodeeducators.com)
+— Roy Vanegas
