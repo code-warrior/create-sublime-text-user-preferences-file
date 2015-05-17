@@ -470,7 +470,14 @@ a {
    background-color: yellow;
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1920px),
+       screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1920px),
+       screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1920px),
+       screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1920px),
+       screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1920px),
+       screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1920px),
+       screen and (       min-resolution: 192dpi)       and (max-width: 1920px),
+       screen and (       min-resolution: 2dppx)        and (max-width: 1920px) {
    body {
       width: 40%;
    }
@@ -482,7 +489,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1850px) {
+@media screen and (max-width: 1850px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1850px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1850px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1850px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1850px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1850px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1850px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1850px) {
    body {
       width: 50%;
    }
@@ -491,7 +505,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1480px) {
+@media screen and (max-width: 1480px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1480px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1480px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1480px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1480px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1480px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1480px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1480px) {
    body {
       width: 54%;
    }
@@ -500,7 +521,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1380px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1380px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1380px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1380px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1380px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1380px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1380px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1380px) {
    body {
       width: 58%;
    }
@@ -509,7 +537,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1280px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1280px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1280px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1280px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1280px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1280px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1280px) {
    body {
       width: 62%;
    }
@@ -518,7 +553,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1200px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1200px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1200px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1200px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1200px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1200px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1200px) {
    body {
       width: 66%;
    }
@@ -527,7 +569,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1130px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1130px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1130px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1130px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1130px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1130px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1130px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1130px) {
    body {
       width: 70%;
    }
@@ -540,7 +589,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1068px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1068px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1068px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1068px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1068px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1068px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1068px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1068px) {
    body {
       width: 74%;
    }
@@ -549,7 +605,14 @@ a {
    }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1024px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1024px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1024px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1024px),
+screen and (       min-resolution: 192dpi)       and (max-width: 1024px),
+screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
    body {
       width: 70%;
    }
@@ -572,7 +635,14 @@ a {
    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px),
+screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 800px),
+screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 800px),
+screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 800px),
+screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 800px),
+screen and (       -min-device-pixel-ratio: 2)   and (max-width: 800px),
+screen and (       min-resolution: 192dpi)       and (max-width: 800px),
+screen and (       min-resolution: 2dppx)        and (max-width: 800px) {
    select {
       font-size: .8rem;
    }
