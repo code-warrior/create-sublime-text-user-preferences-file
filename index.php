@@ -1,4 +1,21 @@
-<?php session_start(); ?>
+<?php
+/**
+ * The landing page.
+ *
+ * In order to avoid creating one massive HTML document, this PHP file compiles the
+ * navigation system and each Sublime Text option individually.
+ *
+ * PHP version 5.3.29
+ *
+ * @category Create_Sublime_Text_User_Preferences_File
+ * @package  Create_Sublime_Text_User_Preferences_File
+ * @author   Roy A Vanegas <roy@thecodeeducators.com>
+ * @license  https://gnu.org/licenses/gpl.html GNU General Public License
+ * @link     https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file
+ */
+
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
