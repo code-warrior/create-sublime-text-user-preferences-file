@@ -41,13 +41,21 @@ session_start();
 
    <h2>Installation Instructions</h2>
    <ol>
-      <li><a href="download-preferences-file.php">Download this file</a> and rename it <code>Preferences.sublime-settings</code>, or copy everything in the bounded region below into a new text file and call it <code>Preferences.sublime-settings</code>.</li>
-      <li>Place <code>Preferences.sublime-settings</code> in your Sublime Text’s <code>User</code> folder:
+      <li><a href="download-preferences-file.php">Download this file</a> and rename
+      it <code>Preferences.sublime-settings</code>, or copy everything in the bounded
+      region below into a new text file and call it
+      <code>Preferences.sublime-settings</code>.</li>
+      <li>Place <code>Preferences.sublime-settings</code> in your Sublime Text’s
+      <code>User</code> folder:
          <ul>
             <li><h3>Mac</h3>
-               <kbd>/Users/USER_NAME/Library/Application Support/Sublime Text 3/Packages/User</kbd>, where <code>USER_NAME</code> is your Mac username.</li>
+               <kbd>/Users/USER_NAME/Library/Application Support/Sublime Text
+               3/Packages/User</kbd>, where <code>USER_NAME</code> is your Mac
+               username.</li>
             <li><h3>Windows</h3>
-               <kbd>C:\Users\USER_NAME\AppData\Roaming\Sublime Text 3\Packages\User</kbd>, again, where <code>USER_NAME</code> is your Windows user name.</li>
+               <kbd>C:\Users\USER_NAME\AppData\Roaming\Sublime Text
+               3\Packages\User</kbd>, again, where <code>USER_NAME</code> is your
+               Windows user name.</li>
          </ul>
       </li>
    </ol>
