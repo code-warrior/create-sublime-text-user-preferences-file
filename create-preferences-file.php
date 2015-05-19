@@ -1,4 +1,19 @@
 <?php
+/**
+ * The target of the form submission page (index.php).
+ *
+ * This page processes the form at index.php that the user submits with her/his
+ * preferences.
+ *
+ * PHP version 5.3.29
+ *
+ * @category Create_Sublime_Text_User_Preferences_File
+ * @package  Create_Sublime_Text_User_Preferences_File
+ * @author   Roy A Vanegas <roy@thecodeeducators.com>
+ * @license  https://gnu.org/licenses/gpl.html GNU General Public License
+ * @link     https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file
+ */
+
 date_default_timezone_set('UTC');
 session_start();
 ?>
