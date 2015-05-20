@@ -71,7 +71,8 @@ if (!empty($_GET['color_scheme_option'])) {
     $colorSchemeOption = trim($_GET['color_scheme_option']);
 
     if (strcmp($colorSchemeOption, "Monokai.tmTheme") !== 0) {
-        $options .= '   "color_scheme": "Packages/Color Scheme - Default/' . $colorSchemeOption . '",' . "\n";
+        $options .= '   "color_scheme": "Packages/Color Scheme - Default/' .
+            $colorSchemeOption . '",' . "\n";
     }
 }
 
@@ -102,8 +103,11 @@ if (!empty($_GET['font_options_option'])) {
  * WORD SEPARATORS
  */
 if (!empty($_GET['word_separators_option'])) {
-    if (strcmp($_GET['word_separators_option'], "./\\\\()\\\"'-:,l;<>~!@#$%^&*|+=[]{}`~?") !== 0) {
-        $options .= '   "word_separators": "' . $_GET['word_separators_option'] . '",' . "\n";
+    if (strcmp(
+        $_GET['word_separators_option'], "./\\\\()\\\"'-:,l;<>~!@#$%^&*|+=[]{}`~?"
+    ) !== 0) {
+        $options .= '   "word_separators": "' .
+            $_GET['word_separators_option'] . '",' . "\n";
     }
 }
 
@@ -112,7 +116,8 @@ if (!empty($_GET['word_separators_option'])) {
  */
 if (!empty($_GET['line_numbers_option'])) {
     if (strcmp($_GET['line_numbers_option'], "true") !== 0) {
-        $options .= '   "line_numbers": ' . $_GET['line_numbers_option'] . ',' . "\n";
+        $options .= '   "line_numbers": ' .
+            $_GET['line_numbers_option'] . ',' . "\n";
     }
 }
 
@@ -139,7 +144,8 @@ if (!empty($_GET['margin_option'])) {
  */
 if (!empty($_GET['fold_buttons_option'])) {
     if (strcmp($_GET['fold_buttons_option'], "true") !== 0) {
-        $options .= '   "fold_buttons": ' . $_GET['fold_buttons_option'] . ',' . "\n";
+        $options .= '   "fold_buttons": ' .
+            $_GET['fold_buttons_option'] . ',' . "\n";
     }
 }
 
@@ -148,7 +154,8 @@ if (!empty($_GET['fold_buttons_option'])) {
  */
 if (!empty($_GET['fade_fold_buttons_option'])) {
     if (strcmp($_GET['fade_fold_buttons_option'], "true") !== 0) {
-        $options .= '   "fade_fold_buttons": ' . $_GET['fade_fold_buttons_option'] . ',' . "\n";
+        $options .= '   "fade_fold_buttons": ' .
+            $_GET['fade_fold_buttons_option'] . ',' . "\n";
     }
 }
 
@@ -184,7 +191,8 @@ if (!empty($_GET['tab_size_option'])) {
  */
 if (!empty($_GET['translate_tabs_to_spaces_option'])) {
     if (strcmp($_GET['translate_tabs_to_spaces_option'], "false") !== 0) {
-        $options .= '   "translate_tabs_to_spaces": ' . $_GET['translate_tabs_to_spaces_option'] . ',' . "\n";
+        $options .= '   "translate_tabs_to_spaces": ' .
+            $_GET['translate_tabs_to_spaces_option'] . ',' . "\n";
     }
 }
 
@@ -193,7 +201,8 @@ if (!empty($_GET['translate_tabs_to_spaces_option'])) {
  */
 if (!empty($_GET['use_tab_stops_option'])) {
     if (strcmp($_GET['use_tab_stops_option'], "true") !== 0) {
-        $options .= '   "use_tab_stops": ' . $_GET['use_tab_stops_option'] . ',' . "\n";
+        $options .= '   "use_tab_stops": ' .
+            $_GET['use_tab_stops_option'] . ',' . "\n";
     }
 }
 
@@ -202,7 +211,8 @@ if (!empty($_GET['use_tab_stops_option'])) {
  */
 if (!empty($_GET['detect_indentation_option'])) {
     if (strcmp($_GET['detect_indentation_option'], "true") !== 0) {
-        $options .= '   "detect_indentation": ' . $_GET['detect_indentation_option'] . ',' . "\n";
+        $options .= '   "detect_indentation": ' .
+            $_GET['detect_indentation_option'] . ',' . "\n";
     }
 }
 
@@ -220,7 +230,8 @@ if (!empty($_GET['auto_indent_option'])) {
  */
 if (!empty($_GET['trim_automatic_white_space_option'])) {
     if (strcmp($_GET['trim_automatic_white_space_option'], "true") !== 0) {
-        $options .= '   "trim_automatic_white_space": ' . $_GET['trim_automatic_white_space_option'] . ',' . "\n";
+        $options .= '   "trim_automatic_white_space": ' .
+            $_GET['trim_automatic_white_space_option'] . ',' . "\n";
     }
 }
 
@@ -247,7 +258,8 @@ if (!empty($_GET['wrap_width_option'])) {
  */
 if (!empty($_GET['draw_centered_option'])) {
     if (strcmp($_GET['draw_centered_option'], "false") !== 0) {
-        $options .= '   "draw_centered": ' . $_GET['draw_centered_option'] . ',' . "\n";
+        $options .= '   "draw_centered": ' .
+            $_GET['draw_centered_option'] . ',' . "\n";
     }
 }
 
@@ -256,7 +268,8 @@ if (!empty($_GET['draw_centered_option'])) {
  */
 if (!empty($_GET['caret_style_option'])) {
     if (strcmp($_GET['caret_style_option'], "smooth") !== 0) {
-        $options .= '   "caret_style": "' . $_GET['caret_style_option'] . '",' . "\n";
+        $options .= '   "caret_style": "' .
+            $_GET['caret_style_option'] . '",' . "\n";
     }
 }
 
@@ -264,7 +277,8 @@ if (!empty($_GET['caret_style_option'])) {
  * SCROLL PAST END
  */
 if (isset($_GET['scroll_past_end_option'])) {
-    $options .= '   "scroll_past_end": ' . $_GET['scroll_past_end_option'] . ',' . "\n";
+    $options .= '   "scroll_past_end": ' .
+        $_GET['scroll_past_end_option'] . ',' . "\n";
 }
 
 /**
@@ -272,7 +286,8 @@ if (isset($_GET['scroll_past_end_option'])) {
  */
 if (!empty($_GET['trim_trailing_white_space_on_save_option'])) {
     if (strcmp($_GET['trim_trailing_white_space_on_save_option'], "false") !== 0) {
-        $options .= '   "trim_trailing_white_space_on_save": ' . $_GET['trim_trailing_white_space_on_save_option'] . ',' . "\n";
+        $options .= '   "trim_trailing_white_space_on_save": ' .
+            $_GET['trim_trailing_white_space_on_save_option'] . ',' . "\n";
     }
 }
 
@@ -281,7 +296,8 @@ if (!empty($_GET['trim_trailing_white_space_on_save_option'])) {
  */
 if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
     if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
-        $options .= '   "ensure_newline_at_eof_on_save": ' . $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
+        $options .= '   "ensure_newline_at_eof_on_save": ' .
+            $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
     }
 }
 
@@ -290,7 +306,8 @@ if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
  */
 if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
     if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
-        $options .= '   "ensure_newline_at_eof_on_save": ' . $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
+        $options .= '   "ensure_newline_at_eof_on_save": ' .
+            $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
     }
 }
 
@@ -299,7 +316,8 @@ if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
  */
 if (!empty($_GET['save_on_focus_lost_option'])) {
     if (strcmp($_GET['save_on_focus_lost_option'], "false") !== 0) {
-        $options .= '   "save_on_focus_lost": ' . $_GET['save_on_focus_lost_option'] . ',' . "\n";
+        $options .= '   "save_on_focus_lost": ' .
+            $_GET['save_on_focus_lost_option'] . ',' . "\n";
     }
 }
 
@@ -308,7 +326,8 @@ if (!empty($_GET['save_on_focus_lost_option'])) {
  */
 if (!empty($_GET['default_line_ending_option'])) {
     if (strcmp($_GET['default_line_ending_option'], "system") !== 0) {
-        $options .= '   "default_line_ending": "' . $_GET['default_line_ending_option'] . '",' . "\n";
+        $options .= '   "default_line_ending": "' .
+            $_GET['default_line_ending_option'] . '",' . "\n";
     }
 }
 
@@ -317,7 +336,8 @@ if (!empty($_GET['default_line_ending_option'])) {
  */
 if (!empty($_GET['copy_with_empty_selection_option'])) {
     if (strcmp($_GET['copy_with_empty_selection_option'], "true") !== 0) {
-        $options .= '   "copy_with_empty_selection": ' . $_GET['copy_with_empty_selection_option'] . ',' . "\n";
+        $options .= '   "copy_with_empty_selection": ' .
+            $_GET['copy_with_empty_selection_option'] . ',' . "\n";
     }
 }
 
@@ -335,7 +355,8 @@ if (!empty($_GET['drag_text_option'])) {
  */
 if (!empty($_GET['show_encoding_option'])) {
     if (strcmp($_GET['show_encoding_option'], "false") !== 0) {
-        $options .= '   "show_encoding": ' . $_GET['show_encoding_option'] . ',' . "\n";
+        $options .= '   "show_encoding": ' .
+            $_GET['show_encoding_option'] . ',' . "\n";
     }
 }
 
@@ -344,7 +365,8 @@ if (!empty($_GET['show_encoding_option'])) {
  */
 if (!empty($_GET['show_line_endings_option'])) {
     if (strcmp($_GET['show_line_endings_option'], "false") !== 0) {
-        $options .= '   "show_line_endings": ' . $_GET['show_line_endings_option'] . ',' . "\n";
+        $options .= '   "show_line_endings": ' .
+            $_GET['show_line_endings_option'] . ',' . "\n";
     }
 }
 
@@ -362,7 +384,8 @@ if (!empty($_GET['hot_exit_option'])) {
  */
 if (!empty($_GET['always_prompt_for_file_reload_option'])) {
     if (strcmp($_GET['always_prompt_for_file_reload_option'], "true") !== 0) {
-        $options .= '   "always_prompt_for_file_reload": ' . $_GET['always_prompt_for_file_reload_option'] . ',' . "\n";
+        $options .= '   "always_prompt_for_file_reload": ' .
+            $_GET['always_prompt_for_file_reload_option'] . ',' . "\n";
     }
 }
 
@@ -371,7 +394,8 @@ if (!empty($_GET['always_prompt_for_file_reload_option'])) {
  */
 if (!empty($_GET['open_files_in_new_window_option'])) {
     if (strcmp($_GET['open_files_in_new_window_option'], "true") !== 0) {
-        $options .= '   "open_files_in_new_window": '.$_GET['open_files_in_new_window_option'].',' . "\n";
+        $options .= '   "open_files_in_new_window": ' .
+            $_GET['open_files_in_new_window_option'] . ',' . "\n";
     }
 }
 
@@ -380,7 +404,8 @@ if (!empty($_GET['open_files_in_new_window_option'])) {
  */
 if (!empty($_GET['create_window_at_startup_option'])) {
     if (strcmp($_GET['create_window_at_startup_option'], "true") !== 0) {
-        $options .= '   "create_window_at_startup": '.$_GET['create_window_at_startup_option'].',' . "\n";
+        $options .= '   "create_window_at_startup": ' .
+            $_GET['create_window_at_startup_option'] . ',' . "\n";
     }
 }
 
@@ -388,7 +413,8 @@ if (!empty($_GET['create_window_at_startup_option'])) {
  * SHOW FULL PATH
  */
 if (isset($_GET['show_full_path_option'])) {
-    $options .= '   "show_full_path": "' . trim($_GET['show_full_path_option']) . '",' . "\n";
+    $options .= '   "show_full_path": "' .
+        trim($_GET['show_full_path_option']) . '",' . "\n";
 }
 
 /**
