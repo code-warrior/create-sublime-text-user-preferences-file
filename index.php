@@ -10,8 +10,8 @@
  * @category Create_Sublime_Text_User_Preferences_File
  * @package  Create_Sublime_Text_User_Preferences_File
  * @author   Roy A Vanegas <roy@thecodeeducators.com>
- * @license  https://gnu.org/licenses/gpl.html GNU General Public License
- * @link     https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file
+ * @license  gnu.org/licenses/gpl.html GNU General Public License
+ * @link     bitbucket.org/code-warrior/create-sublime-text-user-preferences-file
  */
 
 session_start();
