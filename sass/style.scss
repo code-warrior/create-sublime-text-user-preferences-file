@@ -372,7 +372,6 @@ form {
    }
 }
 
-
 input[id="color_scheme_option"] {
    width: 324px;
 }
@@ -387,12 +386,6 @@ input[id="wrap_width_option"] {
    width: 32px;
 }
 
-input:required {
-}
-
-input:valid {
-}
-
 input[type="text"] {
    -webkit-box-shadow: 5px 5px 5px #888;
       -moz-box-shadow: 5px 5px 5px #888;
@@ -405,9 +398,6 @@ input[type="text"]:focus {
    -webkit-box-shadow: 10px 10px 5px #aaa;
       -moz-box-shadow: 10px 10px 5px #aaa;
            box-shadow: 10px 10px 5px #aaa;
-}
-
-input:out-of-range {
 }
 
 a {
