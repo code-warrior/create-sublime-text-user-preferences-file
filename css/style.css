@@ -133,7 +133,7 @@ header h1 {
   z-index: 1;
 }
 header nav {
-  opacity: 0.2;
+  opacity: 0;
   transition: 350ms;
 }
 header nav:hover {
