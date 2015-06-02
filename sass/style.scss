@@ -1,45 +1,7 @@
 @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
-
-@mixin border-radius( $radius ) {
-   -webkit-border-radius: $radius;
-      -moz-border-radius: $radius;
-       -ms-border-radius: $radius;
-        -o-border-radius: $radius;
-           border-radius: $radius;
-}
-
-@mixin transition( $property, $duration, $timing_function, $delay ) {
-   -webkit-transition: $property $duration $timing_function $delay;
-      -moz-transition: $property $duration $timing_function $delay;
-        -o-transition: $property $duration $timing_function $delay;
-           transition: $property $duration $timing_function $delay;
-}
-
-@mixin box-shadow( $horizontal, $vertical, $blur_radius, $spread_radius, $color ) {
-   -webkit-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
-      -moz-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
-       -ms-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
-        -o-box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
-           box-shadow: $horizontal $vertical $blur_radius $spread_radius $color;
-}
-
-@mixin transform( $x, $y, $rotation ) {
-   -webkit-transform: translateX($x) translateY($y) rotate($rotation);
-      -moz-transform: translateX($x) translateY($y) rotate($rotation);
-       -ms-transform: translateX($x) translateY($y) rotate($rotation);
-        -o-transform: translateX($x) translateY($y) rotate($rotation);
-           transform: translateX($x) translateY($y) rotate($rotation);
-}
-
-@mixin transform-origin( $x, $y ) {
-   -webkit-transform-origin: $x $y;
-      -moz-transform-origin: $x $y;
-       -ms-transform-origin: $x $y;
-        -o-transform-origin: $x $y;
-           transform-origin: $x $y;
-}
+@import '_mixins';
 
 $color-important-note: red;
 $color-links: rgb(0,79,130);
