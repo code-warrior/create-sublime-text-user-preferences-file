@@ -391,7 +391,7 @@ a {
     right: 68.5%;
   }
   nav ul {
-    padding-right: 32px;
+    padding-right: 38px;
   }
 }
 @media screen and (max-width: 1850px) {
@@ -429,6 +429,9 @@ a {
   nav {
     right: 78%;
   }
+  nav ul {
+    padding-right: 40px;
+  }
 }
 @media screen and (max-width: 1200px) {
   body {
@@ -437,6 +440,9 @@ a {
 
   nav {
     right: 80%;
+  }
+  nav ul {
+    padding-right: 50px;
   }
 }
 @media screen and (max-width: 1130px) {
