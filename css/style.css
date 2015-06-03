@@ -133,7 +133,7 @@ header h1 {
   z-index: 1;
 }
 header nav {
-  opacity: 0.2;
+  opacity: 0;
   transition: 350ms;
 }
 header nav:hover {
@@ -391,7 +391,7 @@ a {
     right: 68.5%;
   }
   nav ul {
-    padding-right: 32px;
+    padding-right: 38px;
   }
 }
 @media screen and (max-width: 1850px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1850px), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1850px), screen and (-moz-min-device-pixel-ratio: 2) and (max-width: 1850px), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1850px), screen and (-min-device-pixel-ratio: 2) and (max-width: 1850px), screen and (min-resolution: 192dpi) and (max-width: 1850px), screen and (min-resolution: 2dppx) and (max-width: 1850px) {
@@ -429,6 +429,9 @@ a {
   nav {
     right: 78%;
   }
+  nav ul {
+    padding-right: 40px;
+  }
 }
 @media screen and (max-width: 1200px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1200px), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1200px), screen and (-moz-min-device-pixel-ratio: 2) and (max-width: 1200px), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1200px), screen and (-min-device-pixel-ratio: 2) and (max-width: 1200px), screen and (min-resolution: 192dpi) and (max-width: 1200px), screen and (min-resolution: 2dppx) and (max-width: 1200px) {
   body {
@@ -437,6 +440,9 @@ a {
 
   nav {
     right: 80%;
+  }
+  nav ul {
+    padding-right: 50px;
   }
 }
 @media screen and (max-width: 1130px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1130px), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1130px), screen and (-moz-min-device-pixel-ratio: 2) and (max-width: 1130px), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 1130px), screen and (-min-device-pixel-ratio: 2) and (max-width: 1130px), screen and (min-resolution: 192dpi) and (max-width: 1130px), screen and (min-resolution: 2dppx) and (max-width: 1130px) {
