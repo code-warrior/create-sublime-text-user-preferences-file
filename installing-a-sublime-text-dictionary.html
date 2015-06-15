@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Installing a Dictionary Into Sublime Text Via The Terminal</title>
+
+   <meta name="description" content="Learn how to install a dictionary into Sublime Text using The Terminal.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="installing-a-sublime-text-dictionary">
+   <header>
+      <h1>Installing a Dictionary Into Sublime Text Via The Terminal</h1>
+   </header>
+   <main>
+      <h2>Intro</h2>
+      <p>The default dictionary used by Sublime Text is <abbr title="Universal Coded Character Set, Transformation Format — 8-bit">UTF-8</abbr>-based and American English-centric. You can use different dictionaries, but they must be encoded in <abbr title="Universal Coded Character Set, Transformation Format — 8-bit">UTF-8</abbr>. For dictionary options, Sublime suggests looking at <a href="http://extensions.openoffice.org/en/search?f%5B0%5D%3Dfield_project_tags%253A157">these dictionaries</a>, available at OpenOffice.</p>
+
+      <p><strong>Note:</strong> Every OpenOffice dictionary is a compressed file—with a <code>.oxt</code> extension—of a bundle of related files. One of those files is the <em>actual</em> dictionary, which ends in a <code>.dic</code> extension.</p>
+
+      <h3>Mac Install <a href="#footnote">*</a></h3>
+      <p>For the following example, I’ll refer to a dictionary downloaded from the Internet called <code>es_es.oxt</code>. I’ll also assume you’re using Sublime Text 3.</p>
+
+      <ol>
+         <li>Download your desired dictionary, which will likely have a <code>.oxt</code> extension.</li>
+
+         <li>Navigate to the directory containing the dictionary you just downloaded. I downloaded <code>es_es.oxt</code> into the <code>Downloads</code> folder:<br>
+            <div>
+               <kbd>cd ~/Downloads</kbd>
+            </div>
+         </li>
+
+         <li>Change the extension of the dictionary file from <code>.oxt</code> to <code>.zip</code>:
+            <div>
+               <kbd>mv es_es.oxt es_es.zip</kbd>
+            </div>
+         </li>
+
+         <li>Create a new folder and use the name of the dictionary as the name of the folder:
+            <div>
+               <kbd>mkdir es_es</kbd>
+            </div>
+         </li>
+
+         <li>Move the ZIP file into the new folder:
+            <div>
+               <kbd>mv es_es.zip es_es</kbd>
+            </div>
+         </li>
+
+         <li>Navigate into the the new folder:
+            <div>
+               <kbd>cd es_es</kbd>
+            </div>
+         </li>
+
+         <li>Unzip the dictionary file:
+            <div>
+               <kbd>unzip es_es.zip</kbd>
+            </div>
+         </li>
+
+         <li>Delete the ZIP file:
+            <div>
+               <kbd>rm es_es.zip</kbd>
+            </div>
+         </li>
+
+         <li>Navigate to the parent folder:
+            <div>
+               <kbd>cd ..</kbd>
+            </div>
+         </li>
+
+         <li>Move the dictionary folder to Sublime’s <code>User</code> folder:
+            <div>
+               <kbd>mv es_es ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User</kbd>
+            </div>
+         </li>
+
+         <li>The dictionary is now an option under the <code>View</code> menu. Select it by pointing your mouse at <code>View ➞ Dictionary ➞ User</code>. The <code>es_es</code> dictionary, in my case, is at <code>View ➞ Dictionary ➞ User ➞ es_es</code>.</li>
+
+         <li>Verify that you’ve installed the dictionary correctly. Look for the <code>"dictionary"</code> option in your preferences file.</li>
+      </ol>
+   </main>
+   <footer>
+      <p><span id="footnote">*</span> Linux and Windows installation instructions forthcoming.</p>
+   </footer>
+</body>
+</html>
