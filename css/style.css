@@ -65,42 +65,42 @@ h1 {
   font-size: 2.2rem;
 }
 
-#generated-file, #more-info-about-site {
+#generated-file, #more-info-about-site, #installing-a-sublime-text-dictionary {
   font-size: 1.1rem;
 }
-#generated-file code, #generated-file kbd, #more-info-about-site code, #more-info-about-site kbd {
+#generated-file code, #generated-file kbd, #more-info-about-site code, #more-info-about-site kbd, #installing-a-sublime-text-dictionary code, #installing-a-sublime-text-dictionary kbd {
   font-size: 1.1rem;
 }
-#generated-file code, #more-info-about-site code {
+#generated-file code, #more-info-about-site code, #installing-a-sublime-text-dictionary code {
   border: 0;
   padding: 0;
 }
-#generated-file h2, #more-info-about-site h2 {
+#generated-file h2, #more-info-about-site h2, #installing-a-sublime-text-dictionary h2 {
   border: none;
   padding: 0;
 }
-#generated-file pre, #more-info-about-site pre {
+#generated-file pre, #more-info-about-site pre, #installing-a-sublime-text-dictionary pre {
   margin: 48px 0;
   font-size: 1rem;
   border: 1px solid #ddd;
   padding: 5px;
   border-radius: 5px;
 }
-#generated-file ul li, #more-info-about-site ul li {
+#generated-file ul li, #more-info-about-site ul li, #installing-a-sublime-text-dictionary ul li {
   list-style-type: disc;
   margin: 22px 0;
 }
-#generated-file ul li ul, #more-info-about-site ul li ul {
+#generated-file ul li ul, #more-info-about-site ul li ul, #installing-a-sublime-text-dictionary ul li ul {
   margin-left: 40px;
 }
-#generated-file ul li ul li, #more-info-about-site ul li ul li {
+#generated-file ul li ul li, #more-info-about-site ul li ul li, #installing-a-sublime-text-dictionary ul li ul li {
   list-style-type: circle;
   margin: 14px 0;
 }
-#generated-file ul li ol, #more-info-about-site ul li ol {
+#generated-file ul li ol, #more-info-about-site ul li ol, #installing-a-sublime-text-dictionary ul li ol {
   margin-left: 48px;
 }
-#generated-file ul li ol li, #more-info-about-site ul li ol li {
+#generated-file ul li ol li, #more-info-about-site ul li ol li, #installing-a-sublime-text-dictionary ul li ol li {
   list-style-type: decimal;
   margin: 14px 0;
 }
