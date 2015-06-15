@@ -116,6 +116,8 @@ var fontObject = {
     userChoiceForWrapWidthDisplayedInSpan,
     drawCenteredOption,
     userChoiceForDrawCenteredDisplayedInSpan,
+    dictionaryOption,
+    userChoiceForDictionaryDisplayedInSpan,
     caretStyleOption,
     userChoiceForCaretStyleDisplayedInSpan,
     scrollPastEndOption,
@@ -417,6 +419,13 @@ function updateContentInSpanForDrawCentered() {
 
     userChoiceForDrawCenteredDisplayedInSpan.textContent =
         drawCenteredOption.value;
+}
+
+function updateContentInSpanForDictionary() {
+    "use strict";
+
+    userChoiceForDictionaryDisplayedInSpan.textContent =
+        dictionaryOption.value;
 }
 
 function updateContentInSpanforRulers() {
@@ -856,6 +865,22 @@ window.onload = function () {
         false
     );
     userChoiceForDrawCenteredDisplayedInSpan.textContent = drawCenteredOption.value;
+
+    /**
+     * DICTIONARY
+     */
+    userChoiceForDictionaryDisplayedInSpan =
+        document.querySelector(
+            "#dictionary>h2+div>p:first-of-type>code>span"
+        );
+    dictionaryOption = document.getElementById("dictionary_option");
+    dictionaryOption.addEventListener(
+        "change",
+        updateContentInSpanForDictionary,
+        false
+    );
+    userChoiceForDictionaryDisplayedInSpan.textContent =
+        dictionaryOption.value;
 
     /**
      * CARET STYLE
