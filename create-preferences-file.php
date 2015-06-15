@@ -264,6 +264,16 @@ if (!empty($_GET['draw_centered_option'])) {
 }
 
 /**
+ * DICTIONARY
+ */
+if (!empty($_GET['dictionary'])) {
+    if (strcmp($_GET['dictionary_option'], "Packages/Language - English/en_US.dic") !== 0) {
+        $options .= '   "dictionary": ' .
+            " \"{$_GET['dictionary_option']}\",\n";
+    }
+}
+
+/**
  * CARET STYLE
  */
 if (!empty($_GET['caret_style_option'])) {
