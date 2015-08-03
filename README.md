@@ -4,7 +4,7 @@
 
 This project is an online tool that generates a preferences file for use with Sublime Text 3. It explains each of the 101 options Sublime supplies in the JSON-formatted file `Preferences.sublime-settings` and creates a downloadable user-generated file that can be included in a Sublime environment.
 
-_This project is in the alpha phase, because only thirty-six of the 101 options have been implemented._
+_This project is in the alpha phase, because only thirty-nine of the 101 options have been implemented._
 
 The project lives at [http://www.create-sublime-text-user-preferences-file.org](http://www.create-sublime-text-user-preferences-file.org).
 
