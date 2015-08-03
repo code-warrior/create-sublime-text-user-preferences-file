@@ -274,6 +274,27 @@ if (!empty($_GET['dictionary_option'])) {
 }
 
 /**
+ * DRAW MINIMAP BORDER
+ */
+
+if (!empty($_GET['draw_minimap_border_option'])) {
+    if (strcmp($_GET['draw_minimap_border_option'], "false") !== 0) {
+        $options .= '   "draw_minimap_border": ' .
+            $_GET['draw_minimap_border_option'] . ',' . "\n";
+    }
+}
+
+/**
+ * ALWAYS SHOW MINIMAP VIEWPORT
+ */
+if (!empty($_GET['always_show_minimap_viewport_option'])) {
+    if (strcmp($_GET['always_show_minimap_viewport_option'], "false") !== 0) {
+        $options .= '   "always_show_minimap_viewport": ' .
+            $_GET['always_show_minimap_viewport_option'] . ',' . "\n";
+    }
+}
+
+/**
  * CARET STYLE
  */
 if (!empty($_GET['caret_style_option'])) {
