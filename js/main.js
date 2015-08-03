@@ -118,6 +118,10 @@ var fontObject = {
     userChoiceForDrawCenteredDisplayedInSpan,
     dictionaryOption,
     userChoiceForDictionaryDisplayedInSpan,
+    drawMinimapBorderOption,
+    userChoiceForDrawMinimapBorderDisplayedInSpan,
+    alwaysShowMinimapViewportOption,
+    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan,
     caretStyleOption,
     userChoiceForCaretStyleDisplayedInSpan,
     scrollPastEndOption,
@@ -426,6 +430,20 @@ function updateContentInSpanForDictionary() {
 
     userChoiceForDictionaryDisplayedInSpan.textContent =
         dictionaryOption.value;
+}
+
+function updateContentInSpanForDrawMinimapBorder() {
+    "use strict";
+
+    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
+        drawMinimapBorderOption.value;
+}
+
+function updateContentInSpanForAlwaysShowMinimapViewport() {
+    "use strict";
+
+    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
+        alwaysShowMinimapViewportOption.value;
 }
 
 function updateContentInSpanforRulers() {
@@ -881,6 +899,38 @@ window.onload = function () {
     );
     userChoiceForDictionaryDisplayedInSpan.textContent =
         dictionaryOption.value;
+
+    /**
+     * DRAW MINIMAP BORDER
+     */
+    userChoiceForDrawMinimapBorderDisplayedInSpan =
+        document.querySelector(
+            "#draw_minimap_border>h2+div>p:first-of-type>code>span"
+        );
+    drawMinimapBorderOption = document.getElementById("draw_minimap_border_option");
+    drawMinimapBorderOption.addEventListener(
+        "change",
+        updateContentInSpanForDrawMinimapBorder,
+        false
+    );
+    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
+        drawMinimapBorderOption.value;
+
+    /**
+     * ALWAYS SHOW MINIMAP VIEWPORT
+     */
+    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan =
+        document.querySelector(
+            "#always_show_minimap_viewport>h2+div>p:first-of-type>code>span"
+        );
+    alwaysShowMinimapViewportOption = document.getElementById("always_show_minimap_viewport_option");
+    alwaysShowMinimapViewportOption.addEventListener(
+        "change",
+        updateContentInSpanForAlwaysShowMinimapViewport,
+        false
+    );
+    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
+        alwaysShowMinimapViewportOption.value;
 
     /**
      * CARET STYLE
