@@ -206,6 +206,7 @@ sup {
 
 abbr {
   border-bottom: 1px dotted #222;
+  font-variant: small-caps;
 }
 
 h2 {
