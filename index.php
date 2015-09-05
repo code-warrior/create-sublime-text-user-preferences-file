@@ -82,6 +82,7 @@ require_once "includes/28-draw_minimap_border.html";
 require_once "includes/29-always_show_minimap_viewport.html";
 require_once "includes/31-caret_style.html";
 require_once "includes/44-scroll_past_end.html";
+require_once "includes/46-draw_white_space.html";
 require_once "includes/49-trim_trailing_white_space_on_save.html";
 require_once "includes/50-ensure_newline_at_eof_on_save.html";
 require_once "includes/51-save_on_focus_lost.html";
