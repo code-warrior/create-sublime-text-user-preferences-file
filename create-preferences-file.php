@@ -313,6 +313,14 @@ if (isset($_GET['scroll_past_end_option'])) {
 }
 
 /**
+ * DRAW WHITE SPACE
+ */
+if (isset($_GET['draw_white_space_option'])) {
+    $options .= '   "draw_white_space": ' .
+        $_GET['draw_white_space_option'] . ',' . "\n";
+}
+
+/**
  * TRIM TRALING WHITE SPACE ON SAVE
  */
 if (!empty($_GET['trim_trailing_white_space_on_save_option'])) {
