@@ -317,8 +317,8 @@ if (isset($_GET['scroll_past_end_option'])) {
  */
 if (isset($_GET['draw_white_space_option'])) {
     if (strcmp($_GET['draw_white_space_option'], "selection") !== 0) {
-        $options .= '   "draw_white_space": ' .
-            $_GET['draw_white_space_option'] . ',' . "\n";
+        $options .= '   "draw_white_space": "' .
+            $_GET['draw_white_space_option'] . '",' . "\n";
     }
 }
 
