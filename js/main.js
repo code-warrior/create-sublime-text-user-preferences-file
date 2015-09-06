@@ -126,6 +126,8 @@ var fontObject = {
     userChoiceForCaretStyleDisplayedInSpan,
     scrollPastEndOption,
     userChoiceForScrollPastEndDisplayedInSpan,
+    drawWhiteSpaceOption,
+    userChoiceForDrawWhiteSpaceDisplayedInSpan,
     trimTrailingWhiteSpaceOnSaveOption,
     userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan,
     ensureNewlineAtEOFOnSaveOption,
@@ -465,6 +467,13 @@ function updateContentInSpanForScrollPastEnd() {
 
     userChoiceForScrollPastEndDisplayedInSpan.textContent =
         scrollPastEndOption.value;
+}
+
+function updateContentInSpanForDrawWhiteSpace() {
+    "use strict";
+
+    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
+        drawWhiteSpaceOption.value;
 }
 
 function updateContentInSpanForTrimTrailingWhiteSpace() {
@@ -960,6 +969,21 @@ window.onload = function () {
     );
     userChoiceForScrollPastEndDisplayedInSpan.textContent =
         scrollPastEndOption.value;
+
+    /**
+     * DRAW WHITE SPACE
+     */
+    userChoiceForDrawWhiteSpaceDisplayedInSpan = document.querySelector(
+            "#draw_white_space>h2+div>p:first-of-type>code>span"
+    );
+    drawWhiteSpaceOption = document.getElementById("draw_white_space_option");
+    drawWhiteSpaceOption.addEventListener(
+        "change",
+        updateContentInSpanForDrawWhiteSpace,
+        false
+    );
+    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
+        drawWhiteSpaceOption.value;
 
     /**
      * TRIM TRAILING WHITE SPACE ON SAVE
