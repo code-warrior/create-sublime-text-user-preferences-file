@@ -392,6 +392,17 @@ if (!empty($_GET['drag_text_option'])) {
 }
 
 /**
+ * TREE ANIMATION ENABLED
+ */
+
+if (!empty($_GET['tree_animation_enabled_option'])) {
+    if (strcmp($_GET['tree_animation_enabled_option'], "true") !== 0) {
+        $options .= '   "tree_animation_enabled": ' .
+            $_GET['tree_animation_enabled_option'] . ',' . "\n";
+    }
+}
+
+/**
  * SHOW ENCODING
  */
 if (!empty($_GET['show_encoding_option'])) {
