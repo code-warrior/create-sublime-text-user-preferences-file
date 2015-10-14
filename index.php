@@ -34,10 +34,11 @@ session_start();
 <?php require_once "includes/navigation.html"; ?>
    </header>
    <div id="introduction">
-      <p>The purpose of this web site is two-fold. First, it explains in detail each
-      of the options in Sublime Text’s <code>Preferences.sublime-settings</code>
-      file. And second, it allows you to create a customized preferences file that
-      you can install in your own Sublime environment.</p>
+      <p>The purpose of this web site is two-fold. First, it explains in detail
+      forty-one of the options in Sublime Text’s
+      <code>Preferences.sublime-settings</code> file. (The final version will
+      explain all 101 options.) And second, it allows you to create a customized
+      preferences file that you can install in your own Sublime environment.</p>
       <p>This entire page is one large form, and submitting it takes you to a page
       with a customized <code>Preferences.sublime-settings</code> file that you can
       copy, bookmark, and/or share. <a href="read-more.html" target="_blank">Read
