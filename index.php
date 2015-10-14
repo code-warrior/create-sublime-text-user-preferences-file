@@ -89,6 +89,7 @@ require_once "includes/51-save_on_focus_lost.html";
 require_once "includes/56-default_line_ending.html";
 require_once "includes/68-copy_with_empty_selection.html";
 require_once "includes/71-drag_text.html";
+require_once "includes/74-tree_animation_enabled.html";
 require_once "includes/83-show_encoding.html";
 require_once "includes/84-show_line_endings.html";
 require_once "includes/85-hot_exit.html";
