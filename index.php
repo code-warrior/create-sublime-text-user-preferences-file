@@ -35,7 +35,7 @@ session_start();
    </header>
    <div id="introduction">
       <p>The purpose of this web site is two-fold. First, it explains in detail
-      forty-one of the options in Sublime Text’s
+      forty-two of the options in Sublime Text’s
       <code>Preferences.sublime-settings</code> file. (The final version will
       explain all 101 options.) And second, it allows you to create a customized
       preferences file that you can install in your own Sublime environment.</p>
@@ -43,13 +43,9 @@ session_start();
       with a customized <code>Preferences.sublime-settings</code> file that you can
       copy, bookmark, and/or share. <a href="read-more.html" target="_blank">Read
       more here.</a></p>
-      <p>Of the 101 options, forty are discussed below. In my work as a programmer
-      and my experience as a professor over the last decade, prioritizing these makes
-      the most sense. The other sixty-one will slowly be implemented over the coming
-      months.</p>
       <p><strong>Note</strong>: This site is in beta, meaning that some features,
-      such as a navigation menu and collapsible headings, have yet to be
-      implemented, some other features may have small bugs, and many options are
+      such as collapsible headings, have yet to be implemented, some other features
+      may have small bugs (although none have been discovered), and many options are
       missing. Bugs, issues, and feature requests should be submitted via
       <a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Bitbucket</a>.</p>
       <address>— Roy Vanegas</address>
