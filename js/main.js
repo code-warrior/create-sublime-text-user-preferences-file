@@ -139,6 +139,8 @@ var fontObject = {
     copyWithEmptySelectionOption,
     userChoiceForCopyWithEmptySelectionDisplayedInSpan,
     dragTextOption,
+    treeAnimationEnabledOption,
+    userChoiceForTreeAnimationEnabledDisplayedInSpan,
     userChoiceForDragTextDisplayedInSpan,
     showEncodingOption,
     userChoiceForShowEncodingDisplayedInSpan,
@@ -515,6 +517,13 @@ function updateContentInSpanForDragText() {
     "use strict";
 
     userChoiceForDragTextDisplayedInSpan.textContent = dragTextOption.value;
+}
+
+function updateContentInSpanForTreeAnimationEnabled() {
+    "use strict";
+
+    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
+        treeAnimationEnabledOption.value;
 }
 
 function updateContentInSpanForShowEncoding() {
@@ -1084,6 +1093,23 @@ window.onload = function () {
     );
     userChoiceForDragTextDisplayedInSpan.textContent =
         dragTextOption.value;
+
+    /**
+     * TREE ANIMATION ENABLED
+     */
+    userChoiceForTreeAnimationEnabledDisplayedInSpan =
+        document.querySelector(
+            "#tree_animation_enabled>h2+div>p:first-of-type>code>span"
+        );
+    treeAnimationEnabledOption =
+        document.getElementById("tree_animation_enabled_option");
+    treeAnimationEnabledOption.addEventListener(
+        "change",
+        updateContentInSpanForTreeAnimationEnabled,
+        false
+    );
+    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
+        treeAnimationEnabledOption.value;
 
     /**
      * SHOW ENCODING
