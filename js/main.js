@@ -975,7 +975,7 @@ window.onload = function () {
      * DRAW WHITE SPACE
      */
     userChoiceForDrawWhiteSpaceDisplayedInSpan = document.querySelector(
-            "#draw_white_space>h2+div>p:first-of-type>code>span"
+        "#draw_white_space>h2+div>p:first-of-type>code>span"
     );
     drawWhiteSpaceOption = document.getElementById("draw_white_space_option");
     drawWhiteSpaceOption.addEventListener(
