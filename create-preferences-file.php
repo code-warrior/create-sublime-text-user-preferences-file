@@ -403,6 +403,17 @@ if (!empty($_GET['tree_animation_enabled_option'])) {
 }
 
 /**
+ * ANIMATION ENABLED
+ */
+
+if (!empty($_GET['animation_enabled_option'])) {
+    if (strcmp($_GET['animation_enabled_option'], "true") !== 0) {
+        $options .= '   "animation_enabled": ' .
+            $_GET['animation_enabled_option'] . ',' . "\n";
+    }
+}
+
+/**
  * SHOW ENCODING
  */
 if (!empty($_GET['show_encoding_option'])) {

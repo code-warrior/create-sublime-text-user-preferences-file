@@ -142,6 +142,8 @@ var fontObject = {
     userChoiceForDragTextDisplayedInSpan,
     treeAnimationEnabledOption,
     userChoiceForTreeAnimationEnabledDisplayedInSpan,
+    animationEnabledOption,
+    userChoiceForAnimationEnabledDisplayedInSpan,
     showEncodingOption,
     userChoiceForShowEncodingDisplayedInSpan,
     showLineEndingsOption,
@@ -524,6 +526,13 @@ function updateContentInSpanForTreeAnimationEnabled() {
 
     userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
         treeAnimationEnabledOption.value;
+}
+
+function updateContentInSpanForAnimationEnabled() {
+    "use strict";
+
+    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
+        animationEnabledOption.value;
 }
 
 function updateContentInSpanForShowEncoding() {
@@ -1110,6 +1119,23 @@ window.onload = function () {
     );
     userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
         treeAnimationEnabledOption.value;
+
+    /**
+     * ANIMATION ENABLED
+     */
+    userChoiceForAnimationEnabledDisplayedInSpan =
+        document.querySelector(
+            "#animation_enabled>h2+div>p:first-of-type>code>span"
+        );
+    animationEnabledOption =
+        document.getElementById("animation_enabled_option");
+    animationEnabledOption.addEventListener(
+        "change",
+        updateContentInSpanForAnimationEnabled,
+        false
+    );
+    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
+        animationEnabledOption.value;
 
     /**
      * SHOW ENCODING
