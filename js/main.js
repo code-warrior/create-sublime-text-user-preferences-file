@@ -932,7 +932,8 @@ window.onload = function () {
         document.querySelector(
             "#always_show_minimap_viewport>h2+div>p:first-of-type>code>span"
         );
-    alwaysShowMinimapViewportOption = document.getElementById("always_show_minimap_viewport_option");
+    alwaysShowMinimapViewportOption =
+        document.getElementById("always_show_minimap_viewport_option");
     alwaysShowMinimapViewportOption.addEventListener(
         "change",
         updateContentInSpanForAlwaysShowMinimapViewport,
