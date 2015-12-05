@@ -486,8 +486,8 @@ if (!empty($_GET['create_window_at_startup_option'])) {
  * SHOW FULL PATH
  */
 if (isset($_GET['show_full_path_option'])) {
-    $options .= '   "show_full_path": "' .
-        trim($_GET['show_full_path_option']) . '",' . "\n";
+    $options .= '   "show_full_path": ' .
+        trim($_GET['show_full_path_option']) . ',' . "\n";
 }
 
 /**
