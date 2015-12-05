@@ -24,7 +24,6 @@ session_start();
 
    <meta name="description" content="Learn each of the 101 options in the Sublime Text 3 default preferences file, then generate a preferences file for use in your own Sublime Text environment.">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
