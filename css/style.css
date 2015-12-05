@@ -116,7 +116,7 @@ section {
 section > h2 + div {
   margin: 0;
   padding-right: 12px;
-  border-right: 1px solid #d4d4d4;
+  border-right: 1px solid #d5d5d5;
   transition: 1s;
 }
 section > h2 + div > p:first-of-type {
@@ -206,13 +206,12 @@ sup {
 
 abbr {
   border-bottom: 1px dotted #222;
-  font-variant: small-caps;
 }
 
 h2 {
   font-size: 1.9rem;
-  border-bottom: 1px solid #d4d4d4;
-  border-left: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
   margin: 0;
   padding: 0 0 0 12px;
 }
@@ -240,7 +239,7 @@ h2 + div > p:first-of-type > code {
   margin: 20px 0 24px 0;
   border: 0;
   padding: 20px;
-  background-color: #ceecff;
+  background-color: #cfecff;
   color: #444;
   font-size: 1.5rem;
 }
@@ -303,7 +302,7 @@ aside img {
 input[type="submit"] {
   padding: 20px;
   margin: 0 auto;
-  background-color: #9bd8ff;
+  background-color: #9cd8ff;
   color: #444;
 }
 
