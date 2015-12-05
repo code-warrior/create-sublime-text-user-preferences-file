@@ -414,6 +414,16 @@ if (!empty($_GET['animation_enabled_option'])) {
 }
 
 /**
+ * OVERLAY SCROLL BARS
+ */
+if (!empty($_GET['overlay_scroll_bars_option'])) {
+    if (strcmp($_GET['overlay_scroll_bars_option'], "system") !== 0) {
+        $options .= '   "overlay_scroll_bars": ' .
+            $_GET['overlay_scroll_bars_option'].',' . "\n";
+    }
+}
+
+/**
  * SHOW ENCODING
  */
 if (!empty($_GET['show_encoding_option'])) {

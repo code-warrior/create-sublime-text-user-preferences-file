@@ -144,6 +144,8 @@ var fontObject = {
     userChoiceForTreeAnimationEnabledDisplayedInSpan,
     animationEnabledOption,
     userChoiceForAnimationEnabledDisplayedInSpan,
+    overlayScrollBarsOption,
+    userChoiceForOverlayScrollBarsDisplayInSpan,
     showEncodingOption,
     userChoiceForShowEncodingDisplayedInSpan,
     showLineEndingsOption,
@@ -533,6 +535,13 @@ function updateContentInSpanForAnimationEnabled() {
 
     userChoiceForAnimationEnabledDisplayedInSpan.textContent =
         animationEnabledOption.value;
+}
+
+function updateContentInSpanForOverlayScrollBars() {
+    "use strict";
+
+    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
+        overlayScrollBarsOption.value;
 }
 
 function updateContentInSpanForShowEncoding() {
@@ -1136,6 +1145,22 @@ window.onload = function () {
     );
     userChoiceForAnimationEnabledDisplayedInSpan.textContent =
         animationEnabledOption.value;
+
+    /**
+     * OVERLAY SCROLL BARS
+     */
+    userChoiceForOverlayScrollBarsDisplayInSpan =
+        document.querySelector(
+            "#overlay_scroll_bars>h2+div>p:first-of-type>code>span"
+        );
+    overlayScrollBarsOption = document.getElementById("overlay_scroll_bars_option");
+    overlayScrollBarsOption.addEventListener(
+        "change",
+        updateContentInSpanForOverlayScrollBars,
+        false
+    );
+    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
+        overlayScrollBarsOption.value;
 
     /**
      * SHOW ENCODING

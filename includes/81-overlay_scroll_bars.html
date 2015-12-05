@@ -1,0 +1,17 @@
+      <section id="overlay_scroll_bars">
+         <h2>Overlay Scroll Bars</h2>
+         <div>
+            <p><code>"overlay_scroll_bars": <span> </span>,</code></p>
+            <p>The <code>disabled</code> option keeps the scroll bar in view at all times, and doesn’t overlay the scroll bar over the minimap.</p>
+            <p>The <code>enabled</code> option reveals the scroll bar <em>only</em> when the page is scrolled. If the scroll bar reaches the minimap area in the upper right hand corner, the scroll bar appears <em>over</em> the minimap.</p>
+            <p>The <code>system</code> option, which is the default, enforces the option invoked by your operating system. <code>disabled</code> is the default option on Mac OS X, version 10.11.1, and in Windows 10.</p>
+            <p>
+               <label for="overlay_scroll_bars_option">How would you like Sublime to treat scroll bars?</label>
+               <select id="overlay_scroll_bars_option" name="overlay_scroll_bars_option">
+                  <option value="disabled">Keep the scroll bar in view at all times</option>
+                  <option value="enabled">Reveal the scroll bar only when the page is scrolled</option>
+                  <option value="system" selected>Keep the default operating system option</option>
+               </select>
+            </p>
+         </div>
+      </section>
