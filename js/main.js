@@ -608,7 +608,7 @@ window.onload = function () {
     styleSheet = document.styleSheets[0];
     styleSheet.insertRule(
         "#introduction { height: " + introduction.clientHeight + "px; }",
-        0
+        3
     );
     button = document.getElementsByTagName("button")[0];
     button.addEventListener(
