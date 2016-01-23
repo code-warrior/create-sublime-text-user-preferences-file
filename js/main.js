@@ -122,6 +122,8 @@ var fontObject = {
     userChoiceForDrawMinimapBorderDisplayedInSpan,
     alwaysShowMinimapViewportOption,
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan,
+    highlightLineOption,
+    userChoiceForHighlightLineDisplayedInSpan,
     caretStyleOption,
     userChoiceForCaretStyleDisplayedInSpan,
     scrollPastEndOption,
@@ -452,6 +454,13 @@ function updateContentInSpanForAlwaysShowMinimapViewport() {
 
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
         alwaysShowMinimapViewportOption.value;
+}
+
+function updateContentInSpanForHighlightLine() {
+    "use strict";
+
+    userChoiceForHighlightLineDisplayedInSpan.textContent =
+        highlightLineOption.value;
 }
 
 function updateContentInSpanforRulers() {
@@ -968,6 +977,22 @@ window.onload = function () {
     );
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
         alwaysShowMinimapViewportOption.value;
+
+    /**
+     * HIGHLIGHT LINE
+     */
+    userChoiceForHighlightLineDisplayedInSpan =
+        document.querySelector(
+            "#highlight_line>h2+div>p:first-of-type>code>span"
+        );
+    highlightLineOption = document.getElementById("highlight_line_option");
+    highlightLineOption.addEventListener(
+        "change",
+        updateContentInSpanForHighlightLine,
+        false
+    );
+    userChoiceForHighlightLineDisplayedInSpan.textContent =
+        highlightLineOption.value;
 
     /**
      * CARET STYLE

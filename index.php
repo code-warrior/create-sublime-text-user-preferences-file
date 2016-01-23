@@ -76,6 +76,7 @@ require_once "includes/24-draw_centered.html";
 require_once "includes/26-dictionary.html";
 require_once "includes/28-draw_minimap_border.html";
 require_once "includes/29-always_show_minimap_viewport.html";
+require_once "includes/30-highlight_line.html";
 require_once "includes/31-caret_style.html";
 require_once "includes/44-scroll_past_end.html";
 require_once "includes/46-draw_white_space.html";

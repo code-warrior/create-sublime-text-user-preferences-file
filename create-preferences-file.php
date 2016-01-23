@@ -294,6 +294,16 @@ if (!empty($_GET['always_show_minimap_viewport_option'])) {
 }
 
 /**
+ * HIGHLIGHT LINE
+ */
+if (!empty($_GET['highlight_line_option'])) {
+    if (strcmp($_GET['highlight_line_option'], "false") !== 0) {
+        $options .= '   "highlight_line": ' .
+            $_GET['highlight_line_option'].',' . "\n";
+    }
+}
+
+/**
  * CARET STYLE
  */
 if (!empty($_GET['caret_style_option'])) {
