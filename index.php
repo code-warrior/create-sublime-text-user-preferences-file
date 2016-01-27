@@ -34,7 +34,7 @@ session_start();
    </header>
    <div id="introduction">
       <p>The purpose of this web site is two-fold. First, it explains in detail
-      forty-four of the options in Sublime Text’s
+      forty-five of the options in Sublime Text’s
       <code>Preferences.sublime-settings</code> file. (The final version will
       explain all 101 options.) And second, it allows you to create a customized
       preferences file that you can install in your own Sublime environment.</p>
