@@ -500,6 +500,16 @@ if (isset($_GET['show_full_path_option'])) {
 }
 
 /**
+ * PREVIEW ON CLICK
+ */
+if (!empty($_GET['preview_on_click_option'])) {
+    if (strcmp($_GET['preview_on_click_option'], "true") !== 0) {
+        $options .= '   "preview_on_click": ' .
+            $_GET['preview_on_click_option'].',' . "\n";
+    }
+}
+
+/**
  * TEMPLATE
  */
 /*

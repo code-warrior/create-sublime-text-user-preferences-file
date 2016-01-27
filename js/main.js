@@ -161,7 +161,9 @@ var fontObject = {
     createWindowAtStartupOption,
     userChoiceForCreateWindowAtStartupDisplayedInSpan,
     showFullPathOption,
-    userChoiceForShowFullPathDisplayedInSpan;
+    userChoiceForShowFullPathDisplayedInSpan,
+    previewOnClickOption,
+    userChoiceForPreviewOnClickDisplayedInSpan;
 
 function displayFontFaceInfo() {
     "use strict";
@@ -600,6 +602,13 @@ function updateContentInSpanForShowFullPath() {
 
     userChoiceForShowFullPathDisplayedInSpan.textContent =
         showFullPathOption.value;
+}
+
+function updateContentInSpanForPreviewOnClick() {
+    "use strict";
+
+    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
+        previewOnClickOption.value;
 }
 
 window.onload = function () {
@@ -1301,6 +1310,22 @@ window.onload = function () {
     );
     userChoiceForShowFullPathDisplayedInSpan.textContent =
         showFullPathOption.value;
+
+    /**
+     * PREVIEW ON CLICK
+     */
+    userChoiceForPreviewOnClickDisplayedInSpan =
+        document.querySelector(
+            "#preview_on_click>h2+div>p:first-of-type>code>span"
+        );
+    previewOnClickOption = document.getElementById("preview_on_click_option");
+    previewOnClickOption.addEventListener(
+        "change",
+        updateContentInSpanForPreviewOnClick,
+        false
+    );
+    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
+        previewOnClickOption.value;
 
     /**
      * TEMPLATE

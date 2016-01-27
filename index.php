@@ -96,6 +96,7 @@ require_once "includes/87-always_prompt_for_file_reload.html";
 require_once "includes/88-open_files_in_new_window.html";
 require_once "includes/89-create_window_at_startup.html";
 require_once "includes/91-show_full_path.html";
+require_once "includes/93-preview_on_click.html";
 ?>
       <div><input type="submit"
                   id="submit"
