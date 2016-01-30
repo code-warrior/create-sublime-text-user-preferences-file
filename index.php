@@ -29,7 +29,10 @@ session_start();
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <aside title="Fork me at Bitbucket"><a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork at <img src="img/Atlassian_Bitbucket_Logo.png" height="22" alt="Bitbucket"></a></aside>
+   <aside title="Fork me at Bitbucket"><a
+   href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Fork
+   at <img src="img/Atlassian_Bitbucket_Logo.png" height="22"
+   alt="Bitbucket"></a></aside>
    <header>
       <h1>Create Sublime Text User Preferences File</h1>
 <?php require_once "includes/navigation.html"; ?>
@@ -46,7 +49,7 @@ session_start();
       more here.</a></p>
       <p><strong>Note</strong>: This site is in beta, meaning that some features,
       such as collapsible headings, have yet to be implemented, some other features
-      may have small bugs (although none have been discovered), and many options are
+      may have small bugs (although not one has been discovered), and many options are
       missing. Bugs, issues, and feature requests should be submitted via
       <a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Bitbucket</a>.</p>
       <address>— Roy Vanegas</address>
