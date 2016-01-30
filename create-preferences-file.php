@@ -423,6 +423,16 @@ if (!empty($_GET['animation_enabled_option'])) {
 }
 
 /**
+ * HIGHLIGHT MODIFIED TABS
+ */
+if (!empty($_GET['highlight_modified_tabs_option'])) {
+    if (strcmp($_GET['highlight_modified_tabs_option'], "false") !== 0) {
+        $options .= '   "highlight_modified_tabs": ' .
+            $_GET['highlight_modified_tabs_option'] . ',' . "\n";
+    }
+}
+
+/**
  * OVERLAY SCROLL BARS
  */
 if (!empty($_GET['overlay_scroll_bars_option'])) {
