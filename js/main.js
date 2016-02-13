@@ -88,7 +88,6 @@ var fontObject = {
     colorSchemeOption,
     fontFaceOption,
     fontSize,
-    userOptionForFontOptions,
     fontOptionsOption,
     userOptionInSpanForlineNumbers,
     lineNumbersOption,
@@ -304,7 +303,7 @@ function updateContentInSpanForWrapWidth() {
 function updateFontOptionInSpan() {
     "use strict";
 
-    userOptionForFontOptions.textContent =
+    userChoice[3].textContent =
         ("" === fontOptionsOption.value) ? " " : fontOptionsOption.value;
 }
 
@@ -687,16 +686,13 @@ window.onload = function () {
     /**
      * FONT OPTIONS
      */
-    userOptionForFontOptions = document.querySelector(
-        "#font_options>h2+div>p:first-of-type>code>span"
-    );
     fontOptionsOption = document.getElementById("font_options_option");
     fontOptionsOption.addEventListener(
         "change",
         updateFontOptionInSpan,
         false
     );
-    userOptionForFontOptions.textContent = fontOptionsOption.value;
+    userChoice[3].textContent = fontOptionsOption.value;
 
     /**
      * WORD SEPARATORS
