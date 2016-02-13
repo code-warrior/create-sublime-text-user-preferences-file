@@ -333,7 +333,7 @@ function updateUserChoiceForMarginOptionInSpan() {
 
     if ('' === marginOption.value) {
         submit.removeAttribute('disabled');
-        userChoiceForMarginDisplayedInSpan.textContent = '4';
+        userChoice[7].textContent = '4';
     } else {
 
         input = parseInt(marginOption.value, 10);
@@ -341,13 +341,12 @@ function updateUserChoiceForMarginOptionInSpan() {
         if (isNaN(input)) {
             submit.setAttribute('disabled', 'disabled');
 
-            userChoiceForMarginDisplayedInSpan.innerHTML =
+            userChoice[7].innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
             submit.removeAttribute('disabled');
-            userChoiceForMarginDisplayedInSpan.textContent =
-                marginOption.value;
+            userChoice[7].textContent = marginOption.value;
         }
     }
 }
@@ -739,7 +738,7 @@ window.onload = function () {
         updateUserChoiceForMarginOptionInSpan,
         false
     );
-    userChoiceForMarginDisplayedInSpan.textContent = marginOption.value;
+    userChoice[7].textContent = marginOption.value;
 
     /**
      * FOLD BUTTONS
