@@ -319,7 +319,7 @@ function updateContentInSpanForWordSeparators() {
 function updateLineNumbersOptionInSpan() {
     'use strict';
 
-    userOptionInSpanForlineNumbers.textContent = lineNumbersOption.value;
+    userChoice[5].textContent = lineNumbersOption.value;
 }
 
 function updateGutterOptionInSpan() {
@@ -719,7 +719,7 @@ window.onload = function () {
         updateLineNumbersOptionInSpan,
         false
     );
-    userOptionInSpanForlineNumbers.textContent = lineNumbersOption.value;
+    userChoice[5].textContent = lineNumbersOption.value;
 
     /**
      * GUTTER
