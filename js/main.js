@@ -325,13 +325,12 @@ function updateContentInSpan() {
         userChoice[9].textContent = fadeFoldButtonsOption.value;
 
         break;
+
+    case 'rulers_option':
+        userChoice[10].textContent = rulersOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanforRulers() {
-    'use strict';
-
-    userChoice[10].textContent = rulersOption.value;
 }
 
 function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
@@ -688,15 +687,9 @@ window.onload = function () {
     fadeFoldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[9].textContent = fadeFoldButtonsOption.value;
 
-    /**
-     * RULERS
-     */
+    /** RULERS */
     rulersOption = document.getElementById('rulers_option');
-    rulersOption.addEventListener(
-        'change',
-        updateContentInSpanforRulers,
-        false
-    );
+    rulersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[10].textContent = rulersOption.value;
 
     /**
