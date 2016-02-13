@@ -353,7 +353,7 @@ function updateUserChoiceForMarginOptionInSpan() {
 function updateFoldButtonsOptionInSpan() {
     'use strict';
 
-    userOptionInSpanForFoldButtons.textContent = foldButtonsOption.value;
+    userChoice[8].textContent = foldButtonsOption.value;
 }
 
 function updateInSpanFadeFoldButtonsOption() {
@@ -748,7 +748,7 @@ window.onload = function () {
         updateFoldButtonsOptionInSpan,
         false
     );
-    userOptionInSpanForFoldButtons.textContent = foldButtonsOption.value;
+    userChoice[8].textContent = foldButtonsOption.value;
 
     /**
      * FADE FOLD BUTTONS
