@@ -67,7 +67,6 @@ var fontObject = {
     ]
 },
     submit,
-    fontFaceContainer,
     fontFaceInputBox,
     div,
     firstParagraph,
@@ -625,7 +624,6 @@ window.onload = function () {
 
     submit = document.getElementById("submit");
 
-    fontFaceContainer = document.getElementById("font_face");
     fontFaceInputBox =  document.getElementById("font_face_option");
     fontFaceInputBox.addEventListener("input", displayFontFaceInfo, false);
     div = document.querySelector("#font_face>h2+div>div");
