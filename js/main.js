@@ -91,7 +91,7 @@ var fontObject = {
     button,
     colorSchemeOption,
     fontFaceOption,
-    fontSize,
+    fontSizeOption,
     fontOptionsOption,
     wordSeparatorsOption,
     lineNumbersOption,
@@ -251,11 +251,11 @@ function updateContentInSpan() {
     case 'font_size_option':
         var input;
 
-        if ('' === fontSize.value) {
+        if ('' === fontSizeOption.value) {
             submit.removeAttribute('disabled');
             userChoice[2].textContent = '10';
         } else {
-            input = parseInt(fontSize.value, 10);
+            input = parseInt(fontSizeOption.value, 10);
 
             if (isNaN(input)) {
                 submit.setAttribute('disabled', 'disabled');
@@ -265,7 +265,7 @@ function updateContentInSpan() {
                     'Submission is disabled</span>';
             } else {
                 submit.removeAttribute('disabled');
-                userChoice[2].textContent = fontSize.value;
+                userChoice[2].textContent = fontSizeOption.value;
             }
         }
 
@@ -660,9 +660,9 @@ window.onload = function () {
     /**
      * FONT SIZE
      */
-    fontSize = document.getElementById('font_size_option');
-    fontSize.addEventListener('input', updateContentInSpan, false);
-    userChoice[2].textContent = fontSize.value;
+    fontSizeOption = document.getElementById('font_size_option');
+    fontSizeOption.addEventListener('input', updateContentInSpan, false);
+    userChoice[2].textContent = fontSizeOption.value;
 
     /**
      * FONT OPTIONS
