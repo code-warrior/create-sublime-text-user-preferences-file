@@ -98,7 +98,6 @@ var fontObject = {
     marginOption,
     foldButtonsOption,
     fadeFoldButtonsOption,
-    userChoiceForRulersDisplayedInSpan,
     rulersOption,
     userChoiceForSpellCheckOptionDisplayedInSpan,
     spellCheckOption,
@@ -759,9 +758,6 @@ window.onload = function () {
     /**
      * RULERS
      */
-    userChoiceForRulersDisplayedInSpan = document.querySelector(
-        '#rulers>h2+div>p:first-of-type>code>span'
-    );
     rulersOption = document.getElementById('rulers_option');
     rulersOption.addEventListener(
         'change',
