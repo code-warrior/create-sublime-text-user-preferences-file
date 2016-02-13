@@ -267,16 +267,6 @@ function updateContentInSpanForWrapWidth() {
     }
 }
 
-function updateColorSchemeOption() {
-    'use strict';
-
-    userChoice[0].textContent = colorSchemeOption.value;
-
-    if ('' === colorSchemeOption.value) {
-        userChoice[0].textContent = 'Monokai.tmTheme';
-    }
-}
-
 function updateFontFaceOption() {
     'use strict';
 
