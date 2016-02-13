@@ -286,17 +286,12 @@ function updateContentInSpan() {
         userChoice[5].textContent = lineNumbersOption.value;
 
         break;
+
+    case 'gutter_option':
+        userChoice[6].textContent = gutterOption.value;
+
+        break;
     }
-}
-
-
-    }
-}
-
-function updateGutterOptionInSpan() {
-    'use strict';
-
-    userChoice[6].textContent = gutterOption.value;
 }
 
 function updateUserChoiceForMarginOptionInSpan() {
@@ -692,11 +687,7 @@ window.onload = function () {
      * GUTTER
      */
     gutterOption = document.getElementById('gutter_option');
-    gutterOption.addEventListener(
-        'change',
-        updateGutterOptionInSpan,
-        false
-    );
+    gutterOption.addEventListener('change', updateContentInSpan, false);
     userChoice[6].textContent = gutterOption.value;
 
     /**
