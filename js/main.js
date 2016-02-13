@@ -85,7 +85,6 @@ var fontObject = {
     introduction,
     styleSheet,
     button,
-    userOptionForColorScheme,
     colorSchemeOption,
     userOptionForFontFace,
     fontFaceOption,
@@ -237,10 +236,10 @@ function hideIntroduction() {
 function updateColorSchemeOption() {
     "use strict";
 
-    userOptionForColorScheme.textContent = colorSchemeOption.value;
+    userChoice[0].textContent = colorSchemeOption.value;
 
     if ("" === colorSchemeOption.value) {
-        userOptionForColorScheme.textContent = "Monokai.tmTheme";
+        userChoice[0].textContent = "Monokai.tmTheme";
     }
 }
 
@@ -657,16 +656,13 @@ window.onload = function () {
     /**
      * COLOR SCHEME
      */
-    userOptionForColorScheme = document.querySelector(
-        "#color_scheme>h2+div>p:first-of-type>code>span"
-    );
     colorSchemeOption = document.getElementById("color_scheme_option");
     colorSchemeOption.addEventListener(
         "input",
         updateColorSchemeOption,
         false
     );
-    userOptionForColorScheme.textContent = colorSchemeOption.value;
+    userChoice[0].textContent = colorSchemeOption.value;
 
     /**
      * FONT FACE
