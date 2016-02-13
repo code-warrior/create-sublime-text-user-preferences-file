@@ -229,7 +229,7 @@ function hideIntroduction() {
 function updateContentInSpan() {
     'use strict';
 
-    switch(this.id) {
+    switch (this.id) {
     case 'color_scheme_option':
         userChoice[0].textContent = colorSchemeOption.value;
 
