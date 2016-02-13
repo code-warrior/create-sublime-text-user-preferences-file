@@ -99,7 +99,6 @@ var fontObject = {
     foldButtonsOption,
     fadeFoldButtonsOption,
     rulersOption,
-    userChoiceForSpellCheckOptionDisplayedInSpan,
     spellCheckOption,
     userChoiceForTabSizeDisplayedInSpan,
     tabSizeOption,
@@ -768,9 +767,6 @@ window.onload = function () {
     /**
      * SPELL CHECK
      */
-    userChoiceForSpellCheckOptionDisplayedInSpan = document.querySelector(
-        '#spell_check>h2+div>p:first-of-type>code>span'
-    );
     spellCheckOption = document.getElementById('spell_check_option');
     spellCheckOption.addEventListener(
         'change',
