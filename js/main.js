@@ -270,6 +270,12 @@ function updateContentInSpan() {
         }
 
         break;
+
+    case 'font_options_option':
+        userChoice[3].textContent =
+            ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
+
+        break;
     }
 }
 
@@ -297,13 +303,6 @@ function updateContentInSpanForWrapWidth() {
                 wrapWidthOption.value;
         }
     }
-}
-
-function updateFontOptionInSpan() {
-    'use strict';
-
-    userChoice[3].textContent =
-        ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
 }
 
 function updateContentInSpanForWordSeparators() {
@@ -670,11 +669,7 @@ window.onload = function () {
      * FONT OPTIONS
      */
     fontOptionsOption = document.getElementById('font_options_option');
-    fontOptionsOption.addEventListener(
-        'change',
-        updateFontOptionInSpan,
-        false
-    );
+    fontOptionsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[3].textContent = fontOptionsOption.value;
 
     /**
