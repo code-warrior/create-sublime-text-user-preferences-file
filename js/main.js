@@ -174,7 +174,7 @@ var fontObject = {
     userChoiceForPreviewOnClickDisplayedInSpan;
 
 function displayFontFaceInfo() {
-    "use strict";
+    'use strict';
 
     var fontFaceChoice = fontFaceInputBox.value.toLowerCase(),
         index = -1;
@@ -224,13 +224,13 @@ function displayFontFaceInfo() {
 }
 
 function hideIntroduction() {
-    "use strict";
+    'use strict';
 
     introduction.className = "hide";
 }
 
 function updateColorSchemeOption() {
-    "use strict";
+    'use strict';
 
     userChoice[0].textContent = colorSchemeOption.value;
 
@@ -240,7 +240,7 @@ function updateColorSchemeOption() {
 }
 
 function updateFontFaceOption() {
-    "use strict";
+    'use strict';
 
     userChoice[1].textContent = fontFaceOption.value;
 
@@ -250,7 +250,7 @@ function updateFontFaceOption() {
 }
 
 function updateFontSizeOption() {
-    "use strict";
+    'use strict';
 
     var input;
 
@@ -274,7 +274,7 @@ function updateFontSizeOption() {
 }
 
 function updateContentInSpanForWrapWidth() {
-    "use strict";
+    'use strict';
 
     var input;
 
@@ -300,26 +300,26 @@ function updateContentInSpanForWrapWidth() {
 }
 
 function updateFontOptionInSpan() {
-    "use strict";
+    'use strict';
 
     userChoice[3].textContent =
         ("" === fontOptionsOption.value) ? " " : fontOptionsOption.value;
 }
 
 function updateLineNumbersOptionInSpan() {
-    "use strict";
+    'use strict';
 
     userOptionInSpanForlineNumbers.textContent = lineNumbersOption.value;
 }
 
 function updateGutterOptionInSpan() {
-    "use strict";
+    'use strict';
 
     userOptionInSpanForGutter.textContent = gutterOption.value;
 }
 
 function updateUserChoiceForMarginOptionInSpan() {
-    "use strict";
+    'use strict';
 
     var input;
 
@@ -345,26 +345,26 @@ function updateUserChoiceForMarginOptionInSpan() {
 }
 
 function updateFoldButtonsOptionInSpan() {
-    "use strict";
+    'use strict';
 
     userOptionInSpanForFoldButtons.textContent = foldButtonsOption.value;
 }
 
 function updateInSpanFadeFoldButtonsOption() {
-    "use strict";
+    'use strict';
 
     userOptionInSpanForFadeFoldButtons.textContent = fadeFoldButtonsOption.value;
 }
 
 function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
-    "use strict";
+    'use strict';
 
     userChoiceForSpellCheckOptionDisplayedInSpan.textContent =
         spellCheckOption.value;
 }
 
 function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
-    "use strict";
+    'use strict';
 
     var input;
 
@@ -392,241 +392,241 @@ function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
 }
 
 function updateTranslateTabsToSpaces() {
-    "use strict";
+    'use strict';
 
     userChoiceForTranslateTabsToSpacesDisplayedInSpan.textContent =
         translateTabsToSpacesOption.value;
 }
 
 function updateUseTabStopsOption() {
-    "use strict";
+    'use strict';
 
     userChoiceForUseTabStopsInSpan.textContent = useTabStopsOption.value;
 }
 
 function updateContentInSpanForAutoIndentOption() {
-    "use strict";
+    'use strict';
 
     userChoiceForAutoIndentDisplayedInSpan.textContent =
         autoIndentOption.value;
 }
 
 function updateDetectIndentationOption() {
-    "use strict";
+    'use strict';
 
     userChoiceForDetectIndentationInSpan.textContent = detectIndentationOption.value;
 }
 
 function updateContentInSpanForTrimAutomaticWhiteSpace() {
-    "use strict";
+    'use strict';
 
     userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan.textContent =
         trimAutomaticWhiteSpaceOption.value;
 }
 
 function updateContentInSpanForWordWrap() {
-    "use strict";
+    'use strict';
 
     userChoiceForWordWrapDisplayedInSpan.textContent =
         wordWrapOption.value;
 }
 
 function updateContentInSpanForWordSeparators() {
-    "use strict";
+    'use strict';
 
     userChoice[4].textContent = wordSeparatorsOption.value;
 }
 
 function updateContentInSpanForDrawCentered() {
-    "use strict";
+    'use strict';
 
     userChoiceForDrawCenteredDisplayedInSpan.textContent =
         drawCenteredOption.value;
 }
 
 function updateContentInSpanForDictionary() {
-    "use strict";
+    'use strict';
 
     userChoiceForDictionaryDisplayedInSpan.textContent =
         dictionaryOption.value;
 }
 
 function updateContentInSpanForDrawMinimapBorder() {
-    "use strict";
+    'use strict';
 
     userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
         drawMinimapBorderOption.value;
 }
 
 function updateContentInSpanForAlwaysShowMinimapViewport() {
-    "use strict";
+    'use strict';
 
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
         alwaysShowMinimapViewportOption.value;
 }
 
 function updateContentInSpanForHighlightLine() {
-    "use strict";
+    'use strict';
 
     userChoiceForHighlightLineDisplayedInSpan.textContent =
         highlightLineOption.value;
 }
 
 function updateContentInSpanforRulers() {
-    "use strict";
+    'use strict';
 
     userChoiceForRulersDisplayedInSpan.textContent =
         rulersOption.value;
 }
 
 function updateContentInSpanForCaretStyleOption() {
-    "use strict";
+    'use strict';
 
     userChoiceForCaretStyleDisplayedInSpan.textContent =
         caretStyleOption.value;
 }
 
 function updateContentInSpanForScrollPastEnd() {
-    "use strict";
+    'use strict';
 
     userChoiceForScrollPastEndDisplayedInSpan.textContent =
         scrollPastEndOption.value;
 }
 
 function updateContentInSpanForDrawWhiteSpace() {
-    "use strict";
+    'use strict';
 
     userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
         drawWhiteSpaceOption.value;
 }
 
 function updateContentInSpanForTrimTrailingWhiteSpace() {
-    "use strict";
+    'use strict';
 
     userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan.textContent =
         trimTrailingWhiteSpaceOnSaveOption.value;
 }
 
 function updateContentInSpanForEnsureNewlineAtEOFOnSave() {
-    "use strict";
+    'use strict';
 
     userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan.textContent =
         ensureNewlineAtEOFOnSaveOption.value;
 }
 
 function updateContentInSpanForSaveOnFocusLost() {
-    "use strict";
+    'use strict';
 
     userChoiceForSaveOnFocusLostDisplayedInSpan.textContent =
         saveOnFocusLostOption.value;
 }
 
 function updateContentInSpanForDefaultLineEnding() {
-    "use strict";
+    'use strict';
 
     userChoiceForDefaultLineEndingDisplayedInSpan.textContent =
         defaultLineEndingOption.value;
 }
 
 function updateContentInSpanForCopyWithEmptySelection() {
-    "use strict";
+    'use strict';
 
     userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
         copyWithEmptySelectionOption.value;
 }
 
 function updateContentInSpanForDragText() {
-    "use strict";
+    'use strict';
 
     userChoiceForDragTextDisplayedInSpan.textContent = dragTextOption.value;
 }
 
 function updateContentInSpanForTreeAnimationEnabled() {
-    "use strict";
+    'use strict';
 
     userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
         treeAnimationEnabledOption.value;
 }
 
 function updateContentInSpanForAnimationEnabled() {
-    "use strict";
+    'use strict';
 
     userChoiceForAnimationEnabledDisplayedInSpan.textContent =
         animationEnabledOption.value;
 }
 
 function updateContentInSpanForHighlightModifiedTabs() {
-    "use strict";
+    'use strict';
 
     userChoiceForHighlightModifiedTabsDisplayedInSpan.textContent =
         highlightModifiedTabsOption.value;
 }
 
 function updateContentInSpanForOverlayScrollBars() {
-    "use strict";
+    'use strict';
 
     userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
         overlayScrollBarsOption.value;
 }
 
 function updateContentInSpanForShowEncoding() {
-    "use strict";
+    'use strict';
 
     userChoiceForShowEncodingDisplayedInSpan.textContent =
         showEncodingOption.value;
 }
 
 function updateContentInSpanForShowLineEndings() {
-    "use strict";
+    'use strict';
 
     userChoiceForShowLineEndingsDisplayedInSpan.textContent =
         showLineEndingsOption.value;
 }
 
 function updateContentInSpanForHotExit() {
-    "use strict";
+    'use strict';
 
     userChoiceForHotExitDisplayedInSpan.textContent =
         hotExitOption.value;
 }
 
 function updateContentInSpanForAlwaysPromptForFileReload() {
-    "use strict";
+    'use strict';
 
     userChoiceForAlwaysPromptForFileReloadDisplayedInSpan.textContent =
         alwaysPromptForFileReloadOption.value;
 }
 
 function updateContentInSpanForOpenFilesInNewWindow() {
-    "use strict";
+    'use strict';
 
     userChoiceForOpenFilesInNewWindowDisplayedInSpan.textContent =
         openFilesInNewWindowOption.value;
 }
 
 function updateContentInSpanForCreateWindowAtStartup() {
-    "use strict";
+    'use strict';
 
     userChoiceForCreateWindowAtStartupDisplayedInSpan.textContent =
         createWindowAtStartupOption.value;
 }
 
 function updateContentInSpanForShowFullPath() {
-    "use strict";
+    'use strict';
 
     userChoiceForShowFullPathDisplayedInSpan.textContent =
         showFullPathOption.value;
 }
 
 function updateContentInSpanForPreviewOnClick() {
-    "use strict";
+    'use strict';
 
     userChoiceForPreviewOnClickDisplayedInSpan.textContent =
         previewOnClickOption.value;
 }
 
 window.onload = function () {
-    "use strict";
+    'use strict';
 
     submit = document.getElementById("submit");
 
