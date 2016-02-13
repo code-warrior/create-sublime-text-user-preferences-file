@@ -281,6 +281,11 @@ function updateContentInSpan() {
         userChoice[4].textContent = wordSeparatorsOption.value;
 
         break;
+
+    case 'line_numbers_option':
+        userChoice[5].textContent = lineNumbersOption.value;
+
+        break;
     }
 }
 
@@ -308,12 +313,6 @@ function updateContentInSpanForWrapWidth() {
                 wrapWidthOption.value;
         }
     }
-}
-
-function updateLineNumbersOptionInSpan() {
-    'use strict';
-
-    userChoice[5].textContent = lineNumbersOption.value;
 }
 
 function updateGutterOptionInSpan() {
@@ -682,11 +681,7 @@ window.onload = function () {
      * LINE NUMBERS
      */
     lineNumbersOption = document.getElementById('line_numbers_option');
-    lineNumbersOption.addEventListener(
-        'change',
-        updateLineNumbersOptionInSpan,
-        false
-    );
+    lineNumbersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[5].textContent = lineNumbersOption.value;
 
     /**
