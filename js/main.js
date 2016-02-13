@@ -291,31 +291,30 @@ function updateContentInSpan() {
         userChoice[6].textContent = gutterOption.value;
 
         break;
-    }
-}
 
-function updateUserChoiceForMarginOptionInSpan() {
-    'use strict';
+    case 'margin_option':
+        var input;
 
-    var input;
-
-    if ('' === marginOption.value) {
-        submit.removeAttribute('disabled');
-        userChoice[7].textContent = '4';
-    } else {
-
-        input = parseInt(marginOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute('disabled', 'disabled');
-
-            userChoice[7].innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
+        if ('' === marginOption.value) {
             submit.removeAttribute('disabled');
-            userChoice[7].textContent = marginOption.value;
+            userChoice[7].textContent = '4';
+        } else {
+
+            input = parseInt(marginOption.value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[7].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[7].textContent = marginOption.value;
+            }
         }
+
+        break;
     }
 }
 
@@ -694,11 +693,7 @@ window.onload = function () {
      * MARGIN
      */
     marginOption = document.getElementById('margin_option');
-    marginOption.addEventListener(
-        'input',
-        updateUserChoiceForMarginOptionInSpan,
-        false
-    );
+    marginOption.addEventListener('input', updateContentInSpan, false);
     userChoice[7].textContent = marginOption.value;
 
     /**
