@@ -310,6 +310,12 @@ function updateFontOptionInSpan() {
         ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
 }
 
+function updateContentInSpanForWordSeparators() {
+    'use strict';
+
+    userChoice[4].textContent = wordSeparatorsOption.value;
+}
+
 function updateLineNumbersOptionInSpan() {
     'use strict';
 
@@ -433,12 +439,6 @@ function updateContentInSpanForWordWrap() {
 
     userChoiceForWordWrapDisplayedInSpan.textContent =
         wordWrapOption.value;
-}
-
-function updateContentInSpanForWordSeparators() {
-    'use strict';
-
-    userChoice[4].textContent = wordSeparatorsOption.value;
 }
 
 function updateContentInSpanForDrawCentered() {
