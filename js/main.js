@@ -93,7 +93,6 @@ var fontObject = {
     fontFaceOption,
     fontSize,
     fontOptionsOption,
-    userOptionInSpanForlineNumbers,
     lineNumbersOption,
     userOptionInSpanForGutter,
     gutterOption,
@@ -710,9 +709,6 @@ window.onload = function () {
     /**
      * LINE NUMBERS
      */
-    userOptionInSpanForlineNumbers = document.querySelector(
-        '#line_numbers>h2+div>p:first-of-type>code>span'
-    );
     lineNumbersOption = document.getElementById('line_numbers_option');
     lineNumbersOption.addEventListener(
         'change',
