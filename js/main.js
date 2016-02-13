@@ -368,8 +368,7 @@ function updateContentInSpanforRulers() {
 function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
     'use strict';
 
-    userChoiceForSpellCheckOptionDisplayedInSpan.textContent =
-        spellCheckOption.value;
+    userChoice[11].textContent = spellCheckOption.value;
 }
 
 function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
@@ -778,8 +777,7 @@ window.onload = function () {
         updateUserChoiceForSpellCheckOptionDisplayedInSpan,
         false
     );
-    userChoiceForSpellCheckOptionDisplayedInSpan.textContent =
-        spellCheckOption.value;
+    userChoice[11].textContent = spellCheckOption.value;
 
     /**
      * TAB SIZE
