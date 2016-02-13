@@ -651,11 +651,7 @@ window.onload = function () {
      * COLOR SCHEME
      */
     colorSchemeOption = document.getElementById('color_scheme_option');
-    colorSchemeOption.addEventListener(
-        'input',
-        updateColorSchemeOption,
-        false
-    );
+    colorSchemeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[0].textContent = colorSchemeOption.value;
 
     /**
