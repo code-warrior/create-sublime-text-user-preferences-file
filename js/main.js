@@ -117,7 +117,6 @@ var fontObject = {
     trimAutomaticWhiteSpaceOption,
     userChoiceForWordWrapDisplayedInSpan,
     wordWrapOption,
-    userChoiceForWordSeparatorsDisplayedInSpan,
     wordSeparatorsOption,
     wrapWidthOption,
     userChoiceForWrapWidthDisplayedInSpan,
@@ -435,8 +434,7 @@ function updateContentInSpanForWordWrap() {
 function updateContentInSpanForWordSeparators() {
     "use strict";
 
-    userChoiceForWordSeparatorsDisplayedInSpan.textContent =
-        wordSeparatorsOption.value;
+    userChoice[4].textContent = wordSeparatorsOption.value;
 }
 
 function updateContentInSpanForDrawCentered() {
@@ -697,9 +695,6 @@ window.onload = function () {
     /**
      * WORD SEPARATORS
      */
-    userChoiceForWordSeparatorsDisplayedInSpan = document.querySelector(
-        "#word_separators>h2+div>p:first-of-type>code>span"
-    );
     wordSeparatorsOption =
         document.getElementById("word_separators_option");
     wordSeparatorsOption.addEventListener(
