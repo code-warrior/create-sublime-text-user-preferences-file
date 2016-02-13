@@ -13,68 +13,68 @@
 var userChoice = document.querySelectorAll('h2+div>p:first-of-type>code>span');
 
 var fontObject = {
-    "data": [
+    'data': [
         {
-            "name": "Andalé Mono",
-            "link": "http://sourceforge.net/projects/corefonts/?source=navbar",
-            "license": "GNU GPL version 2.0",
-            "summary": "Andalé Mono is bundled with Mac OS X, but may not be " +
-                "included in Windows. It’s downloadable from Sourceforge."
+            'name': 'Andalé Mono',
+            'link': 'http://sourceforge.net/projects/corefonts/?source=navbar',
+            'license': 'GNU GPL version 2.0',
+            'summary': 'Andalé Mono is bundled with Mac OS X, but may not be ' +
+                'included in Windows. It’s downloadable from Sourceforge.'
         },
         {
-            "name": "Anonymous Pro",
-            "link": "http://www.marksimonson.com/fonts/view/anonymous-pro",
-            "license": "SIL OFL",
-            "summary": "Released in 2009, this fixed-width font comes in two " +
-                       "variants: Anonymous Pro and Anonymous Pro Minus. " +
-                       "Anonymous Pro is more compatible with Windows, Mac, and " +
-                       "Linux, and, thus, is recommended over Anonymous Pro Minus."
+            'name': 'Anonymous Pro',
+            'link': 'http://www.marksimonson.com/fonts/view/anonymous-pro',
+            'license': 'SIL OFL',
+            'summary': 'Released in 2009, this fixed-width font comes in two ' +
+                       'variants: Anonymous Pro and Anonymous Pro Minus. ' +
+                       'Anonymous Pro is more compatible with Windows, Mac, and ' +
+                       'Linux, and, thus, is recommended over Anonymous Pro Minus.'
         },
         {
-            "name": "Consolas",
-            "link": "http://www.fonts.com/font/microsoft-corporation/consolas",
-            "license": "Proprietary to Microsoft Corporation",
-            "summary": "Released by Microsoft and bundled with many of its " +
-                       "products, including Office and Visual Studio, Consolas is " +
-                       "a modern alternative to Courier and Courier New."
+            'name': 'Consolas',
+            'link': 'http://www.fonts.com/font/microsoft-corporation/consolas',
+            'license': 'Proprietary to Microsoft Corporation',
+            'summary': 'Released by Microsoft and bundled with many of its ' +
+                       'products, including Office and Visual Studio, Consolas is ' +
+                       'a modern alternative to Courier and Courier New.'
         },
         {
-            "name": "Courier",
-            "link": "http://en.wikipedia.org/wiki/Courier_%28typeface%29",
-            "license": "Royalty-free",
-            "summary": "It’s very, very likely that your computer already has " +
-                       "Courier installed."
+            'name': 'Courier',
+            'link': 'http://en.wikipedia.org/wiki/Courier_%28typeface%29',
+            'license': 'Royalty-free',
+            'summary': 'It’s very, very likely that your computer already has ' +
+                       'Courier installed.'
         },
         {
-            "name": "Courier New",
-            "link": "http://www.myfonts.com/fonts/mti/courier-new/licensing.html",
-            "license": "Proprietary to Monotype Corporation",
-            "summary": "Unlike Courier, its predecessor, Courier New is not " +
-                       "royalty-free. It’s commonly available in Windows and " +
-                       "Macintosh operating systems."
+            'name': 'Courier New',
+            'link': 'http://www.myfonts.com/fonts/mti/courier-new/licensing.html',
+            'license': 'Proprietary to Monotype Corporation',
+            'summary': 'Unlike Courier, its predecessor, Courier New is not ' +
+                       'royalty-free. It’s commonly available in Windows and ' +
+                       'Macintosh operating systems.'
         },
         {
-            "name": "Inconsolata",
-            "link": "http://www.levien.com/type/myfonts/inconsolata.html",
-            "license": "SIL OFL",
-            "summary": "Designed by a computer programmer, Ralph Levien, " +
-                       "specifically for other computer programmers, Inconsalata " +
-                       "is a favorite for many."
+            'name': 'Inconsolata',
+            'link': 'http://www.levien.com/type/myfonts/inconsolata.html',
+            'license': 'SIL OFL',
+            'summary': 'Designed by a computer programmer, Ralph Levien, ' +
+                       'specifically for other computer programmers, Inconsalata ' +
+                       'is a favorite for many.'
         },
         {
-            "name": "Fira Mono",
-            "link": "http://www.carrois.com/fira-4-1/",
-            "license": "SIL OFL",
-            "summary": "Designed specifically for Firefox OS, Fira Mono is a " +
-                       "new, humanist, fixed-width type face and is a member of " +
-                       "the Fira Sans font family."
+            'name': 'Fira Mono',
+            'link': 'http://www.carrois.com/fira-4-1/',
+            'license': 'SIL OFL',
+            'summary': 'Designed specifically for Firefox OS, Fira Mono is a ' +
+                       'new, humanist, fixed-width type face and is a member of ' +
+                       'the Fira Sans font family.'
         },
         {
-            "name": "Ubuntu Mono",
-            "link": "http://font.ubuntu.com/",
-            "license": "Ubuntu Font License",
-            "summary": "Just like Fira Mono was designed for an operating system, " +
-                       "so was Ubuntu Mono for the Ubuntu variant of Debian Linux."
+            'name': 'Ubuntu Mono',
+            'link': 'http://font.ubuntu.com/',
+            'license': 'Ubuntu Font License',
+            'summary': 'Just like Fira Mono was designed for an operating system, ' +
+                       'so was Ubuntu Mono for the Ubuntu variant of Debian Linux.'
         }
     ]
 },
@@ -180,41 +180,41 @@ function displayFontFaceInfo() {
         index = -1;
 
     switch (fontFaceChoice) {
-    case "andalé mono":
+    case 'andalé mono':
         index = 0;
         break;
 
-    case "anonymous pro":
+    case 'anonymous pro':
         index = 1;
         break;
 
-    case "consolas":
+    case 'consolas':
         index = 2;
         break;
 
-    case "courier":
+    case 'courier':
         index = 3;
         break;
 
-    case "courier new":
+    case 'courier new':
         index = 4;
         break;
 
-    case "inconsolata":
+    case 'inconsolata':
         index = 5;
         break;
 
-    case "fira mono":
+    case 'fira mono':
         index = 6;
         break;
 
-    case "ubuntu mono":
+    case 'ubuntu mono':
         index = 7;
         break;
     }
 
     if (index !== -1) {
-        setTimeout(function () {div.setAttribute("class", "transition"); }, 300);
+        setTimeout(function () {div.setAttribute('class', 'transition'); }, 300);
 
         firstParagraph.innerHTML =
             (fontObject.data[index].summary + ' More info <a title="License: ' +
@@ -226,7 +226,7 @@ function displayFontFaceInfo() {
 function hideIntroduction() {
     'use strict';
 
-    introduction.className = "hide";
+    introduction.className = 'hide';
 }
 
 function updateColorSchemeOption() {
@@ -234,8 +234,8 @@ function updateColorSchemeOption() {
 
     userChoice[0].textContent = colorSchemeOption.value;
 
-    if ("" === colorSchemeOption.value) {
-        userChoice[0].textContent = "Monokai.tmTheme";
+    if ('' === colorSchemeOption.value) {
+        userChoice[0].textContent = 'Monokai.tmTheme';
     }
 }
 
@@ -244,8 +244,8 @@ function updateFontFaceOption() {
 
     userChoice[1].textContent = fontFaceOption.value;
 
-    if ("" === fontFaceOption.value) {
-        userChoice[1].textContent = "";
+    if ('' === fontFaceOption.value) {
+        userChoice[1].textContent = '';
     }
 }
 
@@ -254,20 +254,20 @@ function updateFontSizeOption() {
 
     var input;
 
-    if ("" === fontSize.value) {
-        submit.removeAttribute("disabled");
-        userChoice[2].textContent = "10";
+    if ('' === fontSize.value) {
+        submit.removeAttribute('disabled');
+        userChoice[2].textContent = '10';
     } else {
         input = parseInt(fontSize.value, 10);
 
         if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
+            submit.setAttribute('disabled', 'disabled');
 
             userChoice[2].innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
-            submit.removeAttribute("disabled");
+            submit.removeAttribute('disabled');
             userChoice[2].textContent = fontSize.value;
         }
     }
@@ -278,21 +278,21 @@ function updateContentInSpanForWrapWidth() {
 
     var input;
 
-    if ("" === wrapWidthOption.value) {
-        submit.removeAttribute("disabled");
-        userChoiceForWrapWidthDisplayedInSpan.textContent = "0";
+    if ('' === wrapWidthOption.value) {
+        submit.removeAttribute('disabled');
+        userChoiceForWrapWidthDisplayedInSpan.textContent = '0';
     } else {
 
         input = parseInt(wrapWidthOption.value, 10);
 
         if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
+            submit.setAttribute('disabled', 'disabled');
 
             userChoiceForWrapWidthDisplayedInSpan.innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
-            submit.removeAttribute("disabled");
+            submit.removeAttribute('disabled');
             userChoiceForWrapWidthDisplayedInSpan.textContent =
                 wrapWidthOption.value;
         }
@@ -303,7 +303,7 @@ function updateFontOptionInSpan() {
     'use strict';
 
     userChoice[3].textContent =
-        ("" === fontOptionsOption.value) ? " " : fontOptionsOption.value;
+        ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
 }
 
 function updateLineNumbersOptionInSpan() {
@@ -323,21 +323,21 @@ function updateUserChoiceForMarginOptionInSpan() {
 
     var input;
 
-    if ("" === marginOption.value) {
-        submit.removeAttribute("disabled");
-        userChoiceForMarginDisplayedInSpan.textContent = "4";
+    if ('' === marginOption.value) {
+        submit.removeAttribute('disabled');
+        userChoiceForMarginDisplayedInSpan.textContent = '4';
     } else {
 
         input = parseInt(marginOption.value, 10);
 
         if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
+            submit.setAttribute('disabled', 'disabled');
 
             userChoiceForMarginDisplayedInSpan.innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
-            submit.removeAttribute("disabled");
+            submit.removeAttribute('disabled');
             userChoiceForMarginDisplayedInSpan.textContent =
                 marginOption.value;
         }
@@ -368,22 +368,22 @@ function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
 
     var input;
 
-    if ("" === tabSizeOption.value) {
-        submit.removeAttribute("disabled");
+    if ('' === tabSizeOption.value) {
+        submit.removeAttribute('disabled');
 
-        userChoiceForTabSizeDisplayedInSpan.textContent = "4";
+        userChoiceForTabSizeDisplayedInSpan.textContent = '4';
     } else {
 
         input = parseInt(tabSizeOption.value, 10);
 
         if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
+            submit.setAttribute('disabled', 'disabled');
 
             userChoiceForTabSizeDisplayedInSpan.innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
-            submit.removeAttribute("disabled");
+            submit.removeAttribute('disabled');
 
             userChoiceForTabSizeDisplayedInSpan.textContent =
                 tabSizeOption.value;
@@ -628,22 +628,22 @@ function updateContentInSpanForPreviewOnClick() {
 window.onload = function () {
     'use strict';
 
-    submit = document.getElementById("submit");
+    submit = document.getElementById('submit');
 
-    fontFaceInputBox =  document.getElementById("font_face_option");
-    fontFaceInputBox.addEventListener("input", displayFontFaceInfo, false);
-    div = document.querySelector("#font_face>h2+div>div");
-    firstParagraph = div.getElementsByTagName("p")[0];
+    fontFaceInputBox =  document.getElementById('font_face_option');
+    fontFaceInputBox.addEventListener('input', displayFontFaceInfo, false);
+    div = document.querySelector('#font_face>h2+div>div');
+    firstParagraph = div.getElementsByTagName('p')[0];
 
-    introduction = document.getElementById("introduction");
+    introduction = document.getElementById('introduction');
     styleSheet = document.styleSheets[0];
     styleSheet.insertRule(
-        "#introduction { height: " + introduction.clientHeight + "px; }",
+        '#introduction { height: ' + introduction.clientHeight + 'px; }',
         3
     );
-    button = document.getElementsByTagName("button")[0];
+    button = document.getElementsByTagName('button')[0];
     button.addEventListener(
-        "click",
+        'click',
         hideIntroduction,
         false
     );
@@ -651,9 +651,9 @@ window.onload = function () {
     /**
      * COLOR SCHEME
      */
-    colorSchemeOption = document.getElementById("color_scheme_option");
+    colorSchemeOption = document.getElementById('color_scheme_option');
     colorSchemeOption.addEventListener(
-        "input",
+        'input',
         updateColorSchemeOption,
         false
     );
@@ -662,9 +662,9 @@ window.onload = function () {
     /**
      * FONT FACE
      */
-    fontFaceOption = document.getElementById("font_face_option");
+    fontFaceOption = document.getElementById('font_face_option');
     fontFaceOption.addEventListener(
-        "input",
+        'input',
         updateFontFaceOption,
         false
     );
@@ -673,9 +673,9 @@ window.onload = function () {
     /**
      * FONT SIZE
      */
-    fontSize = document.getElementById("font_size_option");
+    fontSize = document.getElementById('font_size_option');
     fontSize.addEventListener(
-        "input",
+        'input',
         updateFontSizeOption,
         false
     );
@@ -684,9 +684,9 @@ window.onload = function () {
     /**
      * FONT OPTIONS
      */
-    fontOptionsOption = document.getElementById("font_options_option");
+    fontOptionsOption = document.getElementById('font_options_option');
     fontOptionsOption.addEventListener(
-        "change",
+        'change',
         updateFontOptionInSpan,
         false
     );
@@ -696,9 +696,9 @@ window.onload = function () {
      * WORD SEPARATORS
      */
     wordSeparatorsOption =
-        document.getElementById("word_separators_option");
+        document.getElementById('word_separators_option');
     wordSeparatorsOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForWordSeparators,
         false
     );
@@ -707,11 +707,11 @@ window.onload = function () {
      * LINE NUMBERS
      */
     userOptionInSpanForlineNumbers = document.querySelector(
-        "#line_numbers>h2+div>p:first-of-type>code>span"
+        '#line_numbers>h2+div>p:first-of-type>code>span'
     );
-    lineNumbersOption = document.getElementById("line_numbers_option");
+    lineNumbersOption = document.getElementById('line_numbers_option');
     lineNumbersOption.addEventListener(
-        "change",
+        'change',
         updateLineNumbersOptionInSpan,
         false
     );
@@ -721,11 +721,11 @@ window.onload = function () {
      * GUTTER
      */
     userOptionInSpanForGutter = document.querySelector(
-        "#gutter>h2+div>p:first-of-type>code>span"
+        '#gutter>h2+div>p:first-of-type>code>span'
     );
-    gutterOption = document.getElementById("gutter_option");
+    gutterOption = document.getElementById('gutter_option');
     gutterOption.addEventListener(
-        "change",
+        'change',
         updateGutterOptionInSpan,
         false
     );
@@ -735,11 +735,11 @@ window.onload = function () {
      * MARGIN
      */
     userChoiceForMarginDisplayedInSpan = document.querySelector(
-        "#margin>h2+div>p:first-of-type>code>span"
+        '#margin>h2+div>p:first-of-type>code>span'
     );
-    marginOption = document.getElementById("margin_option");
+    marginOption = document.getElementById('margin_option');
     marginOption.addEventListener(
-        "input",
+        'input',
         updateUserChoiceForMarginOptionInSpan,
         false
     );
@@ -749,11 +749,11 @@ window.onload = function () {
      * FOLD BUTTONS
      */
     userOptionInSpanForFoldButtons = document.querySelector(
-        "#fold_buttons>h2+div>p:first-of-type>code>span"
+        '#fold_buttons>h2+div>p:first-of-type>code>span'
     );
-    foldButtonsOption = document.getElementById("fold_buttons_option");
+    foldButtonsOption = document.getElementById('fold_buttons_option');
     foldButtonsOption.addEventListener(
-        "change",
+        'change',
         updateFoldButtonsOptionInSpan,
         false
     );
@@ -763,12 +763,12 @@ window.onload = function () {
      * FADE FOLD BUTTONS
      */
     userOptionInSpanForFadeFoldButtons = document.querySelector(
-        "#fade_fold_buttons>h2+div>p:first-of-type>code>span"
+        '#fade_fold_buttons>h2+div>p:first-of-type>code>span'
     );
     fadeFoldButtonsOption =
-        document.getElementById("fade_fold_buttons_option");
+        document.getElementById('fade_fold_buttons_option');
     fadeFoldButtonsOption.addEventListener(
-        "change",
+        'change',
         updateInSpanFadeFoldButtonsOption,
         false
     );
@@ -778,11 +778,11 @@ window.onload = function () {
      * RULERS
      */
     userChoiceForRulersDisplayedInSpan = document.querySelector(
-        "#rulers>h2+div>p:first-of-type>code>span"
+        '#rulers>h2+div>p:first-of-type>code>span'
     );
-    rulersOption = document.getElementById("rulers_option");
+    rulersOption = document.getElementById('rulers_option');
     rulersOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanforRulers,
         false
     );
@@ -792,11 +792,11 @@ window.onload = function () {
      * SPELL CHECK
      */
     userChoiceForSpellCheckOptionDisplayedInSpan = document.querySelector(
-        "#spell_check>h2+div>p:first-of-type>code>span"
+        '#spell_check>h2+div>p:first-of-type>code>span'
     );
-    spellCheckOption = document.getElementById("spell_check_option");
+    spellCheckOption = document.getElementById('spell_check_option');
     spellCheckOption.addEventListener(
-        "change",
+        'change',
         updateUserChoiceForSpellCheckOptionDisplayedInSpan,
         false
     );
@@ -807,11 +807,11 @@ window.onload = function () {
      * TAB SIZE
      */
     userChoiceForTabSizeDisplayedInSpan = document.querySelector(
-        "#tab_size>h2+div>p:first-of-type>code>span"
+        '#tab_size>h2+div>p:first-of-type>code>span'
     );
-    tabSizeOption = document.getElementById("tab_size_option");
+    tabSizeOption = document.getElementById('tab_size_option');
     tabSizeOption.addEventListener(
-        "input",
+        'input',
         updateUserChoiceForTabSizeOptionDisplayedInSpan,
         false
     );
@@ -821,13 +821,13 @@ window.onload = function () {
      * TRANSLATE TABS TO SPACES
      */
     userChoiceForTranslateTabsToSpacesDisplayedInSpan = document.querySelector(
-        "#translate_tabs_to_spaces>h2+div>p:first-of-type>code>span"
+        '#translate_tabs_to_spaces>h2+div>p:first-of-type>code>span'
     );
     translateTabsToSpacesOption = document.getElementById(
-        "translate_tabs_to_spaces_option"
+        'translate_tabs_to_spaces_option'
     );
     translateTabsToSpacesOption.addEventListener(
-        "change",
+        'change',
         updateTranslateTabsToSpaces,
         false
     );
@@ -838,11 +838,11 @@ window.onload = function () {
      * USE TAB STOPS
      */
     userChoiceForUseTabStopsInSpan = document.querySelector(
-        "#use_tab_stops>h2+div>p:first-of-type>code>span"
+        '#use_tab_stops>h2+div>p:first-of-type>code>span'
     );
-    useTabStopsOption = document.getElementById("use_tab_stops_option");
+    useTabStopsOption = document.getElementById('use_tab_stops_option');
     useTabStopsOption.addEventListener(
-        "change",
+        'change',
         updateUseTabStopsOption,
         false
     );
@@ -852,11 +852,11 @@ window.onload = function () {
      * DETECT INDENTATION
      */
     userChoiceForDetectIndentationInSpan = document.querySelector(
-        "#detect_indentation>h2+div>p:first-of-type>code>span"
+        '#detect_indentation>h2+div>p:first-of-type>code>span'
     );
-    detectIndentationOption = document.getElementById("detect_indentation_option");
+    detectIndentationOption = document.getElementById('detect_indentation_option');
     detectIndentationOption.addEventListener(
-        "change",
+        'change',
         updateDetectIndentationOption,
         false
     );
@@ -867,11 +867,11 @@ window.onload = function () {
      * AUTO INDENT
      */
     userChoiceForAutoIndentDisplayedInSpan = document.querySelector(
-        "#auto_indent>h2+div>p:first-of-type>code>span"
+        '#auto_indent>h2+div>p:first-of-type>code>span'
     );
-    autoIndentOption = document.getElementById("auto_indent_option");
+    autoIndentOption = document.getElementById('auto_indent_option');
     autoIndentOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForAutoIndentOption,
         false
     );
@@ -881,12 +881,12 @@ window.onload = function () {
      * TRIM AUTOMATIC WHITE SPACE
      */
     userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan = document.querySelector(
-        "#trim_automatic_white_space>h2+div>p:first-of-type>code>span"
+        '#trim_automatic_white_space>h2+div>p:first-of-type>code>span'
     );
     trimAutomaticWhiteSpaceOption =
-        document.getElementById("trim_automatic_white_space_option");
+        document.getElementById('trim_automatic_white_space_option');
     trimAutomaticWhiteSpaceOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForTrimAutomaticWhiteSpace,
         false
     );
@@ -897,12 +897,12 @@ window.onload = function () {
      * WORD WRAP
      */
     userChoiceForWordWrapDisplayedInSpan = document.querySelector(
-        "#word_wrap>h2+div>p:first-of-type>code>span"
+        '#word_wrap>h2+div>p:first-of-type>code>span'
     );
     wordWrapOption =
-        document.getElementById("word_wrap_option");
+        document.getElementById('word_wrap_option');
     wordWrapOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForWordWrap,
         false
     );
@@ -912,11 +912,11 @@ window.onload = function () {
      * WRAP WIDTH
      */
     userChoiceForWrapWidthDisplayedInSpan = document.querySelector(
-        "#wrap_width>h2+div>p:first-of-type>code>span"
+        '#wrap_width>h2+div>p:first-of-type>code>span'
     );
-    wrapWidthOption = document.getElementById("wrap_width_option");
+    wrapWidthOption = document.getElementById('wrap_width_option');
     wrapWidthOption.addEventListener(
-        "input",
+        'input',
         updateContentInSpanForWrapWidth,
         false
     );
@@ -926,11 +926,11 @@ window.onload = function () {
      * DRAW CENTERED
      */
     userChoiceForDrawCenteredDisplayedInSpan = document.querySelector(
-        "#draw_centered>h2+div>p:first-of-type>code>span"
+        '#draw_centered>h2+div>p:first-of-type>code>span'
     );
-    drawCenteredOption = document.getElementById("draw_centered_option");
+    drawCenteredOption = document.getElementById('draw_centered_option');
     drawCenteredOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDrawCentered,
         false
     );
@@ -941,11 +941,11 @@ window.onload = function () {
      */
     userChoiceForDictionaryDisplayedInSpan =
         document.querySelector(
-            "#dictionary>h2+div>p:first-of-type>code>span"
+            '#dictionary>h2+div>p:first-of-type>code>span'
         );
-    dictionaryOption = document.getElementById("dictionary_option");
+    dictionaryOption = document.getElementById('dictionary_option');
     dictionaryOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDictionary,
         false
     );
@@ -957,11 +957,11 @@ window.onload = function () {
      */
     userChoiceForDrawMinimapBorderDisplayedInSpan =
         document.querySelector(
-            "#draw_minimap_border>h2+div>p:first-of-type>code>span"
+            '#draw_minimap_border>h2+div>p:first-of-type>code>span'
         );
-    drawMinimapBorderOption = document.getElementById("draw_minimap_border_option");
+    drawMinimapBorderOption = document.getElementById('draw_minimap_border_option');
     drawMinimapBorderOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDrawMinimapBorder,
         false
     );
@@ -973,12 +973,12 @@ window.onload = function () {
      */
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan =
         document.querySelector(
-            "#always_show_minimap_viewport>h2+div>p:first-of-type>code>span"
+            '#always_show_minimap_viewport>h2+div>p:first-of-type>code>span'
         );
     alwaysShowMinimapViewportOption =
-        document.getElementById("always_show_minimap_viewport_option");
+        document.getElementById('always_show_minimap_viewport_option');
     alwaysShowMinimapViewportOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForAlwaysShowMinimapViewport,
         false
     );
@@ -990,11 +990,11 @@ window.onload = function () {
      */
     userChoiceForHighlightLineDisplayedInSpan =
         document.querySelector(
-            "#highlight_line>h2+div>p:first-of-type>code>span"
+            '#highlight_line>h2+div>p:first-of-type>code>span'
         );
-    highlightLineOption = document.getElementById("highlight_line_option");
+    highlightLineOption = document.getElementById('highlight_line_option');
     highlightLineOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForHighlightLine,
         false
     );
@@ -1005,11 +1005,11 @@ window.onload = function () {
      * CARET STYLE
      */
     userChoiceForCaretStyleDisplayedInSpan = document.querySelector(
-        "#caret_style>h2+div>p:first-of-type>code>span"
+        '#caret_style>h2+div>p:first-of-type>code>span'
     );
-    caretStyleOption = document.getElementById("caret_style_option");
+    caretStyleOption = document.getElementById('caret_style_option');
     caretStyleOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForCaretStyleOption,
         false
     );
@@ -1019,11 +1019,11 @@ window.onload = function () {
      * SCROLL PAST END
      */
     userChoiceForScrollPastEndDisplayedInSpan = document.querySelector(
-        "#scroll_past_end>h2+div>p:first-of-type>code>span"
+        '#scroll_past_end>h2+div>p:first-of-type>code>span'
     );
-    scrollPastEndOption = document.getElementById("scroll_past_end_option");
+    scrollPastEndOption = document.getElementById('scroll_past_end_option');
     scrollPastEndOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForScrollPastEnd,
         false
     );
@@ -1034,11 +1034,11 @@ window.onload = function () {
      * DRAW WHITE SPACE
      */
     userChoiceForDrawWhiteSpaceDisplayedInSpan = document.querySelector(
-        "#draw_white_space>h2+div>p:first-of-type>code>span"
+        '#draw_white_space>h2+div>p:first-of-type>code>span'
     );
-    drawWhiteSpaceOption = document.getElementById("draw_white_space_option");
+    drawWhiteSpaceOption = document.getElementById('draw_white_space_option');
     drawWhiteSpaceOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDrawWhiteSpace,
         false
     );
@@ -1050,12 +1050,12 @@ window.onload = function () {
      */
     userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan =
         document.querySelector(
-            "#trim_trailing_white_space_on_save>h2+div>p:first-of-type>code>span"
+            '#trim_trailing_white_space_on_save>h2+div>p:first-of-type>code>span'
         );
     trimTrailingWhiteSpaceOnSaveOption =
-        document.getElementById("trim_trailing_white_space_on_save_option");
+        document.getElementById('trim_trailing_white_space_on_save_option');
     trimTrailingWhiteSpaceOnSaveOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForTrimTrailingWhiteSpace,
         false
     );
@@ -1067,12 +1067,12 @@ window.onload = function () {
      */
     userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan =
         document.querySelector(
-            "#ensure_newline_at_eof_on_save>h2+div>p:first-of-type>code>span"
+            '#ensure_newline_at_eof_on_save>h2+div>p:first-of-type>code>span'
         );
     ensureNewlineAtEOFOnSaveOption =
-        document.getElementById("ensure_newline_at_eof_on_save_option");
+        document.getElementById('ensure_newline_at_eof_on_save_option');
     ensureNewlineAtEOFOnSaveOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForEnsureNewlineAtEOFOnSave,
         false
     );
@@ -1084,11 +1084,11 @@ window.onload = function () {
      */
     userChoiceForSaveOnFocusLostDisplayedInSpan =
         document.querySelector(
-            "#save_on_focus_lost>h2+div>p:first-of-type>code>span"
+            '#save_on_focus_lost>h2+div>p:first-of-type>code>span'
         );
-    saveOnFocusLostOption = document.getElementById("save_on_focus_lost_option");
+    saveOnFocusLostOption = document.getElementById('save_on_focus_lost_option');
     saveOnFocusLostOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForSaveOnFocusLost,
         false
     );
@@ -1100,11 +1100,11 @@ window.onload = function () {
      */
     userChoiceForDefaultLineEndingDisplayedInSpan =
         document.querySelector(
-            "#default_line_ending>h2+div>p:first-of-type>code>span"
+            '#default_line_ending>h2+div>p:first-of-type>code>span'
         );
-    defaultLineEndingOption = document.getElementById("default_line_ending_option");
+    defaultLineEndingOption = document.getElementById('default_line_ending_option');
     defaultLineEndingOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDefaultLineEnding,
         false
     );
@@ -1116,12 +1116,12 @@ window.onload = function () {
      */
     userChoiceForCopyWithEmptySelectionDisplayedInSpan =
         document.querySelector(
-            "#copy_with_empty_selection>h2+div>p:first-of-type>code>span"
+            '#copy_with_empty_selection>h2+div>p:first-of-type>code>span'
         );
     copyWithEmptySelectionOption =
-        document.getElementById("copy_with_empty_selection_option");
+        document.getElementById('copy_with_empty_selection_option');
     copyWithEmptySelectionOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForCopyWithEmptySelection,
         false
     );
@@ -1133,11 +1133,11 @@ window.onload = function () {
      */
     userChoiceForDragTextDisplayedInSpan =
         document.querySelector(
-            "#drag_text>h2+div>p:first-of-type>code>span"
+            '#drag_text>h2+div>p:first-of-type>code>span'
         );
-    dragTextOption = document.getElementById("drag_text_option");
+    dragTextOption = document.getElementById('drag_text_option');
     dragTextOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForDragText,
         false
     );
@@ -1149,12 +1149,12 @@ window.onload = function () {
      */
     userChoiceForTreeAnimationEnabledDisplayedInSpan =
         document.querySelector(
-            "#tree_animation_enabled>h2+div>p:first-of-type>code>span"
+            '#tree_animation_enabled>h2+div>p:first-of-type>code>span'
         );
     treeAnimationEnabledOption =
-        document.getElementById("tree_animation_enabled_option");
+        document.getElementById('tree_animation_enabled_option');
     treeAnimationEnabledOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForTreeAnimationEnabled,
         false
     );
@@ -1166,12 +1166,12 @@ window.onload = function () {
      */
     userChoiceForAnimationEnabledDisplayedInSpan =
         document.querySelector(
-            "#animation_enabled>h2+div>p:first-of-type>code>span"
+            '#animation_enabled>h2+div>p:first-of-type>code>span'
         );
     animationEnabledOption =
-        document.getElementById("animation_enabled_option");
+        document.getElementById('animation_enabled_option');
     animationEnabledOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForAnimationEnabled,
         false
     );
@@ -1183,12 +1183,12 @@ window.onload = function () {
      */
     userChoiceForHighlightModifiedTabsDisplayedInSpan =
         document.querySelector(
-            "#highlight_modified_tabs>h2+div>p:first-of-type>code>span"
+            '#highlight_modified_tabs>h2+div>p:first-of-type>code>span'
         );
     highlightModifiedTabsOption =
-        document.getElementById("highlight_modified_tabs_option");
+        document.getElementById('highlight_modified_tabs_option');
     highlightModifiedTabsOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForHighlightModifiedTabs,
         false
     );
@@ -1200,11 +1200,11 @@ window.onload = function () {
      */
     userChoiceForOverlayScrollBarsDisplayInSpan =
         document.querySelector(
-            "#overlay_scroll_bars>h2+div>p:first-of-type>code>span"
+            '#overlay_scroll_bars>h2+div>p:first-of-type>code>span'
         );
-    overlayScrollBarsOption = document.getElementById("overlay_scroll_bars_option");
+    overlayScrollBarsOption = document.getElementById('overlay_scroll_bars_option');
     overlayScrollBarsOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForOverlayScrollBars,
         false
     );
@@ -1216,11 +1216,11 @@ window.onload = function () {
      */
     userChoiceForShowEncodingDisplayedInSpan =
         document.querySelector(
-            "#show_encoding>h2+div>p:first-of-type>code>span"
+            '#show_encoding>h2+div>p:first-of-type>code>span'
         );
-    showEncodingOption = document.getElementById("show_encoding_option");
+    showEncodingOption = document.getElementById('show_encoding_option');
     showEncodingOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForShowEncoding,
         false
     );
@@ -1232,11 +1232,11 @@ window.onload = function () {
      */
     userChoiceForShowLineEndingsDisplayedInSpan =
         document.querySelector(
-            "#show_line_endings>h2+div>p:first-of-type>code>span"
+            '#show_line_endings>h2+div>p:first-of-type>code>span'
         );
-    showLineEndingsOption = document.getElementById("show_line_endings_option");
+    showLineEndingsOption = document.getElementById('show_line_endings_option');
     showLineEndingsOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForShowLineEndings,
         false
     );
@@ -1248,11 +1248,11 @@ window.onload = function () {
      */
     userChoiceForHotExitDisplayedInSpan =
         document.querySelector(
-            "#hot_exit>h2+div>p:first-of-type>code>span"
+            '#hot_exit>h2+div>p:first-of-type>code>span'
         );
-    hotExitOption = document.getElementById("hot_exit_option");
+    hotExitOption = document.getElementById('hot_exit_option');
     hotExitOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForHotExit,
         false
     );
@@ -1264,12 +1264,12 @@ window.onload = function () {
      */
     userChoiceForAlwaysPromptForFileReloadDisplayedInSpan =
         document.querySelector(
-            "#always_prompt_for_file_reload>h2+div>p:first-of-type>code>span"
+            '#always_prompt_for_file_reload>h2+div>p:first-of-type>code>span'
         );
     alwaysPromptForFileReloadOption =
-        document.getElementById("always_prompt_for_file_reload_option");
+        document.getElementById('always_prompt_for_file_reload_option');
     alwaysPromptForFileReloadOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForAlwaysPromptForFileReload,
         false
     );
@@ -1281,12 +1281,12 @@ window.onload = function () {
      */
     userChoiceForOpenFilesInNewWindowDisplayedInSpan =
         document.querySelector(
-            "#open_files_in_new_window>h2+div>p:first-of-type>code>span"
+            '#open_files_in_new_window>h2+div>p:first-of-type>code>span'
         );
     openFilesInNewWindowOption =
-        document.getElementById("open_files_in_new_window_option");
+        document.getElementById('open_files_in_new_window_option');
     openFilesInNewWindowOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForOpenFilesInNewWindow,
         false
     );
@@ -1298,12 +1298,12 @@ window.onload = function () {
      */
     userChoiceForCreateWindowAtStartupDisplayedInSpan =
         document.querySelector(
-            "#create_window_at_startup>h2+div>p:first-of-type>code>span"
+            '#create_window_at_startup>h2+div>p:first-of-type>code>span'
         );
     createWindowAtStartupOption =
-        document.getElementById("create_window_at_startup_option");
+        document.getElementById('create_window_at_startup_option');
     createWindowAtStartupOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForCreateWindowAtStartup,
         false
     );
@@ -1315,11 +1315,11 @@ window.onload = function () {
      */
     userChoiceForShowFullPathDisplayedInSpan =
         document.querySelector(
-            "#show_full_path>h2+div>p:first-of-type>code>span"
+            '#show_full_path>h2+div>p:first-of-type>code>span'
         );
-    showFullPathOption = document.getElementById("show_full_path_option");
+    showFullPathOption = document.getElementById('show_full_path_option');
     showFullPathOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForShowFullPath,
         false
     );
@@ -1331,11 +1331,11 @@ window.onload = function () {
      */
     userChoiceForPreviewOnClickDisplayedInSpan =
         document.querySelector(
-            "#preview_on_click>h2+div>p:first-of-type>code>span"
+            '#preview_on_click>h2+div>p:first-of-type>code>span'
         );
-    previewOnClickOption = document.getElementById("preview_on_click_option");
+    previewOnClickOption = document.getElementById('preview_on_click_option');
     previewOnClickOption.addEventListener(
-        "change",
+        'change',
         updateContentInSpanForPreviewOnClick,
         false
     );
