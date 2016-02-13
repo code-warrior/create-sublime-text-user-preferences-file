@@ -95,7 +95,6 @@ var fontObject = {
     fontOptionsOption,
     lineNumbersOption,
     gutterOption,
-    userChoiceForMarginDisplayedInSpan,
     marginOption,
     userOptionInSpanForFoldButtons,
     foldButtonsOption,
@@ -729,9 +728,6 @@ window.onload = function () {
     /**
      * MARGIN
      */
-    userChoiceForMarginDisplayedInSpan = document.querySelector(
-        '#margin>h2+div>p:first-of-type>code>span'
-    );
     marginOption = document.getElementById('margin_option');
     marginOption.addEventListener(
         'input',
