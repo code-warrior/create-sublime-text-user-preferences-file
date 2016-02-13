@@ -360,6 +360,13 @@ function updateInSpanFadeFoldButtonsOption() {
     userChoice[9].textContent = fadeFoldButtonsOption.value;
 }
 
+function updateContentInSpanforRulers() {
+    'use strict';
+
+    userChoiceForRulersDisplayedInSpan.textContent =
+        rulersOption.value;
+}
+
 function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
     'use strict';
 
@@ -468,13 +475,6 @@ function updateContentInSpanForHighlightLine() {
 
     userChoiceForHighlightLineDisplayedInSpan.textContent =
         highlightLineOption.value;
-}
-
-function updateContentInSpanforRulers() {
-    'use strict';
-
-    userChoiceForRulersDisplayedInSpan.textContent =
-        rulersOption.value;
 }
 
 function updateContentInSpanForCaretStyleOption() {
