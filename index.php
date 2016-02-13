@@ -108,7 +108,7 @@ require_once "includes/93-preview_on_click.html";
                   id="submit"
                   value="Show me my preferences file!"></div>
    </form>
-   <script src="js/main.js"></script>
+   <script src="js/main.js" defer></script>
    <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
