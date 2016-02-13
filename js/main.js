@@ -96,7 +96,6 @@ var fontObject = {
     lineNumbersOption,
     gutterOption,
     marginOption,
-    userOptionInSpanForFoldButtons,
     foldButtonsOption,
     userOptionInSpanForFadeFoldButtons,
     fadeFoldButtonsOption,
@@ -739,9 +738,6 @@ window.onload = function () {
     /**
      * FOLD BUTTONS
      */
-    userOptionInSpanForFoldButtons = document.querySelector(
-        '#fold_buttons>h2+div>p:first-of-type>code>span'
-    );
     foldButtonsOption = document.getElementById('fold_buttons_option');
     foldButtonsOption.addEventListener(
         'change',
