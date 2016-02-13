@@ -289,29 +289,7 @@ function updateContentInSpan() {
     }
 }
 
-function updateContentInSpanForWrapWidth() {
-    'use strict';
 
-    var input;
-
-    if ('' === wrapWidthOption.value) {
-        submit.removeAttribute('disabled');
-        userChoiceForWrapWidthDisplayedInSpan.textContent = '0';
-    } else {
-
-        input = parseInt(wrapWidthOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute('disabled', 'disabled');
-
-            userChoiceForWrapWidthDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
-            submit.removeAttribute('disabled');
-            userChoiceForWrapWidthDisplayedInSpan.textContent =
-                wrapWidthOption.value;
-        }
     }
 }
 
@@ -436,6 +414,32 @@ function updateContentInSpanForWordWrap() {
 
     userChoiceForWordWrapDisplayedInSpan.textContent =
         wordWrapOption.value;
+}
+
+function updateContentInSpanForWrapWidth() {
+    'use strict';
+
+    var input;
+
+    if ('' === wrapWidthOption.value) {
+        submit.removeAttribute('disabled');
+        userChoiceForWrapWidthDisplayedInSpan.textContent = '0';
+    } else {
+
+        input = parseInt(wrapWidthOption.value, 10);
+
+        if (isNaN(input)) {
+            submit.setAttribute('disabled', 'disabled');
+
+            userChoiceForWrapWidthDisplayedInSpan.innerHTML =
+                '<span class="error">That is not a number. ' +
+                'Submission is disabled</span>';
+        } else {
+            submit.removeAttribute('disabled');
+            userChoiceForWrapWidthDisplayedInSpan.textContent =
+                wrapWidthOption.value;
+        }
+    }
 }
 
 function updateContentInSpanForDrawCentered() {
