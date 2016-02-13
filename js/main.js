@@ -93,6 +93,7 @@ var fontObject = {
     fontFaceOption,
     fontSize,
     fontOptionsOption,
+    wordSeparatorsOption,
     lineNumbersOption,
     gutterOption,
     marginOption,
@@ -114,7 +115,6 @@ var fontObject = {
     trimAutomaticWhiteSpaceOption,
     userChoiceForWordWrapDisplayedInSpan,
     wordWrapOption,
-    wordSeparatorsOption,
     wrapWidthOption,
     userChoiceForWrapWidthDisplayedInSpan,
     drawCenteredOption,
@@ -276,6 +276,11 @@ function updateContentInSpan() {
             ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
 
         break;
+
+    case 'word_separators_option':
+        userChoice[4].textContent = wordSeparatorsOption.value;
+
+        break;
     }
 }
 
@@ -303,12 +308,6 @@ function updateContentInSpanForWrapWidth() {
                 wrapWidthOption.value;
         }
     }
-}
-
-function updateContentInSpanForWordSeparators() {
-    'use strict';
-
-    userChoice[4].textContent = wordSeparatorsOption.value;
 }
 
 function updateLineNumbersOptionInSpan() {
@@ -675,13 +674,9 @@ window.onload = function () {
     /**
      * WORD SEPARATORS
      */
-    wordSeparatorsOption =
-        document.getElementById('word_separators_option');
-    wordSeparatorsOption.addEventListener(
-        'change',
-        updateContentInSpanForWordSeparators,
-        false
-    );
+    wordSeparatorsOption = document.getElementById('word_separators_option');
+    wordSeparatorsOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[4].textContent = wordSeparatorsOption.value;
 
     /**
      * LINE NUMBERS
