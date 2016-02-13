@@ -639,65 +639,47 @@ window.onload = function () {
         false
     );
 
-    /**
-     * COLOR SCHEME
-     */
+    /** COLOR SCHEME */
     colorSchemeOption = document.getElementById('color_scheme_option');
     colorSchemeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[0].textContent = colorSchemeOption.value;
 
-    /**
-     * FONT FACE
-     */
+    /** FONT FACE */
     fontFaceOption = document.getElementById('font_face_option');
     fontFaceOption.addEventListener('input', updateContentInSpan, false);
     userChoice[1].textContent = fontFaceOption.value;
 
-    /**
-     * FONT SIZE
-     */
+    /** FONT SIZE */
     fontSizeOption = document.getElementById('font_size_option');
     fontSizeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[2].textContent = fontSizeOption.value;
 
-    /**
-     * FONT OPTIONS
-     */
+    /** FONT OPTIONS */
     fontOptionsOption = document.getElementById('font_options_option');
     fontOptionsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[3].textContent = fontOptionsOption.value;
 
-    /**
-     * WORD SEPARATORS
-     */
+    /** WORD SEPARATORS */
     wordSeparatorsOption = document.getElementById('word_separators_option');
     wordSeparatorsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[4].textContent = wordSeparatorsOption.value;
 
-    /**
-     * LINE NUMBERS
-     */
+    /** LINE NUMBERS */
     lineNumbersOption = document.getElementById('line_numbers_option');
     lineNumbersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[5].textContent = lineNumbersOption.value;
 
-    /**
-     * GUTTER
-     */
+    /** GUTTER */
     gutterOption = document.getElementById('gutter_option');
     gutterOption.addEventListener('change', updateContentInSpan, false);
     userChoice[6].textContent = gutterOption.value;
 
-    /**
-     * MARGIN
-     */
+    /** MARGIN */
     marginOption = document.getElementById('margin_option');
     marginOption.addEventListener('input', updateContentInSpan, false);
     userChoice[7].textContent = marginOption.value;
 
-    /**
-     * FOLD BUTTONS
-     */
+    /** FOLD BUTTONS */
     foldButtonsOption = document.getElementById('fold_buttons_option');
     foldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[8].textContent = foldButtonsOption.value;
