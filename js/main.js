@@ -251,6 +251,30 @@ function updateFontFaceOption() {
     }
 }
 
+function updateFontSizeOption() {
+    "use strict";
+
+    var input;
+
+    if ("" === fontSize.value) {
+        submit.removeAttribute("disabled");
+        userChoice[2].textContent = "10";
+    } else {
+        input = parseInt(fontSize.value, 10);
+
+        if (isNaN(input)) {
+            submit.setAttribute("disabled", "disabled");
+
+            userChoice[2].innerHTML =
+                '<span class="error">That is not a number. ' +
+                'Submission is disabled</span>';
+        } else {
+            submit.removeAttribute("disabled");
+            userChoice[2].textContent = fontSize.value;
+        }
+    }
+}
+
 function updateContentInSpanForWrapWidth() {
     "use strict";
 
@@ -273,30 +297,6 @@ function updateContentInSpanForWrapWidth() {
             submit.removeAttribute("disabled");
             userChoiceForWrapWidthDisplayedInSpan.textContent =
                 wrapWidthOption.value;
-        }
-    }
-}
-
-function updateFontSizeOption() {
-    "use strict";
-
-    var input;
-
-    if ("" === fontSize.value) {
-        submit.removeAttribute("disabled");
-        userChoice[2].textContent = "10";
-    } else {
-        input = parseInt(fontSize.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
-
-            userChoice[2].innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
-            submit.removeAttribute("disabled");
-            userChoice[2].textContent = fontSize.value;
         }
     }
 }
