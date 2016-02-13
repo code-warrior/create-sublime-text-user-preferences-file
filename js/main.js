@@ -238,6 +238,38 @@ function updateContentInSpan() {
         }
 
         break;
+
+    case 'font_face_option':
+        userChoice[1].textContent = fontFaceOption.value;
+
+        if ('' === fontFaceOption.value) {
+            userChoice[1].textContent = '';
+        }
+
+        break;
+
+    case 'font_size_option':
+        var input;
+
+        if ('' === fontSize.value) {
+            submit.removeAttribute('disabled');
+            userChoice[2].textContent = '10';
+        } else {
+            input = parseInt(fontSize.value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[2].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[2].textContent = fontSize.value;
+            }
+        }
+
+        break;
     }
 }
 
@@ -263,40 +295,6 @@ function updateContentInSpanForWrapWidth() {
             submit.removeAttribute('disabled');
             userChoiceForWrapWidthDisplayedInSpan.textContent =
                 wrapWidthOption.value;
-        }
-    }
-}
-
-function updateFontFaceOption() {
-    'use strict';
-
-    userChoice[1].textContent = fontFaceOption.value;
-
-    if ('' === fontFaceOption.value) {
-        userChoice[1].textContent = '';
-    }
-}
-
-function updateFontSizeOption() {
-    'use strict';
-
-    var input;
-
-    if ('' === fontSize.value) {
-        submit.removeAttribute('disabled');
-        userChoice[2].textContent = '10';
-    } else {
-        input = parseInt(fontSize.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute('disabled', 'disabled');
-
-            userChoice[2].innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
-            submit.removeAttribute('disabled');
-            userChoice[2].textContent = fontSize.value;
         }
     }
 }
@@ -658,22 +656,14 @@ window.onload = function () {
      * FONT FACE
      */
     fontFaceOption = document.getElementById('font_face_option');
-    fontFaceOption.addEventListener(
-        'input',
-        updateFontFaceOption,
-        false
-    );
+    fontFaceOption.addEventListener('input', updateContentInSpan, false);
     userChoice[1].textContent = fontFaceOption.value;
 
     /**
      * FONT SIZE
      */
     fontSize = document.getElementById('font_size_option');
-    fontSize.addEventListener(
-        'input',
-        updateFontSizeOption,
-        false
-    );
+    fontSize.addEventListener('input', updateContentInSpan, false);
     userChoice[2].textContent = fontSize.value;
 
     /**
