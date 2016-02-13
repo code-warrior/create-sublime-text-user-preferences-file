@@ -315,13 +315,12 @@ function updateContentInSpan() {
         }
 
         break;
+
+    case 'fold_buttons_option':
+        userChoice[8].textContent = foldButtonsOption.value;
+
+        break;
     }
-}
-
-function updateFoldButtonsOptionInSpan() {
-    'use strict';
-
-    userChoice[8].textContent = foldButtonsOption.value;
 }
 
 function updateInSpanFadeFoldButtonsOption() {
@@ -700,11 +699,7 @@ window.onload = function () {
      * FOLD BUTTONS
      */
     foldButtonsOption = document.getElementById('fold_buttons_option');
-    foldButtonsOption.addEventListener(
-        'change',
-        updateFoldButtonsOptionInSpan,
-        false
-    );
+    foldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[8].textContent = foldButtonsOption.value;
 
     /**
