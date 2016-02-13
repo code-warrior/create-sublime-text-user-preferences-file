@@ -27,27 +27,30 @@ var fontObject = {
                 'license': 'SIL OFL',
                 'summary': 'Released in 2009, this fixed-width font comes in two ' +
                            'variants: Anonymous Pro and Anonymous Pro Minus. ' +
-                           'Anonymous Pro is more compatible with Windows, Mac, and ' +
-                           'Linux, and, thus, is recommended over Anonymous Pro Minus.'
+                           'Anonymous Pro is more compatible with Windows, Mac, ' +
+                           'and Linux, and, thus, is recommended over Anonymous ' +
+                           'Pro Minus.'
             },
             {
                 'name': 'Consolas',
                 'link': 'http://www.fonts.com/font/microsoft-corporation/consolas',
                 'license': 'Proprietary to Microsoft Corporation',
                 'summary': 'Released by Microsoft and bundled with many of its ' +
-                           'products, including Office and Visual Studio, Consolas is ' +
-                           'a modern alternative to Courier and Courier New.'
+                           'products, including Office and Visual Studio, ' +
+                           'Consolas is a modern alternative to Courier and ' +
+                           'Courier New.'
             },
             {
                 'name': 'Courier',
                 'link': 'http://en.wikipedia.org/wiki/Courier_%28typeface%29',
                 'license': 'Royalty-free',
-                'summary': 'It’s very, very likely that your computer already has ' +
-                           'Courier installed.'
+                'summary': 'It’s very, very likely that your computer already ' +
+                           'has Courier installed.'
             },
             {
                 'name': 'Courier New',
-                'link': 'http://www.myfonts.com/fonts/mti/courier-new/licensing.html',
+                'link':
+                    'http://www.myfonts.com/fonts/mti/courier-new/licensing.html',
                 'license': 'Proprietary to Monotype Corporation',
                 'summary': 'Unlike Courier, its predecessor, Courier New is not ' +
                            'royalty-free. It’s commonly available in Windows and ' +
@@ -58,23 +61,24 @@ var fontObject = {
                 'link': 'http://www.levien.com/type/myfonts/inconsolata.html',
                 'license': 'SIL OFL',
                 'summary': 'Designed by a computer programmer, Ralph Levien, ' +
-                           'specifically for other computer programmers, Inconsalata ' +
-                           'is a favorite for many.'
+                           'specifically for other computer programmers, ' +
+                           'Inconsalata is a favorite for many.'
             },
             {
                 'name': 'Fira Mono',
                 'link': 'http://www.carrois.com/fira-4-1/',
                 'license': 'SIL OFL',
                 'summary': 'Designed specifically for Firefox OS, Fira Mono is a ' +
-                           'new, humanist, fixed-width type face and is a member of ' +
-                           'the Fira Sans font family.'
+                           'new, humanist, fixed-width type face and is a member ' +
+                           'of the Fira Sans font family.'
             },
             {
                 'name': 'Ubuntu Mono',
                 'link': 'http://font.ubuntu.com/',
                 'license': 'Ubuntu Font License',
-                'summary': 'Just like Fira Mono was designed for an operating system, ' +
-                           'so was Ubuntu Mono for the Ubuntu variant of Debian Linux.'
+                'summary': 'Just like Fira Mono was designed for an operating ' +
+                           'system, so was Ubuntu Mono for the Ubuntu variant of ' +
+                           'Debian Linux.'
             }
         ]
     },
