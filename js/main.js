@@ -86,7 +86,6 @@ var fontObject = {
     styleSheet,
     button,
     colorSchemeOption,
-    userOptionForFontFace,
     fontFaceOption,
     userOptionForFontSize,
     fontSize,
