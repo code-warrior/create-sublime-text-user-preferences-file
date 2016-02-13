@@ -226,6 +226,21 @@ function hideIntroduction() {
     introduction.className = 'hide';
 }
 
+function updateContentInSpan() {
+    'use strict';
+
+    switch(this.id) {
+    case 'color_scheme_option':
+        userChoice[0].textContent = colorSchemeOption.value;
+
+        if ('' === colorSchemeOption.value) {
+            userChoice[0].textContent = 'Monokai.tmTheme';
+        }
+
+        break;
+    }
+}
+
 function updateContentInSpanForWrapWidth() {
     'use strict';
 
