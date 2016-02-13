@@ -1,5 +1,17 @@
 /*jslint browser: true, devel: true, indent: 4, maxlen: 85 */
 
+/*
+ * This variable holds an array of the <span> elements in index.php that are updated
+ * when a user makes a choice for any of the available options. The default Sublime
+ * option is what is initially displayed.
+ *
+ * Consider the `font_size` option, with its default value of `10`. In the web page,
+ * it appears underneath the heading as `"font_size": 10,`. The number 10 is wrapped
+ * in <span> tags referenced by this option at userChoice[2]. If a user chooses 14 as
+ * the value to `font_size`, then userChoice[2] is updated below with the new value.
+ */
+var userChoice = document.querySelectorAll('h2+div>p:first-of-type>code>span');
+
 var fontObject = {
     "data": [
         {
