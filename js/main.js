@@ -320,13 +320,12 @@ function updateContentInSpan() {
         userChoice[8].textContent = foldButtonsOption.value;
 
         break;
+
+    case 'fade_fold_buttons_option':
+        userChoice[9].textContent = fadeFoldButtonsOption.value;
+
+        break;
     }
-}
-
-function updateInSpanFadeFoldButtonsOption() {
-    'use strict';
-
-    userChoice[9].textContent = fadeFoldButtonsOption.value;
 }
 
 function updateContentInSpanforRulers() {
@@ -684,16 +683,9 @@ window.onload = function () {
     foldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[8].textContent = foldButtonsOption.value;
 
-    /**
-     * FADE FOLD BUTTONS
-     */
-    fadeFoldButtonsOption =
-        document.getElementById('fade_fold_buttons_option');
-    fadeFoldButtonsOption.addEventListener(
-        'change',
-        updateInSpanFadeFoldButtonsOption,
-        false
-    );
+    /** FADE FOLD BUTTONS */
+    fadeFoldButtonsOption = document.getElementById('fade_fold_buttons_option');
+    fadeFoldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[9].textContent = fadeFoldButtonsOption.value;
 
     /**
