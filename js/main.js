@@ -324,7 +324,7 @@ function updateLineNumbersOptionInSpan() {
 function updateGutterOptionInSpan() {
     'use strict';
 
-    userOptionInSpanForGutter.textContent = gutterOption.value;
+    userChoice[6].textContent = gutterOption.value;
 }
 
 function updateUserChoiceForMarginOptionInSpan() {
@@ -729,7 +729,7 @@ window.onload = function () {
         updateGutterOptionInSpan,
         false
     );
-    userOptionInSpanForGutter.textContent = gutterOption.value;
+    userChoice[6].textContent = gutterOption.value;
 
     /**
      * MARGIN
