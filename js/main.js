@@ -229,6 +229,8 @@ function hideIntroduction() {
 function updateContentInSpan() {
     'use strict';
 
+    var input;
+
     switch (this.id) {
     case 'color_scheme_option':
         userChoice[0].textContent = colorSchemeOption.value;
@@ -249,7 +251,6 @@ function updateContentInSpan() {
         break;
 
     case 'font_size_option':
-        var input;
 
         if ('' === fontSizeOption.value) {
             submit.removeAttribute('disabled');
@@ -293,7 +294,6 @@ function updateContentInSpan() {
         break;
 
     case 'margin_option':
-        var input;
 
         if ('' === marginOption.value) {
             submit.removeAttribute('disabled');
