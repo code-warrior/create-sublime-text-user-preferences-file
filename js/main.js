@@ -97,7 +97,6 @@ var fontObject = {
     gutterOption,
     marginOption,
     foldButtonsOption,
-    userOptionInSpanForFadeFoldButtons,
     fadeFoldButtonsOption,
     userChoiceForRulersDisplayedInSpan,
     rulersOption,
@@ -749,9 +748,6 @@ window.onload = function () {
     /**
      * FADE FOLD BUTTONS
      */
-    userOptionInSpanForFadeFoldButtons = document.querySelector(
-        '#fade_fold_buttons>h2+div>p:first-of-type>code>span'
-    );
     fadeFoldButtonsOption =
         document.getElementById('fade_fold_buttons_option');
     fadeFoldButtonsOption.addEventListener(
