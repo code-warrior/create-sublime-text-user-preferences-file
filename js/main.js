@@ -87,7 +87,6 @@ var fontObject = {
     button,
     colorSchemeOption,
     fontFaceOption,
-    userOptionForFontSize,
     fontSize,
     userOptionForFontOptions,
     fontOptionsOption,
@@ -285,19 +284,19 @@ function updateFontSizeOption() {
 
     if ("" === fontSize.value) {
         submit.removeAttribute("disabled");
-        userOptionForFontSize.textContent = "10";
+        userChoice[2].textContent = "10";
     } else {
         input = parseInt(fontSize.value, 10);
 
         if (isNaN(input)) {
             submit.setAttribute("disabled", "disabled");
 
-            userOptionForFontSize.innerHTML =
+            userChoice[2].innerHTML =
                 '<span class="error">That is not a number. ' +
                 'Submission is disabled</span>';
         } else {
             submit.removeAttribute("disabled");
-            userOptionForFontSize.textContent = fontSize.value;
+            userChoice[2].textContent = fontSize.value;
         }
     }
 }
@@ -677,16 +676,13 @@ window.onload = function () {
     /**
      * FONT SIZE
      */
-    userOptionForFontSize = document.querySelector(
-        "#font_size>h2+div>p:first-of-type>code>span"
-    );
     fontSize = document.getElementById("font_size_option");
     fontSize.addEventListener(
         "input",
         updateFontSizeOption,
         false
     );
-    userOptionForFontSize.textContent = fontSize.value;
+    userChoice[2].textContent = fontSize.value;
 
     /**
      * FONT OPTIONS
