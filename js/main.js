@@ -94,7 +94,6 @@ var fontObject = {
     fontSize,
     fontOptionsOption,
     lineNumbersOption,
-    userOptionInSpanForGutter,
     gutterOption,
     userChoiceForMarginDisplayedInSpan,
     marginOption,
@@ -720,9 +719,6 @@ window.onload = function () {
     /**
      * GUTTER
      */
-    userOptionInSpanForGutter = document.querySelector(
-        '#gutter>h2+div>p:first-of-type>code>span'
-    );
     gutterOption = document.getElementById('gutter_option');
     gutterOption.addEventListener(
         'change',
