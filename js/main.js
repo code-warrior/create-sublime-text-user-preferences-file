@@ -246,10 +246,10 @@ function updateColorSchemeOption() {
 function updateFontFaceOption() {
     "use strict";
 
-    userOptionForFontFace.textContent = fontFaceOption.value;
+    userChoice[1].textContent = fontFaceOption.value;
 
     if ("" === fontFaceOption.value) {
-        userOptionForFontFace.textContent = "";
+        userChoice[1].textContent = "";
     }
 }
 
@@ -667,16 +667,13 @@ window.onload = function () {
     /**
      * FONT FACE
      */
-    userOptionForFontFace = document.querySelector(
-        "#font_face>h2+div>p:first-of-type>code>span"
-    );
     fontFaceOption = document.getElementById("font_face_option");
     fontFaceOption.addEventListener(
         "input",
         updateFontFaceOption,
         false
     );
-    userOptionForFontFace.textContent = fontFaceOption.value;
+    userChoice[1].textContent = fontFaceOption.value;
 
     /**
      * FONT SIZE
