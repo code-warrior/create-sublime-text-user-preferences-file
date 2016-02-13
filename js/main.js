@@ -363,8 +363,7 @@ function updateInSpanFadeFoldButtonsOption() {
 function updateContentInSpanforRulers() {
     'use strict';
 
-    userChoiceForRulersDisplayedInSpan.textContent =
-        rulersOption.value;
+    userChoice[10].textContent = rulersOption.value;
 }
 
 function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
@@ -769,7 +768,7 @@ window.onload = function () {
         updateContentInSpanforRulers,
         false
     );
-    userChoiceForRulersDisplayedInSpan.textContent = rulersOption.value;
+    userChoice[10].textContent = rulersOption.value;
 
     /**
      * SPELL CHECK
