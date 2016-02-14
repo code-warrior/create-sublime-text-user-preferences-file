@@ -330,13 +330,12 @@ function updateContentInSpan() {
         userChoice[10].textContent = rulersOption.value;
 
         break;
+
+    case '':
+        userChoice[11].textContent = spellCheckOption.value;
+
+        break;
     }
-}
-
-function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
-    'use strict';
-
-    userChoice[11].textContent = spellCheckOption.value;
 }
 
 function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
@@ -692,15 +691,9 @@ window.onload = function () {
     rulersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[10].textContent = rulersOption.value;
 
-    /**
-     * SPELL CHECK
-     */
+    /** SPELL CHECK */
     spellCheckOption = document.getElementById('spell_check_option');
-    spellCheckOption.addEventListener(
-        'change',
-        updateUserChoiceForSpellCheckOptionDisplayedInSpan,
-        false
-    );
+    spellCheckOption.addEventListener('change', updateContentInSpan, false);
     userChoice[11].textContent = spellCheckOption.value;
 
     /**
