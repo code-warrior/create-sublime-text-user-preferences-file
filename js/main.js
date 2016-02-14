@@ -105,9 +105,8 @@ var fontObject = {
     translateTabsToSpacesOption,
     useTabStopsOption,
     detectIndentationOption,
-
-    userChoiceForAutoIndentDisplayedInSpan,
     autoIndentOption,
+
     userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan,
     trimAutomaticWhiteSpaceOption,
     userChoiceForWordWrapDisplayedInSpan,
@@ -369,14 +368,12 @@ function updateContentInSpan() {
         userChoice[15].textContent = detectIndentationOption.value;
 
         break;
+
+    case 'auto_indent_option':
+        userChoice[16].textContent = autoIndentOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForAutoIndentOption() {
-    'use strict';
-
-    userChoiceForAutoIndentDisplayedInSpan.textContent =
-        autoIndentOption.value;
 }
 
 function updateContentInSpanForTrimAutomaticWhiteSpace() {
@@ -709,19 +706,10 @@ window.onload = function () {
     detectIndentationOption.addEventListener('change', updateContentInSpan, false);
     userChoice[15].textContent = detectIndentationOption.value;
 
-    /**
-     * AUTO INDENT
-     */
-    userChoiceForAutoIndentDisplayedInSpan = document.querySelector(
-        '#auto_indent>h2+div>p:first-of-type>code>span'
-    );
+    /** AUTO INDENT */
     autoIndentOption = document.getElementById('auto_indent_option');
-    autoIndentOption.addEventListener(
-        'change',
-        updateContentInSpanForAutoIndentOption,
-        false
-    );
-    userChoiceForAutoIndentDisplayedInSpan.textContent = autoIndentOption.value;
+    autoIndentOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[16].textContent = autoIndentOption.value;
 
     /**
      * TRIM AUTOMATIC WHITE SPACE
