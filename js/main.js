@@ -104,11 +104,10 @@ var fontObject = {
     tabSizeOption,
     translateTabsToSpacesOption,
     useTabStopsOption,
+    detectIndentationOption,
 
     userChoiceForAutoIndentDisplayedInSpan,
     autoIndentOption,
-    userChoiceForDetectIndentationInSpan,
-    detectIndentationOption,
     userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan,
     trimAutomaticWhiteSpaceOption,
     userChoiceForWordWrapDisplayedInSpan,
@@ -363,6 +362,12 @@ function updateContentInSpan() {
 
     case 'use_tab_stops_option':
         userChoice[14].textContent = useTabStopsOption.value;
+
+        break;
+
+    case 'detect_indentation_option':
+        userChoice[15].textContent = detectIndentationOption.value;
+
         break;
     }
 }
@@ -372,12 +377,6 @@ function updateContentInSpanForAutoIndentOption() {
 
     userChoiceForAutoIndentDisplayedInSpan.textContent =
         autoIndentOption.value;
-}
-
-function updateDetectIndentationOption() {
-    'use strict';
-
-    userChoiceForDetectIndentationInSpan.textContent = detectIndentationOption.value;
 }
 
 function updateContentInSpanForTrimAutomaticWhiteSpace() {
@@ -705,20 +704,10 @@ window.onload = function () {
     useTabStopsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[14].textContent = useTabStopsOption.value;
 
-    /**
-     * DETECT INDENTATION
-     */
-    userChoiceForDetectIndentationInSpan = document.querySelector(
-        '#detect_indentation>h2+div>p:first-of-type>code>span'
-    );
+    /** DETECT INDENTATION */
     detectIndentationOption = document.getElementById('detect_indentation_option');
-    detectIndentationOption.addEventListener(
-        'change',
-        updateDetectIndentationOption,
-        false
-    );
-    userChoiceForDetectIndentationInSpan.textContent =
-        detectIndentationOption.value;
+    detectIndentationOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[15].textContent = detectIndentationOption.value;
 
     /**
      * AUTO INDENT
