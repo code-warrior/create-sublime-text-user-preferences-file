@@ -102,9 +102,8 @@ var fontObject = {
     rulersOption,
     spellCheckOption,
     tabSizeOption,
-
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan,
     translateTabsToSpacesOption,
+
     userChoiceForUseTabStopsInSpan,
     useTabStopsOption,
     userChoiceForAutoIndentDisplayedInSpan,
@@ -359,14 +358,12 @@ function updateContentInSpan() {
         }
 
         break;
+
+    case 'translate_tabs_to_spaces_option':
+        userChoice[13].textContent = translateTabsToSpacesOption.value;
+
+        break;
     }
-}
-
-function updateTranslateTabsToSpaces() {
-    'use strict';
-
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan.textContent =
-        translateTabsToSpacesOption.value;
 }
 
 function updateUseTabStopsOption() {
@@ -697,22 +694,16 @@ window.onload = function () {
     tabSizeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[12].textContent = tabSizeOption.value;
 
-    /**
-     * TRANSLATE TABS TO SPACES
-     */
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan = document.querySelector(
-        '#translate_tabs_to_spaces>h2+div>p:first-of-type>code>span'
-    );
+    /** TRANSLATE TABS TO SPACES */
     translateTabsToSpacesOption = document.getElementById(
         'translate_tabs_to_spaces_option'
     );
     translateTabsToSpacesOption.addEventListener(
         'change',
-        updateTranslateTabsToSpaces,
+        updateContentInSpan,
         false
     );
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan.textContent =
-        translateTabsToSpacesOption.value;
+    userChoice[13].textContent = translateTabsToSpacesOption.value;
 
     /**
      * USE TAB STOPS
