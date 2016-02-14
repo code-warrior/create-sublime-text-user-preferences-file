@@ -107,9 +107,8 @@ var fontObject = {
     detectIndentationOption,
     autoIndentOption,
     trimAutomaticWhiteSpaceOption,
-
-    userChoiceForWordWrapDisplayedInSpan,
     wordWrapOption,
+
     wrapWidthOption,
     userChoiceForWrapWidthDisplayedInSpan,
     drawCenteredOption,
@@ -377,14 +376,12 @@ function updateContentInSpan() {
         userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
 
         break;
+
+    case 'word_wrap_option':
+        userChoice[18].textContent = wordWrapOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForWordWrap() {
-    'use strict';
-
-    userChoiceForWordWrapDisplayedInSpan.textContent =
-        wordWrapOption.value;
 }
 
 function updateContentInSpanForWrapWidth() {
@@ -718,20 +715,10 @@ window.onload = function () {
     );
     userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
 
-    /**
-     * WORD WRAP
-     */
-    userChoiceForWordWrapDisplayedInSpan = document.querySelector(
-        '#word_wrap>h2+div>p:first-of-type>code>span'
-    );
-    wordWrapOption =
-        document.getElementById('word_wrap_option');
-    wordWrapOption.addEventListener(
-        'change',
-        updateContentInSpanForWordWrap,
-        false
-    );
-    userChoiceForWordWrapDisplayedInSpan.textContent = wordWrapOption.value;
+    /** WORD WRAP */
+    wordWrapOption = document.getElementById('word_wrap_option');
+    wordWrapOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[18].textContent = wordWrapOption.value;
 
     /**
      * WRAP WIDTH
