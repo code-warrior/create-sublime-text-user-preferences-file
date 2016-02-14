@@ -111,7 +111,6 @@ var fontObject = {
     wrapWidthOption,
     drawCenteredOption,
 
-    userChoiceForDrawCenteredDisplayedInSpan,
     dictionaryOption,
     userChoiceForDictionaryDisplayedInSpan,
     drawMinimapBorderOption,
@@ -402,14 +401,12 @@ function updateContentInSpan() {
         }
 
         break;
+
+    case 'draw_centered_option':
+        userChoice[20].textContent = drawCenteredOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDrawCentered() {
-    'use strict';
-
-    userChoiceForDrawCenteredDisplayedInSpan.textContent =
-        drawCenteredOption.value;
 }
 
 function updateContentInSpanForDictionary() {
@@ -721,16 +718,9 @@ window.onload = function () {
     userChoice[19].textContent = wrapWidthOption.value;
 
     // DRAW CENTERED
-    userChoiceForDrawCenteredDisplayedInSpan = document.querySelector(
-        '#draw_centered>h2+div>p:first-of-type>code>span'
-    );
     drawCenteredOption = document.getElementById('draw_centered_option');
-    drawCenteredOption.addEventListener(
-        'change',
-        updateContentInSpanForDrawCentered,
-        false
-    );
-    userChoiceForDrawCenteredDisplayedInSpan.textContent = drawCenteredOption.value;
+    drawCenteredOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[20].textContent = drawCenteredOption.value;
 
     /**
      * DICTIONARY
