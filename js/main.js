@@ -101,8 +101,8 @@ var fontObject = {
     fadeFoldButtonsOption,
     rulersOption,
     spellCheckOption,
-    userChoiceForTabSizeDisplayedInSpan,
     tabSizeOption,
+
     userChoiceForTranslateTabsToSpacesDisplayedInSpan,
     translateTabsToSpacesOption,
     userChoiceForUseTabStopsInSpan,
@@ -335,34 +335,30 @@ function updateContentInSpan() {
         userChoice[11].textContent = spellCheckOption.value;
 
         break;
-    }
-}
 
-function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
-    'use strict';
-
-    var input;
-
-    if ('' === tabSizeOption.value) {
-        submit.removeAttribute('disabled');
-
-        userChoiceForTabSizeDisplayedInSpan.textContent = '4';
-    } else {
-
-        input = parseInt(tabSizeOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute('disabled', 'disabled');
-
-            userChoiceForTabSizeDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
+    case 'tab_size_option':
+        if ('' === tabSizeOption.value) {
             submit.removeAttribute('disabled');
 
-            userChoiceForTabSizeDisplayedInSpan.textContent =
-                tabSizeOption.value;
+            userChoice[12].textContent = '4';
+        } else {
+
+            input = parseInt(tabSizeOption.value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[12].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+
+                userChoice[12].textContent = tabSizeOption.value;
+            }
         }
+
+        break;
     }
 }
 
@@ -696,19 +692,10 @@ window.onload = function () {
     spellCheckOption.addEventListener('change', updateContentInSpan, false);
     userChoice[11].textContent = spellCheckOption.value;
 
-    /**
-     * TAB SIZE
-     */
-    userChoiceForTabSizeDisplayedInSpan = document.querySelector(
-        '#tab_size>h2+div>p:first-of-type>code>span'
-    );
+    /** TAB SIZE */
     tabSizeOption = document.getElementById('tab_size_option');
-    tabSizeOption.addEventListener(
-        'input',
-        updateUserChoiceForTabSizeOptionDisplayedInSpan,
-        false
-    );
-    userChoiceForTabSizeDisplayedInSpan.textContent = tabSizeOption.value;
+    tabSizeOption.addEventListener('input', updateContentInSpan, false);
+    userChoice[12].textContent = tabSizeOption.value;
 
     /**
      * TRANSLATE TABS TO SPACES
