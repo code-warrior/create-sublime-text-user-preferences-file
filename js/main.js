@@ -109,8 +109,8 @@ var fontObject = {
     trimAutomaticWhiteSpaceOption,
     wordWrapOption,
     wrapWidthOption,
-
     drawCenteredOption,
+
     userChoiceForDrawCenteredDisplayedInSpan,
     dictionaryOption,
     userChoiceForDictionaryDisplayedInSpan,
@@ -609,72 +609,72 @@ window.onload = function () {
         false
     );
 
-    /** COLOR SCHEME */
+    // COLOR SCHEME
     colorSchemeOption = document.getElementById('color_scheme_option');
     colorSchemeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[0].textContent = colorSchemeOption.value;
 
-    /** FONT FACE */
+    // FONT FACE
     fontFaceOption = document.getElementById('font_face_option');
     fontFaceOption.addEventListener('input', updateContentInSpan, false);
     userChoice[1].textContent = fontFaceOption.value;
 
-    /** FONT SIZE */
+    // FONT SIZE
     fontSizeOption = document.getElementById('font_size_option');
     fontSizeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[2].textContent = fontSizeOption.value;
 
-    /** FONT OPTIONS */
+    // FONT OPTIONS
     fontOptionsOption = document.getElementById('font_options_option');
     fontOptionsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[3].textContent = fontOptionsOption.value;
 
-    /** WORD SEPARATORS */
+    // WORD SEPARATORS
     wordSeparatorsOption = document.getElementById('word_separators_option');
     wordSeparatorsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[4].textContent = wordSeparatorsOption.value;
 
-    /** LINE NUMBERS */
+    // LINE NUMBERS
     lineNumbersOption = document.getElementById('line_numbers_option');
     lineNumbersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[5].textContent = lineNumbersOption.value;
 
-    /** GUTTER */
+    // GUTTER
     gutterOption = document.getElementById('gutter_option');
     gutterOption.addEventListener('change', updateContentInSpan, false);
     userChoice[6].textContent = gutterOption.value;
 
-    /** MARGIN */
+    // MARGIN
     marginOption = document.getElementById('margin_option');
     marginOption.addEventListener('input', updateContentInSpan, false);
     userChoice[7].textContent = marginOption.value;
 
-    /** FOLD BUTTONS */
+    // FOLD BUTTONS
     foldButtonsOption = document.getElementById('fold_buttons_option');
     foldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[8].textContent = foldButtonsOption.value;
 
-    /** FADE FOLD BUTTONS */
+    // FADE FOLD BUTTONS
     fadeFoldButtonsOption = document.getElementById('fade_fold_buttons_option');
     fadeFoldButtonsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[9].textContent = fadeFoldButtonsOption.value;
 
-    /** RULERS */
+    // RULERS
     rulersOption = document.getElementById('rulers_option');
     rulersOption.addEventListener('change', updateContentInSpan, false);
     userChoice[10].textContent = rulersOption.value;
 
-    /** SPELL CHECK */
+    // SPELL CHECK
     spellCheckOption = document.getElementById('spell_check_option');
     spellCheckOption.addEventListener('change', updateContentInSpan, false);
     userChoice[11].textContent = spellCheckOption.value;
 
-    /** TAB SIZE */
+    // TAB SIZE
     tabSizeOption = document.getElementById('tab_size_option');
     tabSizeOption.addEventListener('input', updateContentInSpan, false);
     userChoice[12].textContent = tabSizeOption.value;
 
-    /** TRANSLATE TABS TO SPACES */
+    // TRANSLATE TABS TO SPACES
     translateTabsToSpacesOption = document.getElementById(
         'translate_tabs_to_spaces_option'
     );
@@ -685,22 +685,22 @@ window.onload = function () {
     );
     userChoice[13].textContent = translateTabsToSpacesOption.value;
 
-    /** USE TAB STOPS */
+    // USE TAB STOPS
     useTabStopsOption = document.getElementById('use_tab_stops_option');
     useTabStopsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[14].textContent = useTabStopsOption.value;
 
-    /** DETECT INDENTATION */
+    // DETECT INDENTATION
     detectIndentationOption = document.getElementById('detect_indentation_option');
     detectIndentationOption.addEventListener('change', updateContentInSpan, false);
     userChoice[15].textContent = detectIndentationOption.value;
 
-    /** AUTO INDENT */
+    // AUTO INDENT
     autoIndentOption = document.getElementById('auto_indent_option');
     autoIndentOption.addEventListener('change', updateContentInSpan, false);
     userChoice[16].textContent = autoIndentOption.value;
 
-    /** TRIM AUTOMATIC WHITE SPACE */
+    // TRIM AUTOMATIC WHITE SPACE
     trimAutomaticWhiteSpaceOption =
         document.getElementById('trim_automatic_white_space_option');
     trimAutomaticWhiteSpaceOption.addEventListener(
@@ -710,19 +710,17 @@ window.onload = function () {
     );
     userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
 
-    /** WORD WRAP */
+    // WORD WRAP
     wordWrapOption = document.getElementById('word_wrap_option');
     wordWrapOption.addEventListener('change', updateContentInSpan, false);
     userChoice[18].textContent = wordWrapOption.value;
 
-    /** WRAP WIDTH */
+    // WRAP WIDTH
     wrapWidthOption = document.getElementById('wrap_width_option');
     wrapWidthOption.addEventListener('input', updateContentInSpan, false);
     userChoice[19].textContent = wrapWidthOption.value;
 
-    /**
-     * DRAW CENTERED
-     */
+    // DRAW CENTERED
     userChoiceForDrawCenteredDisplayedInSpan = document.querySelector(
         '#draw_centered>h2+div>p:first-of-type>code>span'
     );
