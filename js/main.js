@@ -108,9 +108,8 @@ var fontObject = {
     autoIndentOption,
     trimAutomaticWhiteSpaceOption,
     wordWrapOption,
-
     wrapWidthOption,
-    userChoiceForWrapWidthDisplayedInSpan,
+
     drawCenteredOption,
     userChoiceForDrawCenteredDisplayedInSpan,
     dictionaryOption,
@@ -381,32 +380,28 @@ function updateContentInSpan() {
         userChoice[18].textContent = wordWrapOption.value;
 
         break;
-    }
-}
 
-function updateContentInSpanForWrapWidth() {
-    'use strict';
-
-    var input;
-
-    if ('' === wrapWidthOption.value) {
-        submit.removeAttribute('disabled');
-        userChoiceForWrapWidthDisplayedInSpan.textContent = '0';
-    } else {
-
-        input = parseInt(wrapWidthOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute('disabled', 'disabled');
-
-            userChoiceForWrapWidthDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
+    case 'wrap_width_option':
+        if ('' === wrapWidthOption.value) {
             submit.removeAttribute('disabled');
-            userChoiceForWrapWidthDisplayedInSpan.textContent =
-                wrapWidthOption.value;
+            userChoice[19].textContent = '0';
+        } else {
+
+            input = parseInt(wrapWidthOption.value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[19].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[19].textContent = wrapWidthOption.value;
+            }
         }
+
+        break;
     }
 }
 
@@ -720,19 +715,10 @@ window.onload = function () {
     wordWrapOption.addEventListener('change', updateContentInSpan, false);
     userChoice[18].textContent = wordWrapOption.value;
 
-    /**
-     * WRAP WIDTH
-     */
-    userChoiceForWrapWidthDisplayedInSpan = document.querySelector(
-        '#wrap_width>h2+div>p:first-of-type>code>span'
-    );
+    /** WRAP WIDTH */
     wrapWidthOption = document.getElementById('wrap_width_option');
-    wrapWidthOption.addEventListener(
-        'input',
-        updateContentInSpanForWrapWidth,
-        false
-    );
-    userChoiceForWrapWidthDisplayedInSpan.textContent = wrapWidthOption.value;
+    wrapWidthOption.addEventListener('input', updateContentInSpan, false);
+    userChoice[19].textContent = wrapWidthOption.value;
 
     /**
      * DRAW CENTERED
