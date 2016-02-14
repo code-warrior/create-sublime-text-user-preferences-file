@@ -249,7 +249,6 @@ function updateContentInSpan() {
         break;
 
     case 'font_size_option':
-
         if ('' === fontSizeOption.value) {
             submit.removeAttribute('disabled');
             userChoice[2].textContent = '10';
@@ -292,7 +291,6 @@ function updateContentInSpan() {
         break;
 
     case 'margin_option':
-
         if ('' === marginOption.value) {
             submit.removeAttribute('disabled');
             userChoice[7].textContent = '4';
