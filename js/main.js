@@ -106,9 +106,8 @@ var fontObject = {
     useTabStopsOption,
     detectIndentationOption,
     autoIndentOption,
-
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan,
     trimAutomaticWhiteSpaceOption,
+
     userChoiceForWordWrapDisplayedInSpan,
     wordWrapOption,
     wrapWidthOption,
@@ -373,14 +372,12 @@ function updateContentInSpan() {
         userChoice[16].textContent = autoIndentOption.value;
 
         break;
+
+    case 'trim_automatic_white_space_option':
+        userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForTrimAutomaticWhiteSpace() {
-    'use strict';
-
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan.textContent =
-        trimAutomaticWhiteSpaceOption.value;
 }
 
 function updateContentInSpanForWordWrap() {
@@ -711,21 +708,15 @@ window.onload = function () {
     autoIndentOption.addEventListener('change', updateContentInSpan, false);
     userChoice[16].textContent = autoIndentOption.value;
 
-    /**
-     * TRIM AUTOMATIC WHITE SPACE
-     */
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan = document.querySelector(
-        '#trim_automatic_white_space>h2+div>p:first-of-type>code>span'
-    );
+    /** TRIM AUTOMATIC WHITE SPACE */
     trimAutomaticWhiteSpaceOption =
         document.getElementById('trim_automatic_white_space_option');
     trimAutomaticWhiteSpaceOption.addEventListener(
         'change',
-        updateContentInSpanForTrimAutomaticWhiteSpace,
+        updateContentInSpan,
         false
     );
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan.textContent =
-        trimAutomaticWhiteSpaceOption.value;
+    userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
 
     /**
      * WORD WRAP
