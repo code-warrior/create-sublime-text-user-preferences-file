@@ -331,7 +331,7 @@ function updateContentInSpan() {
 
         break;
 
-    case '':
+    case 'spell_check_option':
         userChoice[11].textContent = spellCheckOption.value;
 
         break;
