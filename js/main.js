@@ -103,9 +103,8 @@ var fontObject = {
     spellCheckOption,
     tabSizeOption,
     translateTabsToSpacesOption,
-
-    userChoiceForUseTabStopsInSpan,
     useTabStopsOption,
+
     userChoiceForAutoIndentDisplayedInSpan,
     autoIndentOption,
     userChoiceForDetectIndentationInSpan,
@@ -363,13 +362,11 @@ function updateContentInSpan() {
         userChoice[13].textContent = translateTabsToSpacesOption.value;
 
         break;
+
+    case 'use_tab_stops_option':
+        userChoice[14].textContent = useTabStopsOption.value;
+        break;
     }
-}
-
-function updateUseTabStopsOption() {
-    'use strict';
-
-    userChoiceForUseTabStopsInSpan.textContent = useTabStopsOption.value;
 }
 
 function updateContentInSpanForAutoIndentOption() {
@@ -705,19 +702,10 @@ window.onload = function () {
     );
     userChoice[13].textContent = translateTabsToSpacesOption.value;
 
-    /**
-     * USE TAB STOPS
-     */
-    userChoiceForUseTabStopsInSpan = document.querySelector(
-        '#use_tab_stops>h2+div>p:first-of-type>code>span'
-    );
+    /** USE TAB STOPS */
     useTabStopsOption = document.getElementById('use_tab_stops_option');
-    useTabStopsOption.addEventListener(
-        'change',
-        updateUseTabStopsOption,
-        false
-    );
-    userChoiceForUseTabStopsInSpan.textContent = useTabStopsOption.value;
+    useTabStopsOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[14].textContent = useTabStopsOption.value;
 
     /**
      * DETECT INDENTATION
