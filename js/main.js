@@ -112,9 +112,8 @@ var fontObject = {
     drawCenteredOption,
     dictionaryOption,
     drawMinimapBorderOption,
-
     alwaysShowMinimapViewportOption,
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan,
+
     highlightLineOption,
     userChoiceForHighlightLineDisplayedInSpan,
     caretStyleOption,
@@ -414,14 +413,12 @@ function updateContentInSpan() {
         userChoice[22].textContent = drawMinimapBorderOption.value;
 
         break;
+
+    case 'always_show_minimap_viewport_option':
+        userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForAlwaysShowMinimapViewport() {
-    'use strict';
-
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
-        alwaysShowMinimapViewportOption.value;
 }
 
 function updateContentInSpanForHighlightLine() {
@@ -726,22 +723,15 @@ window.onload = function () {
     drawMinimapBorderOption.addEventListener('change', updateContentInSpan, false);
     userChoice[22].textContent = drawMinimapBorderOption.value;
 
-    /**
-     * ALWAYS SHOW MINIMAP VIEWPORT
-     */
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan =
-        document.querySelector(
-            '#always_show_minimap_viewport>h2+div>p:first-of-type>code>span'
-        );
+    // ALWAYS SHOW MINIMAP VIEWPORT
     alwaysShowMinimapViewportOption =
         document.getElementById('always_show_minimap_viewport_option');
     alwaysShowMinimapViewportOption.addEventListener(
         'change',
-        updateContentInSpanForAlwaysShowMinimapViewport,
+        updateContentInSpan,
         false
     );
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
-        alwaysShowMinimapViewportOption.value;
+    userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
 
     /**
      * HIGHLIGHT LINE
