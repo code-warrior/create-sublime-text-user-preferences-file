@@ -202,7 +202,7 @@ function displayFontFaceInfo() {
         break;
     }
 
-    if (index !== -1) {
+    if (-1 !== index) {
         setTimeout(function () {div.setAttribute('class', 'transition'); }, 300);
 
         firstParagraph.innerHTML =
