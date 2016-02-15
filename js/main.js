@@ -114,9 +114,8 @@ var fontObject = {
     drawMinimapBorderOption,
     alwaysShowMinimapViewportOption,
     highlightLineOption,
-
     caretStyleOption,
-    userChoiceForCaretStyleDisplayedInSpan,
+
     scrollPastEndOption,
     userChoiceForScrollPastEndDisplayedInSpan,
     drawWhiteSpaceOption,
@@ -422,14 +421,12 @@ function updateContentInSpan() {
         userChoice[24].textContent = highlightLineOption.value;
 
         break;
+
+    case 'caret_style_option':
+        userChoice[25].textContent = caretStyleOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForCaretStyleOption() {
-    'use strict';
-
-    userChoiceForCaretStyleDisplayedInSpan.textContent =
-        caretStyleOption.value;
 }
 
 function updateContentInSpanForScrollPastEnd() {
@@ -735,19 +732,10 @@ window.onload = function () {
     highlightLineOption.addEventListener('change', updateContentInSpan, false);
     userChoice[24].textContent = highlightLineOption.value;
 
-    /**
-     * CARET STYLE
-     */
-    userChoiceForCaretStyleDisplayedInSpan = document.querySelector(
-        '#caret_style>h2+div>p:first-of-type>code>span'
-    );
+    // CARET STYLE
     caretStyleOption = document.getElementById('caret_style_option');
-    caretStyleOption.addEventListener(
-        'change',
-        updateContentInSpanForCaretStyleOption,
-        false
-    );
-    userChoiceForCaretStyleDisplayedInSpan.textContent = caretStyleOption.value;
+    caretStyleOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[25].textContent = caretStyleOption.value;
 
     /**
      * SCROLL PAST END
