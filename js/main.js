@@ -111,9 +111,8 @@ var fontObject = {
     wrapWidthOption,
     drawCenteredOption,
     dictionaryOption,
-
     drawMinimapBorderOption,
-    userChoiceForDrawMinimapBorderDisplayedInSpan,
+
     alwaysShowMinimapViewportOption,
     userChoiceForAlwaysShowMinimapViewportDisplayedInSpan,
     highlightLineOption,
@@ -410,14 +409,12 @@ function updateContentInSpan() {
         userChoice[21].textContent = dictionaryOption.value;
 
         break;
+
+    case 'draw_minimap_border_option':
+        userChoice[22].textContent = drawMinimapBorderOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDrawMinimapBorder() {
-    'use strict';
-
-    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
-        drawMinimapBorderOption.value;
 }
 
 function updateContentInSpanForAlwaysShowMinimapViewport() {
@@ -724,21 +721,10 @@ window.onload = function () {
     dictionaryOption.addEventListener('change', updateContentInSpan, false);
     userChoice[21].textContent = dictionaryOption.value;
 
-    /**
-     * DRAW MINIMAP BORDER
-     */
-    userChoiceForDrawMinimapBorderDisplayedInSpan =
-        document.querySelector(
-            '#draw_minimap_border>h2+div>p:first-of-type>code>span'
-        );
+    // DRAW MINIMAP BORDER
     drawMinimapBorderOption = document.getElementById('draw_minimap_border_option');
-    drawMinimapBorderOption.addEventListener(
-        'change',
-        updateContentInSpanForDrawMinimapBorder,
-        false
-    );
-    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
-        drawMinimapBorderOption.value;
+    drawMinimapBorderOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[22].textContent = drawMinimapBorderOption.value;
 
     /**
      * ALWAYS SHOW MINIMAP VIEWPORT
