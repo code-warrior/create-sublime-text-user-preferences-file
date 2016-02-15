@@ -719,7 +719,7 @@ window.onload = function () {
     drawCenteredOption.addEventListener('change', updateContentInSpan, false);
     userChoice[20].textContent = drawCenteredOption.value;
 
-    /* DICTIONARY */
+    // DICTIONARY
     dictionaryOption = document.getElementById('dictionary_option');
     dictionaryOption.addEventListener('change', updateContentInSpan, false);
     userChoice[21].textContent = dictionaryOption.value;
