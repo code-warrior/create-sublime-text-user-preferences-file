@@ -115,9 +115,8 @@ var fontObject = {
     alwaysShowMinimapViewportOption,
     highlightLineOption,
     caretStyleOption,
-
     scrollPastEndOption,
-    userChoiceForScrollPastEndDisplayedInSpan,
+
     drawWhiteSpaceOption,
     userChoiceForDrawWhiteSpaceDisplayedInSpan,
     trimTrailingWhiteSpaceOnSaveOption,
@@ -426,14 +425,12 @@ function updateContentInSpan() {
         userChoice[25].textContent = caretStyleOption.value;
 
         break;
+
+    case 'scroll_past_end_option':
+        userChoice[26].textContent = scrollPastEndOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForScrollPastEnd() {
-    'use strict';
-
-    userChoiceForScrollPastEndDisplayedInSpan.textContent =
-        scrollPastEndOption.value;
 }
 
 function updateContentInSpanForDrawWhiteSpace() {
@@ -737,20 +734,10 @@ window.onload = function () {
     caretStyleOption.addEventListener('change', updateContentInSpan, false);
     userChoice[25].textContent = caretStyleOption.value;
 
-    /**
-     * SCROLL PAST END
-     */
-    userChoiceForScrollPastEndDisplayedInSpan = document.querySelector(
-        '#scroll_past_end>h2+div>p:first-of-type>code>span'
-    );
+    // SCROLL PAST END
     scrollPastEndOption = document.getElementById('scroll_past_end_option');
-    scrollPastEndOption.addEventListener(
-        'change',
-        updateContentInSpanForScrollPastEnd,
-        false
-    );
-    userChoiceForScrollPastEndDisplayedInSpan.textContent =
-        scrollPastEndOption.value;
+    scrollPastEndOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[26].textContent = scrollPastEndOption.value;
 
     /**
      * DRAW WHITE SPACE
