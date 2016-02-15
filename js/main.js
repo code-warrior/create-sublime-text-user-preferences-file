@@ -113,9 +113,8 @@ var fontObject = {
     dictionaryOption,
     drawMinimapBorderOption,
     alwaysShowMinimapViewportOption,
-
     highlightLineOption,
-    userChoiceForHighlightLineDisplayedInSpan,
+
     caretStyleOption,
     userChoiceForCaretStyleDisplayedInSpan,
     scrollPastEndOption,
@@ -418,14 +417,12 @@ function updateContentInSpan() {
         userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
 
         break;
+
+    case 'highlight_line_option':
+        userChoice[24].textContent = highlightLineOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForHighlightLine() {
-    'use strict';
-
-    userChoiceForHighlightLineDisplayedInSpan.textContent =
-        highlightLineOption.value;
 }
 
 function updateContentInSpanForCaretStyleOption() {
@@ -733,21 +730,10 @@ window.onload = function () {
     );
     userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
 
-    /**
-     * HIGHLIGHT LINE
-     */
-    userChoiceForHighlightLineDisplayedInSpan =
-        document.querySelector(
-            '#highlight_line>h2+div>p:first-of-type>code>span'
-        );
+    // HIGHLIGHT LINE
     highlightLineOption = document.getElementById('highlight_line_option');
-    highlightLineOption.addEventListener(
-        'change',
-        updateContentInSpanForHighlightLine,
-        false
-    );
-    userChoiceForHighlightLineDisplayedInSpan.textContent =
-        highlightLineOption.value;
+    highlightLineOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[24].textContent = highlightLineOption.value;
 
     /**
      * CARET STYLE
