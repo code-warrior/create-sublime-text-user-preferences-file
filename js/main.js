@@ -110,9 +110,8 @@ var fontObject = {
     wordWrapOption,
     wrapWidthOption,
     drawCenteredOption,
-
     dictionaryOption,
-    userChoiceForDictionaryDisplayedInSpan,
+
     drawMinimapBorderOption,
     userChoiceForDrawMinimapBorderDisplayedInSpan,
     alwaysShowMinimapViewportOption,
@@ -406,14 +405,12 @@ function updateContentInSpan() {
         userChoice[20].textContent = drawCenteredOption.value;
 
         break;
+
+    case 'dictionary_option':
+        userChoice[21].textContent = dictionaryOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDictionary() {
-    'use strict';
-
-    userChoiceForDictionaryDisplayedInSpan.textContent =
-        dictionaryOption.value;
 }
 
 function updateContentInSpanForDrawMinimapBorder() {
@@ -722,21 +719,10 @@ window.onload = function () {
     drawCenteredOption.addEventListener('change', updateContentInSpan, false);
     userChoice[20].textContent = drawCenteredOption.value;
 
-    /**
-     * DICTIONARY
-     */
-    userChoiceForDictionaryDisplayedInSpan =
-        document.querySelector(
-            '#dictionary>h2+div>p:first-of-type>code>span'
-        );
+    /* DICTIONARY */
     dictionaryOption = document.getElementById('dictionary_option');
-    dictionaryOption.addEventListener(
-        'change',
-        updateContentInSpanForDictionary,
-        false
-    );
-    userChoiceForDictionaryDisplayedInSpan.textContent =
-        dictionaryOption.value;
+    dictionaryOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[21].textContent = dictionaryOption.value;
 
     /**
      * DRAW MINIMAP BORDER
