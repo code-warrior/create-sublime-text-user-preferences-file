@@ -116,9 +116,8 @@ var fontObject = {
     highlightLineOption,
     caretStyleOption,
     scrollPastEndOption,
-
     drawWhiteSpaceOption,
-    userChoiceForDrawWhiteSpaceDisplayedInSpan,
+
     trimTrailingWhiteSpaceOnSaveOption,
     userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan,
     ensureNewlineAtEOFOnSaveOption,
@@ -430,14 +429,12 @@ function updateContentInSpan() {
         userChoice[26].textContent = scrollPastEndOption.value;
 
         break;
+
+    case 'draw_white_space_option':
+        userChoice[27].textContent = drawWhiteSpaceOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDrawWhiteSpace() {
-    'use strict';
-
-    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
-        drawWhiteSpaceOption.value;
 }
 
 function updateContentInSpanForTrimTrailingWhiteSpace() {
@@ -739,20 +736,10 @@ window.onload = function () {
     scrollPastEndOption.addEventListener('change', updateContentInSpan, false);
     userChoice[26].textContent = scrollPastEndOption.value;
 
-    /**
-     * DRAW WHITE SPACE
-     */
-    userChoiceForDrawWhiteSpaceDisplayedInSpan = document.querySelector(
-        '#draw_white_space>h2+div>p:first-of-type>code>span'
-    );
+    // DRAW WHITE SPACE
     drawWhiteSpaceOption = document.getElementById('draw_white_space_option');
-    drawWhiteSpaceOption.addEventListener(
-        'change',
-        updateContentInSpanForDrawWhiteSpace,
-        false
-    );
-    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
-        drawWhiteSpaceOption.value;
+    drawWhiteSpaceOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[27].textContent = drawWhiteSpaceOption.value;
 
     /**
      * TRIM TRAILING WHITE SPACE ON SAVE
