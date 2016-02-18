@@ -434,8 +434,8 @@ function updateContentInSpan() {
 
         break;
 
-    case '':
-        userChoice[28].textContent.textContent =
+    case 'trim_trailing_white_space_on_save_option':
+        userChoice[28].textContent =
             trimTrailingWhiteSpaceOnSaveOption.value;
 
         break;
