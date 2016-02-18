@@ -266,7 +266,10 @@ if (!empty($_GET['draw_centered_option'])) {
  * DICTIONARY
  */
 if (!empty($_GET['dictionary_option'])) {
-    if (strcmp($_GET['dictionary_option'], "Packages/Language - English/en_US.dic") !== 0) {
+    if (strcmp(
+        $_GET['dictionary_option'],
+        "Packages/Language - English/en_US.dic"
+    ) !== 0) {
         $options .= '   "dictionary": ' .
             " \"{$_GET['dictionary_option']}\",\n";
     }
