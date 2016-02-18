@@ -3,6 +3,14 @@
          <div>
             <p><code>"word_wrap": <span> </span>,</code></p>
             <p>This option works in tandem with <code><a href="#wrap_width">wrap_width</a></code>. See how these options work together for both source code and non-source code below. And, note that <code>word_wrap</code> plays nicely with the <code><a href="#rulers">rulers</a></code> option.</p>
+            <p>
+               <label for="word_wrap_option">How would you like Sublime to treat word wrapping?</label>
+               <select id="word_wrap_option" name="word_wrap_option">
+                  <option value="auto" selected>Auto</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+               </select>
+            </p>
             <table>
                <thead>
                   <tr>
@@ -55,13 +63,5 @@
                   </tr>
                </tbody>
             </table>
-            <p>
-               <label for="word_wrap_option">How would you like <abbr title="Sublime Text">st</abbr> to treat word wrapping?</label>
-               <select id="word_wrap_option" name="word_wrap_option">
-                  <option value="auto" selected>Auto</option>
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-               </select>
-            </p>
          </div>
       </section>
