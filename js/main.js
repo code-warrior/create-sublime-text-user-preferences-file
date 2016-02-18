@@ -122,9 +122,8 @@ var fontObject = {
     saveOnFocusLostOption,
     defaultLineEndingOption,
     copyWithEmptySelectionOption,
-
     dragTextOption,
-    userChoiceForDragTextDisplayedInSpan,
+
     treeAnimationEnabledOption,
     userChoiceForTreeAnimationEnabledDisplayedInSpan,
     animationEnabledOption,
@@ -455,13 +454,12 @@ function updateContentInSpan() {
         userChoice[32].textContent = copyWithEmptySelectionOption.value;
 
         break;
+
+    case 'drag_text_option':
+        userChoice[33].textContent = dragTextOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDragText() {
-    'use strict';
-
-    userChoiceForDragTextDisplayedInSpan.textContent = dragTextOption.value;
 }
 
 function updateContentInSpanForTreeAnimationEnabled() {
@@ -767,21 +765,10 @@ window.onload = function () {
     );
     userChoice[32].textContent = copyWithEmptySelectionOption.value;
 
-    /**
-     * DRAG TEXT
-     */
-    userChoiceForDragTextDisplayedInSpan =
-        document.querySelector(
-            '#drag_text>h2+div>p:first-of-type>code>span'
-        );
+    // DRAG TEXT
     dragTextOption = document.getElementById('drag_text_option');
-    dragTextOption.addEventListener(
-        'change',
-        updateContentInSpanForDragText,
-        false
-    );
-    userChoiceForDragTextDisplayedInSpan.textContent =
-        dragTextOption.value;
+    dragTextOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[33].textContent = dragTextOption.value;
 
     /**
      * TREE ANIMATION ENABLED
