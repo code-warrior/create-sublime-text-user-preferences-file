@@ -121,9 +121,8 @@ var fontObject = {
     ensureNewlineAtEOFOnSaveOption,
     saveOnFocusLostOption,
     defaultLineEndingOption,
-
     copyWithEmptySelectionOption,
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan,
+
     dragTextOption,
     userChoiceForDragTextDisplayedInSpan,
     treeAnimationEnabledOption,
@@ -451,14 +450,12 @@ function updateContentInSpan() {
         userChoice[31].textContent = defaultLineEndingOption.value;
 
         break;
+
+    case 'copy_with_empty_selection_option':
+        userChoice[32].textContent = copyWithEmptySelectionOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForCopyWithEmptySelection() {
-    'use strict';
-
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
 }
 
 function updateContentInSpanForDragText() {
@@ -760,22 +757,15 @@ window.onload = function () {
     defaultLineEndingOption.addEventListener('change', updateContentInSpan, false);
     userChoice[31].textContent = defaultLineEndingOption.value;
 
-    /**
-     * COPY WITH EMPTY SELECTION
-     */
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan =
-        document.querySelector(
-            '#copy_with_empty_selection>h2+div>p:first-of-type>code>span'
-        );
+    // COPY WITH EMPTY SELECTION
     copyWithEmptySelectionOption =
         document.getElementById('copy_with_empty_selection_option');
     copyWithEmptySelectionOption.addEventListener(
         'change',
-        updateContentInSpanForCopyWithEmptySelection,
+        updateContentInSpan,
         false
     );
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
+    userChoice[32].textContent = copyWithEmptySelectionOption.value;
 
     /**
      * DRAG TEXT
