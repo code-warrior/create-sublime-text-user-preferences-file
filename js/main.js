@@ -117,9 +117,8 @@ var fontObject = {
     caretStyleOption,
     scrollPastEndOption,
     drawWhiteSpaceOption,
-
     trimTrailingWhiteSpaceOnSaveOption,
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan,
+
     ensureNewlineAtEOFOnSaveOption,
     userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan,
     saveOnFocusLostOption,
@@ -434,14 +433,13 @@ function updateContentInSpan() {
         userChoice[27].textContent = drawWhiteSpaceOption.value;
 
         break;
+
+    case '':
+        userChoice[28].textContent.textContent =
+            trimTrailingWhiteSpaceOnSaveOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForTrimTrailingWhiteSpace() {
-    'use strict';
-
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan.textContent =
-        trimTrailingWhiteSpaceOnSaveOption.value;
 }
 
 function updateContentInSpanForEnsureNewlineAtEOFOnSave() {
@@ -741,22 +739,15 @@ window.onload = function () {
     drawWhiteSpaceOption.addEventListener('change', updateContentInSpan, false);
     userChoice[27].textContent = drawWhiteSpaceOption.value;
 
-    /**
-     * TRIM TRAILING WHITE SPACE ON SAVE
-     */
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan =
-        document.querySelector(
-            '#trim_trailing_white_space_on_save>h2+div>p:first-of-type>code>span'
-        );
+    // TRIM TRAILING WHITE SPACE ON SAVE
     trimTrailingWhiteSpaceOnSaveOption =
         document.getElementById('trim_trailing_white_space_on_save_option');
     trimTrailingWhiteSpaceOnSaveOption.addEventListener(
         'change',
-        updateContentInSpanForTrimTrailingWhiteSpace,
+        updateContentInSpan,
         false
     );
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan.textContent =
-        trimTrailingWhiteSpaceOnSaveOption.value;
+    userChoice[28].textContent = trimTrailingWhiteSpaceOnSaveOption.value;
 
     /**
      * ENSURE NEWLINE AT EOF ON SAVE
