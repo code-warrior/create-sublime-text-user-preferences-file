@@ -119,9 +119,8 @@ var fontObject = {
     drawWhiteSpaceOption,
     trimTrailingWhiteSpaceOnSaveOption,
     ensureNewlineAtEOFOnSaveOption,
-
     saveOnFocusLostOption,
-    userChoiceForSaveOnFocusLostDisplayedInSpan,
+
     defaultLineEndingOption,
     userChoiceForDefaultLineEndingDisplayedInSpan,
     copyWithEmptySelectionOption,
@@ -443,14 +442,12 @@ function updateContentInSpan() {
         userChoice[29].textContent = ensureNewlineAtEOFOnSaveOption.value;
 
         break;
+
+    case 'save_on_focus_lost_option':
+        userChoice[30].textContent = saveOnFocusLostOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForSaveOnFocusLost() {
-    'use strict';
-
-    userChoiceForSaveOnFocusLostDisplayedInSpan.textContent =
-        saveOnFocusLostOption.value;
 }
 
 function updateContentInSpanForDefaultLineEnding() {
@@ -756,21 +753,10 @@ window.onload = function () {
     );
     userChoice[29].textContent = ensureNewlineAtEOFOnSaveOption.value;
 
-    /**
-     * SAVE ON FOCUS LOST
-     */
-    userChoiceForSaveOnFocusLostDisplayedInSpan =
-        document.querySelector(
-            '#save_on_focus_lost>h2+div>p:first-of-type>code>span'
-        );
+    // SAVE ON FOCUS LOST
     saveOnFocusLostOption = document.getElementById('save_on_focus_lost_option');
-    saveOnFocusLostOption.addEventListener(
-        'change',
-        updateContentInSpanForSaveOnFocusLost,
-        false
-    );
-    userChoiceForSaveOnFocusLostDisplayedInSpan.textContent =
-        saveOnFocusLostOption.value;
+    saveOnFocusLostOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[30].textContent = saveOnFocusLostOption.value;
 
     /**
      * DEFAULT LINE ENDING
