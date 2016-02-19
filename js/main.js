@@ -126,9 +126,8 @@ var fontObject = {
     treeAnimationEnabledOption,
     animationEnabledOption,
     highlightModifiedTabsOption,
-
     overlayScrollBarsOption,
-    userChoiceForOverlayScrollBarsDisplayInSpan,
+
     showEncodingOption,
     userChoiceForShowEncodingDisplayedInSpan,
     showLineEndingsOption,
@@ -471,14 +470,12 @@ function updateContentInSpan() {
         userChoice[36].textContent = highlightModifiedTabsOption.value;
 
         break;
+
+    case 'overlay_scroll_bars_option':
+        userChoice[37].textContent = overlayScrollBarsOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForOverlayScrollBars() {
-    'use strict';
-
-    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
-        overlayScrollBarsOption.value;
 }
 
 function updateContentInSpanForShowEncoding() {
@@ -786,21 +783,10 @@ window.onload = function () {
     );
     userChoice[36].textContent = highlightModifiedTabsOption.value;
 
-    /**
-     * OVERLAY SCROLL BARS
-     */
-    userChoiceForOverlayScrollBarsDisplayInSpan =
-        document.querySelector(
-            '#overlay_scroll_bars>h2+div>p:first-of-type>code>span'
-        );
+    // OVERLAY SCROLL BARS
     overlayScrollBarsOption = document.getElementById('overlay_scroll_bars_option');
-    overlayScrollBarsOption.addEventListener(
-        'change',
-        updateContentInSpanForOverlayScrollBars,
-        false
-    );
-    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
-        overlayScrollBarsOption.value;
+    overlayScrollBarsOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[37].textContent = overlayScrollBarsOption.value;
 
     /**
      * SHOW ENCODING
