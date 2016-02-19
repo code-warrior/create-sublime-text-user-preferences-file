@@ -123,9 +123,8 @@ var fontObject = {
     defaultLineEndingOption,
     copyWithEmptySelectionOption,
     dragTextOption,
-
     treeAnimationEnabledOption,
-    userChoiceForTreeAnimationEnabledDisplayedInSpan,
+
     animationEnabledOption,
     userChoiceForAnimationEnabledDisplayedInSpan,
     highlightModifiedTabsOption,
@@ -459,14 +458,12 @@ function updateContentInSpan() {
         userChoice[33].textContent = dragTextOption.value;
 
         break;
+
+    case 'tree_animation_enabled_option':
+        userChoice[34].textContent = treeAnimationEnabledOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForTreeAnimationEnabled() {
-    'use strict';
-
-    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
-        treeAnimationEnabledOption.value;
 }
 
 function updateContentInSpanForAnimationEnabled() {
@@ -770,22 +767,15 @@ window.onload = function () {
     dragTextOption.addEventListener('change', updateContentInSpan, false);
     userChoice[33].textContent = dragTextOption.value;
 
-    /**
-     * TREE ANIMATION ENABLED
-     */
-    userChoiceForTreeAnimationEnabledDisplayedInSpan =
-        document.querySelector(
-            '#tree_animation_enabled>h2+div>p:first-of-type>code>span'
-        );
+    // TREE ANIMATION ENABLED
     treeAnimationEnabledOption =
         document.getElementById('tree_animation_enabled_option');
     treeAnimationEnabledOption.addEventListener(
         'change',
-        updateContentInSpanForTreeAnimationEnabled,
+        updateContentInSpan,
         false
     );
-    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
-        treeAnimationEnabledOption.value;
+    userChoice[34].textContent = treeAnimationEnabledOption.value;
 
     /**
      * ANIMATION ENABLED
