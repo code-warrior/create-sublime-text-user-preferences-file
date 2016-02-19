@@ -125,9 +125,8 @@ var fontObject = {
     dragTextOption,
     treeAnimationEnabledOption,
     animationEnabledOption,
-
     highlightModifiedTabsOption,
-    userChoiceForHighlightModifiedTabsDisplayedInSpan,
+
     overlayScrollBarsOption,
     userChoiceForOverlayScrollBarsDisplayInSpan,
     showEncodingOption,
@@ -467,14 +466,12 @@ function updateContentInSpan() {
         userChoice[35].textContent = animationEnabledOption.value;
 
         break;
+
+    case 'highlight_modified_tabs_option':
+        userChoice[36].textContent = highlightModifiedTabsOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForHighlightModifiedTabs() {
-    'use strict';
-
-    userChoiceForHighlightModifiedTabsDisplayedInSpan.textContent =
-        highlightModifiedTabsOption.value;
 }
 
 function updateContentInSpanForOverlayScrollBars() {
@@ -779,22 +776,15 @@ window.onload = function () {
     animationEnabledOption.addEventListener('change', updateContentInSpan, false);
     userChoice[35].textContent = animationEnabledOption.value;
 
-    /**
-     * HIGHLIGHT MODIFIED TABS
-     */
-    userChoiceForHighlightModifiedTabsDisplayedInSpan =
-        document.querySelector(
-            '#highlight_modified_tabs>h2+div>p:first-of-type>code>span'
-        );
+    // HIGHLIGHT MODIFIED TABS
     highlightModifiedTabsOption =
         document.getElementById('highlight_modified_tabs_option');
     highlightModifiedTabsOption.addEventListener(
         'change',
-        updateContentInSpanForHighlightModifiedTabs,
+        updateContentInSpan,
         false
     );
-    userChoiceForHighlightModifiedTabsDisplayedInSpan.textContent =
-        highlightModifiedTabsOption.value;
+    userChoice[36].textContent = highlightModifiedTabsOption.value;
 
     /**
      * OVERLAY SCROLL BARS
