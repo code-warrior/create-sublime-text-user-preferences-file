@@ -120,13 +120,10 @@ var fontObject = {
     trimTrailingWhiteSpaceOnSaveOption,
     ensureNewlineAtEOFOnSaveOption,
     saveOnFocusLostOption,
-
     defaultLineEndingOption,
-    userChoiceForDefaultLineEndingDisplayedInSpan,
     copyWithEmptySelectionOption,
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan,
     dragTextOption,
-    userChoiceForDragTextDisplayedInSpan,
+
     treeAnimationEnabledOption,
     userChoiceForTreeAnimationEnabledDisplayedInSpan,
     animationEnabledOption,
@@ -447,27 +444,22 @@ function updateContentInSpan() {
         userChoice[30].textContent = saveOnFocusLostOption.value;
 
         break;
+
+    case 'default_line_ending_option':
+        userChoice[31].textContent = defaultLineEndingOption.value;
+
+        break;
+
+    case 'copy_with_empty_selection_option':
+        userChoice[32].textContent = copyWithEmptySelectionOption.value;
+
+        break;
+
+    case 'drag_text_option':
+        userChoice[33].textContent = dragTextOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForDefaultLineEnding() {
-    'use strict';
-
-    userChoiceForDefaultLineEndingDisplayedInSpan.textContent =
-        defaultLineEndingOption.value;
-}
-
-function updateContentInSpanForCopyWithEmptySelection() {
-    'use strict';
-
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
-}
-
-function updateContentInSpanForDragText() {
-    'use strict';
-
-    userChoiceForDragTextDisplayedInSpan.textContent = dragTextOption.value;
 }
 
 function updateContentInSpanForTreeAnimationEnabled() {
@@ -758,54 +750,25 @@ window.onload = function () {
     saveOnFocusLostOption.addEventListener('change', updateContentInSpan, false);
     userChoice[30].textContent = saveOnFocusLostOption.value;
 
-    /**
-     * DEFAULT LINE ENDING
-     */
-    userChoiceForDefaultLineEndingDisplayedInSpan =
-        document.querySelector(
-            '#default_line_ending>h2+div>p:first-of-type>code>span'
-        );
+    // DEFAULT LINE ENDING
     defaultLineEndingOption = document.getElementById('default_line_ending_option');
-    defaultLineEndingOption.addEventListener(
-        'change',
-        updateContentInSpanForDefaultLineEnding,
-        false
-    );
-    userChoiceForDefaultLineEndingDisplayedInSpan.textContent =
-        defaultLineEndingOption.value;
+    defaultLineEndingOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[31].textContent = defaultLineEndingOption.value;
 
-    /**
-     * COPY WITH EMPTY SELECTION
-     */
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan =
-        document.querySelector(
-            '#copy_with_empty_selection>h2+div>p:first-of-type>code>span'
-        );
+    // COPY WITH EMPTY SELECTION
     copyWithEmptySelectionOption =
         document.getElementById('copy_with_empty_selection_option');
     copyWithEmptySelectionOption.addEventListener(
         'change',
-        updateContentInSpanForCopyWithEmptySelection,
+        updateContentInSpan,
         false
     );
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
+    userChoice[32].textContent = copyWithEmptySelectionOption.value;
 
-    /**
-     * DRAG TEXT
-     */
-    userChoiceForDragTextDisplayedInSpan =
-        document.querySelector(
-            '#drag_text>h2+div>p:first-of-type>code>span'
-        );
+    // DRAG TEXT
     dragTextOption = document.getElementById('drag_text_option');
-    dragTextOption.addEventListener(
-        'change',
-        updateContentInSpanForDragText,
-        false
-    );
-    userChoiceForDragTextDisplayedInSpan.textContent =
-        dragTextOption.value;
+    dragTextOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[33].textContent = dragTextOption.value;
 
     /**
      * TREE ANIMATION ENABLED
