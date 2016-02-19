@@ -124,9 +124,8 @@ var fontObject = {
     copyWithEmptySelectionOption,
     dragTextOption,
     treeAnimationEnabledOption,
-
     animationEnabledOption,
-    userChoiceForAnimationEnabledDisplayedInSpan,
+
     highlightModifiedTabsOption,
     userChoiceForHighlightModifiedTabsDisplayedInSpan,
     overlayScrollBarsOption,
@@ -463,14 +462,12 @@ function updateContentInSpan() {
         userChoice[34].textContent = treeAnimationEnabledOption.value;
 
         break;
+
+    case 'animation_enabled_option':
+        userChoice[35].textContent = animationEnabledOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForAnimationEnabled() {
-    'use strict';
-
-    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
-        animationEnabledOption.value;
 }
 
 function updateContentInSpanForHighlightModifiedTabs() {
@@ -777,22 +774,10 @@ window.onload = function () {
     );
     userChoice[34].textContent = treeAnimationEnabledOption.value;
 
-    /**
-     * ANIMATION ENABLED
-     */
-    userChoiceForAnimationEnabledDisplayedInSpan =
-        document.querySelector(
-            '#animation_enabled>h2+div>p:first-of-type>code>span'
-        );
-    animationEnabledOption =
-        document.getElementById('animation_enabled_option');
-    animationEnabledOption.addEventListener(
-        'change',
-        updateContentInSpanForAnimationEnabled,
-        false
-    );
-    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
-        animationEnabledOption.value;
+    // ANIMATION ENABLED
+    animationEnabledOption = document.getElementById('animation_enabled_option');
+    animationEnabledOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[35].textContent = animationEnabledOption.value;
 
     /**
      * HIGHLIGHT MODIFIED TABS
