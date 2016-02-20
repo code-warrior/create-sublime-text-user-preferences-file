@@ -127,9 +127,8 @@ var fontObject = {
     animationEnabledOption,
     highlightModifiedTabsOption,
     overlayScrollBarsOption,
-
     showEncodingOption,
-    userChoiceForShowEncodingDisplayedInSpan,
+
     showLineEndingsOption,
     userChoiceForShowLineEndingsDisplayedInSpan,
     hotExitOption,
@@ -475,14 +474,12 @@ function updateContentInSpan() {
         userChoice[37].textContent = overlayScrollBarsOption.value;
 
         break;
+
+    case 'show_encoding_option':
+        userChoice[38].textContent = showEncodingOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForShowEncoding() {
-    'use strict';
-
-    userChoiceForShowEncodingDisplayedInSpan.textContent =
-        showEncodingOption.value;
 }
 
 function updateContentInSpanForShowLineEndings() {
@@ -788,21 +785,10 @@ window.onload = function () {
     overlayScrollBarsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[37].textContent = overlayScrollBarsOption.value;
 
-    /**
-     * SHOW ENCODING
-     */
-    userChoiceForShowEncodingDisplayedInSpan =
-        document.querySelector(
-            '#show_encoding>h2+div>p:first-of-type>code>span'
-        );
+    // SHOW ENCODING
     showEncodingOption = document.getElementById('show_encoding_option');
-    showEncodingOption.addEventListener(
-        'change',
-        updateContentInSpanForShowEncoding,
-        false
-    );
-    userChoiceForShowEncodingDisplayedInSpan.textContent =
-        showEncodingOption.value;
+    showEncodingOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[38].textContent = showEncodingOption.value;
 
     /**
      * SHOW LINE ENDINGS
