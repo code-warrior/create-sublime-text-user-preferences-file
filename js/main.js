@@ -129,9 +129,8 @@ var fontObject = {
     overlayScrollBarsOption,
     showEncodingOption,
     showLineEndingsOption,
-
     hotExitOption,
-    userChoiceForHotExitDisplayedInSpan,
+
     alwaysPromptForFileReloadOption,
     userChoiceForAlwaysPromptForFileReloadDisplayedInSpan,
     openFilesInNewWindowOption,
@@ -480,14 +479,12 @@ function updateContentInSpan() {
         userChoice[39].textContent = showLineEndingsOption.value;
 
         break;
+
+    case 'hot_exit_option':
+        userChoice[40].textContent = hotExitOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForHotExit() {
-    'use strict';
-
-    userChoiceForHotExitDisplayedInSpan.textContent =
-        hotExitOption.value;
 }
 
 function updateContentInSpanForAlwaysPromptForFileReload() {
@@ -789,21 +786,10 @@ window.onload = function () {
     showLineEndingsOption.addEventListener('change', updateContentInSpan, false);
     userChoice[39].textContent = showLineEndingsOption.value;
 
-    /**
-     * HOT EXIT
-     */
-    userChoiceForHotExitDisplayedInSpan =
-        document.querySelector(
-            '#hot_exit>h2+div>p:first-of-type>code>span'
-        );
+    // HOT EXIT
     hotExitOption = document.getElementById('hot_exit_option');
-    hotExitOption.addEventListener(
-        'change',
-        updateContentInSpanForHotExit,
-        false
-    );
-    userChoiceForHotExitDisplayedInSpan.textContent =
-        hotExitOption.value;
+    hotExitOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[40].textContent = hotExitOption.value;
 
     /**
      * ALWAYS PROMPT FOR FILE RELOAD
