@@ -904,22 +904,4 @@ window.onload = function () {
     );
     userChoiceForPreviewOnClickDisplayedInSpan.textContent =
         previewOnClickOption.value;
-
-    /**
-     * TEMPLATE
-     */
-    /*
-    userChoiceForOPTIONDisplayedInSpan =
-        document.querySelector(
-            "#OPTION>h2+div>p:first-of-type>code>span"
-        );
-    OPTIONOption = document.getElementById("OPTION_option");
-    OPTIONOption.addEventListener(
-        "change",
-        updateContentInSpanForOPTION,
-        false
-    );
-    userChoiceForOPTIONDisplayedInSpan.textContent =
-        OPTIONOption.value;
-    */
 };

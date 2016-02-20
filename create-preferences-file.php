@@ -522,17 +522,6 @@ if (!empty($_GET['preview_on_click_option'])) {
     }
 }
 
-/**
- * TEMPLATE
- */
-/*
-if (!empty($_GET['_option'])) {
-    if (strcmp($_GET['_option'], "") !== 0) {
-        $options .= '   "": '.$_GET['_option'].',' . "\n";
-    }
-}
-*/
-
 if (strlen($options) !== 0 ) {
     $indexOfLastComma = strrpos($options, ',', 0);
     $options[$indexOfLastComma] = ' '; // Replace the last comma with a space
