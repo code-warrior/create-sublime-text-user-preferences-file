@@ -130,9 +130,8 @@ var fontObject = {
     showEncodingOption,
     showLineEndingsOption,
     hotExitOption,
-
     alwaysPromptForFileReloadOption,
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan,
+
     openFilesInNewWindowOption,
     userChoiceForOpenFilesInNewWindowDisplayedInSpan,
     createWindowAtStartupOption,
@@ -484,14 +483,12 @@ function updateContentInSpan() {
         userChoice[40].textContent = hotExitOption.value;
 
         break;
+
+    case 'always_prompt_for_file_reload_option':
+        userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForAlwaysPromptForFileReload() {
-    'use strict';
-
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan.textContent =
-        alwaysPromptForFileReloadOption.value;
 }
 
 function updateContentInSpanForOpenFilesInNewWindow() {
@@ -791,22 +788,15 @@ window.onload = function () {
     hotExitOption.addEventListener('change', updateContentInSpan, false);
     userChoice[40].textContent = hotExitOption.value;
 
-    /**
-     * ALWAYS PROMPT FOR FILE RELOAD
-     */
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan =
-        document.querySelector(
-            '#always_prompt_for_file_reload>h2+div>p:first-of-type>code>span'
-        );
+    // ALWAYS PROMPT FOR FILE RELOAD
     alwaysPromptForFileReloadOption =
         document.getElementById('always_prompt_for_file_reload_option');
     alwaysPromptForFileReloadOption.addEventListener(
         'change',
-        updateContentInSpanForAlwaysPromptForFileReload,
+        updateContentInSpan,
         false
     );
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan.textContent =
-        alwaysPromptForFileReloadOption.value;
+    userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
 
     /**
      * OPEN FILES IN NEW WINDOW
