@@ -131,15 +131,10 @@ var fontObject = {
     showLineEndingsOption,
     hotExitOption,
     alwaysPromptForFileReloadOption,
-
     openFilesInNewWindowOption,
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan,
     createWindowAtStartupOption,
-    userChoiceForCreateWindowAtStartupDisplayedInSpan,
     showFullPathOption,
-    userChoiceForShowFullPathDisplayedInSpan,
-    previewOnClickOption,
-    userChoiceForPreviewOnClickDisplayedInSpan;
+    previewOnClickOption;
 
 function displayFontFaceInfo() {
     'use strict';
@@ -488,35 +483,27 @@ function updateContentInSpan() {
         userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
 
         break;
+
+    case 'open_files_in_new_window_option':
+        userChoice[42].textContent = openFilesInNewWindowOption.value;
+
+        break;
+
+    case 'create_window_at_startup_option':
+        userChoice[43].textContent = createWindowAtStartupOption.value;
+
+        break;
+
+    case 'show_full_path_option':
+        userChoice[44].textContent = showFullPathOption.value;
+
+        break;
+
+    case 'preview_on_click_option':
+        userChoice[45].textContent = previewOnClickOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForOpenFilesInNewWindow() {
-    'use strict';
-
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan.textContent =
-        openFilesInNewWindowOption.value;
-}
-
-function updateContentInSpanForCreateWindowAtStartup() {
-    'use strict';
-
-    userChoiceForCreateWindowAtStartupDisplayedInSpan.textContent =
-        createWindowAtStartupOption.value;
-}
-
-function updateContentInSpanForShowFullPath() {
-    'use strict';
-
-    userChoiceForShowFullPathDisplayedInSpan.textContent =
-        showFullPathOption.value;
-}
-
-function updateContentInSpanForPreviewOnClick() {
-    'use strict';
-
-    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
-        previewOnClickOption.value;
 }
 
 window.onload = function () {
@@ -798,69 +785,33 @@ window.onload = function () {
     );
     userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
 
-    /**
-     * OPEN FILES IN NEW WINDOW
-     */
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan =
-        document.querySelector(
-            '#open_files_in_new_window>h2+div>p:first-of-type>code>span'
-        );
+    // OPEN FILES IN NEW WINDOW
     openFilesInNewWindowOption =
         document.getElementById('open_files_in_new_window_option');
     openFilesInNewWindowOption.addEventListener(
         'change',
-        updateContentInSpanForOpenFilesInNewWindow,
+        updateContentInSpan,
         false
     );
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan.textContent =
-        openFilesInNewWindowOption.value;
+    userChoice[42].textContent = openFilesInNewWindowOption.value;
 
-    /**
-     * CREATE WINDOW AT STARTUP
-     */
-    userChoiceForCreateWindowAtStartupDisplayedInSpan =
-        document.querySelector(
-            '#create_window_at_startup>h2+div>p:first-of-type>code>span'
-        );
+    // CREATE WINDOW AT STARTUP
     createWindowAtStartupOption =
         document.getElementById('create_window_at_startup_option');
     createWindowAtStartupOption.addEventListener(
         'change',
-        updateContentInSpanForCreateWindowAtStartup,
+        updateContentInSpan,
         false
     );
-    userChoiceForCreateWindowAtStartupDisplayedInSpan.textContent =
-        createWindowAtStartupOption.value;
+    userChoice[43].textContent = createWindowAtStartupOption.value;
 
-    /**
-     * SHOW FULL PATH
-     */
-    userChoiceForShowFullPathDisplayedInSpan =
-        document.querySelector(
-            '#show_full_path>h2+div>p:first-of-type>code>span'
-        );
+    // SHOW FULL PATH
     showFullPathOption = document.getElementById('show_full_path_option');
-    showFullPathOption.addEventListener(
-        'change',
-        updateContentInSpanForShowFullPath,
-        false
-    );
-    userChoiceForShowFullPathDisplayedInSpan.textContent =
-        showFullPathOption.value;
+    showFullPathOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[44].textContent = showFullPathOption.value;
 
-    /**
-     * PREVIEW ON CLICK
-     */
-    userChoiceForPreviewOnClickDisplayedInSpan =
-        document.querySelector(
-            '#preview_on_click>h2+div>p:first-of-type>code>span'
-        );
+    // PREVIEW ON CLICK
     previewOnClickOption = document.getElementById('preview_on_click_option');
-    previewOnClickOption.addEventListener(
-        'change',
-        updateContentInSpanForPreviewOnClick,
-        false
-    );
-    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
-        previewOnClickOption.value;
+    previewOnClickOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[45].textContent = previewOnClickOption.value;
 };
