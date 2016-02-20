@@ -128,9 +128,8 @@ var fontObject = {
     highlightModifiedTabsOption,
     overlayScrollBarsOption,
     showEncodingOption,
-
     showLineEndingsOption,
-    userChoiceForShowLineEndingsDisplayedInSpan,
+
     hotExitOption,
     userChoiceForHotExitDisplayedInSpan,
     alwaysPromptForFileReloadOption,
@@ -476,14 +475,12 @@ function updateContentInSpan() {
         userChoice[38].textContent = showEncodingOption.value;
 
         break;
+
+    case 'show_line_endings_option':
+        userChoice[39].textContent = showLineEndingsOption.value;
+
+        break;
     }
-}
-
-function updateContentInSpanForShowLineEndings() {
-    'use strict';
-
-    userChoiceForShowLineEndingsDisplayedInSpan.textContent =
-        showLineEndingsOption.value;
 }
 
 function updateContentInSpanForHotExit() {
@@ -787,21 +784,10 @@ window.onload = function () {
     showEncodingOption.addEventListener('change', updateContentInSpan, false);
     userChoice[38].textContent = showEncodingOption.value;
 
-    /**
-     * SHOW LINE ENDINGS
-     */
-    userChoiceForShowLineEndingsDisplayedInSpan =
-        document.querySelector(
-            '#show_line_endings>h2+div>p:first-of-type>code>span'
-        );
+    // SHOW LINE ENDINGS
     showLineEndingsOption = document.getElementById('show_line_endings_option');
-    showLineEndingsOption.addEventListener(
-        'change',
-        updateContentInSpanForShowLineEndings,
-        false
-    );
-    userChoiceForShowLineEndingsDisplayedInSpan.textContent =
-        showLineEndingsOption.value;
+    showLineEndingsOption.addEventListener('change', updateContentInSpan, false);
+    userChoice[39].textContent = showLineEndingsOption.value;
 
     /**
      * HOT EXIT
