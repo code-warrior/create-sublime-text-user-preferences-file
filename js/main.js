@@ -271,7 +271,6 @@ function updateContentInSpan() {
             submit.removeAttribute('disabled');
             userChoice[7].textContent = '4';
         } else {
-
             input = parseInt(marginOption.value, 10);
 
             if (isNaN(input)) {
@@ -314,7 +313,6 @@ function updateContentInSpan() {
 
             userChoice[12].textContent = '4';
         } else {
-
             input = parseInt(tabSizeOption.value, 10);
 
             if (isNaN(input)) {
@@ -367,7 +365,6 @@ function updateContentInSpan() {
             submit.removeAttribute('disabled');
             userChoice[19].textContent = '0';
         } else {
-
             input = parseInt(wrapWidthOption.value, 10);
 
             if (isNaN(input)) {
