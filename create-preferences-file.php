@@ -355,16 +355,6 @@ if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
 }
 
 /**
- * ENSURE NEWLINE AT EOF ON SAVE
- */
-if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
-    if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
-        $options .= '   "ensure_newline_at_eof_on_save": ' .
-            $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
-    }
-}
-
-/**
  * SAVE ON FOCUS LOST
  */
 if (!empty($_GET['save_on_focus_lost_option'])) {
