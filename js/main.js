@@ -1,216 +1,148 @@
 /*jslint browser: true, devel: true, indent: 4, maxlen: 85 */
 
-var fontObject = {
-    "data": [
-        {
-            "name": "Andalé Mono",
-            "link": "http://sourceforge.net/projects/corefonts/?source=navbar",
-            "license": "GNU GPL version 2.0",
-            "summary": "Andalé Mono is bundled with Mac OS X, but may not be " +
-                "included in Windows. It’s downloadable from Sourceforge."
-        },
-        {
-            "name": "Anonymous Pro",
-            "link": "http://www.marksimonson.com/fonts/view/anonymous-pro",
-            "license": "SIL OFL",
-            "summary": "Released in 2009, this fixed-width font comes in two " +
-                       "variants: Anonymous Pro and Anonymous Pro Minus. " +
-                       "Anonymous Pro is more compatible with Windows, Mac, and " +
-                       "Linux, and, thus, is recommended over Anonymous Pro Minus."
-        },
-        {
-            "name": "Consolas",
-            "link": "http://www.fonts.com/font/microsoft-corporation/consolas",
-            "license": "Proprietary to Microsoft Corporation",
-            "summary": "Released by Microsoft and bundled with many of its " +
-                       "products, including Office and Visual Studio, Consolas is " +
-                       "a modern alternative to Courier and Courier New."
-        },
-        {
-            "name": "Courier",
-            "link": "http://en.wikipedia.org/wiki/Courier_%28typeface%29",
-            "license": "Royalty-free",
-            "summary": "It’s very, very likely that your computer already has " +
-                       "Courier installed."
-        },
-        {
-            "name": "Courier New",
-            "link": "http://www.myfonts.com/fonts/mti/courier-new/licensing.html",
-            "license": "Proprietary to Monotype Corporation",
-            "summary": "Unlike Courier, its predecessor, Courier New is not " +
-                       "royalty-free. It’s commonly available in Windows and " +
-                       "Macintosh operating systems."
-        },
-        {
-            "name": "Inconsolata",
-            "link": "http://www.levien.com/type/myfonts/inconsolata.html",
-            "license": "SIL OFL",
-            "summary": "Designed by a computer programmer, Ralph Levien, " +
-                       "specifically for other computer programmers, Inconsalata " +
-                       "is a favorite for many."
-        },
-        {
-            "name": "Fira Mono",
-            "link": "http://www.carrois.com/fira-4-1/",
-            "license": "SIL OFL",
-            "summary": "Designed specifically for Firefox OS, Fira Mono is a " +
-                       "new, humanist, fixed-width type face and is a member of " +
-                       "the Fira Sans font family."
-        },
-        {
-            "name": "Ubuntu Mono",
-            "link": "http://font.ubuntu.com/",
-            "license": "Ubuntu Font License",
-            "summary": "Just like Fira Mono was designed for an operating system, " +
-                       "so was Ubuntu Mono for the Ubuntu variant of Debian Linux."
-        }
-    ]
-},
+   /*
+    * This variable holds an array of the <span> elements in index.php that are
+    * updated when a user makes a choice for any of the available options. The
+    * default Sublime option is what is initially displayed.
+    *
+    * Consider the `font_size` option, with its default value of `10`. In the web
+    * page, it appears underneath the heading as `"font_size": 10,`. The number 10 is
+    * wrapped in <span> tags referenced by this option at userChoice[2]. If a user
+    * chooses 14 as the value to `font_size`, then userChoice[2] is updated below
+    * with the new value.
+    */
+var userChoice = document.querySelectorAll('h2+div>p:first-of-type>code>span'),
+
+    /*
+     * Each element with an ID whose name ends in “option” will be saved in the
+     * following array. Items in this array work in tandem with the userChoice array
+     * initialized above.
+     */
+    options = [],
+    fontObject = {
+        'data': [
+            {
+                'name': 'Andalé Mono',
+                'link': 'http://sourceforge.net/projects/corefonts/?source=navbar',
+                'license': 'GNU GPL version 2.0',
+                'summary': 'Andalé Mono is bundled with Mac OS X, but may not be ' +
+                    'included in Windows. It’s downloadable from Sourceforge.'
+            },
+            {
+                'name': 'Anonymous Pro',
+                'link': 'http://www.marksimonson.com/fonts/view/anonymous-pro',
+                'license': 'SIL OFL',
+                'summary': 'Released in 2009, this fixed-width font comes in two ' +
+                           'variants: Anonymous Pro and Anonymous Pro Minus. ' +
+                           'Anonymous Pro is more compatible with Windows, Mac, ' +
+                           'and Linux, and, thus, is recommended over Anonymous ' +
+                           'Pro Minus.'
+            },
+            {
+                'name': 'Consolas',
+                'link': 'http://www.fonts.com/font/microsoft-corporation/consolas',
+                'license': 'Proprietary to Microsoft Corporation',
+                'summary': 'Released by Microsoft and bundled with many of its ' +
+                           'products, including Office and Visual Studio, ' +
+                           'Consolas is a modern alternative to Courier and ' +
+                           'Courier New.'
+            },
+            {
+                'name': 'Courier',
+                'link': 'http://en.wikipedia.org/wiki/Courier_%28typeface%29',
+                'license': 'Royalty-free',
+                'summary': 'It’s very, very likely that your computer already ' +
+                           'has Courier installed.'
+            },
+            {
+                'name': 'Courier New',
+                'link':
+                    'http://www.myfonts.com/fonts/mti/courier-new/licensing.html',
+                'license': 'Proprietary to Monotype Corporation',
+                'summary': 'Unlike Courier, its predecessor, Courier New is not ' +
+                           'royalty-free. It’s commonly available in Windows and ' +
+                           'Macintosh operating systems.'
+            },
+            {
+                'name': 'Inconsolata',
+                'link': 'http://www.levien.com/type/myfonts/inconsolata.html',
+                'license': 'SIL OFL',
+                'summary': 'Designed by a computer programmer, Ralph Levien, ' +
+                           'specifically for other computer programmers, ' +
+                           'Inconsalata is a favorite for many.'
+            },
+            {
+                'name': 'Fira Mono',
+                'link': 'http://www.carrois.com/fira-4-1/',
+                'license': 'SIL OFL',
+                'summary': 'Designed specifically for Firefox OS, Fira Mono is a ' +
+                           'new, humanist, fixed-width type face and is a member ' +
+                           'of the Fira Sans font family.'
+            },
+            {
+                'name': 'Ubuntu Mono',
+                'link': 'http://font.ubuntu.com/',
+                'license': 'Ubuntu Font License',
+                'summary': 'Just like Fira Mono was designed for an operating ' +
+                           'system, so was Ubuntu Mono for the Ubuntu variant of ' +
+                           'Debian Linux.'
+            }
+        ]
+    },
     submit,
-    fontFaceContainer,
     fontFaceInputBox,
-    div,
-    firstParagraph,
+    fontFaceImportantNote,
+    fontFaceImportantNoteMessage,
     introduction,
     styleSheet,
-    button,
-    userOptionForColorScheme,
-    colorSchemeOption,
-    userOptionForFontFace,
-    fontFaceOption,
-    userOptionForFontSize,
-    fontSize,
-    userOptionForFontOptions,
-    fontOptionsOption,
-    userOptionInSpanForlineNumbers,
-    lineNumbersOption,
-    userOptionInSpanForGutter,
-    gutterOption,
-    userChoiceForMarginDisplayedInSpan,
-    marginOption,
-    userOptionInSpanForFoldButtons,
-    foldButtonsOption,
-    userOptionInSpanForFadeFoldButtons,
-    fadeFoldButtonsOption,
-    userChoiceForRulersDisplayedInSpan,
-    rulersOption,
-    userChoiceForSpellCheckOptionDisplayedInSpan,
-    spellCheckOption,
-    userChoiceForTabSizeDisplayedInSpan,
-    tabSizeOption,
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan,
-    translateTabsToSpacesOption,
-    userChoiceForUseTabStopsInSpan,
-    useTabStopsOption,
-    userChoiceForAutoIndentDisplayedInSpan,
-    autoIndentOption,
-    userChoiceForDetectIndentationInSpan,
-    detectIndentationOption,
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan,
-    trimAutomaticWhiteSpaceOption,
-    userChoiceForWordWrapDisplayedInSpan,
-    wordWrapOption,
-    userChoiceForWordSeparatorsDisplayedInSpan,
-    wordSeparatorsOption,
-    wrapWidthOption,
-    userChoiceForWrapWidthDisplayedInSpan,
-    drawCenteredOption,
-    userChoiceForDrawCenteredDisplayedInSpan,
-    dictionaryOption,
-    userChoiceForDictionaryDisplayedInSpan,
-    drawMinimapBorderOption,
-    userChoiceForDrawMinimapBorderDisplayedInSpan,
-    alwaysShowMinimapViewportOption,
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan,
-    highlightLineOption,
-    userChoiceForHighlightLineDisplayedInSpan,
-    caretStyleOption,
-    userChoiceForCaretStyleDisplayedInSpan,
-    scrollPastEndOption,
-    userChoiceForScrollPastEndDisplayedInSpan,
-    drawWhiteSpaceOption,
-    userChoiceForDrawWhiteSpaceDisplayedInSpan,
-    trimTrailingWhiteSpaceOnSaveOption,
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan,
-    ensureNewlineAtEOFOnSaveOption,
-    userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan,
-    saveOnFocusLostOption,
-    userChoiceForSaveOnFocusLostDisplayedInSpan,
-    defaultLineEndingOption,
-    userChoiceForDefaultLineEndingDisplayedInSpan,
-    copyWithEmptySelectionOption,
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan,
-    dragTextOption,
-    userChoiceForDragTextDisplayedInSpan,
-    treeAnimationEnabledOption,
-    userChoiceForTreeAnimationEnabledDisplayedInSpan,
-    animationEnabledOption,
-    userChoiceForAnimationEnabledDisplayedInSpan,
-    highlightModifiedTabsOption,
-    userChoiceForHighlightModifiedTabsDisplayedInSpan,
-    overlayScrollBarsOption,
-    userChoiceForOverlayScrollBarsDisplayInSpan,
-    showEncodingOption,
-    userChoiceForShowEncodingDisplayedInSpan,
-    showLineEndingsOption,
-    userChoiceForShowLineEndingsDisplayedInSpan,
-    hotExitOption,
-    userChoiceForHotExitDisplayedInSpan,
-    alwaysPromptForFileReloadOption,
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan,
-    openFilesInNewWindowOption,
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan,
-    createWindowAtStartupOption,
-    userChoiceForCreateWindowAtStartupDisplayedInSpan,
-    showFullPathOption,
-    userChoiceForShowFullPathDisplayedInSpan,
-    previewOnClickOption,
-    userChoiceForPreviewOnClickDisplayedInSpan;
+    button;
 
 function displayFontFaceInfo() {
-    "use strict";
+    'use strict';
 
     var fontFaceChoice = fontFaceInputBox.value.toLowerCase(),
         index = -1;
 
     switch (fontFaceChoice) {
-    case "andalé mono":
+    case 'andalé mono':
         index = 0;
         break;
 
-    case "anonymous pro":
+    case 'anonymous pro':
         index = 1;
         break;
 
-    case "consolas":
+    case 'consolas':
         index = 2;
         break;
 
-    case "courier":
+    case 'courier':
         index = 3;
         break;
 
-    case "courier new":
+    case 'courier new':
         index = 4;
         break;
 
-    case "inconsolata":
+    case 'inconsolata':
         index = 5;
         break;
 
-    case "fira mono":
+    case 'fira mono':
         index = 6;
         break;
 
-    case "ubuntu mono":
+    case 'ubuntu mono':
         index = 7;
         break;
     }
 
-    if (index !== -1) {
-        setTimeout(function () {div.setAttribute("class", "transition"); }, 300);
+    if (-1 !== index) {
+        setTimeout(function () {
+            fontFaceImportantNote.setAttribute('class', 'transition');
+        }, 300);
 
-        firstParagraph.innerHTML =
+        fontFaceImportantNoteMessage.innerHTML =
             (fontObject.data[index].summary + ' More info <a title="License: ' +
              fontObject.data[index].license + '" href="' +
              fontObject.data[index].link + '">here</a>.');
@@ -218,1156 +150,405 @@ function displayFontFaceInfo() {
 }
 
 function hideIntroduction() {
-    "use strict";
+    'use strict';
 
-    introduction.className = "hide";
+    introduction.className = 'hide';
 }
 
-function updateColorSchemeOption() {
-    "use strict";
-
-    userOptionForColorScheme.textContent = colorSchemeOption.value;
-
-    if ("" === colorSchemeOption.value) {
-        userOptionForColorScheme.textContent = "Monokai.tmTheme";
-    }
-}
-
-function updateFontFaceOption() {
-    "use strict";
-
-    userOptionForFontFace.textContent = fontFaceOption.value;
-
-    if ("" === fontFaceOption.value) {
-        userOptionForFontFace.textContent = "";
-    }
-}
-
-function updateContentInSpanForWrapWidth() {
-    "use strict";
+function updateContentInSpan() {
+    'use strict';
 
     var input;
 
-    if ("" === wrapWidthOption.value) {
-        submit.removeAttribute("disabled");
-        userChoiceForWrapWidthDisplayedInSpan.textContent = "0";
-    } else {
+    switch (this.id) {
+    case 'color_scheme_option':
+        userChoice[0].textContent = options[0].value;
 
-        input = parseInt(wrapWidthOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
-
-            userChoiceForWrapWidthDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
-            submit.removeAttribute("disabled");
-            userChoiceForWrapWidthDisplayedInSpan.textContent =
-                wrapWidthOption.value;
+        if ('' === options[0].value) {
+            userChoice[0].textContent = 'Monokai.tmTheme';
         }
-    }
-}
 
-function updateFontSizeOption() {
-    "use strict";
+        break;
 
-    var input;
+    case 'font_face_option':
+        userChoice[1].textContent = options[1].value;
 
-    if ("" === fontSize.value) {
-        submit.removeAttribute("disabled");
-        userOptionForFontSize.textContent = "10";
-    } else {
-        input = parseInt(fontSize.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
-
-            userOptionForFontSize.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
-        } else {
-            submit.removeAttribute("disabled");
-            userOptionForFontSize.textContent = fontSize.value;
+        if ('' === options[1].value) {
+            userChoice[1].textContent = '';
         }
-    }
-}
 
-function updateFontOptionInSpan() {
-    "use strict";
+        break;
 
-    userOptionForFontOptions.textContent =
-        ("" === fontOptionsOption.value) ? " " : fontOptionsOption.value;
-}
-
-function updateLineNumbersOptionInSpan() {
-    "use strict";
-
-    userOptionInSpanForlineNumbers.textContent = lineNumbersOption.value;
-}
-
-function updateGutterOptionInSpan() {
-    "use strict";
-
-    userOptionInSpanForGutter.textContent = gutterOption.value;
-}
-
-function updateUserChoiceForMarginOptionInSpan() {
-    "use strict";
-
-    var input;
-
-    if ("" === marginOption.value) {
-        submit.removeAttribute("disabled");
-        userChoiceForMarginDisplayedInSpan.textContent = "4";
-    } else {
-
-        input = parseInt(marginOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
-
-            userChoiceForMarginDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
+    case 'font_size_option':
+        if ('' === options[2].value) {
+            submit.removeAttribute('disabled');
+            userChoice[2].textContent = '10';
         } else {
-            submit.removeAttribute("disabled");
-            userChoiceForMarginDisplayedInSpan.textContent =
-                marginOption.value;
+            input = parseInt(options[2].value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[2].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[2].textContent = options[2].value;
+            }
         }
-    }
-}
 
-function updateFoldButtonsOptionInSpan() {
-    "use strict";
+        break;
 
-    userOptionInSpanForFoldButtons.textContent = foldButtonsOption.value;
-}
+    case 'font_options_option':
+        userChoice[3].textContent =
+            ('' === options[3].value) ? ' ' : options[3].value;
 
-function updateInSpanFadeFoldButtonsOption() {
-    "use strict";
+        break;
 
-    userOptionInSpanForFadeFoldButtons.textContent = fadeFoldButtonsOption.value;
-}
+    case 'word_separators_option':
+        userChoice[4].textContent = options[4].value;
 
-function updateUserChoiceForSpellCheckOptionDisplayedInSpan() {
-    "use strict";
+        break;
 
-    userChoiceForSpellCheckOptionDisplayedInSpan.textContent =
-        spellCheckOption.value;
-}
+    case 'line_numbers_option':
+        userChoice[5].textContent = options[5].value;
 
-function updateUserChoiceForTabSizeOptionDisplayedInSpan() {
-    "use strict";
+        break;
 
-    var input;
+    case 'gutter_option':
+        userChoice[6].textContent = options[6].value;
 
-    if ("" === tabSizeOption.value) {
-        submit.removeAttribute("disabled");
+        break;
 
-        userChoiceForTabSizeDisplayedInSpan.textContent = "4";
-    } else {
-
-        input = parseInt(tabSizeOption.value, 10);
-
-        if (isNaN(input)) {
-            submit.setAttribute("disabled", "disabled");
-
-            userChoiceForTabSizeDisplayedInSpan.innerHTML =
-                '<span class="error">That is not a number. ' +
-                'Submission is disabled</span>';
+    case 'margin_option':
+        if ('' === options[7].value) {
+            submit.removeAttribute('disabled');
+            userChoice[7].textContent = '4';
         } else {
-            submit.removeAttribute("disabled");
+            input = parseInt(options[7].value, 10);
 
-            userChoiceForTabSizeDisplayedInSpan.textContent =
-                tabSizeOption.value;
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[7].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[7].textContent = options[7].value;
+            }
         }
+
+        break;
+
+    case 'fold_buttons_option':
+        userChoice[8].textContent = options[8].value;
+
+        break;
+
+    case 'fade_fold_buttons_option':
+        userChoice[9].textContent = options[9].value;
+
+        break;
+
+    case 'rulers_option':
+        userChoice[10].textContent = options[10].value;
+
+        break;
+
+    case 'spell_check_option':
+        userChoice[11].textContent = options[11].value;
+
+        break;
+
+    case 'tab_size_option':
+        if ('' === options[12].value) {
+            submit.removeAttribute('disabled');
+
+            userChoice[12].textContent = '4';
+        } else {
+            input = parseInt(options[12].value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[12].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+
+                userChoice[12].textContent = options[12].value;
+            }
+        }
+
+        break;
+
+    case 'translate_tabs_to_spaces_option':
+        userChoice[13].textContent = options[13].value;
+
+        break;
+
+    case 'use_tab_stops_option':
+        userChoice[14].textContent = options[14].value;
+
+        break;
+
+    case 'detect_indentation_option':
+        userChoice[15].textContent = options[15].value;
+
+        break;
+
+    case 'auto_indent_option':
+        userChoice[16].textContent = options[16].value;
+
+        break;
+
+    case 'trim_automatic_white_space_option':
+        userChoice[17].textContent = options[17].value;
+
+        break;
+
+    case 'word_wrap_option':
+        userChoice[18].textContent = options[18].value;
+
+        break;
+
+    case 'wrap_width_option':
+        if ('' === options[19].value) {
+            submit.removeAttribute('disabled');
+            userChoice[19].textContent = '0';
+        } else {
+            input = parseInt(options[19].value, 10);
+
+            if (isNaN(input)) {
+                submit.setAttribute('disabled', 'disabled');
+
+                userChoice[19].innerHTML =
+                    '<span class="error">That is not a number. ' +
+                    'Submission is disabled</span>';
+            } else {
+                submit.removeAttribute('disabled');
+                userChoice[19].textContent = options[19].value;
+            }
+        }
+
+        break;
+
+    case 'draw_centered_option':
+        userChoice[20].textContent = options[20].value;
+
+        break;
+
+    case 'dictionary_option':
+        userChoice[21].textContent = options[21].value;
+
+        break;
+
+    case 'draw_minimap_border_option':
+        userChoice[22].textContent = options[22].value;
+
+        break;
+
+    case 'always_show_minimap_viewport_option':
+        userChoice[23].textContent = options[23].value;
+
+        break;
+
+    case 'highlight_line_option':
+        userChoice[24].textContent = options[24].value;
+
+        break;
+
+    case 'caret_style_option':
+        userChoice[25].textContent = options[25].value;
+
+        break;
+
+    case 'scroll_past_end_option':
+        userChoice[26].textContent = options[26].value;
+
+        break;
+
+    case 'draw_white_space_option':
+        userChoice[27].textContent = options[27].value;
+
+        break;
+
+    case 'trim_trailing_white_space_on_save_option':
+        userChoice[28].textContent = options[28].value;
+
+        break;
+
+    case 'ensure_newline_at_eof_on_save_option':
+        userChoice[29].textContent = options[29].value;
+
+        break;
+
+    case 'save_on_focus_lost_option':
+        userChoice[30].textContent = options[30].value;
+
+        break;
+
+    case 'default_line_ending_option':
+        userChoice[31].textContent = options[31].value;
+
+        break;
+
+    case 'copy_with_empty_selection_option':
+        userChoice[32].textContent = options[32].value;
+
+        break;
+
+    case 'drag_text_option':
+        userChoice[33].textContent = options[33].value;
+
+        break;
+
+    case 'tree_animation_enabled_option':
+        userChoice[34].textContent = options[34].value;
+
+        break;
+
+    case 'animation_enabled_option':
+        userChoice[35].textContent = options[35].value;
+
+        break;
+
+    case 'highlight_modified_tabs_option':
+        userChoice[36].textContent = options[36].value;
+
+        break;
+
+    case 'overlay_scroll_bars_option':
+        userChoice[37].textContent = options[37].value;
+
+        break;
+
+    case 'show_encoding_option':
+        userChoice[38].textContent = options[38].value;
+
+        break;
+
+    case 'show_line_endings_option':
+        userChoice[39].textContent = options[39].value;
+
+        break;
+
+    case 'hot_exit_option':
+        userChoice[40].textContent = options[40].value;
+
+        break;
+
+    case 'always_prompt_for_file_reload_option':
+        userChoice[41].textContent = options[41].value;
+
+        break;
+
+    case 'open_files_in_new_window_option':
+        userChoice[42].textContent = options[42].value;
+
+        break;
+
+    case 'create_window_at_startup_option':
+        userChoice[43].textContent = options[43].value;
+
+        break;
+
+    case 'show_full_path_option':
+        userChoice[44].textContent = options[44].value;
+
+        break;
+
+    case 'preview_on_click_option':
+        userChoice[45].textContent = options[45].value;
+
+        break;
     }
-}
-
-function updateTranslateTabsToSpaces() {
-    "use strict";
-
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan.textContent =
-        translateTabsToSpacesOption.value;
-}
-
-function updateUseTabStopsOption() {
-    "use strict";
-
-    userChoiceForUseTabStopsInSpan.textContent = useTabStopsOption.value;
-}
-
-function updateContentInSpanForAutoIndentOption() {
-    "use strict";
-
-    userChoiceForAutoIndentDisplayedInSpan.textContent =
-        autoIndentOption.value;
-}
-
-function updateDetectIndentationOption() {
-    "use strict";
-
-    userChoiceForDetectIndentationInSpan.textContent = detectIndentationOption.value;
-}
-
-function updateContentInSpanForTrimAutomaticWhiteSpace() {
-    "use strict";
-
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan.textContent =
-        trimAutomaticWhiteSpaceOption.value;
-}
-
-function updateContentInSpanForWordWrap() {
-    "use strict";
-
-    userChoiceForWordWrapDisplayedInSpan.textContent =
-        wordWrapOption.value;
-}
-
-function updateContentInSpanForWordSeparators() {
-    "use strict";
-
-    userChoiceForWordSeparatorsDisplayedInSpan.textContent =
-        wordSeparatorsOption.value;
-}
-
-function updateContentInSpanForDrawCentered() {
-    "use strict";
-
-    userChoiceForDrawCenteredDisplayedInSpan.textContent =
-        drawCenteredOption.value;
-}
-
-function updateContentInSpanForDictionary() {
-    "use strict";
-
-    userChoiceForDictionaryDisplayedInSpan.textContent =
-        dictionaryOption.value;
-}
-
-function updateContentInSpanForDrawMinimapBorder() {
-    "use strict";
-
-    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
-        drawMinimapBorderOption.value;
-}
-
-function updateContentInSpanForAlwaysShowMinimapViewport() {
-    "use strict";
-
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
-        alwaysShowMinimapViewportOption.value;
-}
-
-function updateContentInSpanForHighlightLine() {
-    "use strict";
-
-    userChoiceForHighlightLineDisplayedInSpan.textContent =
-        highlightLineOption.value;
-}
-
-function updateContentInSpanforRulers() {
-    "use strict";
-
-    userChoiceForRulersDisplayedInSpan.textContent =
-        rulersOption.value;
-}
-
-function updateContentInSpanForCaretStyleOption() {
-    "use strict";
-
-    userChoiceForCaretStyleDisplayedInSpan.textContent =
-        caretStyleOption.value;
-}
-
-function updateContentInSpanForScrollPastEnd() {
-    "use strict";
-
-    userChoiceForScrollPastEndDisplayedInSpan.textContent =
-        scrollPastEndOption.value;
-}
-
-function updateContentInSpanForDrawWhiteSpace() {
-    "use strict";
-
-    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
-        drawWhiteSpaceOption.value;
-}
-
-function updateContentInSpanForTrimTrailingWhiteSpace() {
-    "use strict";
-
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan.textContent =
-        trimTrailingWhiteSpaceOnSaveOption.value;
-}
-
-function updateContentInSpanForEnsureNewlineAtEOFOnSave() {
-    "use strict";
-
-    userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan.textContent =
-        ensureNewlineAtEOFOnSaveOption.value;
-}
-
-function updateContentInSpanForSaveOnFocusLost() {
-    "use strict";
-
-    userChoiceForSaveOnFocusLostDisplayedInSpan.textContent =
-        saveOnFocusLostOption.value;
-}
-
-function updateContentInSpanForDefaultLineEnding() {
-    "use strict";
-
-    userChoiceForDefaultLineEndingDisplayedInSpan.textContent =
-        defaultLineEndingOption.value;
-}
-
-function updateContentInSpanForCopyWithEmptySelection() {
-    "use strict";
-
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
-}
-
-function updateContentInSpanForDragText() {
-    "use strict";
-
-    userChoiceForDragTextDisplayedInSpan.textContent = dragTextOption.value;
-}
-
-function updateContentInSpanForTreeAnimationEnabled() {
-    "use strict";
-
-    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
-        treeAnimationEnabledOption.value;
-}
-
-function updateContentInSpanForAnimationEnabled() {
-    "use strict";
-
-    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
-        animationEnabledOption.value;
-}
-
-function updateContentInSpanForHighlightModifiedTabs() {
-    "use strict";
-
-    userChoiceForHighlightModifiedTabsDisplayedInSpan.textContent =
-        highlightModifiedTabsOption.value;
-}
-
-function updateContentInSpanForOverlayScrollBars() {
-    "use strict";
-
-    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
-        overlayScrollBarsOption.value;
-}
-
-function updateContentInSpanForShowEncoding() {
-    "use strict";
-
-    userChoiceForShowEncodingDisplayedInSpan.textContent =
-        showEncodingOption.value;
-}
-
-function updateContentInSpanForShowLineEndings() {
-    "use strict";
-
-    userChoiceForShowLineEndingsDisplayedInSpan.textContent =
-        showLineEndingsOption.value;
-}
-
-function updateContentInSpanForHotExit() {
-    "use strict";
-
-    userChoiceForHotExitDisplayedInSpan.textContent =
-        hotExitOption.value;
-}
-
-function updateContentInSpanForAlwaysPromptForFileReload() {
-    "use strict";
-
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan.textContent =
-        alwaysPromptForFileReloadOption.value;
-}
-
-function updateContentInSpanForOpenFilesInNewWindow() {
-    "use strict";
-
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan.textContent =
-        openFilesInNewWindowOption.value;
-}
-
-function updateContentInSpanForCreateWindowAtStartup() {
-    "use strict";
-
-    userChoiceForCreateWindowAtStartupDisplayedInSpan.textContent =
-        createWindowAtStartupOption.value;
-}
-
-function updateContentInSpanForShowFullPath() {
-    "use strict";
-
-    userChoiceForShowFullPathDisplayedInSpan.textContent =
-        showFullPathOption.value;
-}
-
-function updateContentInSpanForPreviewOnClick() {
-    "use strict";
-
-    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
-        previewOnClickOption.value;
 }
 
 window.onload = function () {
-    "use strict";
+    'use strict';
 
-    submit = document.getElementById("submit");
+    var i,
+        j,
+        allElements = document.querySelectorAll('body *');
 
-    fontFaceContainer = document.getElementById("font_face");
-    fontFaceInputBox =  document.getElementById("font_face_option");
-    fontFaceInputBox.addEventListener("input", displayFontFaceInfo, false);
-    div = document.querySelector("#font_face>h2+div>div");
-    firstParagraph = div.getElementsByTagName("p")[0];
+    submit = document.getElementById('submit');
 
-    introduction = document.getElementById("introduction");
+    fontFaceInputBox =  document.getElementById('font_face_option');
+    fontFaceInputBox.addEventListener('input', displayFontFaceInfo, false);
+    fontFaceImportantNote = document.getElementById('font_face_important_note');
+    fontFaceImportantNoteMessage =
+        fontFaceImportantNote.getElementsByTagName('p')[0];
+    introduction = document.getElementById('introduction');
     styleSheet = document.styleSheets[0];
     styleSheet.insertRule(
-        "#introduction { height: " + introduction.clientHeight + "px; }",
+        '#introduction { height: ' + introduction.clientHeight + 'px; }',
         3
     );
-    button = document.getElementsByTagName("button")[0];
+    button = document.getElementsByTagName('button')[0];
     button.addEventListener(
-        "click",
+        'click',
         hideIntroduction,
         false
     );
 
-    /**
-     * COLOR SCHEME
-     */
-    userOptionForColorScheme = document.querySelector(
-        "#color_scheme>h2+div>p:first-of-type>code>span"
-    );
-    colorSchemeOption = document.getElementById("color_scheme_option");
-    colorSchemeOption.addEventListener(
-        "input",
-        updateColorSchemeOption,
-        false
-    );
-    userOptionForColorScheme.textContent = colorSchemeOption.value;
+    for (i = 0, j = 0; i < allElements.length; i++) {
+        if (allElements[i].hasAttribute('id')) {
+            /*
+             * The word “option” is 6 characters long. Thus, slice from end and
+             * check if it is indeed the word “option.”
+             */
+            if ('option' === allElements[i].id.slice(-6)) {
+                options[j++] = allElements[i];
+            }
+        }
+    }
 
-    /**
-     * FONT FACE
-     */
-    userOptionForFontFace = document.querySelector(
-        "#font_face>h2+div>p:first-of-type>code>span"
-    );
-    fontFaceOption = document.getElementById("font_face_option");
-    fontFaceOption.addEventListener(
-        "input",
-        updateFontFaceOption,
-        false
-    );
-    userOptionForFontFace.textContent = fontFaceOption.value;
-
-    /**
-     * FONT SIZE
-     */
-    userOptionForFontSize = document.querySelector(
-        "#font_size>h2+div>p:first-of-type>code>span"
-    );
-    fontSize = document.getElementById("font_size_option");
-    fontSize.addEventListener(
-        "input",
-        updateFontSizeOption,
-        false
-    );
-    userOptionForFontSize.textContent = fontSize.value;
-
-    /**
-     * FONT OPTIONS
-     */
-    userOptionForFontOptions = document.querySelector(
-        "#font_options>h2+div>p:first-of-type>code>span"
-    );
-    fontOptionsOption = document.getElementById("font_options_option");
-    fontOptionsOption.addEventListener(
-        "change",
-        updateFontOptionInSpan,
-        false
-    );
-    userOptionForFontOptions.textContent = fontOptionsOption.value;
-
-    /**
-     * WORD SEPARATORS
-     */
-    userChoiceForWordSeparatorsDisplayedInSpan = document.querySelector(
-        "#word_separators>h2+div>p:first-of-type>code>span"
-    );
-    wordSeparatorsOption =
-        document.getElementById("word_separators_option");
-    wordSeparatorsOption.addEventListener(
-        "change",
-        updateContentInSpanForWordSeparators,
-        false
-    );
-
-    /**
-     * LINE NUMBERS
-     */
-    userOptionInSpanForlineNumbers = document.querySelector(
-        "#line_numbers>h2+div>p:first-of-type>code>span"
-    );
-    lineNumbersOption = document.getElementById("line_numbers_option");
-    lineNumbersOption.addEventListener(
-        "change",
-        updateLineNumbersOptionInSpan,
-        false
-    );
-    userOptionInSpanForlineNumbers.textContent = lineNumbersOption.value;
-
-    /**
-     * GUTTER
-     */
-    userOptionInSpanForGutter = document.querySelector(
-        "#gutter>h2+div>p:first-of-type>code>span"
-    );
-    gutterOption = document.getElementById("gutter_option");
-    gutterOption.addEventListener(
-        "change",
-        updateGutterOptionInSpan,
-        false
-    );
-    userOptionInSpanForGutter.textContent = gutterOption.value;
-
-    /**
-     * MARGIN
-     */
-    userChoiceForMarginDisplayedInSpan = document.querySelector(
-        "#margin>h2+div>p:first-of-type>code>span"
-    );
-    marginOption = document.getElementById("margin_option");
-    marginOption.addEventListener(
-        "input",
-        updateUserChoiceForMarginOptionInSpan,
-        false
-    );
-    userChoiceForMarginDisplayedInSpan.textContent = marginOption.value;
-
-    /**
-     * FOLD BUTTONS
-     */
-    userOptionInSpanForFoldButtons = document.querySelector(
-        "#fold_buttons>h2+div>p:first-of-type>code>span"
-    );
-    foldButtonsOption = document.getElementById("fold_buttons_option");
-    foldButtonsOption.addEventListener(
-        "change",
-        updateFoldButtonsOptionInSpan,
-        false
-    );
-    userOptionInSpanForFoldButtons.textContent = foldButtonsOption.value;
-
-    /**
-     * FADE FOLD BUTTONS
-     */
-    userOptionInSpanForFadeFoldButtons = document.querySelector(
-        "#fade_fold_buttons>h2+div>p:first-of-type>code>span"
-    );
-    fadeFoldButtonsOption =
-        document.getElementById("fade_fold_buttons_option");
-    fadeFoldButtonsOption.addEventListener(
-        "change",
-        updateInSpanFadeFoldButtonsOption,
-        false
-    );
-    userOptionInSpanForFadeFoldButtons.textContent = fadeFoldButtonsOption.value;
-
-    /**
-     * RULERS
-     */
-    userChoiceForRulersDisplayedInSpan = document.querySelector(
-        "#rulers>h2+div>p:first-of-type>code>span"
-    );
-    rulersOption = document.getElementById("rulers_option");
-    rulersOption.addEventListener(
-        "change",
-        updateContentInSpanforRulers,
-        false
-    );
-    userChoiceForRulersDisplayedInSpan.textContent = rulersOption.value;
-
-    /**
-     * SPELL CHECK
-     */
-    userChoiceForSpellCheckOptionDisplayedInSpan = document.querySelector(
-        "#spell_check>h2+div>p:first-of-type>code>span"
-    );
-    spellCheckOption = document.getElementById("spell_check_option");
-    spellCheckOption.addEventListener(
-        "change",
-        updateUserChoiceForSpellCheckOptionDisplayedInSpan,
-        false
-    );
-    userChoiceForSpellCheckOptionDisplayedInSpan.textContent =
-        spellCheckOption.value;
-
-    /**
-     * TAB SIZE
-     */
-    userChoiceForTabSizeDisplayedInSpan = document.querySelector(
-        "#tab_size>h2+div>p:first-of-type>code>span"
-    );
-    tabSizeOption = document.getElementById("tab_size_option");
-    tabSizeOption.addEventListener(
-        "input",
-        updateUserChoiceForTabSizeOptionDisplayedInSpan,
-        false
-    );
-    userChoiceForTabSizeDisplayedInSpan.textContent = tabSizeOption.value;
-
-    /**
-     * TRANSLATE TABS TO SPACES
-     */
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan = document.querySelector(
-        "#translate_tabs_to_spaces>h2+div>p:first-of-type>code>span"
-    );
-    translateTabsToSpacesOption = document.getElementById(
-        "translate_tabs_to_spaces_option"
-    );
-    translateTabsToSpacesOption.addEventListener(
-        "change",
-        updateTranslateTabsToSpaces,
-        false
-    );
-    userChoiceForTranslateTabsToSpacesDisplayedInSpan.textContent =
-        translateTabsToSpacesOption.value;
-
-    /**
-     * USE TAB STOPS
-     */
-    userChoiceForUseTabStopsInSpan = document.querySelector(
-        "#use_tab_stops>h2+div>p:first-of-type>code>span"
-    );
-    useTabStopsOption = document.getElementById("use_tab_stops_option");
-    useTabStopsOption.addEventListener(
-        "change",
-        updateUseTabStopsOption,
-        false
-    );
-    userChoiceForUseTabStopsInSpan.textContent = useTabStopsOption.value;
-
-    /**
-     * DETECT INDENTATION
-     */
-    userChoiceForDetectIndentationInSpan = document.querySelector(
-        "#detect_indentation>h2+div>p:first-of-type>code>span"
-    );
-    detectIndentationOption = document.getElementById("detect_indentation_option");
-    detectIndentationOption.addEventListener(
-        "change",
-        updateDetectIndentationOption,
-        false
-    );
-    userChoiceForDetectIndentationInSpan.textContent =
-        detectIndentationOption.value;
-
-    /**
-     * AUTO INDENT
-     */
-    userChoiceForAutoIndentDisplayedInSpan = document.querySelector(
-        "#auto_indent>h2+div>p:first-of-type>code>span"
-    );
-    autoIndentOption = document.getElementById("auto_indent_option");
-    autoIndentOption.addEventListener(
-        "change",
-        updateContentInSpanForAutoIndentOption,
-        false
-    );
-    userChoiceForAutoIndentDisplayedInSpan.textContent = autoIndentOption.value;
-
-    /**
-     * TRIM AUTOMATIC WHITE SPACE
-     */
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan = document.querySelector(
-        "#trim_automatic_white_space>h2+div>p:first-of-type>code>span"
-    );
-    trimAutomaticWhiteSpaceOption =
-        document.getElementById("trim_automatic_white_space_option");
-    trimAutomaticWhiteSpaceOption.addEventListener(
-        "change",
-        updateContentInSpanForTrimAutomaticWhiteSpace,
-        false
-    );
-    userChoiceForTrimAutomaticWhiteSpaceDisplayedInSpan.textContent =
-        trimAutomaticWhiteSpaceOption.value;
-
-    /**
-     * WORD WRAP
-     */
-    userChoiceForWordWrapDisplayedInSpan = document.querySelector(
-        "#word_wrap>h2+div>p:first-of-type>code>span"
-    );
-    wordWrapOption =
-        document.getElementById("word_wrap_option");
-    wordWrapOption.addEventListener(
-        "change",
-        updateContentInSpanForWordWrap,
-        false
-    );
-    userChoiceForWordWrapDisplayedInSpan.textContent = wordWrapOption.value;
-
-    /**
-     * WRAP WIDTH
-     */
-    userChoiceForWrapWidthDisplayedInSpan = document.querySelector(
-        "#wrap_width>h2+div>p:first-of-type>code>span"
-    );
-    wrapWidthOption = document.getElementById("wrap_width_option");
-    wrapWidthOption.addEventListener(
-        "input",
-        updateContentInSpanForWrapWidth,
-        false
-    );
-    userChoiceForWrapWidthDisplayedInSpan.textContent = wrapWidthOption.value;
-
-    /**
-     * DRAW CENTERED
-     */
-    userChoiceForDrawCenteredDisplayedInSpan = document.querySelector(
-        "#draw_centered>h2+div>p:first-of-type>code>span"
-    );
-    drawCenteredOption = document.getElementById("draw_centered_option");
-    drawCenteredOption.addEventListener(
-        "change",
-        updateContentInSpanForDrawCentered,
-        false
-    );
-    userChoiceForDrawCenteredDisplayedInSpan.textContent = drawCenteredOption.value;
-
-    /**
-     * DICTIONARY
-     */
-    userChoiceForDictionaryDisplayedInSpan =
-        document.querySelector(
-            "#dictionary>h2+div>p:first-of-type>code>span"
-        );
-    dictionaryOption = document.getElementById("dictionary_option");
-    dictionaryOption.addEventListener(
-        "change",
-        updateContentInSpanForDictionary,
-        false
-    );
-    userChoiceForDictionaryDisplayedInSpan.textContent =
-        dictionaryOption.value;
-
-    /**
-     * DRAW MINIMAP BORDER
-     */
-    userChoiceForDrawMinimapBorderDisplayedInSpan =
-        document.querySelector(
-            "#draw_minimap_border>h2+div>p:first-of-type>code>span"
-        );
-    drawMinimapBorderOption = document.getElementById("draw_minimap_border_option");
-    drawMinimapBorderOption.addEventListener(
-        "change",
-        updateContentInSpanForDrawMinimapBorder,
-        false
-    );
-    userChoiceForDrawMinimapBorderDisplayedInSpan.textContent =
-        drawMinimapBorderOption.value;
-
-    /**
-     * ALWAYS SHOW MINIMAP VIEWPORT
-     */
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan =
-        document.querySelector(
-            "#always_show_minimap_viewport>h2+div>p:first-of-type>code>span"
-        );
-    alwaysShowMinimapViewportOption =
-        document.getElementById("always_show_minimap_viewport_option");
-    alwaysShowMinimapViewportOption.addEventListener(
-        "change",
-        updateContentInSpanForAlwaysShowMinimapViewport,
-        false
-    );
-    userChoiceForAlwaysShowMinimapViewportDisplayedInSpan.textContent =
-        alwaysShowMinimapViewportOption.value;
-
-    /**
-     * HIGHLIGHT LINE
-     */
-    userChoiceForHighlightLineDisplayedInSpan =
-        document.querySelector(
-            "#highlight_line>h2+div>p:first-of-type>code>span"
-        );
-    highlightLineOption = document.getElementById("highlight_line_option");
-    highlightLineOption.addEventListener(
-        "change",
-        updateContentInSpanForHighlightLine,
-        false
-    );
-    userChoiceForHighlightLineDisplayedInSpan.textContent =
-        highlightLineOption.value;
-
-    /**
-     * CARET STYLE
-     */
-    userChoiceForCaretStyleDisplayedInSpan = document.querySelector(
-        "#caret_style>h2+div>p:first-of-type>code>span"
-    );
-    caretStyleOption = document.getElementById("caret_style_option");
-    caretStyleOption.addEventListener(
-        "change",
-        updateContentInSpanForCaretStyleOption,
-        false
-    );
-    userChoiceForCaretStyleDisplayedInSpan.textContent = caretStyleOption.value;
-
-    /**
-     * SCROLL PAST END
-     */
-    userChoiceForScrollPastEndDisplayedInSpan = document.querySelector(
-        "#scroll_past_end>h2+div>p:first-of-type>code>span"
-    );
-    scrollPastEndOption = document.getElementById("scroll_past_end_option");
-    scrollPastEndOption.addEventListener(
-        "change",
-        updateContentInSpanForScrollPastEnd,
-        false
-    );
-    userChoiceForScrollPastEndDisplayedInSpan.textContent =
-        scrollPastEndOption.value;
-
-    /**
-     * DRAW WHITE SPACE
-     */
-    userChoiceForDrawWhiteSpaceDisplayedInSpan = document.querySelector(
-        "#draw_white_space>h2+div>p:first-of-type>code>span"
-    );
-    drawWhiteSpaceOption = document.getElementById("draw_white_space_option");
-    drawWhiteSpaceOption.addEventListener(
-        "change",
-        updateContentInSpanForDrawWhiteSpace,
-        false
-    );
-    userChoiceForDrawWhiteSpaceDisplayedInSpan.textContent =
-        drawWhiteSpaceOption.value;
-
-    /**
-     * TRIM TRAILING WHITE SPACE ON SAVE
-     */
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan =
-        document.querySelector(
-            "#trim_trailing_white_space_on_save>h2+div>p:first-of-type>code>span"
-        );
-    trimTrailingWhiteSpaceOnSaveOption =
-        document.getElementById("trim_trailing_white_space_on_save_option");
-    trimTrailingWhiteSpaceOnSaveOption.addEventListener(
-        "change",
-        updateContentInSpanForTrimTrailingWhiteSpace,
-        false
-    );
-    userChoiceForTrimTrailingWhiteSpaceOnSaveDisplayedInSpan.textContent =
-        trimTrailingWhiteSpaceOnSaveOption.value;
-
-    /**
-     * ENSURE NEWLINE AT EOF ON SAVE
-     */
-    userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan =
-        document.querySelector(
-            "#ensure_newline_at_eof_on_save>h2+div>p:first-of-type>code>span"
-        );
-    ensureNewlineAtEOFOnSaveOption =
-        document.getElementById("ensure_newline_at_eof_on_save_option");
-    ensureNewlineAtEOFOnSaveOption.addEventListener(
-        "change",
-        updateContentInSpanForEnsureNewlineAtEOFOnSave,
-        false
-    );
-    userChoiceForEnsureNewlineAtEOFOnSaveDisplayedInSpan.textContent =
-        ensureNewlineAtEOFOnSaveOption.value;
-
-    /**
-     * SAVE ON FOCUS LOST
-     */
-    userChoiceForSaveOnFocusLostDisplayedInSpan =
-        document.querySelector(
-            "#save_on_focus_lost>h2+div>p:first-of-type>code>span"
-        );
-    saveOnFocusLostOption = document.getElementById("save_on_focus_lost_option");
-    saveOnFocusLostOption.addEventListener(
-        "change",
-        updateContentInSpanForSaveOnFocusLost,
-        false
-    );
-    userChoiceForSaveOnFocusLostDisplayedInSpan.textContent =
-        saveOnFocusLostOption.value;
-
-    /**
-     * DEFAULT LINE ENDING
-     */
-    userChoiceForDefaultLineEndingDisplayedInSpan =
-        document.querySelector(
-            "#default_line_ending>h2+div>p:first-of-type>code>span"
-        );
-    defaultLineEndingOption = document.getElementById("default_line_ending_option");
-    defaultLineEndingOption.addEventListener(
-        "change",
-        updateContentInSpanForDefaultLineEnding,
-        false
-    );
-    userChoiceForDefaultLineEndingDisplayedInSpan.textContent =
-        defaultLineEndingOption.value;
-
-    /**
-     * COPY WITH EMPTY SELECTION
-     */
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan =
-        document.querySelector(
-            "#copy_with_empty_selection>h2+div>p:first-of-type>code>span"
-        );
-    copyWithEmptySelectionOption =
-        document.getElementById("copy_with_empty_selection_option");
-    copyWithEmptySelectionOption.addEventListener(
-        "change",
-        updateContentInSpanForCopyWithEmptySelection,
-        false
-    );
-    userChoiceForCopyWithEmptySelectionDisplayedInSpan.textContent =
-        copyWithEmptySelectionOption.value;
-
-    /**
-     * DRAG TEXT
-     */
-    userChoiceForDragTextDisplayedInSpan =
-        document.querySelector(
-            "#drag_text>h2+div>p:first-of-type>code>span"
-        );
-    dragTextOption = document.getElementById("drag_text_option");
-    dragTextOption.addEventListener(
-        "change",
-        updateContentInSpanForDragText,
-        false
-    );
-    userChoiceForDragTextDisplayedInSpan.textContent =
-        dragTextOption.value;
-
-    /**
-     * TREE ANIMATION ENABLED
-     */
-    userChoiceForTreeAnimationEnabledDisplayedInSpan =
-        document.querySelector(
-            "#tree_animation_enabled>h2+div>p:first-of-type>code>span"
-        );
-    treeAnimationEnabledOption =
-        document.getElementById("tree_animation_enabled_option");
-    treeAnimationEnabledOption.addEventListener(
-        "change",
-        updateContentInSpanForTreeAnimationEnabled,
-        false
-    );
-    userChoiceForTreeAnimationEnabledDisplayedInSpan.textContent =
-        treeAnimationEnabledOption.value;
-
-    /**
-     * ANIMATION ENABLED
-     */
-    userChoiceForAnimationEnabledDisplayedInSpan =
-        document.querySelector(
-            "#animation_enabled>h2+div>p:first-of-type>code>span"
-        );
-    animationEnabledOption =
-        document.getElementById("animation_enabled_option");
-    animationEnabledOption.addEventListener(
-        "change",
-        updateContentInSpanForAnimationEnabled,
-        false
-    );
-    userChoiceForAnimationEnabledDisplayedInSpan.textContent =
-        animationEnabledOption.value;
-
-    /**
-     * HIGHLIGHT MODIFIED TABS
-     */
-    userChoiceForHighlightModifiedTabsDisplayedInSpan =
-        document.querySelector(
-            "#highlight_modified_tabs>h2+div>p:first-of-type>code>span"
-        );
-    highlightModifiedTabsOption =
-        document.getElementById("highlight_modified_tabs_option");
-    highlightModifiedTabsOption.addEventListener(
-        "change",
-        updateContentInSpanForHighlightModifiedTabs,
-        false
-    );
-    userChoiceForHighlightModifiedTabsDisplayedInSpan.textContent =
-        highlightModifiedTabsOption.value;
-
-    /**
-     * OVERLAY SCROLL BARS
-     */
-    userChoiceForOverlayScrollBarsDisplayInSpan =
-        document.querySelector(
-            "#overlay_scroll_bars>h2+div>p:first-of-type>code>span"
-        );
-    overlayScrollBarsOption = document.getElementById("overlay_scroll_bars_option");
-    overlayScrollBarsOption.addEventListener(
-        "change",
-        updateContentInSpanForOverlayScrollBars,
-        false
-    );
-    userChoiceForOverlayScrollBarsDisplayInSpan.textContent =
-        overlayScrollBarsOption.value;
-
-    /**
-     * SHOW ENCODING
-     */
-    userChoiceForShowEncodingDisplayedInSpan =
-        document.querySelector(
-            "#show_encoding>h2+div>p:first-of-type>code>span"
-        );
-    showEncodingOption = document.getElementById("show_encoding_option");
-    showEncodingOption.addEventListener(
-        "change",
-        updateContentInSpanForShowEncoding,
-        false
-    );
-    userChoiceForShowEncodingDisplayedInSpan.textContent =
-        showEncodingOption.value;
-
-    /**
-     * SHOW LINE ENDINGS
-     */
-    userChoiceForShowLineEndingsDisplayedInSpan =
-        document.querySelector(
-            "#show_line_endings>h2+div>p:first-of-type>code>span"
-        );
-    showLineEndingsOption = document.getElementById("show_line_endings_option");
-    showLineEndingsOption.addEventListener(
-        "change",
-        updateContentInSpanForShowLineEndings,
-        false
-    );
-    userChoiceForShowLineEndingsDisplayedInSpan.textContent =
-        showLineEndingsOption.value;
-
-    /**
-     * HOT EXIT
-     */
-    userChoiceForHotExitDisplayedInSpan =
-        document.querySelector(
-            "#hot_exit>h2+div>p:first-of-type>code>span"
-        );
-    hotExitOption = document.getElementById("hot_exit_option");
-    hotExitOption.addEventListener(
-        "change",
-        updateContentInSpanForHotExit,
-        false
-    );
-    userChoiceForHotExitDisplayedInSpan.textContent =
-        hotExitOption.value;
-
-    /**
-     * ALWAYS PROMPT FOR FILE RELOAD
-     */
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan =
-        document.querySelector(
-            "#always_prompt_for_file_reload>h2+div>p:first-of-type>code>span"
-        );
-    alwaysPromptForFileReloadOption =
-        document.getElementById("always_prompt_for_file_reload_option");
-    alwaysPromptForFileReloadOption.addEventListener(
-        "change",
-        updateContentInSpanForAlwaysPromptForFileReload,
-        false
-    );
-    userChoiceForAlwaysPromptForFileReloadDisplayedInSpan.textContent =
-        alwaysPromptForFileReloadOption.value;
-
-    /**
-     * OPEN FILES IN NEW WINDOW
-     */
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan =
-        document.querySelector(
-            "#open_files_in_new_window>h2+div>p:first-of-type>code>span"
-        );
-    openFilesInNewWindowOption =
-        document.getElementById("open_files_in_new_window_option");
-    openFilesInNewWindowOption.addEventListener(
-        "change",
-        updateContentInSpanForOpenFilesInNewWindow,
-        false
-    );
-    userChoiceForOpenFilesInNewWindowDisplayedInSpan.textContent =
-        openFilesInNewWindowOption.value;
-
-    /**
-     * CREATE WINDOW AT STARTUP
-     */
-    userChoiceForCreateWindowAtStartupDisplayedInSpan =
-        document.querySelector(
-            "#create_window_at_startup>h2+div>p:first-of-type>code>span"
-        );
-    createWindowAtStartupOption =
-        document.getElementById("create_window_at_startup_option");
-    createWindowAtStartupOption.addEventListener(
-        "change",
-        updateContentInSpanForCreateWindowAtStartup,
-        false
-    );
-    userChoiceForCreateWindowAtStartupDisplayedInSpan.textContent =
-        createWindowAtStartupOption.value;
-
-    /**
-     * SHOW FULL PATH
-     */
-    userChoiceForShowFullPathDisplayedInSpan =
-        document.querySelector(
-            "#show_full_path>h2+div>p:first-of-type>code>span"
-        );
-    showFullPathOption = document.getElementById("show_full_path_option");
-    showFullPathOption.addEventListener(
-        "change",
-        updateContentInSpanForShowFullPath,
-        false
-    );
-    userChoiceForShowFullPathDisplayedInSpan.textContent =
-        showFullPathOption.value;
-
-    /**
-     * PREVIEW ON CLICK
-     */
-    userChoiceForPreviewOnClickDisplayedInSpan =
-        document.querySelector(
-            "#preview_on_click>h2+div>p:first-of-type>code>span"
-        );
-    previewOnClickOption = document.getElementById("preview_on_click_option");
-    previewOnClickOption.addEventListener(
-        "change",
-        updateContentInSpanForPreviewOnClick,
-        false
-    );
-    userChoiceForPreviewOnClickDisplayedInSpan.textContent =
-        previewOnClickOption.value;
-
-    /**
-     * TEMPLATE
-     */
     /*
-    userChoiceForOPTIONDisplayedInSpan =
-        document.querySelector(
-            "#OPTION>h2+div>p:first-of-type>code>span"
-        );
-    OPTIONOption = document.getElementById("OPTION_option");
-    OPTIONOption.addEventListener(
-        "change",
-        updateContentInSpanForOPTION,
-        false
-    );
-    userChoiceForOPTIONDisplayedInSpan.textContent =
-        OPTIONOption.value;
-    */
+     * Set listeners to each of the options on the page, then initialize to
+     * Sublime’s default value the value to the option on the example line under
+     * each heading. For example, if you look under the Font Size option in the web
+     * page, the value 10 is assigned to “font_size.” That value is initially
+     * assigned by one of the for loops below. (It’s updated via the
+     * updateContentInSpan function above.)
+     *
+     * The multiple for loops below are designed to avoid using multiple if
+     * statements when setting “input” or “change” on all the event listeners.
+     */
+    for (i = 0; i < 3; i++) {
+        options[i].addEventListener('input', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
+
+    for (i = 3; i < 7; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
+
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
+
+    for (i = 8; i < 12; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
+
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
+
+    for (i = 13; i < 19; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
+
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
+
+    for (i = 20; i < 46; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 };

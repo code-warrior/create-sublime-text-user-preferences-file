@@ -266,7 +266,10 @@ if (!empty($_GET['draw_centered_option'])) {
  * DICTIONARY
  */
 if (!empty($_GET['dictionary_option'])) {
-    if (strcmp($_GET['dictionary_option'], "Packages/Language - English/en_US.dic") !== 0) {
+    if (strcmp(
+        $_GET['dictionary_option'],
+        "Packages/Language - English/en_US.dic"
+    ) !== 0) {
         $options .= '   "dictionary": ' .
             " \"{$_GET['dictionary_option']}\",\n";
     }
@@ -338,16 +341,6 @@ if (!empty($_GET['trim_trailing_white_space_on_save_option'])) {
     if (strcmp($_GET['trim_trailing_white_space_on_save_option'], "false") !== 0) {
         $options .= '   "trim_trailing_white_space_on_save": ' .
             $_GET['trim_trailing_white_space_on_save_option'] . ',' . "\n";
-    }
-}
-
-/**
- * ENSURE NEWLINE AT EOF ON SAVE
- */
-if (!empty($_GET['ensure_newline_at_eof_on_save_option'])) {
-    if (strcmp($_GET['ensure_newline_at_eof_on_save_option'], "false") !== 0) {
-        $options .= '   "ensure_newline_at_eof_on_save": ' .
-            $_GET['ensure_newline_at_eof_on_save_option'] . ',' . "\n";
     }
 }
 
@@ -518,17 +511,6 @@ if (!empty($_GET['preview_on_click_option'])) {
             $_GET['preview_on_click_option'].',' . "\n";
     }
 }
-
-/**
- * TEMPLATE
- */
-/*
-if (!empty($_GET['_option'])) {
-    if (strcmp($_GET['_option'], "") !== 0) {
-        $options .= '   "": '.$_GET['_option'].',' . "\n";
-    }
-}
-*/
 
 if (strlen($options) !== 0 ) {
     $indexOfLastComma = strrpos($options, ',', 0);
