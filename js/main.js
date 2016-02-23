@@ -86,6 +86,7 @@ var fontObject = {
     fontFaceInputBox,
     div,
     firstParagraph,
+    fontFaceImportantNote,
     introduction,
     styleSheet,
     button,
@@ -177,9 +178,11 @@ function displayFontFaceInfo() {
     }
 
     if (-1 !== index) {
-        setTimeout(function () {div.setAttribute('class', 'transition'); }, 300);
+        setTimeout(function () {
+            fontFaceImportantNote.setAttribute('class', 'transition');
+        }, 300);
 
-        firstParagraph.innerHTML =
+        fontFaceImportantNoteMessage.innerHTML =
             (fontObject.data[index].summary + ' More info <a title="License: ' +
              fontObject.data[index].license + '" href="' +
              fontObject.data[index].link + '">here</a>.');
@@ -509,13 +512,17 @@ function updateContentInSpan() {
 window.onload = function () {
     'use strict';
 
+    var i,
+        j,
+        allElements = document.querySelectorAll('body *');
+
     submit = document.getElementById('submit');
 
     fontFaceInputBox =  document.getElementById('font_face_option');
     fontFaceInputBox.addEventListener('input', displayFontFaceInfo, false);
-    div = document.querySelector('#font_face>h2+div>div');
-    firstParagraph = div.getElementsByTagName('p')[0];
-
+    fontFaceImportantNote = document.getElementById('font_face_important_note');
+    fontFaceImportantNoteMessage =
+        fontFaceImportantNote.getElementsByTagName('p')[0];
     introduction = document.getElementById('introduction');
     styleSheet = document.styleSheets[0];
     styleSheet.insertRule(
