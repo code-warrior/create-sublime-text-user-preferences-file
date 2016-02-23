@@ -1,18 +1,25 @@
 /*jslint browser: true, devel: true, indent: 4, maxlen: 85 */
 
-/*
- * This variable holds an array of the <span> elements in index.php that are updated
- * when a user makes a choice for any of the available options. The default Sublime
- * option is what is initially displayed.
- *
- * Consider the `font_size` option, with its default value of `10`. In the web page,
- * it appears underneath the heading as `"font_size": 10,`. The number 10 is wrapped
- * in <span> tags referenced by this option at userChoice[2]. If a user chooses 14 as
- * the value to `font_size`, then userChoice[2] is updated below with the new value.
- */
-var userChoice = document.querySelectorAll('h2+div>p:first-of-type>code>span');
+   /*
+    * This variable holds an array of the <span> elements in index.php that are
+    * updated when a user makes a choice for any of the available options. The
+    * default Sublime option is what is initially displayed.
+    *
+    * Consider the `font_size` option, with its default value of `10`. In the web
+    * page, it appears underneath the heading as `"font_size": 10,`. The number 10 is
+    * wrapped in <span> tags referenced by this option at userChoice[2]. If a user
+    * chooses 14 as the value to `font_size`, then userChoice[2] is updated below
+    * with the new value.
+    */
+var userChoice = document.querySelectorAll('h2+div>p:first-of-type>code>span'),
 
-var fontObject = {
+    /*
+     * Each element with an ID whose name ends in “option” will be saved in the
+     * following array. Items in this array work in tandem with the userChoice array
+     * initialized above.
+     */
+    options = [],
+    fontObject = {
         'data': [
             {
                 'name': 'Andalé Mono',
@@ -84,58 +91,11 @@ var fontObject = {
     },
     submit,
     fontFaceInputBox,
-    div,
-    firstParagraph,
     fontFaceImportantNote,
+    fontFaceImportantNoteMessage,
     introduction,
     styleSheet,
-    button,
-    colorSchemeOption,
-    fontFaceOption,
-    fontSizeOption,
-    fontOptionsOption,
-    wordSeparatorsOption,
-    lineNumbersOption,
-    gutterOption,
-    marginOption,
-    foldButtonsOption,
-    fadeFoldButtonsOption,
-    rulersOption,
-    spellCheckOption,
-    tabSizeOption,
-    translateTabsToSpacesOption,
-    useTabStopsOption,
-    detectIndentationOption,
-    autoIndentOption,
-    trimAutomaticWhiteSpaceOption,
-    wordWrapOption,
-    wrapWidthOption,
-    drawCenteredOption,
-    dictionaryOption,
-    drawMinimapBorderOption,
-    alwaysShowMinimapViewportOption,
-    highlightLineOption,
-    caretStyleOption,
-    scrollPastEndOption,
-    drawWhiteSpaceOption,
-    trimTrailingWhiteSpaceOnSaveOption,
-    ensureNewlineAtEOFOnSaveOption,
-    saveOnFocusLostOption,
-    defaultLineEndingOption,
-    copyWithEmptySelectionOption,
-    dragTextOption,
-    treeAnimationEnabledOption,
-    animationEnabledOption,
-    highlightModifiedTabsOption,
-    overlayScrollBarsOption,
-    showEncodingOption,
-    showLineEndingsOption,
-    hotExitOption,
-    alwaysPromptForFileReloadOption,
-    openFilesInNewWindowOption,
-    createWindowAtStartupOption,
-    showFullPathOption,
-    previewOnClickOption;
+    button;
 
 function displayFontFaceInfo() {
     'use strict';
@@ -202,29 +162,29 @@ function updateContentInSpan() {
 
     switch (this.id) {
     case 'color_scheme_option':
-        userChoice[0].textContent = colorSchemeOption.value;
+        userChoice[0].textContent = options[0].value;
 
-        if ('' === colorSchemeOption.value) {
+        if ('' === options[0].value) {
             userChoice[0].textContent = 'Monokai.tmTheme';
         }
 
         break;
 
     case 'font_face_option':
-        userChoice[1].textContent = fontFaceOption.value;
+        userChoice[1].textContent = options[1].value;
 
-        if ('' === fontFaceOption.value) {
+        if ('' === options[1].value) {
             userChoice[1].textContent = '';
         }
 
         break;
 
     case 'font_size_option':
-        if ('' === fontSizeOption.value) {
+        if ('' === options[2].value) {
             submit.removeAttribute('disabled');
             userChoice[2].textContent = '10';
         } else {
-            input = parseInt(fontSizeOption.value, 10);
+            input = parseInt(options[2].value, 10);
 
             if (isNaN(input)) {
                 submit.setAttribute('disabled', 'disabled');
@@ -234,7 +194,7 @@ function updateContentInSpan() {
                     'Submission is disabled</span>';
             } else {
                 submit.removeAttribute('disabled');
-                userChoice[2].textContent = fontSizeOption.value;
+                userChoice[2].textContent = options[2].value;
             }
         }
 
@@ -242,31 +202,31 @@ function updateContentInSpan() {
 
     case 'font_options_option':
         userChoice[3].textContent =
-            ('' === fontOptionsOption.value) ? ' ' : fontOptionsOption.value;
+            ('' === options[3].value) ? ' ' : options[3].value;
 
         break;
 
     case 'word_separators_option':
-        userChoice[4].textContent = wordSeparatorsOption.value;
+        userChoice[4].textContent = options[4].value;
 
         break;
 
     case 'line_numbers_option':
-        userChoice[5].textContent = lineNumbersOption.value;
+        userChoice[5].textContent = options[5].value;
 
         break;
 
     case 'gutter_option':
-        userChoice[6].textContent = gutterOption.value;
+        userChoice[6].textContent = options[6].value;
 
         break;
 
     case 'margin_option':
-        if ('' === marginOption.value) {
+        if ('' === options[7].value) {
             submit.removeAttribute('disabled');
             userChoice[7].textContent = '4';
         } else {
-            input = parseInt(marginOption.value, 10);
+            input = parseInt(options[7].value, 10);
 
             if (isNaN(input)) {
                 submit.setAttribute('disabled', 'disabled');
@@ -276,39 +236,39 @@ function updateContentInSpan() {
                     'Submission is disabled</span>';
             } else {
                 submit.removeAttribute('disabled');
-                userChoice[7].textContent = marginOption.value;
+                userChoice[7].textContent = options[7].value;
             }
         }
 
         break;
 
     case 'fold_buttons_option':
-        userChoice[8].textContent = foldButtonsOption.value;
+        userChoice[8].textContent = options[8].value;
 
         break;
 
     case 'fade_fold_buttons_option':
-        userChoice[9].textContent = fadeFoldButtonsOption.value;
+        userChoice[9].textContent = options[9].value;
 
         break;
 
     case 'rulers_option':
-        userChoice[10].textContent = rulersOption.value;
+        userChoice[10].textContent = options[10].value;
 
         break;
 
     case 'spell_check_option':
-        userChoice[11].textContent = spellCheckOption.value;
+        userChoice[11].textContent = options[11].value;
 
         break;
 
     case 'tab_size_option':
-        if ('' === tabSizeOption.value) {
+        if ('' === options[12].value) {
             submit.removeAttribute('disabled');
 
             userChoice[12].textContent = '4';
         } else {
-            input = parseInt(tabSizeOption.value, 10);
+            input = parseInt(options[12].value, 10);
 
             if (isNaN(input)) {
                 submit.setAttribute('disabled', 'disabled');
@@ -319,48 +279,48 @@ function updateContentInSpan() {
             } else {
                 submit.removeAttribute('disabled');
 
-                userChoice[12].textContent = tabSizeOption.value;
+                userChoice[12].textContent = options[12].value;
             }
         }
 
         break;
 
     case 'translate_tabs_to_spaces_option':
-        userChoice[13].textContent = translateTabsToSpacesOption.value;
+        userChoice[13].textContent = options[13].value;
 
         break;
 
     case 'use_tab_stops_option':
-        userChoice[14].textContent = useTabStopsOption.value;
+        userChoice[14].textContent = options[14].value;
 
         break;
 
     case 'detect_indentation_option':
-        userChoice[15].textContent = detectIndentationOption.value;
+        userChoice[15].textContent = options[15].value;
 
         break;
 
     case 'auto_indent_option':
-        userChoice[16].textContent = autoIndentOption.value;
+        userChoice[16].textContent = options[16].value;
 
         break;
 
     case 'trim_automatic_white_space_option':
-        userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
+        userChoice[17].textContent = options[17].value;
 
         break;
 
     case 'word_wrap_option':
-        userChoice[18].textContent = wordWrapOption.value;
+        userChoice[18].textContent = options[18].value;
 
         break;
 
     case 'wrap_width_option':
-        if ('' === wrapWidthOption.value) {
+        if ('' === options[19].value) {
             submit.removeAttribute('disabled');
             userChoice[19].textContent = '0';
         } else {
-            input = parseInt(wrapWidthOption.value, 10);
+            input = parseInt(options[19].value, 10);
 
             if (isNaN(input)) {
                 submit.setAttribute('disabled', 'disabled');
@@ -370,140 +330,139 @@ function updateContentInSpan() {
                     'Submission is disabled</span>';
             } else {
                 submit.removeAttribute('disabled');
-                userChoice[19].textContent = wrapWidthOption.value;
+                userChoice[19].textContent = options[19].value;
             }
         }
 
         break;
 
     case 'draw_centered_option':
-        userChoice[20].textContent = drawCenteredOption.value;
+        userChoice[20].textContent = options[20].value;
 
         break;
 
     case 'dictionary_option':
-        userChoice[21].textContent = dictionaryOption.value;
+        userChoice[21].textContent = options[21].value;
 
         break;
 
     case 'draw_minimap_border_option':
-        userChoice[22].textContent = drawMinimapBorderOption.value;
+        userChoice[22].textContent = options[22].value;
 
         break;
 
     case 'always_show_minimap_viewport_option':
-        userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
+        userChoice[23].textContent = options[23].value;
 
         break;
 
     case 'highlight_line_option':
-        userChoice[24].textContent = highlightLineOption.value;
+        userChoice[24].textContent = options[24].value;
 
         break;
 
     case 'caret_style_option':
-        userChoice[25].textContent = caretStyleOption.value;
+        userChoice[25].textContent = options[25].value;
 
         break;
 
     case 'scroll_past_end_option':
-        userChoice[26].textContent = scrollPastEndOption.value;
+        userChoice[26].textContent = options[26].value;
 
         break;
 
     case 'draw_white_space_option':
-        userChoice[27].textContent = drawWhiteSpaceOption.value;
+        userChoice[27].textContent = options[27].value;
 
         break;
 
     case 'trim_trailing_white_space_on_save_option':
-        userChoice[28].textContent =
-            trimTrailingWhiteSpaceOnSaveOption.value;
+        userChoice[28].textContent = options[28].value;
 
         break;
 
     case 'ensure_newline_at_eof_on_save_option':
-        userChoice[29].textContent = ensureNewlineAtEOFOnSaveOption.value;
+        userChoice[29].textContent = options[29].value;
 
         break;
 
     case 'save_on_focus_lost_option':
-        userChoice[30].textContent = saveOnFocusLostOption.value;
+        userChoice[30].textContent = options[30].value;
 
         break;
 
     case 'default_line_ending_option':
-        userChoice[31].textContent = defaultLineEndingOption.value;
+        userChoice[31].textContent = options[31].value;
 
         break;
 
     case 'copy_with_empty_selection_option':
-        userChoice[32].textContent = copyWithEmptySelectionOption.value;
+        userChoice[32].textContent = options[32].value;
 
         break;
 
     case 'drag_text_option':
-        userChoice[33].textContent = dragTextOption.value;
+        userChoice[33].textContent = options[33].value;
 
         break;
 
     case 'tree_animation_enabled_option':
-        userChoice[34].textContent = treeAnimationEnabledOption.value;
+        userChoice[34].textContent = options[34].value;
 
         break;
 
     case 'animation_enabled_option':
-        userChoice[35].textContent = animationEnabledOption.value;
+        userChoice[35].textContent = options[35].value;
 
         break;
 
     case 'highlight_modified_tabs_option':
-        userChoice[36].textContent = highlightModifiedTabsOption.value;
+        userChoice[36].textContent = options[36].value;
 
         break;
 
     case 'overlay_scroll_bars_option':
-        userChoice[37].textContent = overlayScrollBarsOption.value;
+        userChoice[37].textContent = options[37].value;
 
         break;
 
     case 'show_encoding_option':
-        userChoice[38].textContent = showEncodingOption.value;
+        userChoice[38].textContent = options[38].value;
 
         break;
 
     case 'show_line_endings_option':
-        userChoice[39].textContent = showLineEndingsOption.value;
+        userChoice[39].textContent = options[39].value;
 
         break;
 
     case 'hot_exit_option':
-        userChoice[40].textContent = hotExitOption.value;
+        userChoice[40].textContent = options[40].value;
 
         break;
 
     case 'always_prompt_for_file_reload_option':
-        userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
+        userChoice[41].textContent = options[41].value;
 
         break;
 
     case 'open_files_in_new_window_option':
-        userChoice[42].textContent = openFilesInNewWindowOption.value;
+        userChoice[42].textContent = options[42].value;
 
         break;
 
     case 'create_window_at_startup_option':
-        userChoice[43].textContent = createWindowAtStartupOption.value;
+        userChoice[43].textContent = options[43].value;
 
         break;
 
     case 'show_full_path_option':
-        userChoice[44].textContent = showFullPathOption.value;
+        userChoice[44].textContent = options[44].value;
 
         break;
 
     case 'preview_on_click_option':
-        userChoice[45].textContent = previewOnClickOption.value;
+        userChoice[45].textContent = options[45].value;
 
         break;
     }
@@ -536,289 +495,60 @@ window.onload = function () {
         false
     );
 
-    // COLOR SCHEME
-    colorSchemeOption = document.getElementById('color_scheme_option');
-    colorSchemeOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[0].textContent = colorSchemeOption.value;
+    for (i = 0, j = 0; i < allElements.length; i++) {
+        if (allElements[i].hasAttribute('id')) {
+            /*
+             * The word “option” is 6 characters long. Thus, slice from end and
+             * check if it is indeed the word “option.”
+             */
+            if ('option' === allElements[i].id.slice(-6)) {
+                options[j++] = allElements[i];
+            }
+        }
+    }
 
-    // FONT FACE
-    fontFaceOption = document.getElementById('font_face_option');
-    fontFaceOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[1].textContent = fontFaceOption.value;
+    /*
+     * Set listeners to each of the options on the page, then initialize to
+     * Sublime’s default value the value to the option on the example line under
+     * each heading. For example, if you look under the Font Size option in the web
+     * page, the value 10 is assigned to “font_size.” That value is initially
+     * assigned by one of the for loops below. (It’s updated via the
+     * updateContentInSpan function above.)
+     *
+     * The multiple for loops below are designed to avoid using multiple if
+     * statements when setting “input” or “change” on all the event listeners.
+     */
+    for (i = 0; i < 3; i++) {
+        options[i].addEventListener('input', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 
-    // FONT SIZE
-    fontSizeOption = document.getElementById('font_size_option');
-    fontSizeOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[2].textContent = fontSizeOption.value;
+    for (i = 3; i < 7; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 
-    // FONT OPTIONS
-    fontOptionsOption = document.getElementById('font_options_option');
-    fontOptionsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[3].textContent = fontOptionsOption.value;
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
 
-    // WORD SEPARATORS
-    wordSeparatorsOption = document.getElementById('word_separators_option');
-    wordSeparatorsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[4].textContent = wordSeparatorsOption.value;
+    for (i = 8; i < 12; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 
-    // LINE NUMBERS
-    lineNumbersOption = document.getElementById('line_numbers_option');
-    lineNumbersOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[5].textContent = lineNumbersOption.value;
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
 
-    // GUTTER
-    gutterOption = document.getElementById('gutter_option');
-    gutterOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[6].textContent = gutterOption.value;
+    for (i = 13; i < 19; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 
-    // MARGIN
-    marginOption = document.getElementById('margin_option');
-    marginOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[7].textContent = marginOption.value;
+    options[i].addEventListener('input', updateContentInSpan, false);
+    userChoice[i].textContent = options[i].value;
 
-    // FOLD BUTTONS
-    foldButtonsOption = document.getElementById('fold_buttons_option');
-    foldButtonsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[8].textContent = foldButtonsOption.value;
-
-    // FADE FOLD BUTTONS
-    fadeFoldButtonsOption = document.getElementById('fade_fold_buttons_option');
-    fadeFoldButtonsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[9].textContent = fadeFoldButtonsOption.value;
-
-    // RULERS
-    rulersOption = document.getElementById('rulers_option');
-    rulersOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[10].textContent = rulersOption.value;
-
-    // SPELL CHECK
-    spellCheckOption = document.getElementById('spell_check_option');
-    spellCheckOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[11].textContent = spellCheckOption.value;
-
-    // TAB SIZE
-    tabSizeOption = document.getElementById('tab_size_option');
-    tabSizeOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[12].textContent = tabSizeOption.value;
-
-    // TRANSLATE TABS TO SPACES
-    translateTabsToSpacesOption = document.getElementById(
-        'translate_tabs_to_spaces_option'
-    );
-    translateTabsToSpacesOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[13].textContent = translateTabsToSpacesOption.value;
-
-    // USE TAB STOPS
-    useTabStopsOption = document.getElementById('use_tab_stops_option');
-    useTabStopsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[14].textContent = useTabStopsOption.value;
-
-    // DETECT INDENTATION
-    detectIndentationOption = document.getElementById('detect_indentation_option');
-    detectIndentationOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[15].textContent = detectIndentationOption.value;
-
-    // AUTO INDENT
-    autoIndentOption = document.getElementById('auto_indent_option');
-    autoIndentOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[16].textContent = autoIndentOption.value;
-
-    // TRIM AUTOMATIC WHITE SPACE
-    trimAutomaticWhiteSpaceOption =
-        document.getElementById('trim_automatic_white_space_option');
-    trimAutomaticWhiteSpaceOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[17].textContent = trimAutomaticWhiteSpaceOption.value;
-
-    // WORD WRAP
-    wordWrapOption = document.getElementById('word_wrap_option');
-    wordWrapOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[18].textContent = wordWrapOption.value;
-
-    // WRAP WIDTH
-    wrapWidthOption = document.getElementById('wrap_width_option');
-    wrapWidthOption.addEventListener('input', updateContentInSpan, false);
-    userChoice[19].textContent = wrapWidthOption.value;
-
-    // DRAW CENTERED
-    drawCenteredOption = document.getElementById('draw_centered_option');
-    drawCenteredOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[20].textContent = drawCenteredOption.value;
-
-    // DICTIONARY
-    dictionaryOption = document.getElementById('dictionary_option');
-    dictionaryOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[21].textContent = dictionaryOption.value;
-
-    // DRAW MINIMAP BORDER
-    drawMinimapBorderOption = document.getElementById('draw_minimap_border_option');
-    drawMinimapBorderOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[22].textContent = drawMinimapBorderOption.value;
-
-    // ALWAYS SHOW MINIMAP VIEWPORT
-    alwaysShowMinimapViewportOption =
-        document.getElementById('always_show_minimap_viewport_option');
-    alwaysShowMinimapViewportOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[23].textContent = alwaysShowMinimapViewportOption.value;
-
-    // HIGHLIGHT LINE
-    highlightLineOption = document.getElementById('highlight_line_option');
-    highlightLineOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[24].textContent = highlightLineOption.value;
-
-    // CARET STYLE
-    caretStyleOption = document.getElementById('caret_style_option');
-    caretStyleOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[25].textContent = caretStyleOption.value;
-
-    // SCROLL PAST END
-    scrollPastEndOption = document.getElementById('scroll_past_end_option');
-    scrollPastEndOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[26].textContent = scrollPastEndOption.value;
-
-    // DRAW WHITE SPACE
-    drawWhiteSpaceOption = document.getElementById('draw_white_space_option');
-    drawWhiteSpaceOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[27].textContent = drawWhiteSpaceOption.value;
-
-    // TRIM TRAILING WHITE SPACE ON SAVE
-    trimTrailingWhiteSpaceOnSaveOption =
-        document.getElementById('trim_trailing_white_space_on_save_option');
-    trimTrailingWhiteSpaceOnSaveOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[28].textContent = trimTrailingWhiteSpaceOnSaveOption.value;
-
-    // ENSURE NEWLINE AT EOF ON SAVE
-    ensureNewlineAtEOFOnSaveOption =
-        document.getElementById('ensure_newline_at_eof_on_save_option');
-    ensureNewlineAtEOFOnSaveOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[29].textContent = ensureNewlineAtEOFOnSaveOption.value;
-
-    // SAVE ON FOCUS LOST
-    saveOnFocusLostOption = document.getElementById('save_on_focus_lost_option');
-    saveOnFocusLostOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[30].textContent = saveOnFocusLostOption.value;
-
-    // DEFAULT LINE ENDING
-    defaultLineEndingOption = document.getElementById('default_line_ending_option');
-    defaultLineEndingOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[31].textContent = defaultLineEndingOption.value;
-
-    // COPY WITH EMPTY SELECTION
-    copyWithEmptySelectionOption =
-        document.getElementById('copy_with_empty_selection_option');
-    copyWithEmptySelectionOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[32].textContent = copyWithEmptySelectionOption.value;
-
-    // DRAG TEXT
-    dragTextOption = document.getElementById('drag_text_option');
-    dragTextOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[33].textContent = dragTextOption.value;
-
-    // TREE ANIMATION ENABLED
-    treeAnimationEnabledOption =
-        document.getElementById('tree_animation_enabled_option');
-    treeAnimationEnabledOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[34].textContent = treeAnimationEnabledOption.value;
-
-    // ANIMATION ENABLED
-    animationEnabledOption = document.getElementById('animation_enabled_option');
-    animationEnabledOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[35].textContent = animationEnabledOption.value;
-
-    // HIGHLIGHT MODIFIED TABS
-    highlightModifiedTabsOption =
-        document.getElementById('highlight_modified_tabs_option');
-    highlightModifiedTabsOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[36].textContent = highlightModifiedTabsOption.value;
-
-    // OVERLAY SCROLL BARS
-    overlayScrollBarsOption = document.getElementById('overlay_scroll_bars_option');
-    overlayScrollBarsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[37].textContent = overlayScrollBarsOption.value;
-
-    // SHOW ENCODING
-    showEncodingOption = document.getElementById('show_encoding_option');
-    showEncodingOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[38].textContent = showEncodingOption.value;
-
-    // SHOW LINE ENDINGS
-    showLineEndingsOption = document.getElementById('show_line_endings_option');
-    showLineEndingsOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[39].textContent = showLineEndingsOption.value;
-
-    // HOT EXIT
-    hotExitOption = document.getElementById('hot_exit_option');
-    hotExitOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[40].textContent = hotExitOption.value;
-
-    // ALWAYS PROMPT FOR FILE RELOAD
-    alwaysPromptForFileReloadOption =
-        document.getElementById('always_prompt_for_file_reload_option');
-    alwaysPromptForFileReloadOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[41].textContent = alwaysPromptForFileReloadOption.value;
-
-    // OPEN FILES IN NEW WINDOW
-    openFilesInNewWindowOption =
-        document.getElementById('open_files_in_new_window_option');
-    openFilesInNewWindowOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[42].textContent = openFilesInNewWindowOption.value;
-
-    // CREATE WINDOW AT STARTUP
-    createWindowAtStartupOption =
-        document.getElementById('create_window_at_startup_option');
-    createWindowAtStartupOption.addEventListener(
-        'change',
-        updateContentInSpan,
-        false
-    );
-    userChoice[43].textContent = createWindowAtStartupOption.value;
-
-    // SHOW FULL PATH
-    showFullPathOption = document.getElementById('show_full_path_option');
-    showFullPathOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[44].textContent = showFullPathOption.value;
-
-    // PREVIEW ON CLICK
-    previewOnClickOption = document.getElementById('preview_on_click_option');
-    previewOnClickOption.addEventListener('change', updateContentInSpan, false);
-    userChoice[45].textContent = previewOnClickOption.value;
+    for (i = 20; i < 46; i++) {
+        options[i].addEventListener('change', updateContentInSpan, false);
+        userChoice[i].textContent = options[i].value;
+    }
 };
