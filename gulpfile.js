@@ -9,8 +9,8 @@ var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
  */
 gulp.task('compileCSS', function () {
     gulp.src('sass/style.scss')
-        .pipe(CSSPreprocessor().on('error', CSSPreprocessor.logError))
-        .pipe(CSSPreprocessor({
+        .pipe(new CSSPreprocessor().on('error', CSSPreprocessor.logError))
+        .pipe(new CSSPreprocessor({
             outputStyle: 'compressed',
             precision: 10
         }))
