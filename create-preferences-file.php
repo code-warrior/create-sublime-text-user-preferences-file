@@ -307,22 +307,22 @@ if (!empty($_GET['highlight_line_option'])) {
 }
 
 /**
- * MATCH BRACKETS
- */
-if (!empty($_GET['match_brackets_option'])) {
-    if (strcmp($_GET['match_brackets_option'], "true") !== 0) {
-        $options .= '   "match_brackets": ' .
-            $_GET['match_brackets_option'].',' . "\n";
-    }
-}
-
-/**
  * CARET STYLE
  */
 if (!empty($_GET['caret_style_option'])) {
     if (strcmp($_GET['caret_style_option'], "smooth") !== 0) {
         $options .= '   "caret_style": "' .
             $_GET['caret_style_option'] . '",' . "\n";
+    }
+}
+
+/**
+ * MATCH BRACKETS
+ */
+if (!empty($_GET['match_brackets_option'])) {
+    if (strcmp($_GET['match_brackets_option'], "true") !== 0) {
+        $options .= '   "match_brackets": ' .
+            $_GET['match_brackets_option'].',' . "\n";
     }
 }
 
