@@ -331,7 +331,7 @@ if (!empty($_GET['match_brackets_option'])) {
  */
 if (!empty($_GET['match_brackets_content_option'])) {
     if (strcmp($_GET['match_brackets_content_option'], "true") !== 0) {
-        $options .= '   "match_brackets_option": ' .
+        $options .= '   "match_brackets_content": ' .
             $_GET['match_brackets_content_option'].',' . "\n";
     }
 }
