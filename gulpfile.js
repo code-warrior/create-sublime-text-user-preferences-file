@@ -1,8 +1,8 @@
 /*jslint node: true */
 
-var gulp = require('gulp');
-var CSSPreprocessor = require('gulp-sass');
-var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
+var gulp = require('gulp'),
+    CSSPreprocessor = require('gulp-sass'),
+    browserSpecificPrefixGenerator = require('gulp-autoprefixer');
 
 /**
  * COMPILE CSS
