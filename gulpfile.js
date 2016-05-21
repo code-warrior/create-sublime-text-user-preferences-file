@@ -3,7 +3,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var CSSPreprocessor = require('gulp-sass');
 var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
 
 /**
@@ -11,8 +11,8 @@ var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
  */
 gulp.task('compileCSS', function () {
     gulp.src('sass/style.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sass({
+        .pipe(CSSPreprocessor().on('error', CSSPreprocessor.logError))
+        .pipe(CSSPreprocessor({
             outputStyle: 'compressed',
             precision: 10
         }))
