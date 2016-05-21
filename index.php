@@ -20,7 +20,7 @@ session_start();
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Create a Custom Sublime Text User Preferences File (v0.0.47)</title>
+   <title>Create a Custom Sublime Text User Preferences File (v0.0.48)</title>
 
    <meta name="description" content="Learn each of the 101 options in the Sublime
    Text 3 default preferences file, then generate a preferences file for use in
@@ -39,7 +39,7 @@ session_start();
    </header>
    <div id="introduction">
       <p>The purpose of this web site is two-fold. First, it explains in detail
-      forty-seven of the options in Sublime Text’s
+      forty-eight of the options in Sublime Text’s
       <code>Preferences.sublime-settings</code> file. (The final version will
       explain all 101 options.) And second, it allows you to create a customized
       preferences file that you can install in your own Sublime environment.</p>
