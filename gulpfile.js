@@ -1,7 +1,5 @@
 /*jslint node: true */
 
-'use strict';
-
 var gulp = require('gulp');
 var CSSPreprocessor = require('gulp-sass');
 var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
