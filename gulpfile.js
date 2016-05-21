@@ -2,20 +2,24 @@
 
 var gulp = require('gulp'),
     CSSPreprocessor = require('gulp-sass'),
+    JSCompressor = require('gulp-uglify'),
     browserSpecificPrefixGenerator = require('gulp-autoprefixer'),
     filenames = {
-        styles: 'style.scss'
+        styles: 'style.scss',
+        javascript: 'main.js'
     },
     baseFolders = {
         source: {
             styles: {
                 sass: 'sass/'
-            }
+            },
+            javascript: 'js/'
         },
         target: {
             styles: {
                 css: 'css/'
-            }
+            },
+            javascript: 'js/'
         }
     };
 
@@ -34,6 +38,17 @@ gulp.task('compileCSS', function () {
 });
 
 /**
+ * COMPRESS JAVASCRIPT
+ */
+gulp.task('compressJS', function () {
+    'use strict';
+
+    return gulp.src([baseFolders.source.javascript + filenames.javascript])
+        .pipe(new JSCompressor())
+        .pipe(gulp.dest(baseFolders.target.javascript));
+});
+
+/**
  * DEFAULT
  */
-gulp.task('default', ['compileCSS']);
+gulp.task('default', ['compileCSS', 'compressJS']);
