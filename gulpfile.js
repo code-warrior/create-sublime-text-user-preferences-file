@@ -4,7 +4,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
 
 /**
  * DEFAULT
@@ -26,7 +26,7 @@ gulp.task('sass', function () {
             outputStyle: 'compressed',
             precision: 10
         }))
-        .pipe(autoprefixer({browsers: ['last 2 versions']}))
+        .pipe(browserSpecificPrefixGenerator({browsers: ['last 2 versions']}))
         .pipe(gulp.dest('css'));
 });
 
