@@ -20,7 +20,7 @@ session_start();
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Create a Custom Sublime Text User Preferences File (v0.0.46)</title>
+   <title>Create a Custom Sublime Text User Preferences File (v0.0.48)</title>
 
    <meta name="description" content="Learn each of the 101 options in the Sublime
    Text 3 default preferences file, then generate a preferences file for use in
@@ -39,7 +39,7 @@ session_start();
    </header>
    <div id="introduction">
       <p>The purpose of this web site is two-fold. First, it explains in detail
-      forty-six of the options in Sublime Text’s
+      forty-eight of the options in Sublime Text’s
       <code>Preferences.sublime-settings</code> file. (The final version will
       explain all 101 options.) And second, it allows you to create a customized
       preferences file that you can install in your own Sublime environment.</p>
@@ -83,6 +83,11 @@ require_once "includes/28-draw_minimap_border.html";
 require_once "includes/29-always_show_minimap_viewport.html";
 require_once "includes/30-highlight_line.html";
 require_once "includes/31-caret_style.html";
+require_once "includes/35-match_brackets.html";
+require_once "includes/36-match_brackets_content.html";
+require_once "includes/37-match_brackets_square.html";
+require_once "includes/38-match_brackets_braces.html";
+require_once "includes/39-match_brackets_angle.html";
 require_once "includes/44-scroll_past_end.html";
 require_once "includes/46-draw_white_space.html";
 require_once "includes/49-trim_trailing_white_space_on_save.html";
