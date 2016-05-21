@@ -366,103 +366,108 @@ function updateContentInSpan() {
 
         break;
 
-    case 'scroll_past_end_option':
+    case 'match_brackets_option':
         userChoice[26].textContent = options[26].value;
 
         break;
 
-    case 'draw_white_space_option':
+    case 'scroll_past_end_option':
         userChoice[27].textContent = options[27].value;
 
         break;
 
-    case 'trim_trailing_white_space_on_save_option':
+    case 'draw_white_space_option':
         userChoice[28].textContent = options[28].value;
 
         break;
 
-    case 'ensure_newline_at_eof_on_save_option':
+    case 'trim_trailing_white_space_on_save_option':
         userChoice[29].textContent = options[29].value;
 
         break;
 
-    case 'save_on_focus_lost_option':
+    case 'ensure_newline_at_eof_on_save_option':
         userChoice[30].textContent = options[30].value;
 
         break;
 
-    case 'default_line_ending_option':
+    case 'save_on_focus_lost_option':
         userChoice[31].textContent = options[31].value;
 
         break;
 
-    case 'copy_with_empty_selection_option':
+    case 'default_line_ending_option':
         userChoice[32].textContent = options[32].value;
 
         break;
 
-    case 'drag_text_option':
+    case 'copy_with_empty_selection_option':
         userChoice[33].textContent = options[33].value;
 
         break;
 
-    case 'tree_animation_enabled_option':
+    case 'drag_text_option':
         userChoice[34].textContent = options[34].value;
 
         break;
 
-    case 'animation_enabled_option':
+    case 'tree_animation_enabled_option':
         userChoice[35].textContent = options[35].value;
 
         break;
 
-    case 'highlight_modified_tabs_option':
+    case 'animation_enabled_option':
         userChoice[36].textContent = options[36].value;
 
         break;
 
-    case 'overlay_scroll_bars_option':
+    case 'highlight_modified_tabs_option':
         userChoice[37].textContent = options[37].value;
 
         break;
 
-    case 'show_encoding_option':
+    case 'overlay_scroll_bars_option':
         userChoice[38].textContent = options[38].value;
 
         break;
 
-    case 'show_line_endings_option':
+    case 'show_encoding_option':
         userChoice[39].textContent = options[39].value;
 
         break;
 
-    case 'hot_exit_option':
+    case 'show_line_endings_option':
         userChoice[40].textContent = options[40].value;
 
         break;
 
-    case 'always_prompt_for_file_reload_option':
+    case 'hot_exit_option':
         userChoice[41].textContent = options[41].value;
 
         break;
 
-    case 'open_files_in_new_window_option':
+    case 'always_prompt_for_file_reload_option':
         userChoice[42].textContent = options[42].value;
 
         break;
 
-    case 'create_window_at_startup_option':
+    case 'open_files_in_new_window_option':
         userChoice[43].textContent = options[43].value;
 
         break;
 
-    case 'show_full_path_option':
+    case 'create_window_at_startup_option':
         userChoice[44].textContent = options[44].value;
 
         break;
 
-    case 'preview_on_click_option':
+    case 'show_full_path_option':
         userChoice[45].textContent = options[45].value;
+
+        break;
+
+    case 'preview_on_click_option':
+        userChoice[46].textContent = options[46].value;
 
         break;
     }
@@ -547,7 +552,7 @@ window.onload = function () {
     options[i].addEventListener('input', updateContentInSpan, false);
     userChoice[i].textContent = options[i].value;
 
-    for (i = 20; i < 46; i++) {
+    for (i = 20; i < options.length; i++) {
         options[i].addEventListener('change', updateContentInSpan, false);
         userChoice[i].textContent = options[i].value;
     }
