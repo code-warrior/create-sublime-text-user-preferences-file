@@ -106,34 +106,42 @@ function displayFontFaceInfo() {
     switch (fontFaceChoice) {
     case 'andalé mono':
         index = 0;
+
         break;
 
     case 'anonymous pro':
         index = 1;
+
         break;
 
     case 'consolas':
         index = 2;
+
         break;
 
     case 'courier':
         index = 3;
+
         break;
 
     case 'courier new':
         index = 4;
+
         break;
 
     case 'inconsolata':
         index = 5;
+
         break;
 
     case 'fira mono':
         index = 6;
+
         break;
 
     case 'ubuntu mono':
         index = 7;
+
         break;
     }
 
