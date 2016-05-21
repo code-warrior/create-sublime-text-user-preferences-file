@@ -337,6 +337,36 @@ if (!empty($_GET['match_brackets_content_option'])) {
 }
 
 /**
+ * MATCH BRACKETS SQUARE
+ */
+if (!empty($_GET['match_brackets_square_option'])) {
+    if (strcmp($_GET['match_brackets_square_option'], "true") !== 0) {
+        $options .= '   "match_brackets_square": ' .
+            $_GET['match_brackets_square_option'].',' . "\n";
+    }
+}
+
+/**
+ * MATCH BRACKETS BRACES
+ */
+if (!empty($_GET['match_brackets_braces_option'])) {
+    if (strcmp($_GET['match_brackets_braces_option'], "true") !== 0) {
+        $options .= '   "match_brackets_braces": ' .
+            $_GET['match_brackets_braces_option'].',' . "\n";
+    }
+}
+
+/**
+ * MATCH BRACKETS ANGLE
+ */
+if (!empty($_GET['match_brackets_angle_option'])) {
+    if (strcmp($_GET['match_brackets_angle_option'], "false") !== 0) {
+        $options .= '   "match_brackets_angle": ' .
+            $_GET['match_brackets_angle_option'].',' . "\n";
+    }
+}
+
+/**
  * SCROLL PAST END
  */
 if (isset($_GET['scroll_past_end_option'])) {
