@@ -7,7 +7,7 @@ var sass = require('gulp-sass');
 var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
 
 /**
- * DEFAULT
+ * COMPILE CSS
  *
  * 1. Use `main.scss` as the source for all the following tasks.
  * 2. Toss errors to the command line, highlighting the word “Error” in red.
@@ -19,7 +19,7 @@ var browserSpecificPrefixGenerator = require('gulp-autoprefixer');
  * 6. Lastly, write all the output to the implied file `main.css` in the directory
  *    `css`.
  */
-gulp.task('sass', function () {
+gulp.task('compileCSS', function () {
     gulp.src('sass/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({
@@ -35,4 +35,4 @@ gulp.task('sass', function () {
  *
  * Invoke the default task by simply running “gulp” at the command line.
  */
-gulp.task('default', ['sass']);
+gulp.task('default', ['compileCSS']);
