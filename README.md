@@ -1,8 +1,8 @@
 # Create Sublime Text User Preferences File
 
-(v0.0.46)
+(v0.0.51)
 
-This project is an online tool that generates a preferences file for use with Sublime Text 3. It explains forty-six of the 101 options Sublime supplies in the JSON-formatted file `Preferences.sublime-settings` and creates a downloadable user-generated file that can be included in a Sublime environment. The goal is to explain all 101 options.
+This project is an online tool that generates a preferences file for use with Sublime Text 3. It explains fifty-one of the 101 options Sublime supplies in the JSON-formatted file `Preferences.sublime-settings` and creates a downloadable user-generated file that can be included in a Sublime environment. The goal is to explain all 101 options.
 
 The project lives at [http://www.create-sublime-text-user-preferences-file.org](http://www.create-sublime-text-user-preferences-file.org).
 
