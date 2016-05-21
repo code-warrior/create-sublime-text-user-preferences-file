@@ -327,6 +327,16 @@ if (!empty($_GET['match_brackets_option'])) {
 }
 
 /**
+ * MATCH BRACKETS CONTENT
+ */
+if (!empty($_GET['match_brackets_content_option'])) {
+    if (strcmp($_GET['match_brackets_content_option'], "true") !== 0) {
+        $options .= '   "match_brackets_option": ' .
+            $_GET['match_brackets_content_option'].',' . "\n";
+    }
+}
+
+/**
  * SCROLL PAST END
  */
 if (isset($_GET['scroll_past_end_option'])) {
