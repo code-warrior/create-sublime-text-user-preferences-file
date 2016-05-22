@@ -105,7 +105,7 @@ blockquote {
          margin: 20px 0 24px;
          border: 0;
          padding: 20px;
-         background-color: lighten($color--links, 65%);
+         background-color: $color--button-background;
          color: #444;
          font-size: 1.5rem;
       }

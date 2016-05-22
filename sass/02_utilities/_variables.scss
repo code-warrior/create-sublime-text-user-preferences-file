@@ -6,6 +6,7 @@ $color--important-note : red;
 $color--links          : rgb(0,79,130);
 $color--main           : #222;
 $color--border         : lighten($color--main,70%);
+$color--button-background : lighten($color--links, 65%);
 
 // ----------------------------------------------------------------------------------
 // Font Stacks
