@@ -10,7 +10,7 @@ body {
    font: 300 1.1rem / 1.5 $font-stack--body;
    width: 60%;
    margin: auto;
-   color: $color-main;
+   color: $color--main;
    padding: 0 0 40px;
 }
 
@@ -19,7 +19,7 @@ p {
 }
 
 [class$="fa-info"] {
-   border: 1px solid lighten($color-important-note, 25%);
+   border: 1px solid lighten($color--important-note, 25%);
    font-size: 1.5rem;
    width: 34px;
    height: 34px;
@@ -28,7 +28,7 @@ p {
    line-height: 34px;
    padding: 4px;
    border-radius: 50%;
-   color: lighten($color-important-note, 25%);
+   color: lighten($color--important-note, 25%);
 }
 
 input, button {
@@ -51,7 +51,7 @@ aside {
    @include transform-origin( top, left );
 
    a {
-      color: $color-links;
+      color: $color--links;
       font-size: 1.1rem;
    }
 
@@ -105,7 +105,7 @@ blockquote {
          margin: 20px 0 24px;
          border: 0;
          padding: 20px;
-         background-color: lighten($color-links, 65%);
+         background-color: lighten($color--links, 65%);
          color: #444;
          font-size: 1.5rem;
       }

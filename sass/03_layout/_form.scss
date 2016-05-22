@@ -29,7 +29,7 @@ select {
 input[type="submit"] {
    padding: 20px;
    margin: 0 auto;
-   background-color: lighten($color-links, 55%);
+   background-color: lighten($color--links, 55%);
    color: #444;
 }
 
