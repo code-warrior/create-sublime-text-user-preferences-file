@@ -3,12 +3,7 @@
 @import url("http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
 @import 'base';
 @import 'mixins';
-
-$color-important-note: red;
-$color-links: rgb(0,79,130);
-$color-main: #222;
-$color-border: lighten($color-main,70%);
-$background-color-for-input-and-choice: lighten(green,73%);
+@import 'variables';
 
 body {
    font: 300 1.1rem / 1.5 "Noto Sans", sans-serif;
