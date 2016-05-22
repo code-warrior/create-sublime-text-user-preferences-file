@@ -40,60 +40,6 @@ p {
    padding: .7rem 0;
 }
 
-#generated-file, #more-info-about-site, #installing-a-sublime-text-dictionary {
-   font-size: 1.1rem;
-
-   code, kbd {
-       font-size: 1.1rem;
-   }
-
-   code {
-      border: 0;
-      padding: 0;
-   }
-   h2 {
-      border: none;
-      padding: 0;
-   }
-   pre {
-      margin: 48px 0;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      padding: 5px;
-      border-radius: 5px;
-   }
-   ul {
-      li {
-         list-style-type: disc;
-         margin: 22px 0;
-
-         ul {
-            margin-left: 40px;
-
-            li {
-               list-style-type: circle;
-               margin: 14px 0;
-            }
-         }
-
-         ol {
-            margin-left: 48px;
-
-            li {
-               list-style-type: decimal;
-               margin: 14px 0;
-            }
-         }
-      }
-   }
-}
-
-#installing-a-sublime-text-dictionary {
-   footer {
-      border-top: 1px solid #ccc;
-   }
-}
-
 sup {
    font-size: 1.1rem;
    bottom: 0;
@@ -117,40 +63,6 @@ abbr {
    padding: 4px;
    border-radius: 50%;
    color: lighten($color-important-note, 25%);
-}
-
-#introduction {
-   opacity: 1;
-   transition: all 1s;
-   visibility: visible;
-   position: relative;
-   z-index: 1;
-   background-color: white;
-
-   &.hide {
-      opacity: 0;
-      height: 0;
-      visibility: hidden;
-   }
-
-   div:last-of-type {
-      text-align: center;
-
-      button {
-         margin: 20px 0 24px;
-         border: 0;
-         padding: 20px;
-         background-color: lighten($color-links, 65%);
-         color: #444;
-         font-size: 1.5rem;
-      }
-   }
-}
-
-#font_face>h2+div {
-   input[type="text"] {
-      width: 200px;
-   }
 }
 
 input, button {
@@ -209,6 +121,94 @@ a {
 .error {
    color: red;
    background-color: yellow;
+}
+
+#introduction {
+   opacity: 1;
+   transition: all 1s;
+   visibility: visible;
+   position: relative;
+   z-index: 1;
+   background-color: white;
+
+   &.hide {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+   }
+
+   div:last-of-type {
+      text-align: center;
+
+      button {
+         margin: 20px 0 24px;
+         border: 0;
+         padding: 20px;
+         background-color: lighten($color-links, 65%);
+         color: #444;
+         font-size: 1.5rem;
+      }
+   }
+}
+
+#font_face>h2+div {
+   input[type="text"] {
+      width: 200px;
+   }
+}
+
+#generated-file, #more-info-about-site, #installing-a-sublime-text-dictionary {
+   font-size: 1.1rem;
+
+   code, kbd {
+      font-size: 1.1rem;
+   }
+
+   code {
+      border: 0;
+      padding: 0;
+   }
+   h2 {
+      border: none;
+      padding: 0;
+   }
+   pre {
+      margin: 48px 0;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      padding: 5px;
+      border-radius: 5px;
+   }
+   ul {
+      li {
+         list-style-type: disc;
+         margin: 22px 0;
+
+         ul {
+            margin-left: 40px;
+
+            li {
+               list-style-type: circle;
+               margin: 14px 0;
+            }
+         }
+
+         ol {
+            margin-left: 48px;
+
+            li {
+               list-style-type: decimal;
+               margin: 14px 0;
+            }
+         }
+      }
+   }
+}
+
+#installing-a-sublime-text-dictionary {
+   footer {
+      border-top: 1px solid #ccc;
+   }
 }
 
 @include max-width-responsive-media-query($xxxx-large) {
