@@ -5,6 +5,7 @@
 @import 'mixins';
 @import 'variables';
 @import 'lists';
+@import 'header';
 @import 'nav';
 @import 'table';
 @import 'section';
@@ -102,23 +103,6 @@ h1 {
 
 #installing-a-sublime-text-dictionary footer {
    border-top: 1px solid #ccc;
-}
-
-
-header {
-   h1 {
-      position: relative;
-      background-color: white;
-      height: 100%;
-      z-index: 1;
-   }
-   nav {
-      opacity: 0;
-      transition: 350ms;
-      &:hover {
-         opacity: 1;
-      }
-   }
 }
 
 sup {
