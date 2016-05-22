@@ -10,7 +10,6 @@ body {
    width: 60%;
    margin: auto;
    color: $color-main;
-   padding: 0 0 40px 0;
 }
 
 dl {
@@ -23,6 +22,7 @@ dl {
       margin-bottom: 20px;
       margin-left: 40px;
    }
+   padding: 0 0 40px;
 }
 
 q:before {
@@ -281,8 +281,9 @@ h2 {
 #introduction {
    div:last-of-type {
       text-align: center;
+
       button {
-         margin: 20px 0 24px 0;
+         margin: 20px 0 24px;
          border: 0;
          padding: 20px;
          background-color: lighten($color-links, 65%);
