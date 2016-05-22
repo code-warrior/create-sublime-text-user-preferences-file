@@ -1,0 +1,26 @@
+dl {
+   dt {
+      margin-top: 20px;
+      font-weight: 700;
+   }
+
+   dd {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      margin-left: 40px;
+   }
+}
+
+ol {
+   list-style-type: decimal;
+
+   li {
+      margin: 12px 0;
+   }
+}
+
+ol {
+   ul {
+      margin: 16px 0 16px 18px;
+   }
+}

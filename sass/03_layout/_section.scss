@@ -1,0 +1,39 @@
+section {
+   margin: 52px 0 92px;
+   clear: both;
+   transition: 350ms;
+
+   >h2 {
+      +div {
+         margin: 0;
+         padding-right: 12px;
+         border-right: 1px solid $color--border;
+         transition: 1s;
+
+         >p:first-of-type {
+            margin: 0;
+            padding: 24px 0 8px;
+
+            code {
+               font-size: 1.3rem;
+            }
+         }
+
+         p {
+            margin: 0;
+         }
+      }
+   }
+}
+
+section:hover {
+   box-shadow: 10px 10px 10px 0 #ddd;
+
+   h2 {
+      border-right: 1px solid #ddd;
+   }
+}
+
+section:first-of-type {
+   margin-top: 0;
+}

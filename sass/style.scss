@@ -1,97 +1,140 @@
 @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext");
 @import url("http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
-@import 'base';
-@import 'mixins';
-
-$color-important-note: red;
-$color-links: rgb(0,79,130);
-$color-main: #222;
-$color-border: lighten($color-main,70%);
-$background-color-for-input-and-choice: lighten(green,73%);
+@import '01_reset';
+@import '02_utilities/index';
+@import '03_layout/index';
+@import '04_inline-elements';
 
 body {
-   font: 300 1.1rem / 1.5 "Noto Sans", sans-serif;
+   font: 300 1.1rem / 1.5 $font-stack--body;
    width: 60%;
    margin: auto;
-   color: $color-main;
-   padding: 0 0 40px 0;
-}
-
-dl {
-   dt {
-      margin-top: 20px;
-      font-weight: 700;
-   }
-   dd {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      margin-left: 40px;
-   }
-}
-
-q:before {
-   content: "“";
-}
-
-q:after {
-   content: "”";
-}
-
-ol {
-   list-style-type: decimal;
-   li {
-      margin: 12px 0;
-   }
-}
-
-ol {
-   ul {
-      margin: 16px 0 16px 18px;
-   }
-}
-
-code, tt, kbd, pre {
-   font: 1.2rem / 1.2 "Ubuntu Mono", monospace;
-}
-
-code, tt, kbd {
-   border: 1px solid #eee;
-   border-radius: 5px;
-   color: #444;
-   padding: 5px;
-}
-
-strong, b {
-   font-weight: 700;
+   color: $color--main;
+   padding: 0 0 40px;
 }
 
 p {
    padding: .7rem 0;
 }
 
-h1 {
-   margin: 0;
-   padding: 48px 0;
+[class$="fa-info"] {
+   border: 1px solid lighten($color--important-note, 25%);
+   font-size: 1.5rem;
+   width: 34px;
+   height: 34px;
+   margin: 14px 4px 0 0;
    text-align: center;
-   font-size: 2.2rem;
+   line-height: 34px;
+   padding: 4px;
+   border-radius: 50%;
+   color: lighten($color--important-note, 25%);
+}
+
+input, button {
+   font: 300 1.25rem / 1 $font-stack--body;
+   border: 1px solid #ddd;
+}
+
+// The Bitbucket banner in the upper right hand corner
+aside {
+   line-height: 36px;
+   text-align: center;
+   background-color: rgb(248,248,248);
+   top: 0;
+   right: 0;
+   position: fixed;
+   width: 200px;
+   padding: 0 30px;
+   height: 36px;
+   @include transform( 108px, -35px, 45deg );
+   @include transform-origin( top, left );
+
+   a {
+      color: $color--links;
+      font-size: 1.1rem;
+   }
+
+   img {
+      line-height: 100%;
+   }
+}
+
+blockquote {
+   font-size: 1.3rem;
+   font-style: italic;
+   margin: 38px 38px 24px;
+   padding: 0;
+}
+
+.highlight {
+   background-color: lighten(yellow, 20%);
+   border-radius: 5px;
+   padding: 2px;
+}
+
+.pending {
+   background-color: lighten($color--important-note, 49%);
+   border-radius: 5px;
+   padding: 4px;
+}
+
+.error {
+   color: $color--important-note;
+   background-color: yellow;
+}
+
+#introduction {
+   opacity: 1;
+   transition: all 1s;
+   visibility: visible;
+   position: relative;
+   z-index: $stacking-context--intro;
+   background-color: white;
+
+   &.hide {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+   }
+
+   div:last-of-type {
+      text-align: center;
+
+      button {
+         margin: 20px 0 24px;
+         border: 0;
+         padding: 20px;
+         background-color: $color--button-background;
+         color: #444;
+         font-size: 1.5rem;
+      }
+   }
+}
+
+#font_face>h2+div {
+   input[type="text"] {
+      width: 200px;
+   }
 }
 
 #generated-file, #more-info-about-site, #installing-a-sublime-text-dictionary {
    font-size: 1.1rem;
 
    code, kbd {
-       font-size: 1.1rem;
+      font-size: 1.1rem;
    }
 
    code {
       border: 0;
       padding: 0;
    }
+
    h2 {
       border: none;
       padding: 0;
    }
+
    pre {
       margin: 48px 0;
       font-size: 1rem;
@@ -99,6 +142,7 @@ h1 {
       padding: 5px;
       border-radius: 5px;
    }
+
    ul {
       li {
          list-style-type: disc;
@@ -125,468 +169,110 @@ h1 {
    }
 }
 
-#installing-a-sublime-text-dictionary footer {
-   border-top: 1px solid #ccc;
-}
-
-section {
-   margin: 52px 0;
-   clear: both;
-
-   >h2 {
-      +div {
-         margin: 0;
-         padding-right: 12px;
-         border-right: 1px solid $color-border;
-         transition: 1s;
-
-         >p:first-of-type {
-            margin: 0;
-            padding: 24px 0 8px;
-
-            code {
-               font-size: 1.3rem;
-            }
-         }
-
-         p {
-            margin: 0;
-         }
-      }
-   }
-   transition: 350ms;
-}
-
-section:hover {
-   box-shadow: 10px 10px 10px 0 #ddd;
-   h2 {
-      border-right: 1px solid #ddd;
+#installing-a-sublime-text-dictionary {
+   footer {
+      border-top: 1px solid #ccc;
    }
 }
 
-header {
-   h1 {
-      position: relative;
-      background-color: white;
-      height: 100%;
-      z-index: 1;
-   }
-   nav {
-      opacity: 0;
-      transition: 350ms;
-      &:hover {
-         opacity: 1;
-      }
-   }
-}
-
-nav {
-   font-size: .95rem;
-   position: fixed;
-   right: 79%;
-   top: 154px;
-   height: 100%;
-   overflow-y: hidden;
-   z-index: 0;
-
-   ul {
-      text-align: right;
-      padding-right: 24px;
-      height: 60%;
-      overflow-y: auto;
-
-      li {
-         margin: 12px 0;
-
-         a {
-            padding: 2px;
-            background-color: lighten(#FFCB82, 21%);
-         }
-      }
-   }
-}
-
-table, td {
-   border: 1px solid lighten( $color-links, 50% );
-}
-
-th {
-   border: 1px solid lighten( $color-border, 1% );
-}
-
-table {
-   table-layout: fixed;
-   border-collapse: collapse;
-   font-size: 1rem;
-   margin: 0 auto;
-   code {
-      font-size: 1rem;
-      border: 0;
-      padding: 0;
-   }
-   thead {
-      background-color: lighten($color-border, 12%);
-   }
-   tr {
-      td, th {
-         padding: 14px;
-      }
-   }
-   tbody {
-      tr:nth-child(even) {
-         background-color: lighten($color-links, 73%);
-      }
-   }
-}
-
-sup {
-   font-size: 1.1rem;
-   bottom: 0;
-   line-height: 1;
-   position: relative;
-   vertical-align: super;
-}
-
-abbr {
-   border-bottom: 1px dotted $color-main;
-}
-
-h2 {
-   font-size: 1.9rem;
-   border: {
-      top: 1px solid $color-border;
-      bottom: 1px solid $color-border;
-      left: 1px solid $color-border;
-   }
-   margin: 0;
-   padding: 0 0 0 12px;
-
-   &+div {
-      >p:first-of-type {
-         >code {
-            background-color: lighten(green,73%);
-         }
-      }
-   }
-}
-
-[class$="fa-info"] {
-   border: 1px solid lighten($color-important-note, 25%);
-   font-size: 1.5rem;
-   width: 34px;
-   height: 34px;
-   margin: 14px 4px 0 0;
-   text-align: center;
-   line-height: 34px;
-   padding: 4px;
-   border-radius: 50%;
-   color: lighten($color-important-note, 25%);
-}
-
-#introduction {
-   div:last-of-type {
-      text-align: center;
-      button {
-         margin: 20px 0 24px 0;
-         border: 0;
-         padding: 20px;
-         background-color: lighten($color-links, 65%);
-         color: #444;
-         font-size: 1.5rem;
-      }
-   }
-}
-
-#font_face>h2+div {
-   input[type="text"] {
-      width: 200px;
-   }
-}
-
-input, button {
-   font: 300 1.25rem / 1 "Noto Sans", sans-serif;
-   border: 1px solid #ddd;
-}
-
-input {
-   border-radius: 5px;
-   border: 1px solid #ddd;
-   width: 440px;
-   line-height: 24px;
-   padding: 2px;
-   text-align: center;
-}
-
-select, option {
-   font: 300 1.2rem / 1 "Noto Sans", sans-serif;
-}
-
-select {
-   border: 1px solid #ddd;
-}
-
-// The Bitbucket banner in the upper right hand corner
-aside {
-   line-height: 36px;
-   text-align: center;
-   background-color: rgb(248,248,248);
-   top: 0;
-   right: 0;
-   position: fixed;
-   width: 200px;
-   padding: 0 30px;
-   height: 36px;
-   @include transform( 108px, -35px, 45deg );
-   @include transform-origin( top, left );
-
-   a {
-      color: $color-links;
-      font-size: 1.1rem;
-   }
-
-   img {
-      line-height: 100%;
-   }
-}
-
-input[type="submit"] {
-   padding: 20px;
-   margin: 0 auto;
-   background-color: lighten($color-links, 55%);
-   color: #444;
-}
-
-blockquote {
-   font-size: 1.3rem;
-   font-style: italic;
-   margin: 38px 38px 24px;
-   padding: 0;
-}
-
-form {
-   position: relative;
-   background-color: white;
-   z-index: 10;
-   >div:last-of-type {
-      text-align: center;
-      margin: 40px 0;
-   }
-}
-
-#introduction {
-   opacity: 1;
-   transition: all 1s;
-   visibility: visible;
-   position: relative;
-   z-index: 1;
-   background-color: white;
-
-   &.hide {
-      opacity: 0;
-      height: 0;
-      visibility: hidden;
-   }
-}
-
-input[id="color_scheme_option"] {
-   width: 324px;
-}
-
-input[id="font_size_option"] {
-   width: 68px;
-}
-
-input[id="margin_option"],
-input[id="tab_size_option"],
-input[id="wrap_width_option"] {
-   width: 32px;
-}
-
-input[type="text"] {
-   -webkit-box-shadow: 5px 5px 5px #888;
-      -moz-box-shadow: 5px 5px 5px #888;
-           box-shadow: 5px 5px 5px #888;
-           transition: 500ms;
-}
-
-input[type="text"]:focus {
-   // Mixin this
-   -webkit-box-shadow: 10px 10px 5px #aaa;
-      -moz-box-shadow: 10px 10px 5px #aaa;
-           box-shadow: 10px 10px 5px #aaa;
-}
-
-a {
-   color: lighten($color-links, 11%);
-   text-decoration: none;
-}
-
-.highlight {
-   background-color: lighten(yellow, 20%);
-   border-radius: 5px;
-   padding: 2px;
-}
-
-.pending {
-   background-color: lighten(red, 49%);
-   border-radius: 5px;
-   padding: 4px;
-}
-
-.error {
-   color: red;
-   background-color: yellow;
-}
-
-@media screen and (max-width: 1920px),
-       screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1920px),
-       screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (       min-resolution: 192dpi)       and (max-width: 1920px),
-       screen and (       min-resolution: 2dppx)        and (max-width: 1920px) {
+@include max-width-responsive-media-query($xxxx-large) {
    body {
       width: 40%;
    }
+
    nav {
       right: 68.5%;
+
       ul {
          padding-right: 38px;
       }
    }
 }
 
-@media screen and (max-width: 1850px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1850px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1850px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1850px) {
+@include max-width-responsive-media-query($xxx-large) {
    body {
       width: 50%;
    }
+
    nav {
       right: 73%;
    }
 }
 
-@media screen and (max-width: 1480px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1480px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1480px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1480px) {
+@include max-width-responsive-media-query($xx-large) {
    body {
       width: 54%;
    }
+
    nav {
       right: 75%;
    }
 }
 
-@media screen and (max-width: 1380px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1380px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1380px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1380px) {
+@include max-width-responsive-media-query($x-large) {
    body {
       width: 58%;
    }
+
    nav {
       right: 76.5%;
    }
 }
 
-@media screen and (max-width: 1280px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1280px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1280px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1280px) {
+@include max-width-responsive-media-query($large) {
    body {
       width: 62%;
    }
+
    nav {
       right: 78%;
+
       ul {
          padding-right: 40px;
       }
    }
 }
 
-@media screen and (max-width: 1200px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1200px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1200px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1200px) {
+@include max-width-responsive-media-query($medium) {
    body {
       width: 66%;
    }
+
    nav {
       right: 80%;
+
       ul {
          padding-right: 50px;
       }
    }
 }
 
-@media screen and (max-width: 1130px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1130px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1130px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1130px) {
+@include max-width-responsive-media-query($small) {
    body {
       width: 70%;
    }
+
    nav {
       font-size: .8rem;
       right: 82%;
    }
+
    select {
       font-size: .9rem;
    }
 }
 
-@media screen and (max-width: 1068px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1068px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1068px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1068px) {
+@include max-width-responsive-media-query($x-small) {
    body {
       width: 74%;
    }
+
    nav {
       right: 84%;
    }
 }
 
-@media screen and (max-width: 1024px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1024px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
+@include max-width-responsive-media-query($xx-small) {
    body {
       width: 70%;
    }
@@ -599,7 +285,6 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
       width: 100%;
       padding: 10px 0 0;
       margin: 0 0 20px;
-      z-index: 3;
       @include transform(0, 0, 0);
    }
 
@@ -609,15 +294,9 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
    }
 }
 
-@media screen and (max-width: 800px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 800px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (       min-resolution: 192dpi)       and (max-width: 800px),
-screen and (       min-resolution: 2dppx)        and (max-width: 800px) {
+@include max-width-responsive-media-query($xxx-small) {
    select {
       font-size: .8rem;
    }
 }
+

@@ -1,0 +1,39 @@
+q:before {
+   content: "“";
+}
+
+q:after {
+   content: "”";
+}
+
+code, tt, kbd, pre {
+   font: 1.2rem / 1.2 $font-stack--code;
+}
+
+code, tt, kbd {
+   border: 1px solid #eee;
+   border-radius: 5px;
+   color: #444;
+   padding: 5px;
+}
+
+strong, b {
+   font-weight: 700;
+}
+
+sup {
+   font-size: 1.1rem;
+   bottom: 0;
+   line-height: 1;
+   position: relative;
+   vertical-align: super;
+}
+
+abbr {
+   border-bottom: 1px dotted $color--main;
+}
+
+a {
+   color: lighten($color--links, 11%);
+   text-decoration: none;
+}
