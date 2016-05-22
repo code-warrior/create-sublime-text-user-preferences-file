@@ -5,6 +5,12 @@ $color-main: #222;
 $color-border: lighten($color-main,70%);
 $background-color-for-input-and-choice: lighten(green,73%);
 
+$stacking-context--nav   : 0;
+$stacking-context--intro : 1;
+$stacking-context--h1    : 1;
+$stacking-context--aside : 3;
+$stacking-context--form  : 10;
+
 // ----------------------------------------------------------------------------------
 // Breakpoints
 // ----------------------------------------------------------------------------------
