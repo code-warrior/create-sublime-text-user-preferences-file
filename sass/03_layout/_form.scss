@@ -27,6 +27,8 @@ select {
 }
 
 input[type="submit"] {
+   border-radius: initial;
+   border: none;
    padding: 20px;
    margin: 0 auto;
    background-color: $color--button-background;
