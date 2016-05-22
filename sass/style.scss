@@ -7,7 +7,7 @@
 @import '04_inline-elements';
 
 body {
-   font: 300 1.1rem / 1.5 "Noto Sans", sans-serif;
+   font: 300 1.1rem / 1.5 $font-stack--body;
    width: 60%;
    margin: auto;
    color: $color-main;
@@ -32,7 +32,7 @@ p {
 }
 
 input, button {
-   font: 300 1.25rem / 1 "Noto Sans", sans-serif;
+   font: 300 1.25rem / 1 $font-stack--body;
    border: 1px solid #ddd;
 }
 

@@ -19,7 +19,7 @@ input {
 }
 
 select, option {
-   font: 300 1.2rem / 1 "Noto Sans", sans-serif;
+   font: 300 1.2rem / 1 $font-stack--body;
 }
 
 select {

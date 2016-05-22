@@ -7,7 +7,7 @@ q:after {
 }
 
 code, tt, kbd, pre {
-   font: 1.2rem / 1.2 "Ubuntu Mono", monospace;
+   font: 1.2rem / 1.2 $font-stack--code;
 }
 
 code, tt, kbd {

@@ -6,6 +6,12 @@ $color-border: lighten($color-main,70%);
 $background-color-for-input-and-choice: lighten(green,73%);
 
 // ----------------------------------------------------------------------------------
+// Font Stacks
+// ----------------------------------------------------------------------------------
+$font-stack--body : "Noto Sans", sans-serif;
+$font-stack--code : "Ubuntu Mono", monospace;
+
+// ----------------------------------------------------------------------------------
 // Stacking Contexts (z-index)
 // ----------------------------------------------------------------------------------
 $stacking-context--nav   : 0;                            // 0
