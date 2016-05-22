@@ -74,13 +74,13 @@ blockquote {
 }
 
 .pending {
-   background-color: lighten(red, 49%);
+   background-color: lighten($color--important-note, 49%);
    border-radius: 5px;
    padding: 4px;
 }
 
 .error {
-   color: red;
+   color: $color--important-note;
    background-color: yellow;
 }
 
