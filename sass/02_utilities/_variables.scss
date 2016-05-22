@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------------------
+// Colors
+// ----------------------------------------------------------------------------------
+$color--background        : white;
+$color--important-note    : red;
+$color--links             : rgb(0,79,130);
+$color--main              : #222;
+$color--border            : lighten($color--main,70%);
+$color--button-background : lighten($color--links, 65%);
+
+// ----------------------------------------------------------------------------------
+// Font Stacks
+// ----------------------------------------------------------------------------------
+$font-stack--body : "Noto Sans", sans-serif;
+$font-stack--code : "Ubuntu Mono", monospace;
+
+// ----------------------------------------------------------------------------------
+// Stacking Contexts (z-index)
+// ----------------------------------------------------------------------------------
+$stacking-context--nav   : 0;                            // 0
+$stacking-context--intro : $stacking-context--nav + 1;   // 1
+$stacking-context--h1    : $stacking-context--nav + 1;   // 1
+$stacking-context--aside : $stacking-context--h1 + 1;    // 2
+$stacking-context--form  : $stacking-context--aside + 1; // 3
+
+// ----------------------------------------------------------------------------------
+// Breakpoints
+//
+// TODO: These are temporary while the nav is re-imagined
+// ----------------------------------------------------------------------------------
+$xxxx-large : 1920px;
+$xxx-large  : 1850px;
+$xx-large   : 1480px;
+$x-large    : 1380px;
+$large      : 1280px;
+$medium     : 1200px;
+$small      : 1130px;
+$x-small    : 1068px;
+$xx-small   : 1024px;
+$xxx-small  :  800px;

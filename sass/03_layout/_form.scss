@@ -1,0 +1,64 @@
+form {
+   position: relative;
+   background-color: $color--background;
+   z-index: $stacking-context--form;
+
+   >div:last-of-type {
+      text-align: center;
+      margin: 40px 0;
+   }
+}
+
+input {
+   border-radius: 5px;
+   border: 1px solid #ddd;
+   width: 440px;
+   line-height: 24px;
+   padding: 2px;
+   text-align: center;
+}
+
+select, option {
+   font: 300 1.2rem / 1 $font-stack--body;
+}
+
+select {
+   border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+   border-radius: initial;
+   border: none;
+   padding: 20px;
+   margin: 0 auto;
+   background-color: $color--button-background;
+   color: #444;
+}
+
+input[id="color_scheme_option"] {
+   width: 324px;
+}
+
+input[id="font_size_option"] {
+   width: 68px;
+}
+
+input[id="margin_option"],
+input[id="tab_size_option"],
+input[id="wrap_width_option"] {
+   width: 32px;
+}
+
+input[type="text"] {
+   -webkit-box-shadow: 5px 5px 5px #888;
+      -moz-box-shadow: 5px 5px 5px #888;
+           box-shadow: 5px 5px 5px #888;
+           transition: 500ms;
+}
+
+input[type="text"]:focus {
+   // Mixin this
+   -webkit-box-shadow: 10px 10px 5px #aaa;
+      -moz-box-shadow: 10px 10px 5px #aaa;
+           box-shadow: 10px 10px 5px #aaa;
+}

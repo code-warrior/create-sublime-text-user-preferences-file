@@ -1,0 +1,25 @@
+nav {
+   font-size: .95rem;
+   position: fixed;
+   right: 79%;
+   top: 154px;
+   height: 100%;
+   overflow-y: hidden;
+   z-index: $stacking-context--nav;
+
+   ul {
+      text-align: right;
+      padding-right: 24px;
+      height: 60%;
+      overflow-y: auto;
+
+      li {
+         margin: 12px 0;
+
+         a {
+            padding: 2px;
+            background-color: lighten(#FFCB82, 21%);
+         }
+      }
+   }
+}
