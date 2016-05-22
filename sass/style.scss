@@ -4,24 +4,13 @@
 @import 'reset';
 @import 'mixins';
 @import 'variables';
+@import 'lists';
 
 body {
    font: 300 1.1rem / 1.5 "Noto Sans", sans-serif;
    width: 60%;
    margin: auto;
    color: $color-main;
-}
-
-dl {
-   dt {
-      margin-top: 20px;
-      font-weight: 700;
-   }
-   dd {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      margin-left: 40px;
-   }
    padding: 0 0 40px;
 }
 
@@ -31,19 +20,6 @@ q:before {
 
 q:after {
    content: "”";
-}
-
-ol {
-   list-style-type: decimal;
-   li {
-      margin: 12px 0;
-   }
-}
-
-ol {
-   ul {
-      margin: 16px 0 16px 18px;
-   }
 }
 
 code, tt, kbd, pre {
