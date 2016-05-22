@@ -11,19 +11,23 @@ table {
    border-collapse: collapse;
    font-size: 1rem;
    margin: 0 auto;
+
    code {
       font-size: 1rem;
       border: 0;
       padding: 0;
    }
+
    thead {
       background-color: lighten($color-border, 12%);
    }
+
    tr {
       td, th {
          padding: 14px;
       }
    }
+
    tbody {
       tr:nth-child(even) {
          background-color: lighten($color-links, 73%);

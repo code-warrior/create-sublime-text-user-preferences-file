@@ -1,6 +1,7 @@
 section {
    margin: 52px 0;
    clear: both;
+   transition: 350ms;
 
    >h2 {
       +div {
@@ -23,11 +24,11 @@ section {
          }
       }
    }
-   transition: 350ms;
 }
 
 section:hover {
    box-shadow: 10px 10px 10px 0 #ddd;
+
    h2 {
       border-right: 1px solid #ddd;
    }
