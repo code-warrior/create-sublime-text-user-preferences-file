@@ -5,6 +5,7 @@
 @import 'mixins';
 @import 'variables';
 @import 'lists';
+@import 'section';
 @import 'form';
 
 body {
@@ -101,40 +102,6 @@ h1 {
    border-top: 1px solid #ccc;
 }
 
-section {
-   margin: 52px 0;
-   clear: both;
-
-   >h2 {
-      +div {
-         margin: 0;
-         padding-right: 12px;
-         border-right: 1px solid $color-border;
-         transition: 1s;
-
-         >p:first-of-type {
-            margin: 0;
-            padding: 24px 0 8px;
-
-            code {
-               font-size: 1.3rem;
-            }
-         }
-
-         p {
-            margin: 0;
-         }
-      }
-   }
-   transition: 350ms;
-}
-
-section:hover {
-   box-shadow: 10px 10px 10px 0 #ddd;
-   h2 {
-      border-right: 1px solid #ddd;
-   }
-}
 
 header {
    h1 {
