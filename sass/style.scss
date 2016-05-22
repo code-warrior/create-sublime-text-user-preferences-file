@@ -433,14 +433,7 @@ a {
    background-color: yellow;
 }
 
-@media screen and (max-width: 1920px),
-       screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1920px),
-       screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1920px),
-       screen and (       min-resolution: 192dpi)       and (max-width: 1920px),
-       screen and (       min-resolution: 2dppx)        and (max-width: 1920px) {
+@include max-width-responsive-media-query($xxxx-large) {
    body {
       width: 40%;
    }
@@ -452,14 +445,7 @@ a {
    }
 }
 
-@media screen and (max-width: 1850px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1850px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1850px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1850px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1850px) {
+@include max-width-responsive-media-query($xxx-large) {
    body {
       width: 50%;
    }
@@ -468,14 +454,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1850px) {
    }
 }
 
-@media screen and (max-width: 1480px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1480px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1480px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1480px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1480px) {
+@include max-width-responsive-media-query($xx-large) {
    body {
       width: 54%;
    }
@@ -484,14 +463,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1480px) {
    }
 }
 
-@media screen and (max-width: 1380px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1380px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1380px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1380px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1380px) {
+@include max-width-responsive-media-query($x-large) {
    body {
       width: 58%;
    }
@@ -500,14 +472,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1380px) {
    }
 }
 
-@media screen and (max-width: 1280px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1280px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1280px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1280px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1280px) {
+@include max-width-responsive-media-query($large) {
    body {
       width: 62%;
    }
@@ -519,14 +484,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1280px) {
    }
 }
 
-@media screen and (max-width: 1200px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1200px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1200px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1200px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1200px) {
+@include max-width-responsive-media-query($medium) {
    body {
       width: 66%;
    }
@@ -538,14 +496,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1200px) {
    }
 }
 
-@media screen and (max-width: 1130px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1130px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1130px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1130px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1130px) {
+@include max-width-responsive-media-query($small) {
    body {
       width: 70%;
    }
@@ -558,14 +509,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1130px) {
    }
 }
 
-@media screen and (max-width: 1068px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1068px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1068px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1068px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1068px) {
+@include max-width-responsive-media-query($x-small) {
    body {
       width: 74%;
    }
@@ -574,14 +518,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1068px) {
    }
 }
 
-@media screen and (max-width: 1024px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 1024px),
-screen and (       min-resolution: 192dpi)       and (max-width: 1024px),
-screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
+@include max-width-responsive-media-query($xx-small) {
    body {
       width: 70%;
    }
@@ -604,14 +541,7 @@ screen and (       min-resolution: 2dppx)        and (max-width: 1024px) {
    }
 }
 
-@media screen and (max-width: 800px),
-screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 800px),
-screen and (       -min-device-pixel-ratio: 2)   and (max-width: 800px),
-screen and (       min-resolution: 192dpi)       and (max-width: 800px),
-screen and (       min-resolution: 2dppx)        and (max-width: 800px) {
+@include max-width-responsive-media-query($xxx-small) {
    select {
       font-size: .8rem;
    }
