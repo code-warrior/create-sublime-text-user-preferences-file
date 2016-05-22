@@ -5,6 +5,9 @@ $color-main: #222;
 $color-border: lighten($color-main,70%);
 $background-color-for-input-and-choice: lighten(green,73%);
 
+// ----------------------------------------------------------------------------------
+// Stacking Contexts (z-index)
+// ----------------------------------------------------------------------------------
 $stacking-context--nav   : 0;                            // 0
 $stacking-context--intro : $stacking-context--nav + 1;   // 1
 $stacking-context--h1    : $stacking-context--nav + 1;   // 1
@@ -13,10 +16,9 @@ $stacking-context--form  : $stacking-context--aside + 1; // 3
 
 // ----------------------------------------------------------------------------------
 // Breakpoints
-// ----------------------------------------------------------------------------------
-
+//
 // TODO: These are temporary while the nav is re-imagined
-
+// ----------------------------------------------------------------------------------
 $xxxx-large : 1920px;
 $xxx-large  : 1850px;
 $xx-large   : 1480px;
