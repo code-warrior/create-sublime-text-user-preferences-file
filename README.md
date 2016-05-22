@@ -13,7 +13,7 @@ The web site for this project is live at [http://www.create-sublime-text-user-pr
 
 ## Get Involved/Participate
 
-Like many open source projects, this project is developed and maintained by a single person. Consequently, the continued development is slow-going. (This project was started in February/March 2015, and the first commit took place on 8 May 2015.) Consider getting involved: Report errors/bugs, request features, or address any of the [issues logged at Bitbucket](https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file/issues?status=new&status=open).
+Like many open source endeavors, this project is developed and maintained by a single person. Consequently, the continued development is slow-going. (Development began in February/March 2015, and the first commit took place on 8 May 2015.) Consider getting involved: Report errors/bugs, request features, or address any of the [issues logged at Bitbucket](https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file/issues?status=new&status=open).
 
 ## Contact
 — [Roy Vanegas](mailto:roy@thecodeeducators.com)
