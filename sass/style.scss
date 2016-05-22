@@ -5,6 +5,7 @@
 @import 'mixins';
 @import 'variables';
 @import 'lists';
+@import 'form';
 
 body {
    font: 300 1.1rem / 1.5 "Noto Sans", sans-serif;
@@ -280,23 +281,6 @@ input, button {
    border: 1px solid #ddd;
 }
 
-input {
-   border-radius: 5px;
-   border: 1px solid #ddd;
-   width: 440px;
-   line-height: 24px;
-   padding: 2px;
-   text-align: center;
-}
-
-select, option {
-   font: 300 1.2rem / 1 "Noto Sans", sans-serif;
-}
-
-select {
-   border: 1px solid #ddd;
-}
-
 // The Bitbucket banner in the upper right hand corner
 aside {
    line-height: 36px;
@@ -321,28 +305,11 @@ aside {
    }
 }
 
-input[type="submit"] {
-   padding: 20px;
-   margin: 0 auto;
-   background-color: lighten($color-links, 55%);
-   color: #444;
-}
-
 blockquote {
    font-size: 1.3rem;
    font-style: italic;
    margin: 38px 38px 24px;
    padding: 0;
-}
-
-form {
-   position: relative;
-   background-color: white;
-   z-index: 10;
-   >div:last-of-type {
-      text-align: center;
-      margin: 40px 0;
-   }
 }
 
 #introduction {
@@ -358,34 +325,6 @@ form {
       height: 0;
       visibility: hidden;
    }
-}
-
-input[id="color_scheme_option"] {
-   width: 324px;
-}
-
-input[id="font_size_option"] {
-   width: 68px;
-}
-
-input[id="margin_option"],
-input[id="tab_size_option"],
-input[id="wrap_width_option"] {
-   width: 32px;
-}
-
-input[type="text"] {
-   -webkit-box-shadow: 5px 5px 5px #888;
-      -moz-box-shadow: 5px 5px 5px #888;
-           box-shadow: 5px 5px 5px #888;
-           transition: 500ms;
-}
-
-input[type="text"]:focus {
-   // Mixin this
-   -webkit-box-shadow: 10px 10px 5px #aaa;
-      -moz-box-shadow: 10px 10px 5px #aaa;
-           box-shadow: 10px 10px 5px #aaa;
 }
 
 a {
