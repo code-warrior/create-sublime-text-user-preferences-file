@@ -49,8 +49,8 @@ session_start();
       more here.</a></p>
       <p><strong>Note</strong>: This site is in beta, meaning that some features,
       such as collapsible headings, have yet to be implemented, some other features
-      may have small bugs (although not one has been discovered), and many options are
-      missing. Bugs, issues, and feature requests should be submitted via
+      may have small bugs (although not one has been discovered), and many options
+      are missing. Bugs, issues, and feature requests should be submitted via
       <a href="https://bitbucket.org/code-warrior/create-sublime-text-user-preferences-file">Bitbucket</a>.</p>
       <address>— Roy Vanegas</address>
       <div><button>Hide the intro above</button></div>
