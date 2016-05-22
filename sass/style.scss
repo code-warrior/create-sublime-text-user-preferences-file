@@ -40,13 +40,6 @@ p {
    padding: .7rem 0;
 }
 
-h1 {
-   margin: 0;
-   padding: 48px 0;
-   text-align: center;
-   font-size: 2.2rem;
-}
-
 #generated-file, #more-info-about-site, #installing-a-sublime-text-dictionary {
    font-size: 1.1rem;
 
@@ -109,25 +102,6 @@ sup {
 
 abbr {
    border-bottom: 1px dotted $color-main;
-}
-
-h2 {
-   font-size: 1.9rem;
-   border: {
-      top: 1px solid $color-border;
-      bottom: 1px solid $color-border;
-      left: 1px solid $color-border;
-   }
-   margin: 0;
-   padding: 0 0 0 12px;
-
-   &+div {
-      >p:first-of-type {
-         >code {
-            background-color: lighten(green,73%);
-         }
-      }
-   }
 }
 
 [class$="fa-info"] {
