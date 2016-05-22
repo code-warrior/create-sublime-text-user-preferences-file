@@ -118,6 +118,19 @@ abbr {
 }
 
 #introduction {
+   opacity: 1;
+   transition: all 1s;
+   visibility: visible;
+   position: relative;
+   z-index: 1;
+   background-color: white;
+
+   &.hide {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+   }
+
    div:last-of-type {
       text-align: center;
 
@@ -172,21 +185,6 @@ blockquote {
    font-style: italic;
    margin: 38px 38px 24px;
    padding: 0;
-}
-
-#introduction {
-   opacity: 1;
-   transition: all 1s;
-   visibility: visible;
-   position: relative;
-   z-index: 1;
-   background-color: white;
-
-   &.hide {
-      opacity: 0;
-      height: 0;
-      visibility: hidden;
-   }
 }
 
 a {
