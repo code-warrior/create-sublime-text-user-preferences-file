@@ -36,3 +36,16 @@
         -o-transform-origin: $x $y;
            transform-origin: $x $y;
 }
+
+@mixin max-width-responsive-media-query($screen-width) {
+   @media screen and (max-width: $screen-width),
+   screen and (-webkit-min-device-pixel-ratio: 2)   and (max-width: $screen-width),
+   screen and (   min--moz-device-pixel-ratio: 2)   and (max-width: $screen-width),
+   screen and (   -moz-min-device-pixel-ratio: 2)   and (max-width: $screen-width),
+   screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: $screen-width),
+   screen and (       -min-device-pixel-ratio: 2)   and (max-width: $screen-width),
+   screen and (       min-resolution: 192dpi)       and (max-width: $screen-width),
+   screen and (       min-resolution: 2dppx)        and (max-width: $screen-width) {
+      @content;
+   }
+}
